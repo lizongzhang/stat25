@@ -14,11 +14,6 @@ title: "第11章"
 
 <img src="img/video.png" alt="讲义" style="width: 24px; height: 24px;margin-right: 10px"/>[EXCEL数据分析工具库中的回归分析](https://www.bilibili.com/video/BV13v411b7EU/)
 
-# SPSS操作视频
-
-<img src="img/video.png" alt="讲义" style="width: 24px; height: 24px;margin-right: 10px"/>[SPSS如何报告相关系数矩阵？](https://www.bilibili.com/video/BV1Pw411878L)
-
-<img src="img/video.png" alt="讲义" style="width: 24px; height: 24px;margin-right: 10px"/>[SPSS 一元线性回归？](https://www.bilibili.com/video/BV1QK41137Sf)
 
 # 课堂练习
 

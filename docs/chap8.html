@@ -170,7 +170,6 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#重点难点视频" id="toc-重点难点视频" class="nav-link" data-scroll-target="#重点难点视频">重点难点视频</a></li>
   <li><a href="#excel操作" id="toc-excel操作" class="nav-link" data-scroll-target="#excel操作">Excel操作</a></li>
-  <li><a href="#spss操作" id="toc-spss操作" class="nav-link" data-scroll-target="#spss操作">SPSS操作</a></li>
   </ul></li>
   <li><a href="#课堂练习" id="toc-课堂练习" class="nav-link" data-scroll-target="#课堂练习">课堂练习</a></li>
   <li><a href="#教材习题" id="toc-教材习题" class="nav-link" data-scroll-target="#教材习题">教材习题</a></li>
@@ -235,12 +234,6 @@ ul.task-list li input[type="checkbox"] {
 <p><img src="img/video.png" alt="讲义" style="width: 24px; height: 24px;margin-right: 10px"><a href="https://www.bilibili.com/video/BV1Zr4y1F7jK/">Excel 两个总体方差比的F检验</a></p>
 <p><img src="img/video.png" alt="讲义" style="width: 24px; height: 24px;margin-right: 10px"><a href="https://www.bilibili.com/video/BV16Z4y137HV/">Excel 两个总体均值是否相等的T检验</a></p>
 <p><img src="img/video.png" alt="讲义" style="width: 24px; height: 24px;margin-right: 10px"><a href="https://www.bilibili.com/video/BV1mD4y1Q77U/">EXCEL 配对样本的T检验</a></p>
-</section>
-<section id="spss操作" class="level2">
-<h2 class="anchored" data-anchor-id="spss操作">SPSS操作</h2>
-<p><img src="img/video.png" alt="讲义" style="width: 24px; height: 24px;margin-right: 10px"><a href="https://www.bilibili.com/video/BV1jZ4y1L7ne/">单个总体参数的T检验</a></p>
-<p><img src="img/video.png" alt="讲义" style="width: 24px; height: 24px;margin-right: 10px"><a href="https://www.bilibili.com/video/BV1bi4y1j7Gc/">两个独立样本t检验</a></p>
-<p><img src="img/video.png" alt="讲义" style="width: 24px; height: 24px;margin-right: 10px"><a href="https://www.bilibili.com/video/BV1Fy4y167rs">配对样本的t检验</a></p>
 </section>
 </section>
 <section id="课堂练习" class="level1">
@@ -717,7 +710,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </footer>
 <script>videojs(video_shortcode_videojs_video1);</script>
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","loop":false,"descPosition":"bottom","closeEffect":"zoom","selector":".lightbox"});
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","closeEffect":"zoom","openEffect":"zoom","descPosition":"bottom","loop":false});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

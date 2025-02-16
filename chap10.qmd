@@ -14,11 +14,6 @@ title: "第10章"
 
 <img src="img/video.png" alt="讲义" style="width: 24px; height: 24px;margin-right: 10px">[EXCEL 双因素方差分析](https://www.bilibili.com/video/BV18v411t7Hb/)
 
-# SPSS操作视频
-
-<img src="img/video.png" alt="讲义" style="width: 24px; height: 24px;margin-right: 10px">[SPSS 单因素方差分析ANOVA](https://www.bilibili.com/video/BV1M54y1C7EB
-)
-
 
 # 课堂练习
 

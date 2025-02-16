@@ -167,7 +167,6 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#教学视频" id="toc-教学视频" class="nav-link" data-scroll-target="#教学视频">教学视频</a>
   <ul class="collapse">
   <li><a href="#excel操作视频" id="toc-excel操作视频" class="nav-link" data-scroll-target="#excel操作视频">Excel操作视频</a></li>
-  <li><a href="#spss操作视频" id="toc-spss操作视频" class="nav-link" data-scroll-target="#spss操作视频">SPSS操作视频</a></li>
   </ul></li>
   <li><a href="#课堂练习" id="toc-课堂练习" class="nav-link" data-scroll-target="#课堂练习">课堂练习</a></li>
   <li><a href="#习题讲评" id="toc-习题讲评" class="nav-link" data-scroll-target="#习题讲评">习题讲评</a></li>
@@ -208,12 +207,6 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="excel操作视频">Excel操作视频</h2>
 <p><img src="img/video.png" alt="讲义" style="width: 24px; height: 24px;margin-right: 10px"><a href="https://www.bilibili.com/video/BV1454y167ko/">EXCEL 拟合优度检验 CHISQ.TEST函数的使用</a></p>
 <p><img src="img/video.png" alt="讲义" style="width: 24px; height: 24px;margin-right: 10px"><a href="https://www.bilibili.com/video/BV19A411x7EU/">EXCEL 独立性检验 CHISQ.TEST函数的使用</a></p>
-</section>
-<section id="spss操作视频" class="level2">
-<h2 class="anchored" data-anchor-id="spss操作视频">SPSS操作视频</h2>
-<p><img src="img/video.png" alt="讲义" style="width: 24px; height: 24px;margin-right: 10px"><a href="https://www.bilibili.com/video/BV16r4y1c7bZ/">SPSS 拟合优度检验</a></p>
-<p><img src="img/video.png" alt="讲义" style="width: 24px; height: 24px;margin-right: 10px"><a href="https://www.bilibili.com/video/BV1pD4y1R7KC">SPSS 独立性检验：两个定性变量是否相互独立？</a></p>
-<p><img src="img/video.png" alt="讲义" style="width: 24px; height: 24px;margin-right: 10px"><a href="https://www.bilibili.com/video/BV1Kp4y167vZ">SPSS 列联表分析应用举例</a></p>
 </section>
 </section>
 <section id="课堂练习" class="level1">
@@ -682,7 +675,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","selector":".lightbox","closeEffect":"zoom","loop":false,"descPosition":"bottom"});
+<script>var lightboxQuarto = GLightbox({"loop":false,"descPosition":"bottom","selector":".lightbox","closeEffect":"zoom","openEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
