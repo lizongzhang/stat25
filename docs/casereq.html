@@ -66,6 +66,11 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
+  document.querySelectorAll('a').forEach(function(link) {
+    link.setAttribute('target', '_blank');
+  });
+</script>    
 
 
 </head>
@@ -162,10 +167,13 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#选题要求" id="toc-选题要求" class="nav-link active" data-scroll-target="#选题要求">选题要求</a></li>
   <li><a href="#数据要求" id="toc-数据要求" class="nav-link" data-scroll-target="#数据要求">数据要求</a></li>
-  <li><a href="#四次作业" id="toc-四次作业" class="nav-link" data-scroll-target="#四次作业">四次作业</a></li>
-  <li><a href="#演示文稿大纲" id="toc-演示文稿大纲" class="nav-link" data-scroll-target="#演示文稿大纲">演示文稿大纲</a></li>
+  <li><a href="#第3-4章讨论课-第8周" id="toc-第3-4章讨论课-第8周" class="nav-link" data-scroll-target="#第3-4章讨论课-第8周">第3-4章讨论课 (第8周)</a></li>
+  <li><a href="#第7-8章讨论课-第10周" id="toc-第7-8章讨论课-第10周" class="nav-link" data-scroll-target="#第7-8章讨论课-第10周">第7-8章讨论课 (第10周)</a></li>
+  <li><a href="#第9-10章讨论课-第12周" id="toc-第9-10章讨论课-第12周" class="nav-link" data-scroll-target="#第9-10章讨论课-第12周">第9-10章讨论课 (第12周)</a></li>
+  <li><a href="#第11章讨论课-第14周" id="toc-第11章讨论课-第14周" class="nav-link" data-scroll-target="#第11章讨论课-第14周">第11章讨论课 (第14周)</a></li>
+  <li><a href="#小组作业汇报-第16-17周" id="toc-小组作业汇报-第16-17周" class="nav-link" data-scroll-target="#小组作业汇报-第16-17周">小组作业汇报 (第16-17周)</a></li>
   <li><a href="#演示文稿" id="toc-演示文稿" class="nav-link" data-scroll-target="#演示文稿">演示文稿</a></li>
-  <li><a href="#提交要求" id="toc-提交要求" class="nav-link" data-scroll-target="#提交要求">提交要求</a></li>
+  <li><a href="#汇报文稿提交要求" id="toc-汇报文稿提交要求" class="nav-link" data-scroll-target="#汇报文稿提交要求">汇报文稿提交要求</a></li>
   <li><a href="#发言时长" id="toc-发言时长" class="nav-link" data-scroll-target="#发言时长">发言时长</a></li>
   </ul>
 </nav>
@@ -205,36 +213,66 @@ ul.task-list li input[type="checkbox"] {
 <li><p>不要使用其他教材中的例题或习题数据，不要使用虚拟数据</p></li>
 </ul>
 </section>
-<section id="四次作业" class="level1">
-<h1>四次作业</h1>
-<p>每个小组完成4次作业，提交4个演示文稿，按发言时间表上指定的主题的汇报一次。</p>
+<section id="第3-4章讨论课-第8周" class="level1">
+<h1>第3-4章讨论课 (第8周)</h1>
 <ul>
-<li><p>第1次：第3-4章 图表和描述性统计量</p></li>
-<li><p>第2次：第7-8章 参数估计和假设检验</p></li>
-<li><p>第3次：第9-10章 独立性检验、卡方检验、方差分析</p></li>
-<li><p>第4次：第11章 相关和回归分析</p></li>
+<li><p>在Excel中整理好收集的数据。</p></li>
+<li><p>创建项目, 在项目中存放Excel数据文件，代码文件。</p></li>
+<li><p>将Excel导入R Studio。</p></li>
+<li><p>运用第3-4章方法分析数据</p>
+<ul>
+<li><pre><code>绘制条形图、饼图、直方图、箱线图、散点图等</code></pre></li>
+<li><pre><code>计算定量变量的描述性统计量(均值、标准差、中位数、最小值、最大值)</code></pre></li>
+</ul></li>
+<li><p>将R的输出结果，及文字说明整理到WORD文档。</p></li>
 </ul>
 </section>
-<section id="演示文稿大纲" class="level1">
-<h1>演示文稿大纲</h1>
+<section id="第7-8章讨论课-第10周" class="level1">
+<h1>第7-8章讨论课 (第10周)</h1>
 <ul>
-<li><p>研究目标</p></li>
-<li><p>数据概况</p>
+<li><p>运用第7-8章方法分析数据</p>
 <ul>
-<li><p>数据来源、样本范围、样本容量</p></li>
-<li><p>变量含义</p></li>
-<li><p>描述性统计分析</p></li>
+<li><pre><code>总体均值的区间估计</code></pre></li>
+<li><pre><code>单个总体均值的假设检验</code></pre></li>
+<li><pre><code>两个总体均值的假设检验</code></pre></li>
 </ul></li>
-<li><p>分析过程</p>
+<li><p>将R的输出结果，及文字说明整理到WORD文档。</p></li>
+</ul>
+</section>
+<section id="第9-10章讨论课-第12周" class="level1">
+<h1>第9-10章讨论课 (第12周)</h1>
 <ul>
-<li>呈现统计分析表格、计算结果、检验结果</li>
+<li><p>运用第9-10章方法分析数据</p>
+<ul>
+<li><pre><code>拟合优度检验</code></pre></li>
+<li><pre><code>独立性检验</code></pre></li>
+<li><pre><code>方差分析</code></pre></li>
 </ul></li>
-<li><p>研究结论</p></li>
-<li><p>心得体会</p>
+<li><p>将R的输出结果，及文字说明整理到WORD文档。</p></li>
+</ul>
+</section>
+<section id="第11章讨论课-第14周" class="level1">
+<h1>第11章讨论课 (第14周)</h1>
 <ul>
-<li><p>收集数据、软件操作小技巧</p></li>
-<li><p>遇到的困难及解决方案</p></li>
-<li><p>收获</p></li>
+<li><p>运用第11章方法分析数据</p>
+<ul>
+<li><pre><code>相关分析</code></pre></li>
+<li><pre><code>回归分析</code></pre></li>
+</ul></li>
+<li><p>将R的输出结果，及文字说明整理到WORD文档。</p></li>
+</ul>
+</section>
+<section id="小组作业汇报-第16-17周" class="level1">
+<h1>小组作业汇报 (第16-17周)</h1>
+<ul>
+<li><p>每组汇报时间为5-7分钟。</p></li>
+<li><p>汇报大纲(PPT 20页左右)：</p>
+<ul>
+<li><p>选题背景</p></li>
+<li><p>数据来源</p></li>
+<li><p>数据分析</p></li>
+<li><p>结论</p></li>
+<li><p>经验分享</p></li>
 </ul></li>
 </ul>
 </section>
@@ -246,13 +284,13 @@ ul.task-list li input[type="checkbox"] {
 <li><p>图表美观，清晰可读性强</p></li>
 </ul>
 </section>
-<section id="提交要求" class="level1">
-<h1>提交要求</h1>
+<section id="汇报文稿提交要求" class="level1">
+<h1>汇报文稿提交要求</h1>
 <ul>
-<li><p>将演示文稿转成PDF格式，在发言日的前一天的19:00点将PDF文件提交到QQ群“第#章小组案例”文件夹中</p></li>
-<li><p>PDF文件命名格式：小组编号+组长名字+组长班级+章编号.pdf</p>
+<li><p>将演示文稿转成PDF格式，将PDF文件提交到QQ群“期末汇报”文件夹中</p></li>
+<li><p>PDF文件命名格式：小组编号+组长名字+组长班级.pdf</p>
 <ul>
-<li><p>例如：5黄捷欣19国贸1第3-4章.pdf</p></li>
+<li><p>例如：5黄捷欣19国贸1.pdf</p></li>
 <li><p><strong>小组编号请查看QQ群中的小组发言时间表</strong></p></li>
 </ul></li>
 </ul>
@@ -260,7 +298,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="发言时长" class="level1">
 <h1>发言时长</h1>
 <ul>
-<li><p>5-6分钟, 请演练课堂汇报的时长, 突出重点 。</p></li>
+<li><p>5-7分钟, 请演练课堂汇报的时长, 突出重点 。</p></li>
 <li><p>发言时有倒计时软件计时, 时间到请结束发言。</p></li>
 </ul>
 
