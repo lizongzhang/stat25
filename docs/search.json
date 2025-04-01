@@ -915,5 +915,12 @@
     "title": "第4章",
     "section": "",
     "text": "第4章 数据的概括性度\n讲义\n\n\nExcel教学视频\nExcel 计算描述性统计量的函数\nEXCEL数据分析加载项\nExcel 数据分析加载项中的描述统计功能\n\n\n本章习题\n教材P72 习题4.2，4.3，4.5和4.6\n\n\n习题讲评\n教材第4章习题讲评\n\n\n拓展资源"
+  },
+  {
+    "objectID": "testing.html",
+    "href": "testing.html",
+    "title": "testing quarto document",
+    "section": "",
+    "text": "1+1\n\n[1] 2"
   }
 ]
