@@ -42,13 +42,6 @@
     "text": "学生习作讲评\n 第6章Excel习题学生习作点评"
   },
   {
-    "objectID": "chap6.html#spss小测验",
-    "href": "chap6.html#spss小测验",
-    "title": "第6章",
-    "section": "SPSS小测验",
-    "text": "SPSS小测验\n\n\n题目\n\n数据文件：house.xlsx (QQ群文件)\nhouse.xlsx文件下载\n\n将数据文件中的变量总价万、面积平方米的观测值四舍五入取整。\n创建新变量每平方米单价(万/平方米)，保留1位小数。\n根据变量区域，将“广州番禺区”记录为“番禺”，将“广州天河区”记录为“天河”，保存到新变量行政区域。\n绘制变量“朝向”的频数分布表，将朝向分为东、南、西、北四类，保存到新变量“主朝向”。\n根据变量建筑年份，创建新变量“楼龄”。\n根据变量“总楼层”， 创建新变量“住宅高度”。将楼层为1-6层的，记为“低层”；将楼层为7-11层的记录为小高层；将楼层为12-29层的，记为“高层”；将楼层为30层以上的，记为“超高层”。\n选取两个定性变量，绘制簇状条形图。\n选取两个定性变量，绘制堆积条形图。\n选取两个定性变量，一个定量变量，用条形图反映各个组别的定量变量的均值的大小。\n选取一个定性变量，一个定量变量，绘制分组直方图。\n选取一个定性变量，两个定量变量，绘制分组散点图。\n选取一个定性变量，将样本数据分组，报告各个组别的所有的定量变量的均值、中位数、标准差、最小值和最大值。"
-  },
-  {
     "objectID": "chap6.html#拓展资源",
     "href": "chap6.html#拓展资源",
     "title": "第6章",
@@ -89,34 +82,6 @@
     "title": "第3章",
     "section": "题目4 二维变量的作图",
     "text": "题目4 二维变量的作图\n\n\n分组条形图\n\n\nShow the code\ndata %&gt;%\n  group_by(area, brand) %&gt;%\n  summarise(count = n(), .groups = \"drop\") %&gt;% \n  mutate(brand_order = paste(brand, area, rank(-count), sep = \"_\"))  %&gt;% \n  ggplot(aes(reorder(brand_order, -count),\n             count, fill = brand)) +\n  geom_col()+\n  facet_wrap(~ area, scales = \"free_x\", ncol = 3) +\n  geom_text(aes(label = count), vjust = -0.5) +\n  scale_x_discrete(labels = function(x) gsub(\"_.+$\", \"\", x)) + # 移除排序编号\n  scale_y_continuous(limits = c(0, 42)) +\n  labs(x = \"品牌\", y = \"数量\") +\n  theme(axis.text.x = element_text(angle = 42, hjust = 1), \n        legend.position = \"none\")\n\n\n\n\n\n\n\n\n\n\n\n分组直方图\n\n\nShow the code\n#按单个定性变量分组\ndata %&gt;% \n  ggplot(aes(retail.price, fill = brand))+\n  geom_histogram(breaks = seq(6, 38, 2))+\n  facet_wrap(~brand, ncol = 2) +\n  scale_y_continuous(limits = c(0,60))+\n  scale_fill_brewer(palette  = \"Set1\") +\n  labs(title = \"零售价直方图\",\n       x = \"零售价\",\n       y = \"频数\") +\n  scale_x_continuous(breaks = seq(6, 36, 4),\n                     labels = seq(6, 36, 4)) +\n  theme_bw() +\n  theme(text = element_text(size = 15),\n        legend.position = \"bottom\",\n        legend.text = element_text(size = 10))\n\n\n\n\n\n\n\n\n\n\n\n分组直方图\n\n\nShow the code\ndata %&gt;% \n  ggplot(aes(retail.price, reorder(brand, retail.price, FUN = median),\n             col = brand))+\n  geom_boxplot()+\n  labs(title =\"六大奶茶品牌零售价格\",\n       x = \"零售价格\",\n       y = \"品牌\", fill = \"品牌\")+\n  theme_bw() +\n  theme(text = element_text(size = 15),\n        legend.position = \"bottom\",\n        legend.text = element_text(size = 10))"
-  },
-  {
-    "objectID": "chap3.html#定性数据的图表工具",
-    "href": "chap3.html#定性数据的图表工具",
-    "title": "第3章",
-    "section": "定性数据的图表工具",
-    "text": "定性数据的图表工具\nSPSS 如何美化饼图\nSPSS 帕累托图\nSPSS 简单条形图\nSPSS 簇状条形图\nSPSS 堆积条形图\nSPSS 交叉表"
-  },
-  {
-    "objectID": "chap3.html#定量数据的图表工具",
-    "href": "chap3.html#定量数据的图表工具",
-    "title": "第3章",
-    "section": "定量数据的图表工具",
-    "text": "定量数据的图表工具\nSPSS 简单箱线图\nSPSS 簇状箱线图\nSPSS 直方图\nSPSS 分组直方图\nSPSS 探索工具"
-  },
-  {
-    "objectID": "chap3.html#习题1-telco.sav",
-    "href": "chap3.html#习题1-telco.sav",
-    "title": "第3章",
-    "section": "习题1 telco.sav",
-    "text": "习题1 telco.sav\n数据文件telco.sav\n\ntelco.sav文件在SPSS安装目录下,在电脑搜索文件名找到该文件。\nWindows系统下该文件的路径：C:/ProgramFiles/IBM/SPSS/Statistics/27/Samples/English\nMac系统下该文件的路径：/Applications/IBM SPSS Statistics 27/Samples/English/\nsample files简介：https://www.ibm.com/docs/en/spss-statistics/27.0.0?topic=system-sample-files\n\n1.1 绘制ed的频数分布表，在表中列出各个组别的人数及占比。\n1.2 绘制客户的ed的饼图, 在各个扇区标注百分比，为各个扇区设置你喜欢的颜色。\n1.3 绘制custcat的饼图，按各组百分比降序排列扇区，并在扇区上标注类别名称和百分比。\n1.4 绘制custcat的条形图，按各组频数降序排列条形，并在条形上方标注各组人数。\n1.5 绘制客户custcat和ed的列联表，在表中列出行的百分比，列的百分比。\n1.6 将客户按ed分组，绘制各个组别客户的income的直方图\n1.7 将客户按ed分组，绘制各个组别客户的income的箱线图。\n1.8 将客户按ed分组，绘制各个组别客户的tenure的直方图。\n1.9 将客户按ed分组，绘制各个组别客户的tenure的箱线图。\n1.10 将客户按region、gender分成6个组别，绘制各个组别客户的tenure的直方图。\n1.11 将客户按region、gender分成6个组别，绘制各个组别客户的income的直方图。\n1.12 绘制retire = YES的客户的income的茎叶图。"
-  },
-  {
-    "objectID": "chap3.html#习题2-毕业生.xlsx",
-    "href": "chap3.html#习题2-毕业生.xlsx",
-    "title": "第3章",
-    "section": "习题2 毕业生.xlsx",
-    "text": "习题2 毕业生.xlsx\n数据文件:毕业生.xlsx(在QQ 群文件的“实验数据”文件中）\n\n数据文件下载: https://pan.baidu.com/s/1BESTgZl7whkY4HuSq6ZGgw?pwd=6789\n\n数据文件：毕业生.xlsx(数据文件在QQ 群文件夹中）\n要求：利用SPSS完成\n2.1 绘制毕业生的专业分布的频数分布表、条形图(按各组频数降序排列条形)。\n2.2 绘制毕业生政治面貌分布的饼图，按各组百分比降序排列扇区，并在扇区上标注类别名称和百分比。\n条形图(按各组频数降序排列条形)，为各个扇区设置你喜欢的颜色。\n2.3 绘制毕业生政治面貌和性别的列联表，在表中列出行的百分比，列的百分比。\n2.4 将毕业生按专业分组，绘制各个专业毕业生月薪的直方图。\n2.5 将毕业生按是否在广州就业分组，绘制两个组别毕业生月薪的直方图\n2.6 将毕业生按专业分组，绘制各个专业毕业生月薪的箱线图。\n2.7 将毕业生按是否在广州就业分组，绘制两个组别毕业生月薪的箱线图。\n2.8 将毕业生按生源地是否在广州，就业地是否在广州分成4个组别，绘制各个组别毕业生薪酬的直方图。\n2.9 将毕业生按生源地是否在广州，就业地是否在广州分成4个组别，绘制各个组别毕业生薪酬的箱线图。\n2.10 绘制物流管理专业毕业生月薪的茎叶图。请简要描述该专业毕业生月薪分布的特征。（SPSS主菜单：分析，图…勾选茎叶图，提示：月薪分布在哪个区间最密集？其分布是对称、左偏还是右偏？）"
   },
   {
     "objectID": "chap3.html#习题3-毕业生.xlsx",
@@ -236,6 +201,13 @@
     "title": "《R语言与统计应用》课程实验报告",
     "section": "9 结论和展望",
     "text": "9 结论和展望\n总结研究结论, 本研究的不足, 值得进一步研究的问题"
+  },
+  {
+    "objectID": "report.html#r代码",
+    "href": "report.html#r代码",
+    "title": "《R语言与统计应用》课程实验报告",
+    "section": "10 R代码",
+    "text": "10 R代码"
   },
   {
     "objectID": "report.html#个人心得体会每个小组成员独立撰写",
@@ -455,13 +427,6 @@
     "text": "Excel操作视频\nEXCEL 拟合优度检验 CHISQ.TEST函数的使用\nEXCEL 独立性检验 CHISQ.TEST函数的使用"
   },
   {
-    "objectID": "chap9.html#spss操作视频",
-    "href": "chap9.html#spss操作视频",
-    "title": "第9章",
-    "section": "SPSS操作视频",
-    "text": "SPSS操作视频\nSPSS 拟合优度检验\nSPSS 独立性检验：两个定性变量是否相互独立？\nSPSS 列联表分析应用举例"
-  },
-  {
     "objectID": "case3comment.html",
     "href": "case3comment.html",
     "title": "第9-10章小组作业讲评",
@@ -488,13 +453,6 @@
     "title": "第8章",
     "section": "Excel操作",
     "text": "Excel操作\nExcel 总体均值的Z检验：Z.test函数\nExcel 总体均值的T检验\nExcel 总体均值的T检验：P值法和临界值法\nExcel 两个总体方差比的F检验\nExcel 两个总体均值是否相等的T检验\nEXCEL 配对样本的T检验"
-  },
-  {
-    "objectID": "chap8.html#spss操作",
-    "href": "chap8.html#spss操作",
-    "title": "第8章",
-    "section": "SPSS操作",
-    "text": "SPSS操作\n单个总体参数的T检验\n两个独立样本t检验\n配对样本的t检验"
   },
   {
     "objectID": "case2pre.html#数据和变量",
@@ -788,7 +746,7 @@
     "href": "index.html",
     "title": "统计学25春",
     "section": "",
-    "text": "欢迎访问《统计学》课程网站！\nR语言与统计应用课程网站\n\n教材\n\n统计学(第8版), 贾俊平 何晓群 金勇进编著，中国人民大学出版社,2021.\n\n下载教材配套数据文件\n教学软件\n\nMicrosoft Excel 2016或以上版本 \n\n注意：不是WPS Excel \n\n\nR https://www.r-project.org/\nR Studio https://posit.co/download/rstudio-desktop/\n教学视频\nExcel数据分析实战\nR数据分析实战\n教学平台\n91速课：考勤，测验等\n在91速课中设置姓名和学号的方法\n\nQQ群：提交作业，提问答疑\n\n参考书\n下载\n\n\n\n\nclick here"
+    "text": "欢迎访问《统计学》课程网站！\nR语言与统计应用课程网站\n\n教材\n\n统计学(第8版), 贾俊平 何晓群 金勇进编著，中国人民大学出版社,2021.\n\n下载教材配套数据文件\n教学软件\n\nMicrosoft Excel 2016或以上版本 \n\n注意：不是WPS Excel \n\n\nR https://www.r-project.org/\nR Studio https://posit.co/download/rstudio-desktop/\n教学视频\nExcel数据分析实战\nR数据分析实战\n教学平台\n91速课：考勤，测验等\n在91速课中设置姓名和学号的方法\n\nQQ群：提交作业，提问答疑\n\n参考书\n下载\n课程考核\n\n平时成绩：50%\n\n个人作业、测验 ：30%\n小组作业：16%\n考勤： 4%\n\n期末考试： 50%\n\n\n\n\n\nclick here"
   },
   {
     "objectID": "case1code.html",
@@ -879,7 +837,7 @@
     "href": "casereq.html",
     "title": "小组案例作业",
     "section": "",
-    "text": "选题要求\n运用统计方法分析现实问题。\n\n\n数据要求\n\n微观层面的截面数据\n样本容量大于200\n至少3个定量变量，至少3个定性变量，建议变量个数超过8个\n不要使用其他教材中的例题或习题数据，不要使用虚拟数据\n\n\n\n四次作业\n每个小组完成4次作业，提交4个演示文稿，按发言时间表上指定的主题的汇报一次。\n\n第1次：第3-4章 图表和描述性统计量\n第2次：第7-8章 参数估计和假设检验\n第3次：第9-10章 独立性检验、卡方检验、方差分析\n第4次：第11章 相关和回归分析\n\n\n\n演示文稿大纲\n\n研究目标\n数据概况\n\n数据来源、样本范围、样本容量\n变量含义\n描述性统计分析\n\n分析过程\n\n呈现统计分析表格、计算结果、检验结果\n\n研究结论\n心得体会\n\n收集数据、软件操作小技巧\n遇到的困难及解决方案\n收获\n\n\n\n\n演示文稿\n\n15-20页左右\n浅色底色, 深色字体, 字号&gt;28\n图表美观，清晰可读性强\n\n\n\n提交要求\n\n将演示文稿转成PDF格式，在发言日的前一天的19:00点将PDF文件提交到QQ群“第#章小组案例”文件夹中\nPDF文件命名格式：小组编号+组长名字+组长班级+章编号.pdf\n\n例如：5黄捷欣19国贸1第3-4章.pdf\n小组编号请查看QQ群中的小组发言时间表\n\n\n\n\n发言时长\n\n5-6分钟, 请演练课堂汇报的时长, 突出重点 。\n发言时有倒计时软件计时, 时间到请结束发言。"
+    "text": "选题要求\n运用统计方法分析现实问题。\n\n\n数据要求\n\n微观层面的截面数据\n样本容量大于200\n至少3个定量变量，至少3个定性变量，建议变量个数超过8个\n不要使用其他教材中的例题或习题数据，不要使用虚拟数据\n\n\n\n第3-4章讨论课 (第8周)\n\n在Excel中整理好收集的数据。\n创建项目, 在项目中存放Excel数据文件，代码文件。\n将Excel导入R Studio。\n运用第3-4章方法分析数据\n\n绘制条形图、饼图、直方图、箱线图、散点图等\n计算定量变量的描述性统计量(均值、标准差、中位数、最小值、最大值)\n\n将R的输出结果，及文字说明整理到WORD文档。\n\n\n\n第7-8章讨论课 (第10周)\n\n运用第7-8章方法分析数据\n\n总体均值的区间估计\n单个总体均值的假设检验\n两个总体均值的假设检验\n\n将R的输出结果，及文字说明整理到WORD文档。\n\n\n\n第9-10章讨论课 (第12周)\n\n运用第9-10章方法分析数据\n\n拟合优度检验\n独立性检验\n方差分析\n\n将R的输出结果，及文字说明整理到WORD文档。\n\n\n\n第11章讨论课 (第14周)\n\n运用第11章方法分析数据\n\n相关分析\n回归分析\n\n将R的输出结果，及文字说明整理到WORD文档。\n\n\n\n小组作业汇报 (第16-17周)\n\n每组汇报时间为5-7分钟。\n汇报大纲(PPT 20页左右)：\n\n选题背景\n数据来源\n数据分析\n结论\n经验分享\n\n\n\n\n演示文稿\n\n15-20页左右\n浅色底色, 深色字体, 字号&gt;28\n图表美观，清晰可读性强\n\n\n\n汇报文稿提交要求\n\n将演示文稿转成PDF格式，将PDF文件提交到QQ群“期末汇报”文件夹中\nPDF文件命名格式：小组编号+组长名字+组长班级.pdf\n\n例如：5黄捷欣19国贸1.pdf\n小组编号请查看QQ群中的小组发言时间表\n\n\n\n\n发言时长\n\n5-7分钟, 请演练课堂汇报的时长, 突出重点 。\n发言时有倒计时软件计时, 时间到请结束发言。"
   },
   {
     "objectID": "case2comment.html",
@@ -957,19 +915,5 @@
     "title": "第4章",
     "section": "",
     "text": "第4章 数据的概括性度\n讲义\n\n\nExcel教学视频\nExcel 计算描述性统计量的函数\nEXCEL数据分析加载项\nExcel 数据分析加载项中的描述统计功能\n\n\n本章习题\n教材P72 习题4.2，4.3，4.5和4.6\n\n\n习题讲评\n教材第4章习题讲评\n\n\n拓展资源"
-  },
-  {
-    "objectID": "chap4.html#习题1-employee-data.sav",
-    "href": "chap4.html#习题1-employee-data.sav",
-    "title": "第4章",
-    "section": "习题1 Employee data.sav",
-    "text": "习题1 Employee data.sav\n数据文件Employee data.sav\n\nEmployee data.sav文件在SPSS安装目录下,在电脑搜索文件名找到该文件。\nWindows系统下该文件的路径：C:/ProgramFiles/IBM/SPSS/Statistics/27/Samples/English\nMac系统下该文件的路径：/Applications/IBM SPSS Statistics 27/Samples/English/\nsample files简介：https://www.ibm.com/docs/en/spss-statistics/27.0.0?topic=system-sample-files\n\n1.1 Employee data.sav文件中一共有多少个个案，多少个变量？每个变量的含义是什么？\n1.2 报告educ的均值、中位数、标准差、最小值、最大值。\n1.3 根据educ的值创建定性变量educat, 创建规则为：若educ等于8， educat等于middle school; 若educ等于12， educat等于high school; 若educ大于等于14，且小于等于16， educat等于college; 若educ大于16， educat等postgraduate。报告educat的频数分布。\n1.4 创建变量salchange, 用于衡量current salary与beginning salary的差距。\n1.5 利用Employee data.sav文件中的变量，你还可以创建哪些变量？\n1.6 绘制salary的频数分布表，采用适当的组距，概括salary的分布在哪个区间最密集？\n1.7 绘制salbegin的频数分布表，采用适当的组距，概括salbegin的分布在哪个区间最密集？。\n1.8 按照性别分组，绘制各组别的salary的频数分布表，概括两个组别salary分布的差距。\n1.9 按照minor分组，绘制各组别的salbegin的频数分布表，概括两个组别salary分布的差距。\n1.10 选取两个定性变量，绘制簇状条形图。\n1.11 选取两个定性变量，绘制堆积条形图。\n1.12 选取两个定性变量，一个定量变量，用条形图反映各个组别的定量变量的均值的大小。\n1.13 选取一个定性变量，一个定量变量，绘制分组直方图。\n1.14 选取一个定性变量，两个定量变量，绘制分组散点图。\n1.15 将1.2中报告的表格，修改为三线表。"
-  },
-  {
-    "objectID": "report.html#r代码",
-    "href": "report.html#r代码",
-    "title": "《R语言与统计应用》课程实验报告",
-    "section": "10 R代码",
-    "text": "10 R代码"
   }
 ]
