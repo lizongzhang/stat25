@@ -396,6 +396,10 @@ X-squared = 221.6, df = 12, p-value &lt; 2.2e-16</code></pre>
 <section id="独立性检验-查看期望频数" class="slide level2">
 <h2>独立性检验 —— 查看期望频数</h2>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="fu">chisq.test</span>(df<span class="sc">$</span>class, df<span class="sc">$</span>drv)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     Pearson's Chi-squared test
@@ -403,6 +407,10 @@ X-squared = 221.6, df = 12, p-value &lt; 2.2e-16</code></pre>
 data:  df$class and df$drv
 X-squared = 105.86, df = 3, p-value &lt; 2.2e-16</code></pre>
 </div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="fu">chisq.test</span>(df<span class="sc">$</span>class, df<span class="sc">$</span>drv)<span class="sc">$</span>expected</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>         df$drv
 df$class         f    Other
@@ -443,29 +451,29 @@ df$class         f    Other
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a><span class="fu">library</span>(ggstatsplot)</span>
-<span id="cb19-2"><a></a></span>
-<span id="cb19-3"><a></a><span class="co"># 筛选两组数据</span></span>
-<span id="cb19-4"><a></a>df <span class="ot">&lt;-</span> mpg <span class="sc">%&gt;%</span></span>
-<span id="cb19-5"><a></a>  <span class="fu">filter</span>(drv <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"f"</span>, <span class="st">"4"</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb19-6"><a></a>  <span class="fu">mutate</span>(<span class="at">drv =</span> <span class="fu">factor</span>(drv, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"f"</span>, <span class="st">"4"</span>),</span>
-<span id="cb19-7"><a></a>                      <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"前驱"</span>, <span class="st">"四驱"</span>)))</span>
-<span id="cb19-8"><a></a></span>
-<span id="cb19-9"><a></a><span class="co"># 两个总体均值的t检验</span></span>
-<span id="cb19-10"><a></a><span class="fu">ggbetweenstats</span>(</span>
-<span id="cb19-11"><a></a>  <span class="at">data =</span> df,</span>
-<span id="cb19-12"><a></a>  <span class="at">x =</span> drv,</span>
-<span id="cb19-13"><a></a>  <span class="at">y =</span> displ,</span>
-<span id="cb19-14"><a></a>  <span class="at">type =</span> <span class="st">"parametric"</span>,        </span>
-<span id="cb19-15"><a></a>  <span class="at">palette =</span> <span class="st">"Accent"</span>,        </span>
-<span id="cb19-16"><a></a>  <span class="at">messages =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb19-17"><a></a>  <span class="at">violin.args =</span> <span class="fu">list</span>(<span class="at">width =</span> <span class="dv">0</span>),</span>
-<span id="cb19-18"><a></a>  <span class="at">title =</span> <span class="st">"前驱和四驱的排量比较"</span>,</span>
-<span id="cb19-19"><a></a>  <span class="at">xlab =</span> <span class="st">"驱动方式"</span>,</span>
-<span id="cb19-20"><a></a>  <span class="at">ylab =</span> <span class="st">"发动机排量"</span>,</span>
-<span id="cb19-21"><a></a>  <span class="at">bf.message =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb19-22"><a></a>  <span class="at">digits =</span> <span class="dv">3</span>L</span>
-<span id="cb19-23"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a><span class="fu">library</span>(ggstatsplot)</span>
+<span id="cb21-2"><a></a></span>
+<span id="cb21-3"><a></a><span class="co"># 筛选两组数据</span></span>
+<span id="cb21-4"><a></a>df <span class="ot">&lt;-</span> mpg <span class="sc">%&gt;%</span></span>
+<span id="cb21-5"><a></a>  <span class="fu">filter</span>(drv <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"f"</span>, <span class="st">"4"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb21-6"><a></a>  <span class="fu">mutate</span>(<span class="at">drv =</span> <span class="fu">factor</span>(drv, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"f"</span>, <span class="st">"4"</span>),</span>
+<span id="cb21-7"><a></a>                      <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"前驱"</span>, <span class="st">"四驱"</span>)))</span>
+<span id="cb21-8"><a></a></span>
+<span id="cb21-9"><a></a><span class="co"># 两个总体均值的t检验</span></span>
+<span id="cb21-10"><a></a><span class="fu">ggbetweenstats</span>(</span>
+<span id="cb21-11"><a></a>  <span class="at">data =</span> df,</span>
+<span id="cb21-12"><a></a>  <span class="at">x =</span> drv,</span>
+<span id="cb21-13"><a></a>  <span class="at">y =</span> displ,</span>
+<span id="cb21-14"><a></a>  <span class="at">type =</span> <span class="st">"parametric"</span>,        </span>
+<span id="cb21-15"><a></a>  <span class="at">palette =</span> <span class="st">"Accent"</span>,        </span>
+<span id="cb21-16"><a></a>  <span class="at">messages =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb21-17"><a></a>  <span class="at">violin.args =</span> <span class="fu">list</span>(<span class="at">width =</span> <span class="dv">0</span>),</span>
+<span id="cb21-18"><a></a>  <span class="at">title =</span> <span class="st">"前驱和四驱的排量比较"</span>,</span>
+<span id="cb21-19"><a></a>  <span class="at">xlab =</span> <span class="st">"驱动方式"</span>,</span>
+<span id="cb21-20"><a></a>  <span class="at">ylab =</span> <span class="st">"发动机排量"</span>,</span>
+<span id="cb21-21"><a></a>  <span class="at">bf.message =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb21-22"><a></a>  <span class="at">digits =</span> <span class="dv">3</span>L</span>
+<span id="cb21-23"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 
 </div>
@@ -475,20 +483,20 @@ df$class         f    Other
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a><span class="co"># 单因素方差分析</span></span>
-<span id="cb20-2"><a></a><span class="fu">ggbetweenstats</span>(</span>
-<span id="cb20-3"><a></a>  <span class="at">data =</span> mpg,</span>
-<span id="cb20-4"><a></a>  <span class="at">x =</span> class,</span>
-<span id="cb20-5"><a></a>  <span class="at">y =</span> displ,</span>
-<span id="cb20-6"><a></a>  <span class="at">type =</span> <span class="st">"parametric"</span>,        </span>
-<span id="cb20-7"><a></a>  <span class="at">palette =</span> <span class="st">"Accent"</span>, </span>
-<span id="cb20-8"><a></a>  <span class="at">violin.args =</span> <span class="fu">list</span>(<span class="at">width =</span> <span class="dv">0</span>),</span>
-<span id="cb20-9"><a></a>  <span class="at">title =</span> <span class="st">"Suv, Midsize, Compact, Subcompact, Other五个组别的排量比较"</span>,</span>
-<span id="cb20-10"><a></a>  <span class="at">xlab =</span> <span class="st">"Class"</span>,</span>
-<span id="cb20-11"><a></a>  <span class="at">ylab =</span> <span class="st">"发动机排量"</span>,</span>
-<span id="cb20-12"><a></a>  <span class="at">bf.message =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb20-13"><a></a>  <span class="at">digits =</span> <span class="dv">3</span>L</span>
-<span id="cb20-14"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a><span class="co"># 单因素方差分析</span></span>
+<span id="cb22-2"><a></a><span class="fu">ggbetweenstats</span>(</span>
+<span id="cb22-3"><a></a>  <span class="at">data =</span> mpg,</span>
+<span id="cb22-4"><a></a>  <span class="at">x =</span> class,</span>
+<span id="cb22-5"><a></a>  <span class="at">y =</span> displ,</span>
+<span id="cb22-6"><a></a>  <span class="at">type =</span> <span class="st">"parametric"</span>,        </span>
+<span id="cb22-7"><a></a>  <span class="at">palette =</span> <span class="st">"Accent"</span>, </span>
+<span id="cb22-8"><a></a>  <span class="at">violin.args =</span> <span class="fu">list</span>(<span class="at">width =</span> <span class="dv">0</span>),</span>
+<span id="cb22-9"><a></a>  <span class="at">title =</span> <span class="st">"Suv, Midsize, Compact, Subcompact, Other五个组别的排量比较"</span>,</span>
+<span id="cb22-10"><a></a>  <span class="at">xlab =</span> <span class="st">"Class"</span>,</span>
+<span id="cb22-11"><a></a>  <span class="at">ylab =</span> <span class="st">"发动机排量"</span>,</span>
+<span id="cb22-12"><a></a>  <span class="at">bf.message =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb22-13"><a></a>  <span class="at">digits =</span> <span class="dv">3</span>L</span>
+<span id="cb22-14"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 
 </div>
@@ -498,28 +506,28 @@ df$class         f    Other
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a><span class="co"># 按中位数对 class 重新排序</span></span>
-<span id="cb21-2"><a></a>df <span class="ot">&lt;-</span> mpg <span class="sc">%&gt;%</span></span>
-<span id="cb21-3"><a></a>  <span class="fu">mutate</span>(</span>
-<span id="cb21-4"><a></a>    <span class="at">class =</span> <span class="fu">fct_lump</span>(class, <span class="at">n =</span> <span class="dv">4</span>),</span>
-<span id="cb21-5"><a></a>    <span class="at">class =</span> <span class="fu">fct_reorder</span>(class, displ, </span>
-<span id="cb21-6"><a></a>                        <span class="at">.fun =</span> median, <span class="at">.desc =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb21-7"><a></a>  )</span>
-<span id="cb21-8"><a></a></span>
-<span id="cb21-9"><a></a><span class="co"># 单因素方差分析</span></span>
-<span id="cb21-10"><a></a><span class="fu">ggbetweenstats</span>(</span>
-<span id="cb21-11"><a></a>  <span class="at">data =</span> df,</span>
-<span id="cb21-12"><a></a>  <span class="at">x =</span> class,</span>
-<span id="cb21-13"><a></a>  <span class="at">y =</span> displ,</span>
-<span id="cb21-14"><a></a>  <span class="at">type =</span> <span class="st">"parametric"</span>,        </span>
-<span id="cb21-15"><a></a>  <span class="at">palette =</span> <span class="st">"Accent"</span>, </span>
-<span id="cb21-16"><a></a>  <span class="at">violin.args =</span> <span class="fu">list</span>(<span class="at">width =</span> <span class="dv">0</span>),</span>
-<span id="cb21-17"><a></a>  <span class="at">title =</span> <span class="st">"Suv, Midsize, Compact, Subcompact, Other五个组别的排量比较"</span>,</span>
-<span id="cb21-18"><a></a>  <span class="at">xlab =</span> <span class="st">"Class"</span>,</span>
-<span id="cb21-19"><a></a>  <span class="at">ylab =</span> <span class="st">"发动机排量"</span>,</span>
-<span id="cb21-20"><a></a>  <span class="at">bf.message =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb21-21"><a></a>  <span class="at">digits =</span> <span class="dv">3</span>L</span>
-<span id="cb21-22"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a><span class="co"># 按中位数对 class 重新排序</span></span>
+<span id="cb23-2"><a></a>df <span class="ot">&lt;-</span> mpg <span class="sc">%&gt;%</span></span>
+<span id="cb23-3"><a></a>  <span class="fu">mutate</span>(</span>
+<span id="cb23-4"><a></a>    <span class="at">class =</span> <span class="fu">fct_lump</span>(class, <span class="at">n =</span> <span class="dv">4</span>),</span>
+<span id="cb23-5"><a></a>    <span class="at">class =</span> <span class="fu">fct_reorder</span>(class, displ, </span>
+<span id="cb23-6"><a></a>                        <span class="at">.fun =</span> median, <span class="at">.desc =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb23-7"><a></a>  )</span>
+<span id="cb23-8"><a></a></span>
+<span id="cb23-9"><a></a><span class="co"># 单因素方差分析</span></span>
+<span id="cb23-10"><a></a><span class="fu">ggbetweenstats</span>(</span>
+<span id="cb23-11"><a></a>  <span class="at">data =</span> df,</span>
+<span id="cb23-12"><a></a>  <span class="at">x =</span> class,</span>
+<span id="cb23-13"><a></a>  <span class="at">y =</span> displ,</span>
+<span id="cb23-14"><a></a>  <span class="at">type =</span> <span class="st">"parametric"</span>,        </span>
+<span id="cb23-15"><a></a>  <span class="at">palette =</span> <span class="st">"Accent"</span>, </span>
+<span id="cb23-16"><a></a>  <span class="at">violin.args =</span> <span class="fu">list</span>(<span class="at">width =</span> <span class="dv">0</span>),</span>
+<span id="cb23-17"><a></a>  <span class="at">title =</span> <span class="st">"Suv, Midsize, Compact, Subcompact, Other五个组别的排量比较"</span>,</span>
+<span id="cb23-18"><a></a>  <span class="at">xlab =</span> <span class="st">"Class"</span>,</span>
+<span id="cb23-19"><a></a>  <span class="at">ylab =</span> <span class="st">"发动机排量"</span>,</span>
+<span id="cb23-20"><a></a>  <span class="at">bf.message =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb23-21"><a></a>  <span class="at">digits =</span> <span class="dv">3</span>L</span>
+<span id="cb23-22"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 
 </div>

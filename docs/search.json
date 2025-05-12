@@ -375,7 +375,7 @@
     "href": "case.html#往届小组作业演示文稿",
     "title": "案例与实验报告",
     "section": "往届小组作业演示文稿",
-    "text": "往届小组作业演示文稿\n\n饮料特征分析——第3-4章图表工具和描述统计R\n广东省地市领导班子特征分析——第3章图表工具SPSS\n奶茶消费调查——第3章图表工具SPSS\n证监会录用人员特征——第3章图表工具Excel\n饮料特征分析——第7-8章区间估计和假设检验R\n证券分析师——第9-10章卡方检验和方差分析R\n饮料特征分析——第9-10章卡方检验和方差分析R\n广州市住宅房租比较——第10章方差分析SPSS\n大学生择偶观调查——第10章方差分析SPSS\n饮料特征分析——第11章相关和回归分析R"
+    "text": "往届小组作业演示文稿\n\n饮料特征分析——第3-4章图表工具和描述统计R\n广东省地市领导班子特征分析——第3章图表工具SPSS\n奶茶消费调查——第3章图表工具SPSS\n证监会录用人员特征——第3章图表工具Excel\n饮料特征分析——第7-8章区间估计和假设检验R\n证券分析师——第9-10章卡方检验和方差分析R\n饮料特征分析——第9-10章卡方检验和方差分析R {target=“_blank”}\n广州市住宅房租比较——第10章方差分析SPSS\n大学生择偶观调查——第10章方差分析SPSS\n饮料特征分析——第11章相关和回归分析R"
   },
   {
     "objectID": "case.html#实验报告要求",
@@ -1369,7 +1369,7 @@
     "href": "casetips.html#独立性检验-查看期望频数",
     "title": "《R语言与统计应用》实验报告常见问题",
     "section": "独立性检验 —— 查看期望频数",
-    "text": "独立性检验 —— 查看期望频数\n\n\n\n    Pearson's Chi-squared test\n\ndata:  df$class and df$drv\nX-squared = 105.86, df = 3, p-value &lt; 2.2e-16\n\n\n         df$drv\ndf$class         f    Other\n  compact 21.29060 25.70940\n  midsize 18.57265 22.42735\n  suv     28.08547 33.91453\n  Other   38.05128 45.94872"
+    "text": "独立性检验 —— 查看期望频数\n\n\nCode\nchisq.test(df$class, df$drv)\n\n\n\n    Pearson's Chi-squared test\n\ndata:  df$class and df$drv\nX-squared = 105.86, df = 3, p-value &lt; 2.2e-16\n\n\nCode\nchisq.test(df$class, df$drv)$expected\n\n\n         df$drv\ndf$class         f    Other\n  compact 21.29060 25.70940\n  midsize 18.57265 22.42735\n  suv     28.08547 33.91453\n  Other   38.05128 45.94872"
   },
   {
     "objectID": "casetips.html#计算行列百分比-提炼研究结论",

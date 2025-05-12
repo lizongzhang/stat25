@@ -215,7 +215,8 @@ table(df$class, df$drv)
 ## 独立性检验 —— 查看期望频数
 
 ```{r}
-
+#| echo: TRUE
+#| 
 chisq.test(df$class, df$drv)
 
 chisq.test(df$class, df$drv)$expected
