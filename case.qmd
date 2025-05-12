@@ -16,7 +16,7 @@ title: "案例与实验报告"
   
 -   <img src="img/link.png" style="width: 24px; height: 24px;margin-right: 10px">[第7-8章 小组作业收获感](https://lizongzhang.github.io/stat/case2.html)
 
--   <img src="img/link.png" style="width: 24px; height: 24px;margin-right: 10px">[第8-9章 汽车油耗](https://lizongzhang.github.io/stat24/case2pre.html)    
+-   <img src="img/link.png" style="width: 24px; height: 24px;margin-right: 10px">[第8-9章 汽车油耗](https://lizongzhang.github.io/stat25/case2pre.html)    
   
 -   <img src="img/link.png" style="width: 24px; height: 24px;margin-right: 10px">[第9-10章 奶茶品牌、区位和价格](https://lizongzhang.github.io/stat/case3.html)
   
@@ -50,6 +50,8 @@ title: "案例与实验报告"
 
 -   <img src="img/link.png" style="width: 24px; height: 24px;margin-right: 10px">[实验报告写作要求](https://lizongzhang.github.io/stat25/report.html)
 
+
+-   <img src="img/link.png" style="width: 24px; height: 24px;margin-right: 10px">[实验报告常见问题](https://lizongzhang.github.io/stat25/casetips.html)
 
 ## 往届实验报告
 

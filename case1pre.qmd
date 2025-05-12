@@ -147,6 +147,7 @@ data %>%
 
 ```{r}
 #| echo: TRUE
+#| warning: false
 data %>% 
   ggplot(aes(retail.price, groupbuy.price,col = brand))+
   geom_point()+
@@ -189,11 +190,11 @@ data %>%
 
 ```{r}
 #| echo: TRUE
-library(gtExtras)
-
-data %>% 
-  select(retail.price, groupbuy.price) %>%
-  gt_plt_summary()
+# library(gtExtras)
+# 
+# data %>% 
+#   select(retail.price, groupbuy.price) %>%
+#   gt_plt_summary()
 ```
 
 ## 表格中添加分布图像
@@ -202,8 +203,9 @@ data %>%
 
 ```{r}
 #| echo: TRUE
+library(gtExtras)
 retail_group <- data %>% 
-  select(brand, retail.price) %>%
+  dplyr::select(brand, retail.price) %>%
   group_by(brand) %>%
   summarize(mean = mean(retail.price) %>% round(3),
             median = median(retail.price)%>% round(3),

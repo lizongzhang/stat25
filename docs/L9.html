@@ -1,0 +1,1752 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="李宗璋">
+<meta name="dcterms.date" content="2025-05-12">
+
+<title>模块九 DeepSeek辅助傻瓜式医学统计 – DeepSeek临床医学科研训练营</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-49229086609d0b79d46078c832500fff.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">DeepSeek临床医学科研训练营</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+    <a href="./lizongzhang9@qq.com" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-envelope"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#模块九-deepseek辅助傻瓜式医学统计" id="toc-模块九-deepseek辅助傻瓜式医学统计" class="nav-link active" data-scroll-target="#模块九-deepseek辅助傻瓜式医学统计">模块九 DeepSeek辅助傻瓜式医学统计</a></li>
+  <li><a href="#deepseek辅助统计理念快速入门" id="toc-deepseek辅助统计理念快速入门" class="nav-link" data-scroll-target="#deepseek辅助统计理念快速入门">9.1 DeepSeek辅助统计理念快速入门</a></li>
+  <li><a href="#与deepseek协作重塑统计学习与科研方式" id="toc-与deepseek协作重塑统计学习与科研方式" class="nav-link" data-scroll-target="#与deepseek协作重塑统计学习与科研方式">9.1.1 与DeepSeek协作：重塑统计学习与科研方式</a></li>
+  <li><a href="#prompt驱动的可解释统计协作" id="toc-prompt驱动的可解释统计协作" class="nav-link" data-scroll-target="#prompt驱动的可解释统计协作">9.1.1 Prompt驱动的“可解释统计协作”</a></li>
+  <li><a href="#deepseek如何助力统计学习" id="toc-deepseek如何助力统计学习" class="nav-link" data-scroll-target="#deepseek如何助力统计学习">9.1.2 DeepSeek如何助力统计学习？</a></li>
+  <li><a href="#deepseek如何助力统计学习-1" id="toc-deepseek如何助力统计学习-1" class="nav-link" data-scroll-target="#deepseek如何助力统计学习-1">9.1.2 DeepSeek如何助力统计学习？</a>
+  <ul class="collapse">
+  <li><a href="#统计基础知识补遗" id="toc-统计基础知识补遗" class="nav-link" data-scroll-target="#统计基础知识补遗">9.1.2 统计基础知识补遗</a></li>
+  <li><a href="#提问句式" id="toc-提问句式" class="nav-link" data-scroll-target="#提问句式">🎯 <strong>提问句式</strong></a></li>
+  <li><a href="#示例1-什么是置信水平" id="toc-示例1-什么是置信水平" class="nav-link" data-scroll-target="#示例1-什么是置信水平">🔍 示例1 什么是置信水平？</a></li>
+  <li><a href="#示例1-什么是置信水平-1" id="toc-示例1-什么是置信水平-1" class="nav-link" data-scroll-target="#示例1-什么是置信水平-1">🔍 示例1 什么是置信水平？</a></li>
+  <li><a href="#示例1-什么是置信水平-2" id="toc-示例1-什么是置信水平-2" class="nav-link" data-scroll-target="#示例1-什么是置信水平-2">🔍 示例1 什么是置信水平？</a></li>
+  <li><a href="#示例2-se和sd的区别" id="toc-示例2-se和sd的区别" class="nav-link" data-scroll-target="#示例2-se和sd的区别">🔍 示例2 se和sd的区别</a></li>
+  <li><a href="#示例2-se和sd的区别-1" id="toc-示例2-se和sd的区别-1" class="nav-link" data-scroll-target="#示例2-se和sd的区别-1">🔍 示例2 se和sd的区别</a></li>
+  <li><a href="#权威期刊建议" id="toc-权威期刊建议" class="nav-link" data-scroll-target="#权威期刊建议">📘 权威期刊建议</a></li>
+  </ul></li>
+  <li><a href="#重构统计学习方式从被动学习到主动建构" id="toc-重构统计学习方式从被动学习到主动建构" class="nav-link" data-scroll-target="#重构统计学习方式从被动学习到主动建构">9.1.2 重构统计学习方式：从被动学习到主动建构</a>
+  <ul class="collapse">
+  <li><a href="#deepseek-能做什么" id="toc-deepseek-能做什么" class="nav-link" data-scroll-target="#deepseek-能做什么">9.1.2 DeepSeek 能做什么？</a></li>
+  </ul></li>
+  <li><a href="#从统计学习者到提问专家如何与-deepseek-高效对话" id="toc-从统计学习者到提问专家如何与-deepseek-高效对话" class="nav-link" data-scroll-target="#从统计学习者到提问专家如何与-deepseek-高效对话">9.1.3 从统计学习者到提问专家：如何与 DeepSeek 高效对话？</a>
+  <ul class="collapse">
+  <li><a href="#示例3-deepseek与研究者的角色分工" id="toc-示例3-deepseek与研究者的角色分工" class="nav-link" data-scroll-target="#示例3-deepseek与研究者的角色分工">🔍 示例3 deepseek与研究者的角色分工</a></li>
+  <li><a href="#低质量提问的特点" id="toc-低质量提问的特点" class="nav-link" data-scroll-target="#低质量提问的特点">9.1.3 ① 低质量提问的特点</a></li>
+  <li><a href="#如何构建高质量提问" id="toc-如何构建高质量提问" class="nav-link" data-scroll-target="#如何构建高质量提问">9.1.3 ② 如何构建高质量提问？</a></li>
+  <li><a href="#示例4-高质量提问" id="toc-示例4-高质量提问" class="nav-link" data-scroll-target="#示例4-高质量提问">🔍 示例4 高质量提问</a></li>
+  <li><a href="#提问句式-1" id="toc-提问句式-1" class="nav-link" data-scroll-target="#提问句式-1">🎯 <strong>提问句式</strong></a></li>
+  </ul></li>
+  <li><a href="#小结从工具到能力构建ai辅助统计思维" id="toc-小结从工具到能力构建ai辅助统计思维" class="nav-link" data-scroll-target="#小结从工具到能力构建ai辅助统计思维">9.1 小结：从工具到能力，构建AI辅助统计思维</a></li>
+  <li><a href="#deepseek辅助医学统计的学习和运用" id="toc-deepseek辅助医学统计的学习和运用" class="nav-link" data-scroll-target="#deepseek辅助医学统计的学习和运用">9.2 DeepSeek辅助医学统计的学习和运用</a></li>
+  <li><a href="#医学统计方法全景图" id="toc-医学统计方法全景图" class="nav-link" data-scroll-target="#医学统计方法全景图">9.2.1 医学统计方法全景图</a></li>
+  <li><a href="#deepseek如何辅助选择统计方法" id="toc-deepseek如何辅助选择统计方法" class="nav-link" data-scroll-target="#deepseek如何辅助选择统计方法">9.2.2 DeepSeek如何辅助选择统计方法？</a>
+  <ul class="collapse">
+  <li><a href="#临床研究数据结构" id="toc-临床研究数据结构" class="nav-link" data-scroll-target="#临床研究数据结构">临床研究数据结构</a></li>
+  <li><a href="#统计方法与样本容量" id="toc-统计方法与样本容量" class="nav-link" data-scroll-target="#统计方法与样本容量">统计方法与样本容量</a></li>
+  <li><a href="#如何向deepseek描述你的研究问题" id="toc-如何向deepseek描述你的研究问题" class="nav-link" data-scroll-target="#如何向deepseek描述你的研究问题">9.2.2 ① 如何向DeepSeek描述你的研究问题？</a></li>
+  <li><a href="#示例4-差异比较" id="toc-示例4-差异比较" class="nav-link" data-scroll-target="#示例4-差异比较">🔍 示例4 差异比较</a></li>
+  <li><a href="#示例5-影响因素分析" id="toc-示例5-影响因素分析" class="nav-link" data-scroll-target="#示例5-影响因素分析">🔍 示例5 影响因素分析</a></li>
+  <li><a href="#示例5-影响因素分析-1" id="toc-示例5-影响因素分析-1" class="nav-link" data-scroll-target="#示例5-影响因素分析-1">🔍 示例5 影响因素分析</a></li>
+  <li><a href="#示例5" id="toc-示例5" class="nav-link" data-scroll-target="#示例5">🔍 示例5</a></li>
+  </ul></li>
+  <li><a href="#deepseek辅助深入学习统计方法" id="toc-deepseek辅助深入学习统计方法" class="nav-link" data-scroll-target="#deepseek辅助深入学习统计方法">9.2.3 deepseek辅助深入学习统计方法</a>
+  <ul class="collapse">
+  <li><a href="#如何向deepseek-追问统计分析过程的细节" id="toc-如何向deepseek-追问统计分析过程的细节" class="nav-link" data-scroll-target="#如何向deepseek-追问统计分析过程的细节">9.2.3 ① 如何向DeepSeek 追问统计分析过程的细节？</a></li>
+  <li><a href="#向deepseek-追问统计分析过程的细节" id="toc-向deepseek-追问统计分析过程的细节" class="nav-link" data-scroll-target="#向deepseek-追问统计分析过程的细节">9.2.3 ① 向DeepSeek 追问统计分析过程的细节</a></li>
+  <li><a href="#向deepseek追问检验方法的细节" id="toc-向deepseek追问检验方法的细节" class="nav-link" data-scroll-target="#向deepseek追问检验方法的细节">9.2.3 ② 向deepseek追问检验方法的细节</a></li>
+  <li><a href="#向deepseek追问图形工具的细节" id="toc-向deepseek追问图形工具的细节" class="nav-link" data-scroll-target="#向deepseek追问图形工具的细节">9.2.3 ③ 向deepseek追问图形工具的细节</a></li>
+  <li><a href="#向deepseek追问如何评估模型拟合效果" id="toc-向deepseek追问如何评估模型拟合效果" class="nav-link" data-scroll-target="#向deepseek追问如何评估模型拟合效果">9.2.3 ④向deepseek追问如何评估模型拟合效果</a></li>
+  <li><a href="#deepseek如何辅助结果解读" id="toc-deepseek如何辅助结果解读" class="nav-link" data-scroll-target="#deepseek如何辅助结果解读">9.2.3 ⑤ DeepSeek如何辅助结果解读？</a></li>
+  <li><a href="#deepseek如何辅助结果解读-1" id="toc-deepseek如何辅助结果解读-1" class="nav-link" data-scroll-target="#deepseek如何辅助结果解读-1">9.2.3 ⑤ DeepSeek如何辅助结果解读？</a></li>
+  <li><a href="#deepseek如何辅助结果解读-2" id="toc-deepseek如何辅助结果解读-2" class="nav-link" data-scroll-target="#deepseek如何辅助结果解读-2">9.2.3 ⑤ DeepSeek如何辅助结果解读？</a></li>
+  <li><a href="#deepseek提供优化统计分析的建议" id="toc-deepseek提供优化统计分析的建议" class="nav-link" data-scroll-target="#deepseek提供优化统计分析的建议">9.2.3 ⑥ DeepSeek提供优化统计分析的建议</a></li>
+  </ul></li>
+  <li><a href="#小结deepseek辅助医学统计的学习和运用" id="toc-小结deepseek辅助医学统计的学习和运用" class="nav-link" data-scroll-target="#小结deepseek辅助医学统计的学习和运用">9.2 小结：DeepSeek辅助医学统计的学习和运用</a></li>
+  <li><a href="#deepseek辅助医学统计写作" id="toc-deepseek辅助医学统计写作" class="nav-link" data-scroll-target="#deepseek辅助医学统计写作">9.3 DeepSeek辅助医学统计写作</a></li>
+  <li><a href="#医学统计写作的挑战" id="toc-医学统计写作的挑战" class="nav-link" data-scroll-target="#医学统计写作的挑战">9.3.1 医学统计写作的挑战</a></li>
+  <li><a href="#如何向deepseek寻求写作帮助" id="toc-如何向deepseek寻求写作帮助" class="nav-link" data-scroll-target="#如何向deepseek寻求写作帮助">9.3.2 如何向DeepSeek寻求写作帮助？</a>
+  <ul class="collapse">
+  <li><a href="#示例6-table-1的解释英文" id="toc-示例6-table-1的解释英文" class="nav-link" data-scroll-target="#示例6-table-1的解释英文">🔍 示例6 table 1的解释——英文</a></li>
+  <li><a href="#示例6-table-1的解释中文" id="toc-示例6-table-1的解释中文" class="nav-link" data-scroll-target="#示例6-table-1的解释中文">🔍 示例6 table 1的解释——中文</a></li>
+  <li><a href="#示例7-统计图形解释英文" id="toc-示例7-统计图形解释英文" class="nav-link" data-scroll-target="#示例7-统计图形解释英文">🔍 示例7 统计图形解释——英文</a></li>
+  <li><a href="#示例7-统计图形解释中文" id="toc-示例7-统计图形解释中文" class="nav-link" data-scroll-target="#示例7-统计图形解释中文">🔍 示例7 统计图形解释——中文</a></li>
+  <li><a href="#示例8-有序logistic回归估计结果的解释英文" id="toc-示例8-有序logistic回归估计结果的解释英文" class="nav-link" data-scroll-target="#示例8-有序logistic回归估计结果的解释英文">🔍 示例8 有序logistic回归估计结果的解释——英文</a></li>
+  <li><a href="#示例8-有序logistic回归估计结果的解释英文-1" id="toc-示例8-有序logistic回归估计结果的解释英文-1" class="nav-link" data-scroll-target="#示例8-有序logistic回归估计结果的解释英文-1">🔍 示例8 有序logistic回归估计结果的解释——英文</a></li>
+  <li><a href="#示例8-有序logistic回归估计结果的解释英文-2" id="toc-示例8-有序logistic回归估计结果的解释英文-2" class="nav-link" data-scroll-target="#示例8-有序logistic回归估计结果的解释英文-2">🔍 示例8 有序logistic回归估计结果的解释——英文</a></li>
+  <li><a href="#示例8-有序logistic回归估计结果的解释中文" id="toc-示例8-有序logistic回归估计结果的解释中文" class="nav-link" data-scroll-target="#示例8-有序logistic回归估计结果的解释中文">🔍 示例8 有序logistic回归估计结果的解释——中文</a></li>
+  <li><a href="#技巧截长图" id="toc-技巧截长图" class="nav-link" data-scroll-target="#技巧截长图">💡 技巧：截长图</a></li>
+  <li><a href="#提问句式-一次性输出数据方法结果讨论" id="toc-提问句式-一次性输出数据方法结果讨论" class="nav-link" data-scroll-target="#提问句式-一次性输出数据方法结果讨论">🎯 提问句式： 一次性输出数据/方法/结果/讨论</a></li>
+  </ul></li>
+  <li><a href="#多轮对话优化文字段落" id="toc-多轮对话优化文字段落" class="nav-link" data-scroll-target="#多轮对话优化文字段落">9.3.3 多轮对话优化文字段落</a></li>
+  <li><a href="#多轮对话优化" id="toc-多轮对话优化" class="nav-link" data-scroll-target="#多轮对话优化">9.3.3 多轮对话优化</a>
+  <ul class="collapse">
+  <li><a href="#提问句式-①-数据部分中文" id="toc-提问句式-①-数据部分中文" class="nav-link" data-scroll-target="#提问句式-①-数据部分中文">🎯 提问句式 ① “数据”部分——中文</a></li>
+  <li><a href="#提问句式-①-数据部分英文" id="toc-提问句式-①-数据部分英文" class="nav-link" data-scroll-target="#提问句式-①-数据部分英文">🎯 提问句式 ① “数据”部分——英文</a></li>
+  <li><a href="#示例9-优化数据的写作" id="toc-示例9-优化数据的写作" class="nav-link" data-scroll-target="#示例9-优化数据的写作">🔍 示例9 优化“数据”的写作</a></li>
+  <li><a href="#提问句式-②-方法部分中文" id="toc-提问句式-②-方法部分中文" class="nav-link" data-scroll-target="#提问句式-②-方法部分中文">🎯 提问句式 ② “方法”部分——中文</a></li>
+  <li><a href="#提问句式-②-方法部分英文" id="toc-提问句式-②-方法部分英文" class="nav-link" data-scroll-target="#提问句式-②-方法部分英文">🎯 提问句式 ② “方法”部分——英文</a></li>
+  <li><a href="#示例9-优化方法的写作" id="toc-示例9-优化方法的写作" class="nav-link" data-scroll-target="#示例9-优化方法的写作">🔍 示例9 优化“方法”的写作</a></li>
+  <li><a href="#提问句式-③-结果部分中文" id="toc-提问句式-③-结果部分中文" class="nav-link" data-scroll-target="#提问句式-③-结果部分中文">🎯 提问句式 ③ “结果”部分——中文</a></li>
+  <li><a href="#提问句式-③-结果部分英文" id="toc-提问句式-③-结果部分英文" class="nav-link" data-scroll-target="#提问句式-③-结果部分英文">🎯 提问句式 ③ “结果”部分——英文</a></li>
+  <li><a href="#示例9-优化结果的写作" id="toc-示例9-优化结果的写作" class="nav-link" data-scroll-target="#示例9-优化结果的写作">🔍 示例9 优化“结果”的写作</a></li>
+  <li><a href="#提问句式-④-讨论部分中文" id="toc-提问句式-④-讨论部分中文" class="nav-link" data-scroll-target="#提问句式-④-讨论部分中文">🎯 提问句式 ④ “讨论”部分–中文</a></li>
+  <li><a href="#提问句式-④-讨论部分英文" id="toc-提问句式-④-讨论部分英文" class="nav-link" data-scroll-target="#提问句式-④-讨论部分英文">🎯 提问句式 ④ “讨论”部分–英文</a></li>
+  <li><a href="#示例9-优化讨论的写作" id="toc-示例9-优化讨论的写作" class="nav-link" data-scroll-target="#示例9-优化讨论的写作">🔍 示例9 优化“讨论”的写作</a></li>
+  <li><a href="#技巧基于范文驱动-ai-的写作进阶" id="toc-技巧基于范文驱动-ai-的写作进阶" class="nav-link" data-scroll-target="#技巧基于范文驱动-ai-的写作进阶">💡 技巧：基于范文，驱动 AI 的写作进阶</a></li>
+  <li><a href="#技巧deepseek进入学习改进模式" id="toc-技巧deepseek进入学习改进模式" class="nav-link" data-scroll-target="#技巧deepseek进入学习改进模式">💡 技巧：DeepSeek进入“学习–改进”模式</a></li>
+  <li><a href="#deepseek的局限性" id="toc-deepseek的局限性" class="nav-link" data-scroll-target="#deepseek的局限性">💡 DeepSeek的局限性</a></li>
+  <li><a href="#问小白已接入deepseek-v3" id="toc-问小白已接入deepseek-v3" class="nav-link" data-scroll-target="#问小白已接入deepseek-v3">💡 问小白：已接入DeepSeek V3</a></li>
+  <li><a href="#问小白-生成网页研报" id="toc-问小白-生成网页研报" class="nav-link" data-scroll-target="#问小白-生成网页研报">💡 问小白: 生成网页/研报</a></li>
+  </ul></li>
+  <li><a href="#小结-deepseek辅助医学统计写作" id="toc-小结-deepseek辅助医学统计写作" class="nav-link" data-scroll-target="#小结-deepseek辅助医学统计写作">9.3 小结 DeepSeek辅助医学统计写作</a></li>
+  <li><a href="#统计再也不怕" id="toc-统计再也不怕" class="nav-link" data-scroll-target="#统计再也不怕">9.4 统计再也不怕</a>
+  <ul class="collapse">
+  <li><a href="#练习作业" id="toc-练习作业" class="nav-link" data-scroll-target="#练习作业">9.4 练习作业</a></li>
+  </ul></li>
+  <li><a href="#模块九-总结" id="toc-模块九-总结" class="nav-link" data-scroll-target="#模块九-总结">模块九 总结</a></li>
+  <li><a href="#致谢" id="toc-致谢" class="nav-link" data-scroll-target="#致谢">致谢</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="L9.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">模块九<br>DeepSeek辅助傻瓜式医学统计</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p><a href="https://space.bilibili.com/590872906/">李宗璋</a> </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">May 12, 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="模块九-deepseek辅助傻瓜式医学统计" class="level2" data-auto-animate="true">
+<h2 data-auto-animate="true" class="anchored" data-anchor-id="模块九-deepseek辅助傻瓜式医学统计">模块九 DeepSeek辅助傻瓜式医学统计</h2>
+<ul>
+<li><p>9.1 DeepSeek辅助统计理念快速入门</p></li>
+<li><p>9.2 DeepSeek辅助医学统计学习和运用</p></li>
+<li><p>9.3 DeepSeek辅助医学统计写作</p></li>
+<li><p>9.4 统计再也不怕</p></li>
+</ul>
+<hr>
+</section>
+<section id="deepseek辅助统计理念快速入门" class="level2">
+<h2 class="anchored" data-anchor-id="deepseek辅助统计理念快速入门">9.1 DeepSeek辅助统计理念快速入门</h2>
+<ul>
+<li><p>9.1.1 与DeepSeek协作：重塑统计学习与科研方式</p></li>
+<li><p>9.1.2 DeepSeek如何助力统计学习？</p></li>
+<li><p>9.1.3 从学习者到提问者：如何高效对话？</p></li>
+</ul>
+<hr>
+</section>
+<section id="与deepseek协作重塑统计学习与科研方式" class="level2">
+<h2 class="anchored" data-anchor-id="与deepseek协作重塑统计学习与科研方式">9.1.1 与DeepSeek协作：重塑统计学习与科研方式</h2>
+<ul>
+<li><p>不知道该用什么统计方法？</p></li>
+<li><p>看不懂输出结果</p></li>
+<li><p>为写论文而发愁</p></li>
+</ul>
+<p>💡 理念重塑: 从“工具”到“伙伴”:</p>
+<ul>
+<li><p>“我不会统计方法” ➡️ “我会提问”</p></li>
+<li><p>“我不会用SPSS/R” ➡ “在AI辅助下我能”</p></li>
+<li><p>“我写不好论文中的统计部分” ➡ “我能借助 AI表达、优化”</p></li>
+</ul>
+<hr>
+</section>
+<section id="prompt驱动的可解释统计协作" class="level2">
+<h2 class="anchored" data-anchor-id="prompt驱动的可解释统计协作">9.1.1 Prompt驱动的“可解释统计协作”</h2>
+<p>DeepSeek: “提示词”(Prompt)驱动的大语言模型(LLM)。</p>
+<p>核心优势：与临床研究者进行“可解释的统计对话”。</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>🚀 能力维度</th>
+<th>DeepSeek 如何支持统计协作</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>🧩 认知支持</td>
+<td>说明统计术语、检验条件、适用场景</td>
+</tr>
+<tr class="even">
+<td>📊 结果解读</td>
+<td>解读OR/HR、Logistic或Cox模型</td>
+</tr>
+<tr class="odd">
+<td>📈 图表表达</td>
+<td>解读KM曲线、森林图等</td>
+</tr>
+<tr class="even">
+<td>✍️ 文本重构</td>
+<td>输出期刊风格的统计分析段落</td>
+</tr>
+<tr class="odd">
+<td>💬 多轮互动</td>
+<td>Prompt→输出→提问→优化写作</td>
+</tr>
+<tr class="even">
+<td>📦 Prompt积累</td>
+<td>构建个人“统计分析提示词库”，复用迁移</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="deepseek如何助力统计学习" class="level2">
+<h2 class="anchored" data-anchor-id="deepseek如何助力统计学习">9.1.2 DeepSeek如何助力统计学习？</h2>
+<ul>
+<li>重构统计学习方式
+<ul>
+<li><p>互动式</p></li>
+<li><p>针对性</p></li>
+<li><p>不要撒网式学习</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="deepseek如何助力统计学习-1" class="level2">
+<h2 class="anchored" data-anchor-id="deepseek如何助力统计学习-1">9.1.2 DeepSeek如何助力统计学习？</h2>
+<ul>
+<li>统计学习的重心
+<ul>
+<li>基础知识(本科课程已涵盖)
+<ul>
+<li>变量类型: 定性(无序/有序), 定量(离散/连续)</li>
+<li>参数估计: 置信水平，置信区间</li>
+<li>假设检验: 双/单侧检验，显著性水平, p值, 临界值, 检验统计量</li>
+</ul></li>
+<li>方法选择</li>
+<li>结果解读</li>
+</ul></li>
+</ul>
+<hr>
+<section id="统计基础知识补遗" class="level3">
+<h3 class="anchored" data-anchor-id="统计基础知识补遗">9.1.2 统计基础知识补遗</h3>
+</section>
+<section id="提问句式" class="level3">
+<h3 class="anchored" data-anchor-id="提问句式">🎯 <strong>提问句式</strong></h3>
+<blockquote class="blockquote">
+<p>🧭 提示语: 请用最通俗的方式解释“统计术语”</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>🧭 提示语: 请用数值模拟解释“统计术语”，并提供 R 代码与详细解释，以便更直观地理解。</p>
+</blockquote>
+<hr>
+</section>
+<section id="示例1-什么是置信水平" class="level3">
+<h3 class="anchored" data-anchor-id="示例1-什么是置信水平">🔍 示例1 什么是置信水平？</h3>
+<blockquote class="blockquote">
+<p>🧭 提示语: 用最通俗的方式解释什么是置信水平？</p>
+</blockquote>
+<div style="height: 600px; overflow-y: auto; border: 1px solid #ccc; padding: 10px;">
+<p><img src="img/9.1eg1.png" class="img-fluid"></p>
+</div>
+<hr>
+</section>
+<section id="示例1-什么是置信水平-1" class="level3">
+<h3 class="anchored" data-anchor-id="示例1-什么是置信水平-1">🔍 示例1 什么是置信水平？</h3>
+<blockquote class="blockquote">
+<p>🧭 提示语: 请用数值模拟上述解释过程，让我理解起来更加容易。给出数值模拟的R代码，并加以解释。</p>
+</blockquote>
+<div style="height: 600px; overflow-y: auto; border: 1px solid #ccc; padding: 10px;">
+<p><img src="img/9.1eg2.png" class="img-fluid"></p>
+</div>
+<hr>
+</section>
+<section id="示例1-什么是置信水平-2" class="level3">
+<h3 class="anchored" data-anchor-id="示例1-什么是置信水平-2">🔍 示例1 什么是置信水平？</h3>
+<blockquote class="blockquote">
+<p>🧭 提示语: 请用数值模拟上述解释过程，让我理解起来更加容易。给出数值模拟的R代码，并加以解释。</p>
+</blockquote>
+<div style="height: 600px; overflow-y: auto; border: 1px solid #ccc; padding: 10px;">
+<p><img src="img/9.1eg3.png" class="img-fluid"></p>
+</div>
+<hr>
+</section>
+<section id="示例2-se和sd的区别" class="level3">
+<h3 class="anchored" data-anchor-id="示例2-se和sd的区别">🔍 示例2 se和sd的区别</h3>
+<blockquote class="blockquote">
+<p>🧭 提示语: standar error 和 standard deviation 有什么区别？请用最通俗的方式解释。</p>
+</blockquote>
+<div style="height: 600px; overflow-y: auto; border: 1px solid #ccc; padding: 10px;">
+<p><img src="img/9.1eg4.png" class="img-fluid"></p>
+</div>
+<hr>
+</section>
+<section id="示例2-se和sd的区别-1" class="level3">
+<h3 class="anchored" data-anchor-id="示例2-se和sd的区别-1">🔍 示例2 se和sd的区别</h3>
+<blockquote class="blockquote">
+<p>🧭 提示语: standar error 和 standard deviation 有什么区别？请用最通俗的方式解释。</p>
+</blockquote>
+<div style="height: 600px; overflow-y: auto; border: 1px solid #ccc; padding: 10px;">
+<p><img src="img/9.1eg5.png" class="img-fluid"></p>
+</div>
+<hr>
+</section>
+<section id="权威期刊建议" class="level3">
+<h3 class="anchored" data-anchor-id="权威期刊建议">📘 权威期刊建议</h3>
+<div class="callout callout-style-default callout-note callout-titled" title="推荐做法">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+推荐做法
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>《Nature》、《Cell》、《JAMA》、《NEJM》 等权威医学与生物期刊明确建议：</p>
+<blockquote class="blockquote">
+<p>柱状图或点图的误差线应使用 <strong>标准误差（SE）</strong> 或 <strong>置信区间（CI）</strong>，而非 <strong>标准差（SD）</strong>，以避免误导读者。</p>
+</blockquote>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="参考文献">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+参考文献
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<blockquote class="blockquote">
+<p>Cumming G, Fidler F, Vaux DL. (2007). <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2064100/">Error bars in experimental biology</a>. The Journal of Cell Biology, 177(1):7–11.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>该文指出：<strong>SD 描述数据变异性，而非估计均值的可信度</strong>，因此在展示组间比较时使用 SE 或 CI 更有解释力。</p>
+</blockquote>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="重构统计学习方式从被动学习到主动建构" class="level2">
+<h2 class="anchored" data-anchor-id="重构统计学习方式从被动学习到主动建构">9.1.2 重构统计学习方式：从被动学习到主动建构</h2>
+<p>💡 不再是“学完了才能用”，而是“在用中学习，在问中学”</p>
+<p>📕️ 传统模式：教科书主导，学生被动接受</p>
+<ul>
+<li>教材编什么，读者学什么<br>
+</li>
+<li>顺着教材目录走，忽视了<strong>统计思维</strong>的培养、“统计写作”能力的训练</li>
+</ul>
+<p>🚀 DeepSeek模式：需求驱动，Prompt引导学习</p>
+<ul>
+<li><p>先有问题，后找方法</p></li>
+<li><p>不再强调公式/计算/软件操作，而是<strong>围绕科研任务主动构建统计能力</strong></p></li>
+</ul>
+<blockquote class="blockquote">
+<p>📌 <strong>统计学习的未来，不是依靠更全面系统的教材，而是善于利用AI工具的引导。</strong></p>
+</blockquote>
+<hr>
+<section id="deepseek-能做什么" class="level3">
+<h3 class="anchored" data-anchor-id="deepseek-能做什么">9.1.2 DeepSeek 能做什么？</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>任务</th>
+<th>DeepSeek 支持</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>方法选择</td>
+<td>根据变量类型、研究设计，推荐方法</td>
+</tr>
+<tr class="even">
+<td>适用前提</td>
+<td>如何检验前提条件是否成立</td>
+</tr>
+<tr class="odd">
+<td>软件命令生成</td>
+<td>提供 SPSS / R / Python 操作命令模板</td>
+</tr>
+<tr class="even">
+<td>结果解读</td>
+<td>报告模型估计结果、系数解释、CI、p-value</td>
+</tr>
+<tr class="odd">
+<td>语言生成</td>
+<td>输出医学期刊风格的统计分析段落</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+</section>
+<section id="从统计学习者到提问专家如何与-deepseek-高效对话" class="level2">
+<h2 class="anchored" data-anchor-id="从统计学习者到提问专家如何与-deepseek-高效对话">9.1.3 从统计学习者到提问专家：如何与 DeepSeek 高效对话？</h2>
+<ul>
+<li><p>DeepSeek可以回答”如何做”</p></li>
+<li><p>选择方法, 解释结果, 润色语言</p></li>
+<li><p>DeepSeek无法判断统计分析结论的“临床或现实意义”</p></li>
+<li><p>① 它不了解临床语境</p>
+<ul>
+<li>无法判断1.2 mmHg 的血压差异是否有意义</li>
+<li>无法判断术后感染降低 3% 是否值得改变用药</li>
+<li>无法判断效果大小对患者是否“可感知”</li>
+</ul></li>
+<li><p>② 它无法识别研究的局限</p>
+<ul>
+<li>样本的代表性</li>
+<li>数据质量</li>
+<li>研究全貌</li>
+</ul></li>
+</ul>
+<hr>
+<section id="示例3-deepseek与研究者的角色分工" class="level3">
+<h3 class="anchored" data-anchor-id="示例3-deepseek与研究者的角色分工">🔍 示例3 deepseek与研究者的角色分工</h3>
+<blockquote class="blockquote">
+<p><strong>新药组患者平均在服药后4.3小时出现咳嗽明显缓解，对照组为5.3小时，差异为1.1小时，P = 0.002。</strong></p>
+</blockquote>
+<ul>
+<li><p><strong>DeepSeek的判断</strong>：P值小于0.05，说明两组在缓解时间上存在统计学显著差异。</p></li>
+<li><p><strong>研究者需要进一步判断</strong>：</p>
+<ul>
+<li>平均提前1小时缓解咳嗽，对患者体验是否足够重要？</li>
+<li>新药是否价格更高、服用方案更复杂或存在其他副作用？</li>
+<li>如果只是轻症患者，是否有必要优先推荐此类新药？</li>
+<li>在临床实践中，该差异是否足以改变现有用药指南或医生处方习惯？</li>
+</ul></li>
+</ul>
+<blockquote class="blockquote">
+<p>📌 要评估“统计显著”的“现实价值”，需结合患者反馈、药物成本、安全性及对临床决策的实际影响。</p>
+</blockquote>
+<hr>
+</section>
+<section id="低质量提问的特点" class="level3">
+<h3 class="anchored" data-anchor-id="低质量提问的特点">9.1.3 ① 低质量提问的特点</h3>
+<ul>
+<li><strong>太笼统</strong>：“我这组数据怎么分析？”——没有说明变量、设计、目的；</li>
+<li><strong>背景缺失</strong>：没有交代样本量、变量类型、研究目标等关键信息；</li>
+<li><strong>术语模糊</strong>：用“数字”, “分组”代替“连续变量”“独立样本”等标准术语；</li>
+<li><strong>目的不清</strong>：是要选方法？还是要解释P值？甚至只是想画图？</li>
+</ul>
+<hr>
+</section>
+<section id="如何构建高质量提问" class="level3">
+<h3 class="anchored" data-anchor-id="如何构建高质量提问">9.1.3 ② 如何构建高质量提问？</h3>
+<ul>
+<li><p><strong>研究背景</strong>：研究设计、样本量、数据来源</p></li>
+<li><p><strong>变量</strong>：类型（定性/定量）、分布特征（正态/非正态）、数据结构（截面/重复测量/分层/生存数据等）</p></li>
+<li><p><strong>提问目标</strong>：你希望DeepSeek帮你做什么？推荐方法？解释输出？润色语言？</p></li>
+</ul>
+<hr>
+</section>
+<section id="示例4-高质量提问" class="level3">
+<h3 class="anchored" data-anchor-id="示例4-高质量提问">🔍 示例4 高质量提问</h3>
+<p>💡 <strong>明确表达研究背景、变量类型和分析目的</strong></p>
+<ul>
+<li><p><strong>原问法</strong>：我做了线性回归，能不能帮我看看有没有问题？<br>
+<strong>优化提问</strong>：我用线性回归分析术后住院天数的影响因素，自变量包括年龄、手术方式和是否术前使用抗生素，模型输出如下，请帮我判断变量解释是否合理，并协助我撰写结果描述。</p></li>
+<li><p><strong>原问法</strong>：我想知道两组患者有无差异，用什么方法好？<br>
+<strong>优化提问</strong>：我想比较 A 药和B药对血糖控制的效果，两组样本独立，结局变量是非正态分布的 HbA1c，请问适合使用哪种非参数检验方法？</p></li>
+<li><p><strong>原问法</strong>：这个 P 值怎么解读？<br>
+<strong>优化提问</strong>：在 logistic 回归中，变量“糖尿病病史”的 OR = 1.9，95% CI 为 1.1–3.2，P = 0.025，请帮我解释这个变量在模型中的统计与临床意义。</p></li>
+</ul>
+<hr>
+</section>
+<section id="提问句式-1" class="level3">
+<h3 class="anchored" data-anchor-id="提问句式-1">🎯 <strong>提问句式</strong></h3>
+<ul>
+<li><p><strong>研究背景</strong>（如研究设计、样本量、数据来源）</p></li>
+<li><p><strong>变量类型、数据结构、分布特征</strong>（如定量、定性、是否正态）</p></li>
+<li><p><strong>分析目的</strong>（比较差异、建模预测、描述分布等）</p></li>
+<li><p><strong>希望 AI 协助的具体环节</strong>（方法选择、结果解读、语言撰写等）</p></li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="小结从工具到能力构建ai辅助统计思维" class="level2">
+<h2 class="anchored" data-anchor-id="小结从工具到能力构建ai辅助统计思维">9.1 小结：从工具到能力，构建AI辅助统计思维</h2>
+<ul>
+<li><p>统计学习不只是掌握方法，更是形成解决问题的思维方式。</p></li>
+<li><p>DeepSeek不只是工具，更可以成为统计学习与科研写作的智能伙伴。</p></li>
+<li><p>借助 AI，可以加速理解、提升效率，但不能替代判断与思考。</p></li>
+<li><p>真正有效的统计学习，应注重：</p>
+<ul>
+<li>明确目标（用AI解决具体问题）；</li>
+<li>精准提问（提升与AI对话质量）；</li>
+<li>灵活应用（将建议转化为科研能力）。</li>
+</ul></li>
+</ul>
+<blockquote class="blockquote">
+<p>📌 从“学习统计”到“用统计解决问题”</p>
+</blockquote>
+<hr>
+</section>
+<section id="deepseek辅助医学统计的学习和运用" class="level2">
+<h2 class="anchored" data-anchor-id="deepseek辅助医学统计的学习和运用">9.2 DeepSeek辅助医学统计的学习和运用</h2>
+<ul>
+<li><p>9.2.1 医学统计方法全景图</p></li>
+<li><p>9.2.2 DeepSeek如何辅助方法选择？</p></li>
+<li><p>9.2.3 DeepSeek如何辅助结果解读？</p></li>
+</ul>
+<hr>
+</section>
+<section id="医学统计方法全景图" class="level2">
+<h2 class="anchored" data-anchor-id="医学统计方法全景图">9.2.1 医学统计方法全景图</h2>
+<div style="height: 600px; overflow-y: auto; border: 1px solid #ccc; padding: 10px;">
+<p><img src="img/map.png" class="img-fluid"></p>
+</div>
+</section>
+<section id="deepseek如何辅助选择统计方法" class="level2">
+<h2 class="anchored" data-anchor-id="deepseek如何辅助选择统计方法">9.2.2 DeepSeek如何辅助选择统计方法？</h2>
+<p>✅ 研究目的: 描述/推断/比较/预测/因果推断</p>
+<p>✅ 数据结构: 横截面/纵向/分层/RCT/生存数据等</p>
+<p>✅ 变量类型: 定性变量(无序/有序), 定量变量(离散/连续)</p>
+<p>✅ 变量地位：结局变量/自变量/协变量</p>
+<p>✅ 变量分布：正态/非正态/泊松分布等</p>
+<p>✅ 样本容量</p>
+<hr>
+<section id="临床研究数据结构" class="level3">
+<h3 class="anchored" data-anchor-id="临床研究数据结构">临床研究数据结构</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 31%">
+<col style="width: 20%">
+<col style="width: 26%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>数据结构</th>
+<th>时间特征</th>
+<th>是否追踪</th>
+<th>应用场景示例</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>横断面研究</td>
+<td>单时间点</td>
+<td>无追踪</td>
+<td>现况调查、患病率估计</td>
+</tr>
+<tr class="even">
+<td>病例对照研究</td>
+<td>单时间点（回顾性暴露）</td>
+<td>无追踪</td>
+<td>病因探索、罕见病研究</td>
+</tr>
+<tr class="odd">
+<td>随机对照试验</td>
+<td>多时间点（前瞻性：基线+随访）</td>
+<td>干预后追踪</td>
+<td>药物疗效、治疗比较</td>
+</tr>
+<tr class="even">
+<td>队列研究</td>
+<td>多时间点（前瞻或回顾）</td>
+<td>长期追踪</td>
+<td>危险因素评估、预后分析</td>
+</tr>
+<tr class="odd">
+<td>登记研究</td>
+<td>多时间点（通常前瞻）</td>
+<td>长期追踪</td>
+<td>真实世界数据、药物监测</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="统计方法与样本容量" class="level3">
+<h3 class="anchored" data-anchor-id="统计方法与样本容量">统计方法与样本容量</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>统计方法</th>
+<th>样本容量建议</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>t检验（独立样本）</strong></td>
+<td>每组 ≥ 30（≥15 可接受）</td>
+</tr>
+<tr class="even">
+<td><strong>配对t检验</strong></td>
+<td>≥ 15 对（≥30 理想）</td>
+</tr>
+<tr class="odd">
+<td><strong>方差分析（ANOVA）</strong></td>
+<td>每组 ≥ 20–30</td>
+</tr>
+<tr class="even">
+<td><strong>卡方检验</strong></td>
+<td>每格期望值 ≥ 5</td>
+</tr>
+<tr class="odd">
+<td><strong>Fisher精确检验</strong></td>
+<td>总样本 &lt; 40</td>
+</tr>
+<tr class="even">
+<td><strong>Mann-Whitney U检验</strong></td>
+<td>每组 ≥ 10–15</td>
+</tr>
+<tr class="odd">
+<td><strong>Logistic回归</strong></td>
+<td>每类结局 ≥ 10×变量数（EPV）</td>
+</tr>
+<tr class="even">
+<td><strong>Cox回归模型</strong></td>
+<td>≥ 10 个事件/变量</td>
+</tr>
+<tr class="odd">
+<td><strong>线性回归</strong></td>
+<td>总样本 ≥ 15×变量数</td>
+</tr>
+<tr class="even">
+<td><strong>倾向评分匹配</strong></td>
+<td>匹配后每组 ≥ 100+</td>
+</tr>
+</tbody>
+</table>
+<blockquote class="blockquote">
+<p><strong>注</strong>：以上为经验性参考，正式研究请结合效应量、α、Power 等进行样本量计算。</p>
+</blockquote>
+<hr>
+</section>
+<section id="如何向deepseek描述你的研究问题" class="level3">
+<h3 class="anchored" data-anchor-id="如何向deepseek描述你的研究问题">9.2.2 ① 如何向DeepSeek描述你的研究问题？</h3>
+<p>🎯 将“临床问题”转换为“统计问题”</p>
+<p>临床问题：自然语言描述</p>
+<ul>
+<li><p>“比较两种降压药对高血压患者收缩压的影响”</p></li>
+<li><p>“新药是否能降低术后感染的风险”</p></li>
+</ul>
+<p>🎯 提问句式</p>
+<p><strong>研究目的</strong>：描述 / 推断/ 比较 / 预测 / 因果推断 <strong>研究对象</strong>：样本单位（如患者、标本等） <strong>自变量</strong>：变量类型：（如两组、三组、分层等） <strong>因变量</strong>：变量类型： 是否连续 / 分类 / 计数 <strong>特殊说明</strong>：如样本量、分布形态、是否配对等</p>
+<hr>
+</section>
+<section id="示例4-差异比较" class="level3">
+<h3 class="anchored" data-anchor-id="示例4-差异比较">🔍 示例4 差异比较</h3>
+<blockquote class="blockquote">
+<p>比较两种降压药对收缩压的影响，自变量为“药物类型”（两组），因变量为“收缩压”（连续变量），各组分别有40人，需要使用什么统计分析方法？</p>
+</blockquote>
+<div style="height: 600px; overflow-y: auto; border: 1px solid #ccc; padding: 10px;">
+<p><img src="img/9.2_eg1.png" class="img-fluid"></p>
+</div>
+<hr>
+</section>
+<section id="示例5-影响因素分析" class="level3">
+<h3 class="anchored" data-anchor-id="示例5-影响因素分析">🔍 示例5 影响因素分析</h3>
+<p>🩺 临床问题</p>
+<blockquote class="blockquote">
+<p>探讨年龄、性别、住院天数、治疗方案是否与患者出院时的功能恢复水平有关。功能恢复分为三级：<strong>良好 / 一般 / 差</strong>。</p>
+</blockquote>
+<p>🎯 提问句式</p>
+<ul>
+<li><p><strong>研究目的</strong>：预测, 推断<br>
+</p></li>
+<li><p><strong>研究对象</strong>：康复科出院患者<br>
+</p></li>
+<li><p><strong>因变量</strong>：功能恢复水平（有序分类变量，共3级）<br>
+</p></li>
+<li><p><strong>自变量</strong>：年龄(连续), 性别(二分类), 住院天数(连续),治疗方案(无序分类，共3种)<br>
+</p></li>
+<li><p><strong>特殊说明</strong>：</p>
+<ul>
+<li>样本：150 人<br>
+</li>
+<li>因变量具有自然顺序(良好 &gt; 一般 &gt; 差)，但间距不等<br>
+</li>
+<li>希望控制混杂并分析预测因子</li>
+</ul></li>
+</ul>
+<hr>
+</section>
+<section id="示例5-影响因素分析-1" class="level3">
+<h3 class="anchored" data-anchor-id="示例5-影响因素分析-1">🔍 示例5 影响因素分析</h3>
+<blockquote class="blockquote">
+<p>“我有150名康复患者的数据，记录了年龄、性别、住院天数和治疗方案（3种，无序分类）。我想分析这些因素对出院时功能恢复水平（良好/一般/差）的影响。因变量是有序分类变量。需要用什么统计分析方法？”</p>
+</blockquote>
+<div style="height: 600px; overflow-y: auto; border: 1px solid #ccc; padding: 10px;">
+<p><img src="img/9.2_eg2.png" class="img-fluid"></p>
+</div>
+<hr>
+</section>
+<section id="示例5" class="level3">
+<h3 class="anchored" data-anchor-id="示例5">🔍 示例5</h3>
+<p>要求用SPSS实现有序logistic回归分析</p>
+<div style="height: 600px; overflow-y: auto; border: 1px solid #ccc; padding: 10px;">
+<p><img src="img/9.2_eg2_spss.png" class="img-fluid"></p>
+</div>
+<hr>
+</section>
+</section>
+<section id="deepseek辅助深入学习统计方法" class="level2">
+<h2 class="anchored" data-anchor-id="deepseek辅助深入学习统计方法">9.2.3 deepseek辅助深入学习统计方法</h2>
+<ul>
+<li><p>追问统计分析过程细节</p></li>
+<li><p>追问检验方法的细节</p></li>
+<li><p>追问图形工具的细节</p></li>
+<li><p>追问如何评估模型拟合效果</p></li>
+</ul>
+<hr>
+<section id="如何向deepseek-追问统计分析过程的细节" class="level3">
+<h3 class="anchored" data-anchor-id="如何向deepseek-追问统计分析过程的细节">9.2.3 ① 如何向DeepSeek 追问统计分析过程的细节？</h3>
+<p>🎯 提问句式</p>
+<p>针对<strong>方法/模型，还可以做哪些检验或者绘制可视化图形，来深入探讨</strong>方法/模型的估计结果，提供有价值的研究发现？请参考学术文献的主流做法，回答上述问题。</p>
+<div style="height: 600px; overflow-y: auto; border: 1px solid #ccc; padding: 10px;">
+<p><img src="img/9.2_eg2_method_detail.png" class="img-fluid"></p>
+</div>
+<hr>
+</section>
+<section id="向deepseek-追问统计分析过程的细节" class="level3">
+<h3 class="anchored" data-anchor-id="向deepseek-追问统计分析过程的细节">9.2.3 ① 向DeepSeek 追问统计分析过程的细节</h3>
+<div style="height: 600px; overflow-y: auto; border: 1px solid #ccc; padding: 10px;">
+<p><img src="img/9.2_eg2_method_spss.png" class="img-fluid"></p>
+</div>
+<hr>
+</section>
+<section id="向deepseek追问检验方法的细节" class="level3">
+<h3 class="anchored" data-anchor-id="向deepseek追问检验方法的细节">9.2.3 ② 向deepseek追问检验方法的细节</h3>
+<div style="height: 600px; overflow-y: auto; border: 1px solid #ccc; padding: 10px;">
+<p><img src="img/9.2_eg2_method_detail2.png" class="img-fluid"></p>
+</div>
+<hr>
+</section>
+<section id="向deepseek追问图形工具的细节" class="level3">
+<h3 class="anchored" data-anchor-id="向deepseek追问图形工具的细节">9.2.3 ③ 向deepseek追问图形工具的细节</h3>
+<div style="height: 600px; overflow-y: auto; border: 1px solid #ccc; padding: 10px;">
+<p><img src="img/9.2_eg2_method_detail3.png" class="img-fluid"></p>
+</div>
+<hr>
+</section>
+<section id="向deepseek追问如何评估模型拟合效果" class="level3">
+<h3 class="anchored" data-anchor-id="向deepseek追问如何评估模型拟合效果">9.2.3 ④向deepseek追问如何评估模型拟合效果</h3>
+<div style="height: 600px; overflow-y: auto; border: 1px solid #ccc; padding: 10px;">
+<p><img src="img/9.2_eg2_method_detail4.png" class="img-fluid"></p>
+</div>
+<hr>
+</section>
+<section id="deepseek如何辅助结果解读" class="level3">
+<h3 class="anchored" data-anchor-id="deepseek如何辅助结果解读">9.2.3 ⑤ DeepSeek如何辅助结果解读？</h3>
+<ul>
+<li>统计学意义：系数含义</li>
+<li>临床学意义：临床相关性、实际应用价值</li>
+</ul>
+<div style="height: 600px; overflow-y: auto; border: 1px solid #ccc; padding: 10px;">
+<p><img src="img/9.2_eg2_result1.png" class="img-fluid"></p>
+</div>
+<hr>
+</section>
+<section id="deepseek如何辅助结果解读-1" class="level3">
+<h3 class="anchored" data-anchor-id="deepseek如何辅助结果解读-1">9.2.3 ⑤ DeepSeek如何辅助结果解读？</h3>
+<div style="height: 600px; overflow-y: auto; border: 1px solid #ccc; padding: 10px;">
+<p><img src="img/9.2_eg2_result2.png" class="img-fluid"></p>
+</div>
+<hr>
+</section>
+<section id="deepseek如何辅助结果解读-2" class="level3">
+<h3 class="anchored" data-anchor-id="deepseek如何辅助结果解读-2">9.2.3 ⑤ DeepSeek如何辅助结果解读？</h3>
+<div style="height: 600px; overflow-y: auto; border: 1px solid #ccc; padding: 10px;">
+<p><img src="img/9.2_eg2_result3.png" class="img-fluid"></p>
+</div>
+<hr>
+</section>
+<section id="deepseek提供优化统计分析的建议" class="level3">
+<h3 class="anchored" data-anchor-id="deepseek提供优化统计分析的建议">9.2.3 ⑥ DeepSeek提供优化统计分析的建议</h3>
+<p>🎯 提问句式</p>
+<p>我的样本数据、选用的变量、估计方法是否存在局限性？请提出改进建议。</p>
+<div style="height: 600px; overflow-y: auto; border: 1px solid #ccc; padding: 10px;">
+<p><img src="img/9.2_eg2_result4.png" class="img-fluid"></p>
+</div>
+<hr>
+</section>
+</section>
+<section id="小结deepseek辅助医学统计的学习和运用" class="level2">
+<h2 class="anchored" data-anchor-id="小结deepseek辅助医学统计的学习和运用">9.2 小结：DeepSeek辅助医学统计的学习和运用</h2>
+<ul>
+<li><p>将“临床问题”转换为“统计问题”</p>
+<ul>
+<li>提问句式：研究目的 + 研究对象 + 自变量 + 因变量 + 特殊说明</li>
+</ul></li>
+<li><p>追问统计分析过程的细节</p>
+<ul>
+<li>方法/模型，还可以做哪些检验或者绘制可视化图形？请参考学术文献的主流做法，回答上述问题。</li>
+</ul></li>
+<li><p>追问检验方法的细节</p></li>
+<li><p>追问图形工具的细节</p></li>
+<li><p>追问如何评估模型拟合效果</p></li>
+<li><p>关于输出结果的解读</p>
+<ul>
+<li>统计学意义：P值、效应量、置信区间</li>
+<li>临床学意义：临床相关性、实际应用价值</li>
+</ul></li>
+<li><p>优化统计分析的建议</p>
+<ul>
+<li>样本数据、选用的变量、估计方法是否存在局限性？请提出改进建议</li>
+</ul></li>
+</ul>
+<hr>
+</section>
+<section id="deepseek辅助医学统计写作" class="level2">
+<h2 class="anchored" data-anchor-id="deepseek辅助医学统计写作">9.3 DeepSeek辅助医学统计写作</h2>
+<ul>
+<li><p>9.3.1 医学统计写作的挑战</p></li>
+<li><p>9.3.2 如何向DeepSeek寻求写作帮助？</p></li>
+<li><p>9.3.3 多轮对话优化文字段落</p></li>
+</ul>
+<hr>
+</section>
+<section id="医学统计写作的挑战" class="level2">
+<h2 class="anchored" data-anchor-id="医学统计写作的挑战">9.3.1 医学统计写作的挑战</h2>
+<ul>
+<li>统计分析部分的重要性</li>
+<li>高水平期刊对统计分析的准确性和表达逻辑要求极高</li>
+<li>常见困扰
+<ul>
+<li>不熟悉统计方法的选择与表述</li>
+<li>难以准确表述结果的意义</li>
+<li>英语表达能力限制写作效率</li>
+</ul></li>
+</ul>
+<hr>
+</section>
+<section id="如何向deepseek寻求写作帮助" class="level2">
+<h2 class="anchored" data-anchor-id="如何向deepseek寻求写作帮助">9.3.2 如何向DeepSeek寻求写作帮助？</h2>
+<p>🎯 提问句式</p>
+<ul>
+<li><p>输入说明 以下是***结果 / 回归输出 / 表格 / 图形</p></li>
+<li><p>目的说明 “请撰写一段医学论文中‘统计分析结果’部分的英文描述</p></li>
+<li><p>风格指定 “风格参考JAMA / The Lancet/中华医学杂志</p></li>
+<li><p>语言指定 “语言简洁、专业、英文/中文撰写；避免解释性语言</p></li>
+</ul>
+<hr>
+<section id="示例6-table-1的解释英文" class="level3">
+<h3 class="anchored" data-anchor-id="示例6-table-1的解释英文">🔍 示例6 table 1的解释——英文</h3>
+<blockquote class="blockquote">
+<p>Please write a concise and professional paragraph, in the style of a medical journal (e.g., The Lancet or JAMA), describing and comparing the baseline characteristics of two patient groups based on the data presented in Table 1. Use objective, scientific language appropriate for the Results section of a clinical research article.</p>
+</blockquote>
+<div style="height: 600px; overflow-y: auto; border: 1px solid #ccc; padding: 10px;">
+<p><img src="img/9.3pic1.png" class="img-fluid"></p>
+</div>
+<hr>
+</section>
+<section id="示例6-table-1的解释中文" class="level3">
+<h3 class="anchored" data-anchor-id="示例6-table-1的解释中文">🔍 示例6 table 1的解释——中文</h3>
+<blockquote class="blockquote">
+<p>基于Table 1，撰写一段描述患者基线特征的段落, 重点说明两组患者基线特征的相似性与显著差异, 采用《中华医学杂志》的写作风格, 语言简洁, 专业。</p>
+</blockquote>
+<div style="height: 600px; overflow-y: auto; border: 1px solid #ccc; padding: 10px;">
+<p><img src="img/9.3pic2.png" class="img-fluid"></p>
+</div>
+<hr>
+</section>
+<section id="示例7-统计图形解释英文" class="level3">
+<h3 class="anchored" data-anchor-id="示例7-统计图形解释英文">🔍 示例7 统计图形解释——英文</h3>
+<blockquote class="blockquote">
+<p>Please write a concise and professional paragraph, in the style of a medical journal (e.g., The Lancet or JAMA), describing the comparison of age between patients who survived and those who died, based on the data shown in the figure. Use objective, scientific language appropriate for the Results section of a clinical research article.</p>
+</blockquote>
+<div style="height: 600px; overflow-y: auto; border: 1px solid #ccc; padding: 10px;">
+<p><img src="img/9.3pic3.png" class="img-fluid"></p>
+</div>
+<hr>
+</section>
+<section id="示例7-统计图形解释中文" class="level3">
+<h3 class="anchored" data-anchor-id="示例7-统计图形解释中文">🔍 示例7 统计图形解释——中文</h3>
+<blockquote class="blockquote">
+<p>基于上图，撰写一段描述图中所示生存与死亡患者两组之间年龄比较的段落, 采用《中华医学杂志》的写作风格, 语言简洁, 专业。</p>
+</blockquote>
+<div style="height: 600px; overflow-y: auto; border: 1px solid #ccc; padding: 10px;">
+<p><img src="img/9.3pic4.png" class="img-fluid"></p>
+</div>
+<hr>
+</section>
+<section id="示例8-有序logistic回归估计结果的解释英文" class="level3">
+<h3 class="anchored" data-anchor-id="示例8-有序logistic回归估计结果的解释英文">🔍 示例8 有序logistic回归估计结果的解释——英文</h3>
+<blockquote class="blockquote">
+<p>Please write a concise and professional paragraph suitable for the “Discussion” section of a clinical research article, describing and interpreting the findings from a binary logistic regression analysis. Emphasize the potential clinical implications and practical relevance of the significant predictors identified in the model. Use formal scientific language similar to that found in journals such as The Lancet or JAMA. Avoid statistical jargon unless necessary, and focus on how the findings may inform clinical decision-making or patient care.</p>
+</blockquote>
+<div style="height: 600px; overflow-y: auto; border: 1px solid #ccc; padding: 10px;">
+<p><img src="img/9.3pic5.png" class="img-fluid"></p>
+</div>
+<hr>
+</section>
+<section id="示例8-有序logistic回归估计结果的解释英文-1" class="level3">
+<h3 class="anchored" data-anchor-id="示例8-有序logistic回归估计结果的解释英文-1">🔍 示例8 有序logistic回归估计结果的解释——英文</h3>
+<div style="height: 600px; overflow-y: auto; border: 1px solid #ccc; padding: 10px;">
+<p><img src="img/9.3pic6.png" class="img-fluid"></p>
+</div>
+<hr>
+</section>
+<section id="示例8-有序logistic回归估计结果的解释英文-2" class="level3">
+<h3 class="anchored" data-anchor-id="示例8-有序logistic回归估计结果的解释英文-2">🔍 示例8 有序logistic回归估计结果的解释——英文</h3>
+<div style="height: 600px; overflow-y: auto; border: 1px solid #ccc; padding: 10px;">
+<p><img src="img/9.3pic7.png" class="img-fluid"></p>
+</div>
+<hr>
+</section>
+<section id="示例8-有序logistic回归估计结果的解释中文" class="level3">
+<h3 class="anchored" data-anchor-id="示例8-有序logistic回归估计结果的解释中文">🔍 示例8 有序logistic回归估计结果的解释——中文</h3>
+<blockquote class="blockquote">
+<p>请撰写一段用于医学期刊论文“讨论”部分的文字，基于二元 logistic 回归模型的结果，阐述主要显著预测变量的临床意义与实际应用价值。文风应简洁、专业，表达符合《中华医学杂志》的学术规范。</p>
+</blockquote>
+<div style="height: 600px; overflow-y: auto; border: 1px solid #ccc; padding: 10px;">
+<p><img src="img/9.3pic8.png" class="img-fluid"></p>
+</div>
+<hr>
+</section>
+<section id="技巧截长图" class="level3">
+<h3 class="anchored" data-anchor-id="技巧截长图">💡 技巧：截长图</h3>
+<p>用截图工具，截取长图，将所有的统计输出一次性粘贴到DeepSeek中，避免多次提问。</p>
+<p>截图工具：</p>
+<ul>
+<li><p><strong>Windows</strong>：Snipping Tool(Win 11)</p></li>
+<li><p><strong>Mac OS</strong>: Xnip <a href="https://zh.xnipapp.com/" class="uri">https://zh.xnipapp.com/</a></p></li>
+</ul>
+<div style="height: 600px; overflow-y: auto; border: 1px solid #ccc; padding: 10px;">
+<p><img src="img/9.3tip1.png" class="img-fluid"></p>
+</div>
+<hr>
+<div style="height: 600px; overflow-y: auto; border: 1px solid #ccc; padding: 10px;">
+<p><img src="img/9.3tip2.png" class="img-fluid"></p>
+</div>
+<hr>
+</section>
+<section id="提问句式-一次性输出数据方法结果讨论" class="level3">
+<h3 class="anchored" data-anchor-id="提问句式-一次性输出数据方法结果讨论">🎯 提问句式： 一次性输出数据/方法/结果/讨论</h3>
+<p>请根据SPSS/R的输出，撰写一篇临床研究论文的四个部分：数据、方法、结果、讨论。</p>
+<p>要求如下：</p>
+<p>① 请使用医学期刊常见的表达方式，语言简洁、专业；</p>
+<p>② 写作风格参考《中华医学杂志》，用中文撰写；</p>
+<p>③ 对“结果”部分要求客观描述，不加入主观解释，绘制表格呈现模型的估计结果；</p>
+<p>④ 对“讨论”部分要求结合统计结果，重点说明显著变量的临床意义与现实应用价值；</p>
+<p>⑤ 适用规范的专业术语</p>
+<hr>
+</section>
+</section>
+<section id="多轮对话优化文字段落" class="level2">
+<h2 class="anchored" data-anchor-id="多轮对话优化文字段落">9.3.3 多轮对话优化文字段落</h2>
+<ul>
+<li><p>第一轮生成后继续补充显著性解释、控制混杂变量说明。</p></li>
+<li><p>提升质量与防止AI写作痕迹</p></li>
+<li><p>核对数据与描述是否匹配。</p></li>
+</ul>
+<hr>
+</section>
+<section id="多轮对话优化" class="level2">
+<h2 class="anchored" data-anchor-id="多轮对话优化">9.3.3 多轮对话优化</h2>
+<ul>
+<li><p>明确传达研究设计类型、变量信息、分析目的、统计方法或输出；</p></li>
+<li><p>指定写作风格（如参考 BMJ / JAMA / 中华医学杂志）；</p></li>
+<li><p>要求其输出语言风格客观、精炼、符合医学统计写作规范。</p></li>
+</ul>
+<hr>
+<section id="提问句式-①-数据部分中文" class="level3">
+<h3 class="anchored" data-anchor-id="提问句式-①-数据部分中文">🎯 提问句式 ① “数据”部分——中文</h3>
+<p>我正在撰写一篇临床医学学术论文，请帮我撰写“数据”部分的相关段落，内容包括：</p>
+<ul>
+<li>研究设计类型（如回顾性队列、前瞻性观察、随机对照试验等）；</li>
+<li>研究对象的来源与纳入/排除标准（如某医院的连续入院患者、特定病种等）；</li>
+<li>数据收集方式（如电子病历、问卷、电话随访等）；</li>
+<li>变量名称、定义及其分类方式；</li>
+<li>所有变量测量的时间点和方式；</li>
+<li>样本量及缺失数据说明（如是否进行插补、排除等处理）；</li>
+</ul>
+<p>写作要求： ① 语言参考《中华医学杂志》的风格，规范、简练、客观； ② 仅陈述事实，不进行解释或讨论； ③ 所用术语请医学统计规范</p>
+<p>我使用了以下变量(列出变量名称及含义)：</p>
+<hr>
+</section>
+<section id="提问句式-①-数据部分英文" class="level3">
+<h3 class="anchored" data-anchor-id="提问句式-①-数据部分英文">🎯 提问句式 ① “数据”部分——英文</h3>
+<p>Please help me write a paragraph suitable for the <strong>Data / Participants / Methods</strong> section of a clinical research article, describing the study data source, variables, and data collection methods.</p>
+<p>Include the following elements: - Study design: e.g., retrospective cohort / prospective observational - Study population: inclusion and exclusion criteria, hospital or registry - Data collection method: electronic medical records, interviews, etc. - Variable definitions: e.g., age (continuous), sex (binary: male/female), GCS score (continuous) - Timing of data collection: baseline at admission / discharge - Handling of missing data: deletion / imputation / no missingness</p>
+<p>Writing style: - Use concise, objective scientific language; - Follow the tone and structure of journals like BMJ or JAMA; - Avoid interpretation—just state the facts; - End with a reference to Table 1 if available (e.g., “Baseline characteristics are shown in Table 1”).</p>
+<hr>
+</section>
+<section id="示例9-优化数据的写作" class="level3">
+<h3 class="anchored" data-anchor-id="示例9-优化数据的写作">🔍 示例9 优化“数据”的写作</h3>
+<div style="height: 600px; overflow-y: auto; border: 1px solid #ccc; padding: 10px;">
+<p><img src="img/9.3optimize1.png" class="img-fluid"></p>
+</div>
+<hr>
+</section>
+<section id="提问句式-②-方法部分中文" class="level3">
+<h3 class="anchored" data-anchor-id="提问句式-②-方法部分中文">🎯 提问句式 ② “方法”部分——中文</h3>
+<p>以下是我研究的一部分统计分析输出结果（如表格/图/文字），请根据医学期刊论文的写作规范（参考《中华医学杂志》），帮助我撰写“统计分析”部分的方法描述文字，要求语言规范、专业、精炼，适用于论文的“方法”章节。</p>
+<ul>
+<li>研究类型：回顾性观察研究</li>
+<li>因变量：住院期间状态（生存=1，死亡=2）</li>
+<li>自变量：性别、年龄、SBP、GCS评分、糖尿病史、卒中类型</li>
+<li>分析方法：二元Logistic回归（逐步法）</li>
+<li>模型评价方法：Omnibus检验、Hosmer-Lemeshow检验、分类预测准确率</li>
+</ul>
+<p>请撰写论文中关于“方法”的段落。</p>
+<hr>
+</section>
+<section id="提问句式-②-方法部分英文" class="level3">
+<h3 class="anchored" data-anchor-id="提问句式-②-方法部分英文">🎯 提问句式 ② “方法”部分——英文</h3>
+<blockquote class="blockquote">
+<p>Please help me write the “Statistical Analysis” section of a clinical research article in the style of <strong>BMJ or JAMA</strong>, using the data and analysis described below. Use professional, concise, and scientifically accurate language appropriate for peer-reviewed medical journals.</p>
+</blockquote>
+<p>Please include:</p>
+<ul>
+<li>Study design and population</li>
+<li>Variables involved (e.g., age, sex, disease type)</li>
+<li>Statistical methods used (e.g., t-test, Cox regression, Kaplan-Meier)</li>
+<li>Software used (e.g., SPSS, R, Stata)</li>
+<li>Significance level (e.g., two-sided P &lt; 0.05)</li>
+</ul>
+<p>Ensure that the paragraph is suitable for inclusion in the <strong>Methods section</strong> of a medical journal manuscript.</p>
+<hr>
+</section>
+<section id="示例9-优化方法的写作" class="level3">
+<h3 class="anchored" data-anchor-id="示例9-优化方法的写作">🔍 示例9 优化“方法”的写作</h3>
+<div style="height: 600px; overflow-y: auto; border: 1px solid #ccc; padding: 10px;">
+<p><img src="img/9.3optimize2.png" class="img-fluid"></p>
+</div>
+<hr>
+</section>
+<section id="提问句式-③-结果部分中文" class="level3">
+<h3 class="anchored" data-anchor-id="提问句式-③-结果部分中文">🎯 提问句式 ③ “结果”部分——中文</h3>
+<p>我正在撰写一篇医学研究论文的“结果”部分，以下是我的结果输出，请根据统计结果写出“结果”段落。</p>
+<p>写作要求如下：</p>
+<p>① 请使用医学期刊论文中“结果”部分常见的表达方式</p>
+<p>② 语言客观、精炼，不夹叙述、解释与讨论</p>
+<p>③ 表达风格参考《中华医学杂志》</p>
+<p>④ 正确描述显著性（如 P 值、置信区间、效应量）</p>
+<p>⑤ 分层/亚组分析时，请明确指出组间比较与趋势</p>
+<p>⑥ 所用术语请尽量规范，遵循医学统计表达惯例。</p>
+<hr>
+</section>
+<section id="提问句式-③-结果部分英文" class="level3">
+<h3 class="anchored" data-anchor-id="提问句式-③-结果部分英文">🎯 提问句式 ③ “结果”部分——英文</h3>
+<p>Please write a professional, objective, and concise paragraph suitable for the <strong>Results</strong> section of a clinical research article, based on the logistic regression results provided below.</p>
+<p>Writing style: follow the conventions used in <strong>BMJ</strong> or <strong>JAMA</strong>.</p>
+<p>Language: formal, scientific, and free from subjective interpretation or discussion.</p>
+<p>Content: include odds ratios (OR), confidence intervals (CI), and P-values.<br>
+Structure: begin with the overall result, then report on significant predictors, and conclude with non-significant findings if relevant.</p>
+<p>Do not explain or interpret the results—just report them accurately.</p>
+<hr>
+</section>
+<section id="示例9-优化结果的写作" class="level3">
+<h3 class="anchored" data-anchor-id="示例9-优化结果的写作">🔍 示例9 优化“结果”的写作</h3>
+<div style="height: 600px; overflow-y: auto; border: 1px solid #ccc; padding: 10px;">
+<p><img src="img/9.3optimize3.png" class="img-fluid"></p>
+</div>
+<hr>
+</section>
+<section id="提问句式-④-讨论部分中文" class="level3">
+<h3 class="anchored" data-anchor-id="提问句式-④-讨论部分中文">🎯 提问句式 ④ “讨论”部分–中文</h3>
+<p>请帮助我撰写一段用于医学期刊论文“讨论”部分的文字。以下是我的研究背景与统计分析结果：</p>
+<ul>
+<li>研究设计：前瞻性队列研究 / 回顾性研究 / 随机对照试验（请根据实际写）</li>
+<li>主要结局：</li>
+<li>统计方法：</li>
+<li>显著变量：</li>
+<li>非显著变量：</li>
+</ul>
+<p>请根据上述信息，撰写“讨论”部分的段落，重点说明：</p>
+<p>① 显著变量的<strong>临床意义与现实应用价值</strong> ② 如何解释统计结果中显著与不显著变量的差异 ③ 如何将研究结果与既往研究进行对比 ④ 语言风格参考《中华医学杂志》，表达规范、客观 ⑤ 避免重复“结果”部分的内容，请聚焦<strong>解释与意义</strong>，不是数据罗列</p>
+<p>请以论文讨论部分的标准结构撰写该段内容。</p>
+<hr>
+</section>
+<section id="提问句式-④-讨论部分英文" class="level3">
+<h3 class="anchored" data-anchor-id="提问句式-④-讨论部分英文">🎯 提问句式 ④ “讨论”部分–英文</h3>
+<p>Please help me write a professional, well-structured paragraph suitable for the <strong>Discussion</strong> section of a clinical research article, based on the following logistic regression results:</p>
+<ul>
+<li>Study design:</li>
+<li>Primary outcome:</li>
+<li>Significant predictors:</li>
+<li>Non-significant variables:</li>
+</ul>
+<p>Writing requirements: 1. Explain the <strong>clinical relevance and implications</strong> of statistically significant predictors; 2. Discuss potential reasons for non-significant findings; 3. Compare with findings from previous studies (if applicable); 4. Use objective and concise scientific language, modeled after BMJ or JAMA; 5. Focus on <strong>interpretation and contextualization</strong>, not repetition of numeric results.</p>
+<hr>
+</section>
+<section id="示例9-优化讨论的写作" class="level3">
+<h3 class="anchored" data-anchor-id="示例9-优化讨论的写作">🔍 示例9 优化“讨论”的写作</h3>
+<div style="height: 600px; overflow-y: auto; border: 1px solid #ccc; padding: 10px;">
+<p><img src="img/9.3optimize4.png" class="img-fluid"></p>
+</div>
+<hr>
+</section>
+<section id="技巧基于范文驱动-ai-的写作进阶" class="level3">
+<h3 class="anchored" data-anchor-id="技巧基于范文驱动-ai-的写作进阶">💡 技巧：基于范文，驱动 AI 的写作进阶</h3>
+<ul>
+<li><p>选取一篇范文，发送给DeepSeek，要求DeepSeek归纳其值得借鉴之处</p></li>
+<li><p>要求DeepSeek参照“亮点”对你的段落进行润色与改写</p></li>
+</ul>
+<div style="height: 600px; overflow-y: auto; border: 1px solid #ccc; padding: 10px;">
+<p><img src="img/9.3learn1.png" class="img-fluid"></p>
+</div>
+<hr>
+</section>
+<section id="技巧deepseek进入学习改进模式" class="level3">
+<h3 class="anchored" data-anchor-id="技巧deepseek进入学习改进模式">💡 技巧：DeepSeek进入“学习–改进”模式</h3>
+<div style="height: 600px; overflow-y: auto; border: 1px solid #ccc; padding: 10px;">
+<p><img src="img/9.3learn2.png" class="img-fluid"></p>
+</div>
+<hr>
+</section>
+<section id="deepseek的局限性" class="level3">
+<h3 class="anchored" data-anchor-id="deepseek的局限性">💡 DeepSeek的局限性</h3>
+<ul>
+<li><p>服务器繁忙</p>
+<ul>
+<li>替代方案：腾讯元宝 <a href="https://yuanbao.tencent.com/chat/" target="_blank">https://yuanbao.tencent.com/chat/</a></li>
+</ul></li>
+<li><p>未提取到图片中的文字</p>
+<ul>
+<li>替代方案：问小白 <a href="https://www.wenxiaobai.com/" target="_blank">https://www.wenxiaobai.com/</a></li>
+</ul></li>
+</ul>
+<div style="height: 600px; overflow-y: auto; border: 1px solid #ccc; padding: 10px;">
+<p><img src="img/9.4pic1.png" class="img-fluid"></p>
+</div>
+<div style="height: 600px; overflow-y: auto; border: 1px solid #ccc; padding: 10px;">
+<p><img src="stroke_type.png" class="img-fluid"></p>
+</div>
+<hr>
+</section>
+<section id="问小白已接入deepseek-v3" class="level3">
+<h3 class="anchored" data-anchor-id="问小白已接入deepseek-v3">💡 问小白：已接入DeepSeek V3</h3>
+<div style="height: 600px; overflow-y: auto; border: 1px solid #ccc; padding: 10px;">
+<p><img src="img/9.4pic2.png" class="img-fluid"></p>
+</div>
+<hr>
+</section>
+<section id="问小白-生成网页研报" class="level3">
+<h3 class="anchored" data-anchor-id="问小白-生成网页研报">💡 问小白: 生成网页/研报</h3>
+<div style="height: 600px; overflow-y: auto; border: 1px solid #ccc; padding: 10px;">
+<p><img src="img/9.4pic3.jpg" class="img-fluid"></p>
+</div>
+<hr>
+</section>
+</section>
+<section id="小结-deepseek辅助医学统计写作" class="level2">
+<h2 class="anchored" data-anchor-id="小结-deepseek辅助医学统计写作">9.3 小结 DeepSeek辅助医学统计写作</h2>
+<ul>
+<li><p>建立自己的提示词库</p>
+<ul>
+<li><p>方法提示词：适用条件/数据结构/样本容量/估计结果解释/需要做的检验/可视化工具</p></li>
+<li><p>写作提示词：数据/方法/结果/讨论</p></li>
+</ul></li>
+<li><p>建立自己的范文库</p>
+<ul>
+<li>高水平期刊的同类研究的范文的数据/方法/结果/讨论的写法</li>
+</ul></li>
+<li><p>不要忙于统计分析，而疏于写作</p>
+<ul>
+<li><p><strong>边分析边写作</strong>：每完成一部分统计分析，就立即转化为文字，避免遗忘。</p></li>
+<li><p><strong>初稿不求完美</strong>：先写出雏形，然后借助AI逐步润色。</p></li>
+</ul></li>
+</ul>
+<p>💡 统计写作不是“最后一步”，而是每一步统计分析的<strong>记录、反馈与构建</strong>。</p>
+<hr>
+</section>
+<section id="统计再也不怕" class="level2">
+<h2 class="anchored" data-anchor-id="统计再也不怕">9.4 统计再也不怕</h2>
+<ul>
+<li><p>构建“AI+统计”的信心</p></li>
+<li><p>用Prompt实践训练，让统计更“傻瓜”、更“可控”</p></li>
+<li><p>“统计不再可怕，AI与你同行”</p></li>
+</ul>
+<hr>
+<section id="练习作业" class="level3">
+<h3 class="anchored" data-anchor-id="练习作业">9.4 练习作业</h3>
+<ul>
+<li><p>上传你论文中的一张表格(如Table 1 或 回归模型估计表格)，请DeepSeek写作对应的统计分析段落。 |</p></li>
+<li><p>将你过去最头疼的统计部分（如生存分析、PSM段落）写成Prompt试试看 |</p></li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="模块九-总结" class="level2">
+<h2 class="anchored" data-anchor-id="模块九-总结">模块九 总结</h2>
+<ul>
+<li><p>✅ DeepSeek如何助力统计方法的学习？</p></li>
+<li><p>✅ DeepSeek如何助力统计方法的运用？</p></li>
+<li><p>✅ DeepSeek如何助力写出医学论文中的统计方法/结果/讨论段落的写作？</p></li>
+</ul>
+<hr>
+</section>
+<section id="致谢" class="level2">
+<h2 class="anchored" data-anchor-id="致谢">致谢</h2>
+<blockquote class="blockquote">
+<p>医生不必精通统计，但值得拥有一位懂统计、会表达的AI助手。</p>
+</blockquote>
+<p><br>
+</p>
+<blockquote class="blockquote">
+<p>DeepSeek不是统计学家，却总能说出你心中那句“有理有据”。</p>
+</blockquote>
+<p><br>
+</p>
+<blockquote class="blockquote">
+<p>把统计分析交给AI，把思考留给科学。</p>
+</blockquote>
+<p><br>
+<br>
+</p>
+<p>感谢大家的参与！欢迎提问交流！</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© Copyright 2025, 顶刊研习社 &amp; Li Zongzhang</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Data illuminates insights.</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
