@@ -10,8 +10,8 @@
   <meta name="generator" content="quarto-1.6.42">
 
   <meta name="author" content="李宗璋">
-  <meta name="dcterms.date" content="2025-05-12">
-  <title>统计学25 – 《R语言与统计应用》实验报告 常见问题</title>
+  <meta name="dcterms.date" content="2025-05-13">
+  <title>统计学25春 – 《R语言与统计应用》 实验报告常见问题</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -195,8 +195,8 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" data-background-image="img/bili_up.jpg" data-background-position="center bottom 120px" data-background-size="80px" class="quarto-title-block center">
-  <h1 class="title">《R语言与统计应用》实验报告<br>常见问题</h1>
+<section id="title-slide" data-background-image="img/bili_up.jpg" data-background-position="center bottom 120px" data-background-size="50px" class="quarto-title-block center">
+  <h1 class="title">《R语言与统计应用》<br>实验报告常见问题</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -206,7 +206,7 @@
 </div>
 </div>
 
-  <p class="date">2025-05-12</p>
+  <p class="date">2025-05-13</p>
 </section>
 <section id="r读取excel文件时excel中的数值变成了字符串" class="slide level2">
 <h2>R读取Excel文件时，Excel中的数值变成了字符串</h2>
@@ -219,6 +219,8 @@
 <section id="数据框中的定量变量以字符串的形式保存" class="slide level2">
 <h2>数据框中的定量变量以字符串的形式保存</h2>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
 <span id="cb1-2"><a></a>  <span class="at">name =</span> <span class="fu">c</span>(<span class="st">"Tom"</span>, <span class="st">"Jerry"</span>, <span class="st">"Mickey"</span>, <span class="st">"Donald"</span>, <span class="st">"Goofy"</span>),</span>
 <span id="cb1-3"><a></a>  <span class="at">height =</span> <span class="fu">c</span>(<span class="st">"170"</span>, <span class="st">"172"</span>, <span class="st">"183"</span>, <span class="st">"185"</span>, <span class="st">"177"</span>),</span>
@@ -226,80 +228,61 @@
 <span id="cb1-5"><a></a>)</span>
 <span id="cb1-6"><a></a></span>
 <span id="cb1-7"><a></a><span class="fu">mean</span>(df<span class="sc">$</span>height)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in mean.default(df$height): argument is not numeric or logical:
+returning NA</code></pre>
+</div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] NA</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="co"># across(c(height, weight), as.numeric) 把height, weight转换为数值型</span></span>
-<span id="cb3-2"><a></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
-<span id="cb3-3"><a></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">c</span>(height, weight), as.numeric))</span>
-<span id="cb3-4"><a></a></span>
-<span id="cb3-5"><a></a><span class="fu">mean</span>(df<span class="sc">$</span>height)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="co"># 把height, weight转换为数值型</span></span>
+<span id="cb4-2"><a></a></span>
+<span id="cb4-3"><a></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
+<span id="cb4-4"><a></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">c</span>(height, weight), as.numeric))</span>
+<span id="cb4-5"><a></a></span>
+<span id="cb4-6"><a></a><span class="fu">mean</span>(df<span class="sc">$</span>height)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 177.4</code></pre>
 </div>
 </div>
 </section>
-<section id="帕雷托图" class="slide level2">
-<h2>帕雷托图</h2>
+<section id="帕累托图" class="slide level2">
+<h2>帕累托图</h2>
 <ul>
 <li><p>条形按降序排列</p></li>
 <li><p>标注频数</p></li>
 </ul>
 </section>
-<section id="帕雷托图-1" class="slide level2">
-<h2>帕雷托图</h2>
+<section id="帕累托图-1" class="slide level2">
+<h2>帕累托图</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>mpg <span class="sc">%&gt;%</span> </span>
-<span id="cb5-2"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="fu">fct_infreq</span>(class))) <span class="sc">+</span> </span>
-<span id="cb5-3"><a></a>  <span class="fu">geom_bar</span>(<span class="at">col =</span> <span class="st">"cyan"</span>, <span class="at">fill =</span> <span class="st">"cyan"</span>)<span class="sc">+</span></span>
-<span id="cb5-4"><a></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Pareto Diagram"</span>, <span class="at">x =</span> <span class="st">"Manufacturer"</span>) <span class="sc">+</span></span>
-<span id="cb5-5"><a></a>    <span class="fu">geom_text</span>(<span class="at">stat =</span> <span class="st">"count"</span>,</span>
-<span id="cb5-6"><a></a>            <span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">after_stat</span>(count)), </span>
-<span id="cb5-7"><a></a>            <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.5</span>)<span class="sc">+</span>     </span>
-<span id="cb5-8"><a></a>  <span class="fu">guides</span>(<span class="at">x =</span> <span class="fu">guide_axis</span>(<span class="at">angle =</span> <span class="dv">45</span>))<span class="sc">+</span></span>
-<span id="cb5-9"><a></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Pareto Diagram"</span>, <span class="at">x =</span> <span class="st">"Manufacturer"</span>) <span class="sc">+</span></span>
-<span id="cb5-10"><a></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">70</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>mpg <span class="sc">%&gt;%</span> </span>
+<span id="cb6-2"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="fu">fct_infreq</span>(class))) <span class="sc">+</span> </span>
+<span id="cb6-3"><a></a>  <span class="fu">geom_bar</span>(<span class="at">col =</span> <span class="st">"cyan"</span>, <span class="at">fill =</span> <span class="st">"cyan"</span>)<span class="sc">+</span></span>
+<span id="cb6-4"><a></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Pareto Diagram"</span>, <span class="at">x =</span> <span class="st">"Manufacturer"</span>) <span class="sc">+</span></span>
+<span id="cb6-5"><a></a>    <span class="fu">geom_text</span>(<span class="at">stat =</span> <span class="st">"count"</span>,</span>
+<span id="cb6-6"><a></a>            <span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">after_stat</span>(count)), </span>
+<span id="cb6-7"><a></a>            <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.5</span>)<span class="sc">+</span>     </span>
+<span id="cb6-8"><a></a>  <span class="fu">guides</span>(<span class="at">x =</span> <span class="fu">guide_axis</span>(<span class="at">angle =</span> <span class="dv">45</span>))<span class="sc">+</span></span>
+<span id="cb6-9"><a></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Pareto Diagram"</span>, <span class="at">x =</span> <span class="st">"Manufacturer"</span>) <span class="sc">+</span></span>
+<span id="cb6-10"><a></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">70</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+
 </div>
-</section>
-<section class="slide level2">
-
-
-<img data-src="casetips_files/figure-revealjs/unnamed-chunk-4-1.png" width="960" class="r-stretch"></section>
-<section class="slide level2">
-
+<img data-src="casetips_files/figure-revealjs/unnamed-chunk-3-1.png" width="960" class="r-stretch"></section>
+<section id="饼图-扇区按百分比降序排列" class="slide level2">
+<h2>饼图 – 扇区按百分比降序排列</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="co"># 准备数据：按频数降序排列</span></span>
-<span id="cb6-2"><a></a>df <span class="ot">&lt;-</span> mpg <span class="sc">%&gt;%</span></span>
-<span id="cb6-3"><a></a>  <span class="fu">count</span>(class) <span class="sc">%&gt;%</span></span>
-<span id="cb6-4"><a></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(n)) <span class="sc">%&gt;%</span></span>
-<span id="cb6-5"><a></a>  <span class="fu">mutate</span>(<span class="at">pct =</span> <span class="fu">round</span>(<span class="dv">100</span> <span class="sc">*</span> n <span class="sc">/</span> <span class="fu">sum</span>(n), <span class="dv">0</span>),</span>
-<span id="cb6-6"><a></a>         <span class="at">label =</span> <span class="fu">paste0</span>(class, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>, pct, <span class="st">"%"</span>),</span>
-<span id="cb6-7"><a></a>         <span class="at">class =</span> <span class="fu">factor</span>(class, <span class="at">levels =</span> class) <span class="co"># 按频数降序设置因子顺序</span></span>
-<span id="cb6-8"><a></a>  )</span>
-<span id="cb6-9"><a></a></span>
-<span id="cb6-10"><a></a>colors <span class="ot">&lt;-</span> <span class="fu">colorRampPalette</span>(<span class="fu">c</span>(<span class="st">"lightblue"</span>, <span class="st">"blue"</span>, <span class="st">"darkblue"</span>))(<span class="fu">nrow</span>(df))</span>
-<span id="cb6-11"><a></a></span>
-<span id="cb6-12"><a></a><span class="co"># 绘制饼图（极坐标 + 降序排列）</span></span>
-<span id="cb6-13"><a></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> <span class="st">""</span>, <span class="at">y =</span> n, <span class="at">fill =</span> class)) <span class="sc">+</span></span>
-<span id="cb6-14"><a></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">width =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb6-15"><a></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> colors) <span class="sc">+</span></span>
-<span id="cb6-16"><a></a>  <span class="fu">coord_polar</span>(<span class="at">theta =</span> <span class="st">"y"</span>, <span class="at">direction =</span> <span class="sc">-</span><span class="dv">1</span>) <span class="sc">+</span>  <span class="co"># 逆时针方向排列</span></span>
-<span id="cb6-17"><a></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> label), </span>
-<span id="cb6-18"><a></a>            <span class="at">col =</span> <span class="st">"white"</span>,</span>
-<span id="cb6-19"><a></a>            <span class="at">position =</span> <span class="fu">position_stack</span>(<span class="at">vjust =</span> <span class="fl">0.5</span>), <span class="at">size =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
-<span id="cb6-20"><a></a>  <span class="fu">theme_void</span>() <span class="sc">+</span></span>
-<span id="cb6-21"><a></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section class="slide level2">
-
-
-<img data-src="casetips_files/figure-revealjs/unnamed-chunk-6-1.png" width="960" class="r-stretch"></section>
-<section class="slide level2">
-
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>df <span class="ot">&lt;-</span> mpg <span class="sc">%&gt;%</span></span>
-<span id="cb7-2"><a></a>  <span class="fu">mutate</span>(<span class="at">class =</span> <span class="fu">fct_lump_n</span>(class, <span class="dv">5</span>)) <span class="sc">%&gt;%</span> </span>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="co"># 准备数据：按频数降序排列</span></span>
+<span id="cb7-2"><a></a>df <span class="ot">&lt;-</span> mpg <span class="sc">%&gt;%</span></span>
 <span id="cb7-3"><a></a>  <span class="fu">count</span>(class) <span class="sc">%&gt;%</span></span>
 <span id="cb7-4"><a></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(n)) <span class="sc">%&gt;%</span></span>
 <span id="cb7-5"><a></a>  <span class="fu">mutate</span>(<span class="at">pct =</span> <span class="fu">round</span>(<span class="dv">100</span> <span class="sc">*</span> n <span class="sc">/</span> <span class="fu">sum</span>(n), <span class="dv">0</span>),</span>
@@ -319,52 +302,107 @@
 <span id="cb7-19"><a></a>            <span class="at">position =</span> <span class="fu">position_stack</span>(<span class="at">vjust =</span> <span class="fl">0.5</span>), <span class="at">size =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
 <span id="cb7-20"><a></a>  <span class="fu">theme_void</span>() <span class="sc">+</span></span>
 <span id="cb7-21"><a></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+
 </div>
-</section>
-<section class="slide level2">
-
-
-<img data-src="casetips_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch"></section>
-<section class="slide level2">
-
+<img data-src="casetips_files/figure-revealjs/unnamed-chunk-4-1.png" width="960" class="r-stretch"></section>
+<section id="合并小类减少扇区" class="slide level2">
+<h2>合并小类，减少扇区</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>mpg <span class="sc">%&gt;%</span></span>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>df <span class="ot">&lt;-</span> mpg <span class="sc">%&gt;%</span></span>
 <span id="cb8-2"><a></a>  <span class="fu">mutate</span>(<span class="at">class =</span> <span class="fu">fct_lump_n</span>(class, <span class="dv">5</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb8-3"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="fu">reorder</span>(class,displ),displ,</span>
-<span id="cb8-4"><a></a>             <span class="at">col =</span> class))<span class="sc">+</span></span>
-<span id="cb8-5"><a></a>  <span class="fu">geom_boxplot</span>()<span class="sc">+</span></span>
-<span id="cb8-6"><a></a>  <span class="fu">guides</span>(<span class="at">x =</span> <span class="fu">guide_axis</span>(<span class="at">n.dodge =</span> <span class="dv">3</span>)) <span class="sc">+</span></span>
-<span id="cb8-7"><a></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-3"><a></a>  <span class="fu">count</span>(class) <span class="sc">%&gt;%</span></span>
+<span id="cb8-4"><a></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(n)) <span class="sc">%&gt;%</span></span>
+<span id="cb8-5"><a></a>  <span class="fu">mutate</span>(<span class="at">pct =</span> <span class="fu">round</span>(<span class="dv">100</span> <span class="sc">*</span> n <span class="sc">/</span> <span class="fu">sum</span>(n), <span class="dv">0</span>),</span>
+<span id="cb8-6"><a></a>         <span class="at">label =</span> <span class="fu">paste0</span>(class, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>, pct, <span class="st">"%"</span>),</span>
+<span id="cb8-7"><a></a>         <span class="at">class =</span> <span class="fu">factor</span>(class, <span class="at">levels =</span> class) <span class="co"># 按频数降序设置因子顺序</span></span>
+<span id="cb8-8"><a></a>  )</span>
+<span id="cb8-9"><a></a></span>
+<span id="cb8-10"><a></a>colors <span class="ot">&lt;-</span> <span class="fu">colorRampPalette</span>(<span class="fu">c</span>(<span class="st">"lightblue"</span>, <span class="st">"blue"</span>, <span class="st">"darkblue"</span>))(<span class="fu">nrow</span>(df))</span>
+<span id="cb8-11"><a></a></span>
+<span id="cb8-12"><a></a><span class="co"># 绘制饼图（极坐标 + 降序排列）</span></span>
+<span id="cb8-13"><a></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> <span class="st">""</span>, <span class="at">y =</span> n, <span class="at">fill =</span> class)) <span class="sc">+</span></span>
+<span id="cb8-14"><a></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">width =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb8-15"><a></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> colors) <span class="sc">+</span></span>
+<span id="cb8-16"><a></a>  <span class="fu">coord_polar</span>(<span class="at">theta =</span> <span class="st">"y"</span>, <span class="at">direction =</span> <span class="sc">-</span><span class="dv">1</span>) <span class="sc">+</span>  <span class="co"># 逆时针方向排列</span></span>
+<span id="cb8-17"><a></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> label), </span>
+<span id="cb8-18"><a></a>            <span class="at">col =</span> <span class="st">"white"</span>,</span>
+<span id="cb8-19"><a></a>            <span class="at">position =</span> <span class="fu">position_stack</span>(<span class="at">vjust =</span> <span class="fl">0.5</span>), <span class="at">size =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb8-20"><a></a>  <span class="fu">theme_void</span>() <span class="sc">+</span></span>
+<span id="cb8-21"><a></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+
+</div>
+<img data-src="casetips_files/figure-revealjs/unnamed-chunk-5-1.png" width="960" class="r-stretch"></section>
+<section id="合并小类分组箱线图" class="slide level2">
+<h2>合并小类，分组箱线图</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>mpg <span class="sc">%&gt;%</span></span>
+<span id="cb9-2"><a></a>  <span class="fu">mutate</span>(<span class="at">class =</span> <span class="fu">fct_lump_n</span>(class, <span class="dv">5</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-3"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="fu">reorder</span>(class,displ),displ,</span>
+<span id="cb9-4"><a></a>             <span class="at">col =</span> class))<span class="sc">+</span></span>
+<span id="cb9-5"><a></a>  <span class="fu">geom_boxplot</span>()<span class="sc">+</span></span>
+<span id="cb9-6"><a></a>  <span class="fu">guides</span>(<span class="at">x =</span> <span class="fu">guide_axis</span>(<span class="at">n.dodge =</span> <span class="dv">3</span>)) <span class="sc">+</span></span>
+<span id="cb9-7"><a></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+
+</div>
+<img data-src="casetips_files/figure-revealjs/unnamed-chunk-6-1.png" width="960" class="r-stretch"></section>
+<section id="独立性检验-适用条件" class="slide level2">
+<h2>独立性检验 —— 适用条件</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="fu">chisq.test</span>(mpg<span class="sc">$</span>class, mpg<span class="sc">$</span>drv)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in chisq.test(mpg$class, mpg$drv): Chi-squared approximation may be
+incorrect</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Pearson's Chi-squared test
+
+data:  mpg$class and mpg$drv
+X-squared = 221.6, df = 12, p-value &lt; 2.2e-16</code></pre>
+</div>
 </div>
 </section>
-<section class="slide level2">
-
-
-<img data-src="casetips_files/figure-revealjs/unnamed-chunk-10-1.png" width="960" class="r-stretch"></section>
-<section class="slide level2">
-
+<section id="独立性检验-合并小类降低列联表纬度" class="slide level2">
+<h2>独立性检验 —— 合并小类，降低列联表纬度</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="fu">chisq.test</span>(mpg<span class="sc">$</span>class, mpg<span class="sc">$</span>drv)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-    Pearson's Chi-squared test
-
-data:  mpg$class and mpg$drv
-X-squared = 221.6, df = 12, p-value &lt; 2.2e-16</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="fu">chisq.test</span>(mpg<span class="sc">$</span>class, mpg<span class="sc">$</span>drv)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-    Pearson's Chi-squared test
-
-data:  mpg$class and mpg$drv
-X-squared = 221.6, df = 12, p-value &lt; 2.2e-16</code></pre>
-</div>
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a>df <span class="ot">&lt;-</span> mpg <span class="sc">%&gt;%</span> </span>
 <span id="cb13-2"><a></a>  <span class="fu">mutate</span>(<span class="at">class =</span> <span class="fu">fct_lump_n</span>(class, <span class="dv">3</span>),</span>
 <span id="cb13-3"><a></a>         <span class="at">drv =</span> <span class="fu">fct_lump_n</span>(drv, <span class="dv">1</span>))</span>
 <span id="cb13-4"><a></a></span>
-<span id="cb13-5"><a></a><span class="fu">chisq.test</span>(df<span class="sc">$</span>class, df<span class="sc">$</span>drv)<span class="sc">$</span>expected</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb13-5"><a></a><span class="fu">table</span>(df<span class="sc">$</span>class, df<span class="sc">$</span>drv)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>         
+           f Other
+  compact 35    12
+  midsize 38     3
+  suv      0    62
+  Other   33    51</code></pre>
+</div>
+</div>
+</section>
+<section id="独立性检验-查看期望频数" class="slide level2">
+<h2>独立性检验 —— 查看期望频数</h2>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Pearson's Chi-squared test
+
+data:  df$class and df$drv
+X-squared = 105.86, df = 3, p-value &lt; 2.2e-16</code></pre>
+</div>
 <div class="cell-output cell-output-stdout">
 <pre><code>         df$drv
 df$class         f    Other
@@ -373,10 +411,11 @@ df$class         f    Other
   suv     28.08547 33.91453
   Other   38.05128 45.94872</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="co"># 计算行的百分比</span></span>
-<span id="cb15-2"><a></a><span class="fu">table</span>(df<span class="sc">$</span>class, df<span class="sc">$</span>drv) <span class="sc">%&gt;%</span> </span>
-<span id="cb15-3"><a></a>  <span class="fu">prop.table</span>(<span class="at">margin =</span> <span class="dv">1</span>)<span class="sc">%&gt;%</span> </span>
-<span id="cb15-4"><a></a>  <span class="fu">round</span>(<span class="dv">2</span>)<span class="sc">*</span><span class="dv">100</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="计算行列百分比-提炼研究结论" class="slide level2">
+<h2>计算行/列百分比 —— 提炼研究结论</h2>
+<div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>         
             f Other
@@ -385,10 +424,6 @@ df$class         f    Other
   suv       0   100
   Other    39    61</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="co"># 计算行的百分比</span></span>
-<span id="cb17-2"><a></a><span class="fu">table</span>(df<span class="sc">$</span>class, df<span class="sc">$</span>drv) <span class="sc">%&gt;%</span> </span>
-<span id="cb17-3"><a></a>  <span class="fu">prop.table</span>(<span class="at">margin =</span> <span class="dv">2</span>)<span class="sc">%&gt;%</span> </span>
-<span id="cb17-4"><a></a>  <span class="fu">round</span>(<span class="dv">2</span>)<span class="sc">*</span><span class="dv">100</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>         
            f Other
@@ -401,7 +436,13 @@ df$class         f    Other
 </section>
 <section class="slide level2">
 
+</section>
+<section>
+<section id="两个独立总体的均值的比较" class="title-slide slide level1 center">
+<h1>两个独立总体的均值的比较</h1>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a><span class="fu">library</span>(ggstatsplot)</span>
 <span id="cb19-2"><a></a></span>
 <span id="cb19-3"><a></a><span class="co"># 筛选两组数据</span></span>
@@ -425,45 +466,66 @@ df$class         f    Other
 <span id="cb19-21"><a></a>  <span class="at">bf.message =</span> <span class="cn">FALSE</span>,</span>
 <span id="cb19-22"><a></a>  <span class="at">digits =</span> <span class="dv">3</span>L</span>
 <span id="cb19-23"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+
 </div>
-</section>
-<section class="slide level2">
-
-
-<img data-src="casetips_files/figure-revealjs/unnamed-chunk-13-1.png" width="960" class="r-stretch"></section>
-<section class="slide level2">
-
+<img data-src="casetips_files/figure-revealjs/unnamed-chunk-11-1.png" width="960" class="r-stretch"></section>
+<section id="单因素方差分析-分类数太多导致有些组别的样本量太小" class="slide level2">
+<h2>单因素方差分析 – 分类数太多，导致有些组别的样本量太小</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a><span class="co"># 按中位数对 class 重新排序（中位数越高排越前）</span></span>
-<span id="cb20-2"><a></a>df <span class="ot">&lt;-</span> mpg <span class="sc">%&gt;%</span></span>
-<span id="cb20-3"><a></a>  <span class="fu">mutate</span>(</span>
-<span id="cb20-4"><a></a>    <span class="at">class =</span> <span class="fu">fct_lump</span>(class, <span class="at">n =</span> <span class="dv">4</span>),</span>
-<span id="cb20-5"><a></a>    <span class="at">class =</span> <span class="fu">fct_reorder</span>(class, displ, </span>
-<span id="cb20-6"><a></a>                        <span class="at">.fun =</span> median, <span class="at">.desc =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb20-7"><a></a>  )</span>
-<span id="cb20-8"><a></a></span>
-<span id="cb20-9"><a></a><span class="co"># 单因素方差分析</span></span>
-<span id="cb20-10"><a></a><span class="fu">ggbetweenstats</span>(</span>
-<span id="cb20-11"><a></a>  <span class="at">data =</span> df,</span>
-<span id="cb20-12"><a></a>  <span class="at">x =</span> class,</span>
-<span id="cb20-13"><a></a>  <span class="at">y =</span> displ,</span>
-<span id="cb20-14"><a></a>  <span class="at">type =</span> <span class="st">"parametric"</span>,        </span>
-<span id="cb20-15"><a></a>  <span class="at">palette =</span> <span class="st">"Accent"</span>, </span>
-<span id="cb20-16"><a></a>  <span class="at">violin.args =</span> <span class="fu">list</span>(<span class="at">width =</span> <span class="dv">0</span>),</span>
-<span id="cb20-17"><a></a>  <span class="at">title =</span> <span class="st">"Suv, Midsize, Compact, Subcompact, Other五个组别的排量比较"</span>,</span>
-<span id="cb20-18"><a></a>  <span class="at">xlab =</span> <span class="st">"Class"</span>,</span>
-<span id="cb20-19"><a></a>  <span class="at">ylab =</span> <span class="st">"发动机排量"</span>,</span>
-<span id="cb20-20"><a></a>  <span class="at">bf.message =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb20-21"><a></a>  <span class="at">digits =</span> <span class="dv">3</span>L</span>
-<span id="cb20-22"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a><span class="co"># 单因素方差分析</span></span>
+<span id="cb20-2"><a></a><span class="fu">ggbetweenstats</span>(</span>
+<span id="cb20-3"><a></a>  <span class="at">data =</span> mpg,</span>
+<span id="cb20-4"><a></a>  <span class="at">x =</span> class,</span>
+<span id="cb20-5"><a></a>  <span class="at">y =</span> displ,</span>
+<span id="cb20-6"><a></a>  <span class="at">type =</span> <span class="st">"parametric"</span>,        </span>
+<span id="cb20-7"><a></a>  <span class="at">palette =</span> <span class="st">"Accent"</span>, </span>
+<span id="cb20-8"><a></a>  <span class="at">violin.args =</span> <span class="fu">list</span>(<span class="at">width =</span> <span class="dv">0</span>),</span>
+<span id="cb20-9"><a></a>  <span class="at">title =</span> <span class="st">"Suv, Midsize, Compact, Subcompact, Other五个组别的排量比较"</span>,</span>
+<span id="cb20-10"><a></a>  <span class="at">xlab =</span> <span class="st">"Class"</span>,</span>
+<span id="cb20-11"><a></a>  <span class="at">ylab =</span> <span class="st">"发动机排量"</span>,</span>
+<span id="cb20-12"><a></a>  <span class="at">bf.message =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb20-13"><a></a>  <span class="at">digits =</span> <span class="dv">3</span>L</span>
+<span id="cb20-14"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+
 </div>
-</section>
-<section class="slide level2">
+<img data-src="casetips_files/figure-revealjs/unnamed-chunk-12-1.png" width="960" class="r-stretch"></section>
+<section id="单因素方差分析-合并小类-排序" class="slide level2">
+<h2>单因素方差分析 – 合并小类, 排序</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a><span class="co"># 按中位数对 class 重新排序</span></span>
+<span id="cb21-2"><a></a>df <span class="ot">&lt;-</span> mpg <span class="sc">%&gt;%</span></span>
+<span id="cb21-3"><a></a>  <span class="fu">mutate</span>(</span>
+<span id="cb21-4"><a></a>    <span class="at">class =</span> <span class="fu">fct_lump</span>(class, <span class="at">n =</span> <span class="dv">4</span>),</span>
+<span id="cb21-5"><a></a>    <span class="at">class =</span> <span class="fu">fct_reorder</span>(class, displ, </span>
+<span id="cb21-6"><a></a>                        <span class="at">.fun =</span> median, <span class="at">.desc =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb21-7"><a></a>  )</span>
+<span id="cb21-8"><a></a></span>
+<span id="cb21-9"><a></a><span class="co"># 单因素方差分析</span></span>
+<span id="cb21-10"><a></a><span class="fu">ggbetweenstats</span>(</span>
+<span id="cb21-11"><a></a>  <span class="at">data =</span> df,</span>
+<span id="cb21-12"><a></a>  <span class="at">x =</span> class,</span>
+<span id="cb21-13"><a></a>  <span class="at">y =</span> displ,</span>
+<span id="cb21-14"><a></a>  <span class="at">type =</span> <span class="st">"parametric"</span>,        </span>
+<span id="cb21-15"><a></a>  <span class="at">palette =</span> <span class="st">"Accent"</span>, </span>
+<span id="cb21-16"><a></a>  <span class="at">violin.args =</span> <span class="fu">list</span>(<span class="at">width =</span> <span class="dv">0</span>),</span>
+<span id="cb21-17"><a></a>  <span class="at">title =</span> <span class="st">"Suv, Midsize, Compact, Subcompact, Other五个组别的排量比较"</span>,</span>
+<span id="cb21-18"><a></a>  <span class="at">xlab =</span> <span class="st">"Class"</span>,</span>
+<span id="cb21-19"><a></a>  <span class="at">ylab =</span> <span class="st">"发动机排量"</span>,</span>
+<span id="cb21-20"><a></a>  <span class="at">bf.message =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb21-21"><a></a>  <span class="at">digits =</span> <span class="dv">3</span>L</span>
+<span id="cb21-22"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+
+</div>
 
 
-
-
-<img data-src="casetips_files/figure-revealjs/unnamed-chunk-15-1.png" width="960" class="r-stretch"></section>
+<img data-src="casetips_files/figure-revealjs/unnamed-chunk-13-1.png" width="960" class="r-stretch"></section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">

@@ -25,24 +25,15 @@
   color: #044875 !important;
 }
 
-/* 控制代码块中的字体大小 */
-.reveal pre code {
-  font-size: 1.4em;  /* 默认是1em，可调为1.2~1.4 */
-}
 
-/* 可选：让代码块文字行距更舒服 */
-.reveal pre {
+
+/* 调整代码字体大小 + 添加滚动条 */
+.reveal pre code {
+  font-size: 1.6em !important;
+  max-height: 400px;
+  overflow-y: auto;
+  overflow-x: auto;
   line-height: 1.6;
-}
-
-/* 让代码块具有滚动条 */
-.reveal pre code {
-  display: block;
-  max-height: 100px;    /* 根据需要调整高度 */
-  overflow-y: auto;     /* 垂直滚动 */
-  overflow-x: auto;     /* 水平滚动（可选） */
-  white-space: pre;     /* 保持原始格式 */
-  font-size: 1.2em !important;
 }
 
 

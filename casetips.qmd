@@ -1,5 +1,5 @@
 ---
-title:  "《R语言与统计应用》实验报告<br>常见问题"
+title:  "《R语言与统计应用》<br>实验报告常见问题"
 date: today
 author: 
   name: "李宗璋"
@@ -9,6 +9,7 @@ format:
     incremental: FALSE
     theme: sky
     slide-number: true
+    code-fold: true
     chalkboard: 
       buttons: true
     preview-links: auto
@@ -20,7 +21,7 @@ format:
       - fonts.html
     title-slide-attributes: 
       data-background-image: "img/bili_up.jpg"  
-      data-background-size: "80px"        
+      data-background-size: "50px"        
       data-background-position: "center bottom 120px"  
     plugins: [highlight, zoom, notes]
 editor: 
@@ -52,6 +53,9 @@ library(tidyverse)
 
 ```{r}
 #| echo: TRUE
+#| warning: TRUE
+
+
 df <- data.frame(
   name = c("Tom", "Jerry", "Mickey", "Donald", "Goofy"),
   height = c("170", "172", "183", "185", "177"),
@@ -60,7 +64,8 @@ df <- data.frame(
 
 mean(df$height)
 
-# across(c(height, weight), as.numeric) 把height, weight转换为数值型
+# 把height, weight转换为数值型
+
 df <- df %>%
   mutate(across(c(height, weight), as.numeric))
 
@@ -70,7 +75,7 @@ mean(df$height)
 
 ------
 
-## 帕雷托图
+## 帕累托图
 
 - 条形按降序排列
 
@@ -78,12 +83,10 @@ mean(df$height)
 
 ----
 
-## 帕雷托图
+## 帕累托图
 
 ```{r}
 #| echo: TRUE
-#| results: "hide"
-#| fig-show: "hide"
 
 mpg %>% 
   ggplot(aes(fct_infreq(class))) + 
@@ -96,33 +99,14 @@ mpg %>%
   labs(title = "Pareto Diagram", x = "Manufacturer") +
   scale_y_continuous(limits = c(0, 70))
 ```
-
-
-----
-
-```{r}
-#| echo: FALSE
-
-mpg %>% 
-  ggplot(aes(fct_infreq(class))) + 
-  geom_bar(col = "cyan", fill = "cyan")+
-  labs(title = "Pareto Diagram", x = "Class") +
-    geom_text(stat = "count",
-            aes(label = after_stat(count)), 
-            vjust = -0.5)+     
-  guides(x = guide_axis(angle = 45))+
-  labs(title = "Pareto Diagram", x = "Class") +
-  scale_y_continuous(limits = c(0, 70))
-```
-
 
 
 ---
 
+## 饼图 -- 扇区按百分比降序排列
+
 ```{r}
 #| echo: TRUE
-#| results: "hide"
-#| fig-show: "hide"
 
 # 准备数据：按频数降序排列
 df <- mpg %>%
@@ -148,70 +132,12 @@ ggplot(df, aes(x = "", y = n, fill = class)) +
 ```
 
 
---------------
+------
 
-```{r}
-#| echo: FALSE
-
-
-# 准备数据：按频数降序排列
-df <- mpg %>%
-  count(class) %>%
-  arrange(desc(n)) %>%
-  mutate(pct = round(100 * n / sum(n), 0),
-         label = paste0(class, "\n", pct, "%"),
-         class = factor(class, levels = class) # 按频数降序设置因子顺序
-  )
-
-colors <- colorRampPalette(c("lightblue", "blue", "darkblue"))(nrow(df))
-
-# 绘制饼图（极坐标 + 降序排列）
-ggplot(df, aes(x = "", y = n, fill = class)) +
-  geom_bar(stat = "identity", width = 1) +
-  scale_fill_manual(values = colors) +
-  coord_polar(theta = "y", direction = -1) +  # 逆时针方向排列
-  geom_text(aes(label = label), 
-            col = "white",
-            position = position_stack(vjust = 0.5), size = 5) +
-  theme_void() +
-  theme(legend.position = "none")
-```
-
---------------
+## 合并小类，减少扇区
 
 ```{r}
 #| echo: TRUE
-#| results: "hide"
-#| fig-show: "hide"
-
-
-df <- mpg %>%
-  mutate(class = fct_lump_n(class, 5)) %>% 
-  count(class) %>%
-  arrange(desc(n)) %>%
-  mutate(pct = round(100 * n / sum(n), 0),
-         label = paste0(class, "\n", pct, "%"),
-         class = factor(class, levels = class) # 按频数降序设置因子顺序
-  )
-
-colors <- colorRampPalette(c("lightblue", "blue", "darkblue"))(nrow(df))
-
-# 绘制饼图（极坐标 + 降序排列）
-ggplot(df, aes(x = "", y = n, fill = class)) +
-  geom_bar(stat = "identity", width = 1) +
-  scale_fill_manual(values = colors) +
-  coord_polar(theta = "y", direction = -1) +  # 逆时针方向排列
-  geom_text(aes(label = label), 
-            col = "white",
-            position = position_stack(vjust = 0.5), size = 5) +
-  theme_void() +
-  theme(legend.position = "none")
-```
-
----
-
-```{r}
-#| echo: FALSE
 
 
 df <- mpg %>%
@@ -238,13 +164,12 @@ ggplot(df, aes(x = "", y = n, fill = class)) +
 ```
 
 
-
 --------------
+
+## 合并小类，分组箱线图
 
 ```{r}
 #| echo: TRUE
-#| results: "hide"
-#| fig-show: "hide"
 
 mpg %>%
   mutate(class = fct_lump_n(class, 5)) %>% 
@@ -259,34 +184,51 @@ mpg %>%
 
 --------------
 
-```{r}
-#| echo: FALSE
-
-
-mpg %>%
-  mutate(class = fct_lump_n(class, 5)) %>% 
-  ggplot(aes(reorder(class,displ),displ,
-             col = class))+
-  geom_boxplot()+
-  guides(x = guide_axis(n.dodge = 3)) +
-  theme(legend.position = "none")
-```
-
-
---------------
+## 独立性检验 —— 适用条件
 
 ```{r}
 #| echo: TRUE
+#| warning: TRUE
 
 chisq.test(mpg$class, mpg$drv)
 
-chisq.test(mpg$class, mpg$drv)
+```
+
+--------------
+
+## 独立性检验 —— 合并小类，降低列联表纬度
+
+```{r}
+#| echo: TRUE
+#| warning: TRUE
 
 df <- mpg %>% 
   mutate(class = fct_lump_n(class, 3),
          drv = fct_lump_n(drv, 1))
 
+table(df$class, df$drv)
+
+```
+
+---
+
+## 独立性检验 —— 查看期望频数
+
+```{r}
+
+chisq.test(df$class, df$drv)
+
 chisq.test(df$class, df$drv)$expected
+
+```
+
+----
+
+## 计算行/列百分比 —— 提炼研究结论
+
+```{r}
+
+#| echo: TRUE
 
 # 计算行的百分比
 table(df$class, df$drv) %>% 
@@ -301,10 +243,10 @@ table(df$class, df$drv) %>%
 
 --------
 
+# 两个独立总体的均值的比较
+
 ```{r}
 #| echo: TRUE
-#| results: "hide"
-#| fig-show: "hide"
 
 library(ggstatsplot)
 
@@ -332,56 +274,19 @@ ggbetweenstats(
 
 ```
 
---------
+----
 
-```{r}
-#| echo: FALSE
-
-library(ggstatsplot)
-
-# 筛选两组数据
-df <- mpg %>%
-  filter(drv %in% c("f", "4")) %>%
-  mutate(drv = factor(drv, levels = c("f", "4"),
-                      labels = c("前驱", "四驱")))
-
-# 两个总体均值的t检验
-ggbetweenstats(
-  data = df,
-  x = drv,
-  y = displ,
-  type = "parametric",        
-  palette = "Accent",        
-  messages = FALSE,
-  violin.args = list(width = 0),
-  title = "前驱和四驱的排量比较",
-  xlab = "驱动方式",
-  ylab = "发动机排量",
-  bf.message = FALSE,
-  digits = 3L
-)
-
-```
-
---------
+## 单因素方差分析 -- 分类数太多，导致有些组别的样本量太小
 
 ```{r}
 #| echo: TRUE
-#| results: "hide"
-#| fig-show: "hide"
+#| fig-width: 10
+#| fig-height: 4.5
 
-
-# 按中位数对 class 重新排序（中位数越高排越前）
-df <- mpg %>%
-  mutate(
-    class = fct_lump(class, n = 4),
-    class = fct_reorder(class, displ, 
-                        .fun = median, .desc = TRUE)
-  )
 
 # 单因素方差分析
 ggbetweenstats(
-  data = df,
+  data = mpg,
   x = class,
   y = displ,
   type = "parametric",        
@@ -394,13 +299,18 @@ ggbetweenstats(
   digits = 3L
 )
 ```
+
+
 
 --------
 
-```{r}
-#| echo: FALSE
+## 单因素方差分析 -- 合并小类, 排序
 
-# 按中位数对 class 重新排序（中位数越高排越前）
+```{r}
+#| echo: TRUE
+
+
+# 按中位数对 class 重新排序
 df <- mpg %>%
   mutate(
     class = fct_lump(class, n = 4),
@@ -423,7 +333,6 @@ ggbetweenstats(
   digits = 3L
 )
 ```
-
 
 
 
