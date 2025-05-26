@@ -128,7 +128,7 @@ title: "第6章"
 
 ## 学生习作讲评
 
-<img src="img/link.png" style="width: 24px; height: 24px;margin-right: 10px"> [第6章Excel习题学生习作点评](https://lizongzhang.github.io/statwithspss/chap6ex.html){target="_blank"}
+<img src="img/link.png" style="width: 24px; height: 24px;margin-right: 10px"> [第6章Excel习题学生习作点评](https://lizongzhang.github.io/stat25/chap6ex.html){target="_blank"}
 
 
 

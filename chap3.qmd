@@ -292,7 +292,7 @@ data %>%
 
 # 学生习作讲评
 
-<img src="img/link.png" style="width: 24px; height: 24px;margin-right: 10px"> [教材第3章习题学生习作点评](https://lizongzhang.github.io/statwithspss/chap3ex.html){target="_blank"}
+<img src="img/link.png" style="width: 24px; height: 24px;margin-right: 10px"> [教材第3章习题学生习作点评](https://lizongzhang.github.io/stat25/chap3ex.html){target="_blank"}
 
   
     
