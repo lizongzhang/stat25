@@ -4,7 +4,7 @@
     "href": "chap6ex.html",
     "title": "第6章Excel习题讲评",
     "section": "",
-    "text": "第1题 概率密度曲线\n\n\n\n卡方分布概率密度曲线\n\n\n \n\n\n第2题 直方图\n\n\n\n卡方分布和t分布直方图学生习作\n\n\n\n\n\n卡方分布、F分布直方图学生习作\n\n\n\n\n\n第2题 调整组距\n\n\n\n\n\n第2题 调整组距\n\n\n\n\n\n第4题学生习作\n\n\n\n\n\n第5题学生习作\n\n\n\n\n\n卡方分布概率密度曲线\n卡方分布和t分布直方图学生习作\n卡方分布、F分布直方图学生习作\n第2题 调整组距\n第2题 调整组距\n第4题学生习作\n第5题学生习作"
+    "text": "第1题 概率密度曲线\n\n\n\n卡方分布概率密度曲线\n\n\n \n\n\n第2题 直方图\n\n\n\n卡方分布和t分布直方图学生习作\n\n\n\n\n\n卡方分布、F分布直方图学生习作\n\n\n\n\n\n第2题 调整组距\n\n\n\n\n\n第2题 调整组距\n\n\n\n\n\n第4题学生习作\n\n\n\n\n\n第5题学生习作"
   },
   {
     "objectID": "chap6.html",
@@ -46,7 +46,7 @@
     "href": "chap6.html#拓展资源",
     "title": "第6章",
     "section": "拓展资源",
-    "text": "拓展资源\n正态分布概率密度曲线动画演示 https://www.geogebra.org/m/nrgtzj5a\nt分布与标准正态分布概率密度曲线对比 https://www.geogebra.org/m/zxUzwgkH\nt分布与标准正态分布特定区间取值概率对比 https://www.geogebra.org/m/zxUzwgkH\n卡方分布计算器https://www.geogebra.org/m/AQX6fB2e\nF分布概率密度曲线https://www.geogebra.org/m/zxt2xuRs\n分位数计算器 https://gallery.shinyapps.io/dist_calc/\nCentral Limit Theorem for Means https://gallery.shinyapps.io/CLT_mean/\n中心极限定理 n=2-31 https://astools.datadesk.com/clt.html\nGalton Board https://www.mathsisfun.com/data/quincunx.html\n3Blue1Brown: 为什么正态分布里会有一个π？\n3Blue1Brown: 到底为什么“中心极限”是正态分布啊\n\n\n\n标准正态分布表\nt分布表\n卡方分布表\nF分布表"
+    "text": "拓展资源\n正态分布概率密度曲线动画演示 https://www.geogebra.org/m/nrgtzj5a\nt分布与标准正态分布概率密度曲线对比 https://www.geogebra.org/m/zxUzwgkH\nt分布与标准正态分布特定区间取值概率对比 https://www.geogebra.org/m/zxUzwgkH\n卡方分布计算器https://www.geogebra.org/m/AQX6fB2e\nF分布概率密度曲线https://www.geogebra.org/m/zxt2xuRs\n分位数计算器 https://gallery.shinyapps.io/dist_calc/\nCentral Limit Theorem for Means https://gallery.shinyapps.io/CLT_mean/\n中心极限定理 n=2-31 https://astools.datadesk.com/clt.html\nGalton Board https://www.mathsisfun.com/data/quincunx.html\n3Blue1Brown: 为什么正态分布里会有一个π？\n3Blue1Brown: 到底为什么“中心极限”是正态分布啊"
   },
   {
     "objectID": "chap3.html",
@@ -126,228 +126,200 @@
     "text": "拓展资源\nCSMAR 国泰安经济金融数据库 http://www.gtarsc.com/Home\n中国家庭追踪调查 CFPS http://www.isss.pku.edu.cn/cfps/\n中国家庭金融调查数据 CHFS https://chfs.swufe.edu.cn\n中国健康与养老数据追踪调查数据CHARLS http://charls.pku.edu.cn\n暨南大学社会调查中心 https://sdc-iesr.jnu.edu.cn\nKaggle https://www.kaggle.com/datasets"
   },
   {
-    "objectID": "report.html",
-    "href": "report.html",
-    "title": "《R语言与统计应用》课程实验报告",
+    "objectID": "casetips.html#r读取excel文件时excel中的数值变成了字符串",
+    "href": "casetips.html#r读取excel文件时excel中的数值变成了字符串",
+    "title": "《R语言与统计应用》实验报告常见问题",
+    "section": "R读取Excel文件时，Excel中的数值变成了字符串",
+    "text": "R读取Excel文件时，Excel中的数值变成了字符串\n\n某列中混有非数字字符, 如空格、文字、符号等\nExcel 中该列被显式设置为了“文本”格式\n如果前几行的数据不具代表性（如缺失、为字符串等），类型推断就可能失误"
+  },
+  {
+    "objectID": "casetips.html#数据框中的定量变量以字符串的形式保存",
+    "href": "casetips.html#数据框中的定量变量以字符串的形式保存",
+    "title": "《R语言与统计应用》实验报告常见问题",
+    "section": "数据框中的定量变量以字符串的形式保存",
+    "text": "数据框中的定量变量以字符串的形式保存\n\n\nCode\ndf &lt;- data.frame(\n  name = c(\"Tom\", \"Jerry\", \"Mickey\", \"Donald\", \"Goofy\"),\n  height = c(\"170\", \"172\", \"183\", \"185\", \"177\"),\n  weight = c(\"73\", \"78\", \"85\", \"92\", \"70\")\n)\n\nmean(df$height)\n\n\nWarning in mean.default(df$height): argument is not numeric or logical:\nreturning NA\n\n\n[1] NA\n\n\nCode\n# 把height, weight转换为数值型\n\ndf &lt;- df %&gt;%\n  mutate(across(c(height, weight), as.numeric))\n\nmean(df$height)\n\n\n[1] 177.4"
+  },
+  {
+    "objectID": "casetips.html#帕累托图",
+    "href": "casetips.html#帕累托图",
+    "title": "《R语言与统计应用》实验报告常见问题",
+    "section": "帕累托图",
+    "text": "帕累托图\n\n条形按降序排列\n标注频数"
+  },
+  {
+    "objectID": "casetips.html#帕累托图-1",
+    "href": "casetips.html#帕累托图-1",
+    "title": "《R语言与统计应用》实验报告常见问题",
+    "section": "帕累托图",
+    "text": "帕累托图\n\n\nCode\nmpg %&gt;% \n  ggplot(aes(fct_infreq(class))) + \n  geom_bar(col = \"cyan\", fill = \"cyan\")+\n  labs(title = \"Pareto Diagram\", x = \"Manufacturer\") +\n    geom_text(stat = \"count\",\n            aes(label = after_stat(count)), \n            vjust = -0.5)+     \n  guides(x = guide_axis(angle = 45))+\n  labs(title = \"Pareto Diagram\", x = \"Manufacturer\") +\n  scale_y_continuous(limits = c(0, 70))"
+  },
+  {
+    "objectID": "casetips.html#饼图-扇区按百分比降序排列",
+    "href": "casetips.html#饼图-扇区按百分比降序排列",
+    "title": "《R语言与统计应用》实验报告常见问题",
+    "section": "饼图 – 扇区按百分比降序排列",
+    "text": "饼图 – 扇区按百分比降序排列\n\n\nCode\n# 准备数据：按频数降序排列\ndf &lt;- mpg %&gt;%\n  count(class) %&gt;%\n  arrange(desc(n)) %&gt;%\n  mutate(pct = round(100 * n / sum(n), 0),\n         label = paste0(class, \"\\n\", pct, \"%\"),\n         class = factor(class, levels = class) # 按频数降序设置因子顺序\n  )\n\ncolors &lt;- colorRampPalette(c(\"lightblue\", \"blue\", \"darkblue\"))(nrow(df))\n\n# 绘制饼图（极坐标 + 降序排列）\nggplot(df, aes(x = \"\", y = n, fill = class)) +\n  geom_bar(stat = \"identity\", width = 1) +\n  scale_fill_manual(values = colors) +\n  coord_polar(theta = \"y\", direction = -1) +  # 逆时针方向排列\n  geom_text(aes(label = label), \n            col = \"white\",\n            position = position_stack(vjust = 0.5), size = 5) +\n  theme_void() +\n  theme(legend.position = \"none\")"
+  },
+  {
+    "objectID": "casetips.html#合并小类减少扇区",
+    "href": "casetips.html#合并小类减少扇区",
+    "title": "《R语言与统计应用》实验报告常见问题",
+    "section": "合并小类，减少扇区",
+    "text": "合并小类，减少扇区\n\n\nCode\ndf &lt;- mpg %&gt;%\n  mutate(class = fct_lump_n(class, 5)) %&gt;% \n  count(class) %&gt;%\n  arrange(desc(n)) %&gt;%\n  mutate(pct = round(100 * n / sum(n), 0),\n         label = paste0(class, \"\\n\", pct, \"%\"),\n         class = factor(class, levels = class) # 按频数降序设置因子顺序\n  )\n\ncolors &lt;- colorRampPalette(c(\"lightblue\", \"blue\", \"darkblue\"))(nrow(df))\n\n# 绘制饼图（极坐标 + 降序排列）\nggplot(df, aes(x = \"\", y = n, fill = class)) +\n  geom_bar(stat = \"identity\", width = 1) +\n  scale_fill_manual(values = colors) +\n  coord_polar(theta = \"y\", direction = -1) +  # 逆时针方向排列\n  geom_text(aes(label = label), \n            col = \"white\",\n            position = position_stack(vjust = 0.5), size = 5) +\n  theme_void() +\n  theme(legend.position = \"none\")"
+  },
+  {
+    "objectID": "casetips.html#合并小类分组箱线图",
+    "href": "casetips.html#合并小类分组箱线图",
+    "title": "《R语言与统计应用》实验报告常见问题",
+    "section": "合并小类，分组箱线图",
+    "text": "合并小类，分组箱线图\n\n\nCode\nmpg %&gt;%\n  mutate(class = fct_lump_n(class, 5)) %&gt;% \n  ggplot(aes(reorder(class,displ),displ,\n             col = class))+\n  geom_boxplot()+\n  guides(x = guide_axis(n.dodge = 3)) +\n  theme(legend.position = \"none\")"
+  },
+  {
+    "objectID": "casetips.html#独立性检验-适用条件",
+    "href": "casetips.html#独立性检验-适用条件",
+    "title": "《R语言与统计应用》实验报告常见问题",
+    "section": "独立性检验 —— 适用条件",
+    "text": "独立性检验 —— 适用条件\n\n\nCode\nchisq.test(mpg$class, mpg$drv)\n\n\nWarning in chisq.test(mpg$class, mpg$drv): Chi-squared approximation may be\nincorrect\n\n\n\n    Pearson's Chi-squared test\n\ndata:  mpg$class and mpg$drv\nX-squared = 221.6, df = 12, p-value &lt; 2.2e-16"
+  },
+  {
+    "objectID": "casetips.html#独立性检验-合并小类降低列联表纬度",
+    "href": "casetips.html#独立性检验-合并小类降低列联表纬度",
+    "title": "《R语言与统计应用》实验报告常见问题",
+    "section": "独立性检验 —— 合并小类，降低列联表纬度",
+    "text": "独立性检验 —— 合并小类，降低列联表纬度\n\n\nCode\ndf &lt;- mpg %&gt;% \n  mutate(class = fct_lump_n(class, 3),\n         drv = fct_lump_n(drv, 1))\n\ntable(df$class, df$drv)\n\n\n         \n           f Other\n  compact 35    12\n  midsize 38     3\n  suv      0    62\n  Other   33    51"
+  },
+  {
+    "objectID": "casetips.html#独立性检验-查看期望频数",
+    "href": "casetips.html#独立性检验-查看期望频数",
+    "title": "《R语言与统计应用》实验报告常见问题",
+    "section": "独立性检验 —— 查看期望频数",
+    "text": "独立性检验 —— 查看期望频数\n\n\nCode\nchisq.test(df$class, df$drv)\n\n\n\n    Pearson's Chi-squared test\n\ndata:  df$class and df$drv\nX-squared = 105.86, df = 3, p-value &lt; 2.2e-16\n\n\nCode\nchisq.test(df$class, df$drv)$expected\n\n\n         df$drv\ndf$class         f    Other\n  compact 21.29060 25.70940\n  midsize 18.57265 22.42735\n  suv     28.08547 33.91453\n  Other   38.05128 45.94872"
+  },
+  {
+    "objectID": "casetips.html#计算行列百分比-提炼研究结论",
+    "href": "casetips.html#计算行列百分比-提炼研究结论",
+    "title": "《R语言与统计应用》实验报告常见问题",
+    "section": "计算行/列百分比 —— 提炼研究结论",
+    "text": "计算行/列百分比 —— 提炼研究结论\n\n\n         \n            f Other\n  compact  74    26\n  midsize  93     7\n  suv       0   100\n  Other    39    61\n\n\n         \n           f Other\n  compact 33     9\n  midsize 36     2\n  suv      0    48\n  Other   31    40"
+  },
+  {
+    "objectID": "casetips.html#单因素方差分析-分类数太多导致有些组别的样本量太小",
+    "href": "casetips.html#单因素方差分析-分类数太多导致有些组别的样本量太小",
+    "title": "《R语言与统计应用》实验报告常见问题",
+    "section": "单因素方差分析 – 分类数太多，导致有些组别的样本量太小",
+    "text": "单因素方差分析 – 分类数太多，导致有些组别的样本量太小\n\n\nCode\n# 单因素方差分析\nggbetweenstats(\n  data = mpg,\n  x = class,\n  y = displ,\n  type = \"parametric\",        \n  palette = \"Accent\", \n  violin.args = list(width = 0),\n  title = \"Suv, Midsize, Compact, Subcompact, Other五个组别的排量比较\",\n  xlab = \"Class\",\n  ylab = \"发动机排量\",\n  bf.message = FALSE,\n  digits = 3L\n)"
+  },
+  {
+    "objectID": "casetips.html#单因素方差分析-合并小类-排序",
+    "href": "casetips.html#单因素方差分析-合并小类-排序",
+    "title": "《R语言与统计应用》实验报告常见问题",
+    "section": "单因素方差分析 – 合并小类, 排序",
+    "text": "单因素方差分析 – 合并小类, 排序\n\n\nCode\n# 按中位数对 class 重新排序\ndf &lt;- mpg %&gt;%\n  mutate(\n    class = fct_lump(class, n = 4),\n    class = fct_reorder(class, displ, \n                        .fun = median, .desc = TRUE)\n  )\n\n# 单因素方差分析\nggbetweenstats(\n  data = df,\n  x = class,\n  y = displ,\n  type = \"parametric\",        \n  palette = \"Accent\", \n  violin.args = list(width = 0),\n  title = \"Suv, Midsize, Compact, Subcompact, Other五个组别的排量比较\",\n  xlab = \"Class\",\n  ylab = \"发动机排量\",\n  bf.message = FALSE,\n  digits = 3L\n)"
+  },
+  {
+    "objectID": "case2comment.html",
+    "href": "case2comment.html",
+    "title": "第7-8章小组作业讲评",
     "section": "",
-    "text": "运用统计方法分析现实问题。"
+    "text": "如何提出要证明的观点？\n\n\n\nmiu_0如何选取？\n\n\n\n\n\n差值的检验\n\n\n\n\n\nmiu0不要设置为两个样本均值的差\n\n\n\n\n建议用单侧检验\n\n单侧检验的P值更小，更容易拒绝原假设\n双侧检验的结论过于常识化\n\n\n\n\n双侧检验的结论没有现实意义\n\n\n\n\n\n单侧检验的P值更小\n\n\n\n\n\n双侧检验的结论过于常识化\n\n\n\n\n\n双侧检验的结论过于常识化\n\n\n\n\n\n双侧检验的结论缺乏价值\n\n\n\n\n理论知识理解不足\n\n\n\nP值法\n\n\n\n\n排版及文字\n\n\n\n文字段落太多\n\n\n\n\n\n文字段落太多\n\n\n\n\n\n文字段落太多\n\n\n\n\n\n文字段落太多\n\n\n\n\n\n用表格呈现结果\n\n\n\n\n\n表格中信息模糊\n\n\n\n\n\n图片模糊\n\n\n\n\n\n文字不够简练\n\n\n\n\n\n表格不够清晰\n\n\n\n\n\n优秀例子：思维导图\n\n\n\n\n研究结论的提炼\n\n结论不够具体\n结论过于常识化\n提炼有价值的，有吸引力的，不是常识化的结论\n\n\n\n\n差异具体是多大？\n\n\n\n\n\n差异具体是多大？\n\n\n\n\n\n差异具体是多大？\n\n\n\n\n\n差异具体是多大？\n\n\n\n\n\n显著差异的表现是什么\n\n\n\n\n\n结论缺乏吸引力\n\n\n\n\n\n找到差异\n\n\n\n\n\n优秀例子：有价值的结论\n\n\n\n\n其他问题：没有运用两个总体参数的检验"
   },
   {
-    "objectID": "report.html#封面",
-    "href": "report.html#封面",
-    "title": "《R语言与统计应用》课程实验报告",
-    "section": "封面",
-    "text": "封面\n\n题目\n小组成员信息（按学号顺序排列）\n\n班级 学号 成员1\n班级 学号 成员2\n班级 学号 成员3"
-  },
-  {
-    "objectID": "report.html#前言",
-    "href": "report.html#前言",
-    "title": "《R语言与统计应用》课程实验报告",
-    "section": "1 前言",
-    "text": "1 前言\n介绍研究背景、选题动机、研究目标。"
-  },
-  {
-    "objectID": "report.html#数据概况",
-    "href": "report.html#数据概况",
-    "title": "《R语言与统计应用》课程实验报告",
-    "section": "2 数据概况",
-    "text": "2 数据概况\n介绍数据来源、数据收集过程、解释变量的含义。"
-  },
-  {
-    "objectID": "report.html#描述性统计分析chap-3-4",
-    "href": "report.html#描述性统计分析chap-3-4",
-    "title": "《R语言与统计应用》课程实验报告",
-    "section": "3 描述性统计分析：Chap 3 & 4",
-    "text": "3 描述性统计分析：Chap 3 & 4\n运用表格或图形呈现关键变量的分布特征、报告其描述性统计量。"
-  },
-  {
-    "objectID": "report.html#参数估计-chap-7",
-    "href": "report.html#参数估计-chap-7",
-    "title": "《R语言与统计应用》课程实验报告",
-    "section": "4 参数估计: Chap 7",
-    "text": "4 参数估计: Chap 7\n运用参数估计方法对总体参数（关键变量）进行推断。"
-  },
-  {
-    "objectID": "report.html#假设检验chap-8",
-    "href": "report.html#假设检验chap-8",
-    "title": "《R语言与统计应用》课程实验报告",
-    "section": "5 假设检验：Chap 8",
-    "text": "5 假设检验：Chap 8\n运用假设检验对总体参数（关键变量）进行推断。"
-  },
-  {
-    "objectID": "report.html#独立性检验-chap-9",
-    "href": "report.html#独立性检验-chap-9",
-    "title": "《R语言与统计应用》课程实验报告",
-    "section": "6 独立性检验: Chap 9",
-    "text": "6 独立性检验: Chap 9\n运用独立性检验讨论两个定性变量之间的关系。"
-  },
-  {
-    "objectID": "report.html#方差分析-chap-10",
-    "href": "report.html#方差分析-chap-10",
-    "title": "《R语言与统计应用》课程实验报告",
-    "section": "7 方差分析: Chap 10",
-    "text": "7 方差分析: Chap 10\n运用方差分析讨论定性变量和定量变量之间的关系。"
-  },
-  {
-    "objectID": "report.html#相关与回归分析-chap-11",
-    "href": "report.html#相关与回归分析-chap-11",
-    "title": "《R语言与统计应用》课程实验报告",
-    "section": "8 相关与回归分析: Chap 11",
-    "text": "8 相关与回归分析: Chap 11\n运用方差分析讨论定性变量和定量变量之间的关系。"
-  },
-  {
-    "objectID": "report.html#结论和展望",
-    "href": "report.html#结论和展望",
-    "title": "《R语言与统计应用》课程实验报告",
-    "section": "9 结论和展望",
-    "text": "9 结论和展望\n总结研究结论, 本研究的不足, 值得进一步研究的问题"
-  },
-  {
-    "objectID": "report.html#r代码",
-    "href": "report.html#r代码",
-    "title": "《R语言与统计应用》课程实验报告",
-    "section": "10 R代码",
-    "text": "10 R代码"
-  },
-  {
-    "objectID": "report.html#个人心得体会每个小组成员独立撰写",
-    "href": "report.html#个人心得体会每个小组成员独立撰写",
-    "title": "《R语言与统计应用》课程实验报告",
-    "section": "11 个人心得体会（每个小组成员独立撰写）",
-    "text": "11 个人心得体会（每个小组成员独立撰写）\n班级 学号 成员1\n\n本人在完成实验报告中的具体工作\n遇到过什么困难，如何解决该困难\n课程感想和建议\n单个成员的心得体会字数不少于500字"
-  },
-  {
-    "objectID": "report.html#电子版",
-    "href": "report.html#电子版",
-    "title": "《R语言与统计应用》课程实验报告",
-    "section": "电子版",
-    "text": "电子版\n\n提交时限：第17周上课日的前一天的19:00\nPDF版实验报告和数据文件提交到QQ群中的“实验报告及其数据文件”文件夹\nPDF文件命名格式：“小组编号 组长名 组长班级 实验报告.pdf”\nR项目文件夹(包含数据文件和R代码)压缩后命名格式：“小组编号 组长名 组长班级 实验报告.zip/rar”"
-  },
-  {
-    "objectID": "report.html#纸质版",
-    "href": "report.html#纸质版",
-    "title": "《R语言与统计应用》课程实验报告",
-    "section": "纸质版",
-    "text": "纸质版\n\n双面或单面打印皆可，黑白打印即可，无需彩色打印，无需制作硬壳封面, 三颗订书针装订。\n提交时限：第17周上课日"
-  },
-  {
-    "objectID": "case1pre.html#数据和变量",
-    "href": "case1pre.html#数据和变量",
-    "title": "广州6大品牌奶茶店消费价格分析",
-    "section": "1 数据和变量",
-    "text": "1 数据和变量\n数据来源：大众点评网，广州六大品牌奶茶店\n样本容量：336\n数据来源：大众点评网，广州6大奶茶品牌\n零售价格: retail.price\n团购价格：group.price\n品牌： brand\n区位：area\n市区：荔湾，越秀，天河，海珠\n近郊：白云，番禺，黄埔\n远郊：花都，从化，南沙，增城"
-  },
-  {
-    "objectID": "case1pre.html#图形工具",
-    "href": "case1pre.html#图形工具",
-    "title": "广州6大品牌奶茶店消费价格分析",
-    "section": "2 图形工具",
-    "text": "2 图形工具\n2.1 帕累托图\n2.2 分组条形图\n2.3 分组直方图\n2.4 分组箱线图\n2.5 散点图"
-  },
-  {
-    "objectID": "case1pre.html#帕累托图",
-    "href": "case1pre.html#帕累托图",
-    "title": "广州6大品牌奶茶店消费价格分析",
-    "section": "2.1 帕累托图",
-    "text": "2.1 帕累托图\n\nlibrary(tidyverse)\nlibrary(readxl)\ndata  &lt;- read_excel(\"data/top6.xlsx\")\n\nlibrary(forcats)\ndata %&gt;% ggplot(aes(fct_infreq(brand), fill = brand)) + \n  geom_bar() +\n  geom_text(stat = \"count\", aes(label = after_stat(count)), vjust = -0.5)+ \n  scale_y_continuous(limits = c(0,100))+\n  guides(x = guide_axis(angle = 45)) +\n  labs(x = \"品牌\", fill = \"品牌\") +\n  theme_bw() +\n  theme(text = element_text(size = 15),\n        legend.position = \"bottom\",\n        legend.text = element_text(size = 10))"
-  },
-  {
-    "objectID": "case1pre.html#分组条形图",
-    "href": "case1pre.html#分组条形图",
-    "title": "广州6大品牌奶茶店消费价格分析",
-    "section": "2.2 分组条形图",
-    "text": "2.2 分组条形图\n\ndata %&gt;%\n  group_by(area, brand) %&gt;%\n  summarise(count = n(), .groups = \"drop\") %&gt;% \n  mutate(brand_order = paste(brand, area, rank(-count), sep = \"_\"))  %&gt;% \n  ggplot(aes(reorder(brand_order, -count),\n             count, fill = brand)) +\n  geom_col()+\n  facet_wrap(~ area, scales = \"free_x\", ncol = 3) +\n  geom_text(aes(label = count), vjust = -0.5) +\n  scale_x_discrete(labels = function(x) gsub(\"_.+$\", \"\", x)) + # 移除排序编号\n  scale_y_continuous(limits = c(0, 42)) +\n  labs(x = \"品牌\", y = \"数量\") +\n  theme(axis.text.x = element_text(angle = 42, hjust = 1), \n        legend.position = \"none\")"
-  },
-  {
-    "objectID": "case1pre.html#分组直方图",
-    "href": "case1pre.html#分组直方图",
-    "title": "广州6大品牌奶茶店消费价格分析",
-    "section": "2.3 分组直方图",
-    "text": "2.3 分组直方图\n\n#按单个定性变量分组\ndata %&gt;% \n  ggplot(aes(retail.price, fill = brand))+\n  geom_histogram(breaks = seq(6, 38, 2))+\n  facet_wrap(~brand, ncol = 2) +\n  scale_y_continuous(limits = c(0,60))+\n  scale_fill_brewer(palette  = \"Set1\") +\n  labs(title = \"零售价直方图\",\n       x = \"零售价\",\n       y = \"频数\") +\n  scale_x_continuous(breaks = seq(6, 36, 4),\n                     labels = seq(6, 36, 4)) +\n  theme_bw() +\n  theme(text = element_text(size = 15),\n        legend.position = \"bottom\",\n        legend.text = element_text(size = 10))\n\n\n零售价格：喜茶&gt;茶百道&gt;TANNING&gt;CoCo都可&gt;书亦烧仙草&gt;益禾堂"
-  },
-  {
-    "objectID": "case1pre.html#分组箱线图",
-    "href": "case1pre.html#分组箱线图",
-    "title": "广州6大品牌奶茶店消费价格分析",
-    "section": "2.4 分组箱线图",
-    "text": "2.4 分组箱线图\n\ndata %&gt;% \n  ggplot(aes(retail.price, reorder(brand, retail.price, FUN = median),\n             col = brand))+\n  geom_boxplot()+\n  labs(title =\"六大奶茶品牌零售价格\",\n       x = \"零售价格\",\n       y = \"品牌\", fill = \"品牌\")+\n  theme_bw() +\n  theme(text = element_text(size = 15),\n        legend.position = \"bottom\",\n        legend.text = element_text(size = 10))\n\n\n零售价格：喜茶&gt;茶百道&gt;TANNING&gt;CoCo都可&gt;书亦烧仙草&gt;益禾堂"
-  },
-  {
-    "objectID": "case1pre.html#散点图",
-    "href": "case1pre.html#散点图",
-    "title": "广州6大品牌奶茶店消费价格分析",
-    "section": "2.5 散点图",
-    "text": "2.5 散点图\n\ndata %&gt;% \n  ggplot(aes(retail.price, groupbuy.price,col = brand))+\n  geom_point()+\n  geom_jitter()+\n  geom_smooth(method = lm, se = F) +\n  labs(title = \"零售价格与团购价散点图\",\n       x = \"零售价\",\n       y = \"团购价\") +\n  theme_bw() +\n    theme(text = element_text(size = 15),\n        legend.position = \"bottom\",\n        legend.text = element_text(size = 10))\n\n\n无论在市区、近郊、远郊，同一品牌的团购价格相同。"
-  },
-  {
-    "objectID": "case1pre.html#全样本",
-    "href": "case1pre.html#全样本",
-    "title": "广州6大品牌奶茶店消费价格分析",
-    "section": "3.1 全样本",
-    "text": "3.1 全样本\n\nlibrary(psych)\n\ndata %&gt;% \n  select(retail.price, groupbuy.price, comment.num) %&gt;%\n  describe() %&gt;% \n  select(n, mean, sd, median, min, max, skew, kurtosis)\n\n                 n   mean      sd median min   max skew kurtosis\nretail.price   336  15.60    5.26   15.0   7    35 1.53     1.72\ngroupbuy.price 301  10.85    4.00   10.5   6    18 0.22    -1.15\ncomment.num    336 564.28 1027.57  281.0  13 10598 5.24    36.47"
-  },
-  {
-    "objectID": "case1pre.html#表格中添加分布图像",
-    "href": "case1pre.html#表格中添加分布图像",
-    "title": "广州6大品牌奶茶店消费价格分析",
-    "section": "表格中添加分布图像",
-    "text": "表格中添加分布图像\n{gtExtras}\n\n# library(gtExtras)\n# \n# data %&gt;% \n#   select(retail.price, groupbuy.price) %&gt;%\n#   gt_plt_summary()"
-  },
-  {
-    "objectID": "case1pre.html#表格中添加分布图像-1",
-    "href": "case1pre.html#表格中添加分布图像-1",
-    "title": "广州6大品牌奶茶店消费价格分析",
-    "section": "表格中添加分布图像",
-    "text": "表格中添加分布图像\n{gtExtras}\n\nlibrary(gtExtras)\nretail_group &lt;- data %&gt;% \n  dplyr::select(brand, retail.price) %&gt;%\n  group_by(brand) %&gt;%\n  summarize(mean = mean(retail.price) %&gt;% round(3),\n            median = median(retail.price)%&gt;% round(3),\n            sd = sd(retail.price)%&gt;% round(3),\n            retail_t = list(retail.price))\n\n\nretail_group %&gt;%\n  arrange(desc(mean)) %&gt;% \n  gt() %&gt;% \n  gt_plt_dist(retail_t,\n              type = \"histogram\",\n              line_color = \"purple\",\n              fill_color = \"green\",\n              bw = 1)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nbrand\nmean\nmedian\nsd\nretail_t\n\n\n\n\n喜茶\n27.930\n28\n1.818\n\n\n\n   \n\n\n\n茶百道\n15.603\n16\n1.154\n\n\n\n   \n\n\n\nTANING手挞柠檬茶\n15.023\n15\n1.067\n\n\n\n   \n\n\n\nCoCo都可\n14.391\n14\n2.013\n\n\n\n   \n\n\n\n书亦烧仙草\n13.415\n13\n1.770\n\n\n\n   \n\n\n\n益禾堂\n10.067\n10\n1.286"
-  },
-  {
-    "objectID": "case1pre.html#分品牌零售价格比较",
-    "href": "case1pre.html#分品牌零售价格比较",
-    "title": "广州6大品牌奶茶店消费价格分析",
-    "section": "3.2 分品牌零售价格比较",
-    "text": "3.2 分品牌零售价格比较\n\ndata %&gt;%\n  group_by(brand) %&gt;%\n  summarize(n(),\n            min = min(retail.price),\n            q1 = quantile(retail.price, 0.25),\n            median = median(retail.price),\n            mean = mean(retail.price),\n            q3 = quantile(retail.price, 0.75),\n            max = max(retail.price),\n            sd = sd(retail.price)) %&gt;% \n  arrange(desc(median))\n\n# A tibble: 6 × 9\n  brand            `n()`   min    q1 median  mean    q3   max    sd\n  &lt;chr&gt;            &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1 喜茶                43    24  27       28  27.9  29      35  1.82\n2 茶百道              58    13  15       16  15.6  16      19  1.15\n3 TANING手挞柠檬茶    44    13  14.8     15  15.0  16      18  1.07\n4 CoCo都可            64    11  13       14  14.4  15      23  2.01\n5 书亦烧仙草          82    10  12       13  13.4  14.8    21  1.77\n6 益禾堂              45     7   9       10  10.1  11      13  1.29\n\n\n零售价格：喜茶&gt;茶百道&gt;TANNING&gt;CoCo都可&gt;书亦烧仙草&gt;益禾堂"
-  },
-  {
-    "objectID": "case1pre.html#分区域零售价格比较",
-    "href": "case1pre.html#分区域零售价格比较",
-    "title": "广州6大品牌奶茶店消费价格分析",
-    "section": "3.3 分区域零售价格比较",
-    "text": "3.3 分区域零售价格比较\n\nlibrary(psych)\n\ndata %&gt;%\n  group_by(area) %&gt;%\n  summarize(n(),\n            min = min(retail.price),\n            q1 = quantile(retail.price, 0.25),\n            median = median(retail.price),\n            mean = mean(retail.price),\n            q3 = quantile(retail.price, 0.75),\n            max = max(retail.price),\n            sd = sd(retail.price))%&gt;% \n  arrange(desc(median))\n\n# A tibble: 3 × 9\n  area  `n()`   min    q1 median  mean    q3   max    sd\n  &lt;chr&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1 市区    168     8    13     15  16.5  16.2    35  5.90\n2 近郊    138     7    13     14  14.7  16      30  4.20\n3 远郊     30     8    11     14  14.5  16      28  5.06\n\n\n零售价格：市区&gt;近郊&gt;远郊"
-  },
-  {
-    "objectID": "case1pre.html#section",
-    "href": "case1pre.html#section",
-    "title": "广州6大品牌奶茶店消费价格分析",
+    "objectID": "casereq.html",
+    "href": "casereq.html",
+    "title": "小组案例作业",
     "section": "",
-    "text": "Thanks for your attention！"
+    "text": "选题要求\n运用统计方法分析现实问题。\n\n\n数据要求\n\n微观层面的截面数据\n样本容量大于200\n至少3个定量变量，至少3个定性变量，建议变量个数超过8个\n不要使用其他教材中的例题或习题数据，不要使用虚拟数据\n\n\n\n第3-4章讨论课 (第8周)\n\n在Excel中整理好收集的数据。\n创建项目, 在项目中存放Excel数据文件，代码文件。\n将Excel导入R Studio。\n运用第3-4章方法分析数据\n\n绘制条形图、饼图、直方图、箱线图、散点图等\n计算定量变量的描述性统计量(均值、标准差、中位数、最小值、最大值)\n\n将R的输出结果，及文字说明整理到WORD文档。\n\n\n\n第7-8章讨论课 (第10周)\n\n运用第7-8章方法分析数据\n\n总体均值的区间估计\n单个总体均值的假设检验\n两个总体均值的假设检验\n\n将R的输出结果，及文字说明整理到WORD文档。\n\n\n\n第9-10章讨论课 (第12周)\n\n运用第9-10章方法分析数据\n\n拟合优度检验\n独立性检验\n方差分析\n\n将R的输出结果，及文字说明整理到WORD文档。\n\n\n\n第11章讨论课 (第14周)\n\n运用第11章方法分析数据\n\n相关分析\n回归分析\n\n将R的输出结果，及文字说明整理到WORD文档。\n\n\n\n小组作业汇报 (第16-17周)\n\n每组汇报时间为5-7分钟。\n汇报大纲(PPT 20页左右)：\n\n选题背景\n数据来源\n数据分析\n结论\n经验分享\n\n\n\n\n演示文稿\n\n15-20页左右\n浅色底色, 深色字体, 字号&gt;28\n图表美观，清晰可读性强\n\n\n\n汇报文稿提交要求\n\n将演示文稿转成PDF格式，将PDF文件提交到QQ群“期末汇报”文件夹中\nPDF文件命名格式：小组编号+组长名字+组长班级.pdf\n\n例如：5黄捷欣19国贸1.pdf\n小组编号请查看QQ群中的小组发言时间表\n\n\n\n\n发言时长\n\n5-7分钟, 请演练课堂汇报的时长, 突出重点 。\n发言时有倒计时软件计时, 时间到请结束发言。"
   },
   {
-    "objectID": "chap3ex.html",
-    "href": "chap3ex.html",
-    "title": "教材第3章习题讲评",
+    "objectID": "case1code.html",
+    "href": "case1code.html",
+    "title": "Case 1 based on Chap 3 and Chap 4",
     "section": "",
-    "text": "3.1 定性变量的图表工具\n\n\n\n习题3.1学生习作之一\n\n\n\n\n\n习题3.1学生习作之二\n\n\n\n\n\n习题3.1条形图\n\n\n\n\n\n习题3.1帕累托图\n\n\n\n\n3.2或3.3 定量变量的图表工具\n\n\n\n习题3.2学生习作之一\n\n\n\n\n\n习题3.2学生习作之二\n\n\n\n\n\n习题3.2 直方图\n\n\n\n说明数据分布特点\n\n集中区域，稀疏区域\n数据范围，最大/小值\n对称/右偏/左偏\n\n\n\n\n3.5 对比条形图/环形图\n\n\n\n习题3.5学生习作之一\n\n\n\n\n\n习题3.5对比条形图\n\n\n\n\n\n习题3.5对比条形图\n\n\n\n\n\n习题3.5堆栈条形图\n\n\n\n\n\n习题3.5学生习作之二\n\n\n\n\n\n习题3.5对比环形图\n\n\n\n\n3.6 箱线图\n\n\n\n习题3.6学生习作之一\n\n\n\n\n\n习题3.6学生习作之二\n\n\n\n\n\n习题3.6数据整理——按中位数排序\n\n\n\n\n\n习题3.6箱线图\n\n\n\n\n\n习题3.1学生习作之一\n习题3.1学生习作之二\n习题3.1条形图\n习题3.1帕累托图\n习题3.2学生习作之一\n习题3.2学生习作之二\n习题3.2 直方图\n习题3.5学生习作之一\n习题3.5对比条形图\n习题3.5对比条形图\n习题3.5堆栈条形图\n习题3.5学生习作之二\n习题3.5对比环形图\n习题3.6学生习作之一\n习题3.6学生习作之二\n习题3.6数据整理——按中位数排序\n习题3.6箱线图"
+    "text": "library(tidyverse)\n\n\nlibrary(readxl)\ndata  &lt;- read_excel(\"data/top6.xlsx\")\n\n\n#加载fct_infreq包\nlibrary(forcats)\ndata %&gt;% ggplot(aes(fct_infreq(brand))) + \n  geom_bar(col = 6, fill = 6) +\n  facet_wrap(~area) +\n  guides(x = guide_axis(angle = 45)) +\n  labs(x = \"品牌\")\n\n\n\n\n\n\n\ndata %&gt;% ggplot(aes(fct_infreq(area))) + \n  geom_bar(col = 1, fill = \"cyan\")+\n  facet_wrap(~brand)+\n  guides(x = guide_axis(angle = 45)) +\n  labs(x = \"品牌\")"
   },
   {
-    "objectID": "chap14.html",
-    "href": "chap14.html",
-    "title": "第14章",
+    "objectID": "case1code.html#直方图",
+    "href": "case1code.html#直方图",
+    "title": "Case 1 based on Chap 3 and Chap 4",
+    "section": "直方图",
+    "text": "直方图\n\n普通直方图\n\ndata %&gt;% \n  ggplot(aes(retail.price))+\n  geom_histogram(col = 1, fill = 5, breaks = seq(2, 38, 2)) +\n  labs(title = \"零售价直方图\",\n       x = \"团购价格\",\n       y = \"频数\") +\n  scale_x_continuous(breaks = seq(2, 38, 2),\n                     labels = seq(2, 38, 2)) +\n  theme(text = element_text(size = 15)) \n\n\n\n\n\n\n\ndata %&gt;%\n  filter(!is.na(groupbuy.price)) %&gt;% \n  ggplot(aes(groupbuy.price))+\n  geom_histogram(col = 1, fill = 5, breaks = seq(2, 38, 2)) +\n  labs(title = \"团购价直方图\",\n       x = \"团购价\",\n       y = \"频数\") +\n  scale_x_continuous(breaks = seq(2, 38, 2),\n                     labels = seq(2, 38, 2)) +\n  theme(text = element_text(size = 15)) \n\n\n\n\n\n\n\n\n\n\n分组直方图\n\n#按单个定性变量分组\ndata %&gt;% \n  ggplot(aes(retail.price, fill = area))+\n  geom_histogram()+\n  facet_wrap(~area, ncol = 1) +\n  labs(title = \"零售价直方图\",\n       x = \"零售价\",\n       y = \"频数\") +\n  theme(text = element_text(size = 15)) \n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\n\n\n\n\n\n\ndata %&gt;% \n  ggplot(aes(retail.price, fill = area))+\n  geom_density()+\n  facet_wrap(~area, ncol = 1) +\n  labs(title = \"零售价直方图\",\n       x = \"零售价\",\n       y = \"概率密度\") +\n  theme(text = element_text(size = 15)) \n\n\n\n\n\n\n\ndata %&gt;% \n  ggplot(aes(retail.price, color = brand, fill = brand))+\n  geom_histogram()+\n  facet_wrap(~brand, ncol = 1)+\n  labs(title = \"零售价直方图\",\n       x = \"零售价\",\n       y = \"频数\") +\n  theme(text = element_text(size = 15)) \n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\n\n\n\n\n\n\n#按两个定性变量分组后的直方图\ndata %&gt;% \n  ggplot(aes(retail.price, fill = brand))+\n  geom_histogram(breaks = seq(2, 38, 2))+\n  facet_grid(vars(brand), vars(area)) +\n  labs(title = \"零售价直方图\",\n       x = \"零售价\",\n       y = \"频数\") +\n  theme(text = element_text(size = 10),\n        legend.position = \"bottom\") \n\n\n\n\n\n\n\n\n\n\n概率密度曲线\n\ndata %&gt;% \n  ggplot(aes(retail.price, color = area))+\n  geom_histogram(aes(y = ..density..,\n                 fill = area), breaks = seq(2, 38, 1))+\n  geom_density(lwd = 1, linetype = 1)+\n  facet_wrap(~area,ncol=1)\n\nWarning: The dot-dot notation (`..density..`) was deprecated in ggplot2 3.4.0.\nℹ Please use `after_stat(density)` instead."
+  },
+  {
+    "objectID": "case1code.html#频数折线图",
+    "href": "case1code.html#频数折线图",
+    "title": "Case 1 based on Chap 3 and Chap 4",
+    "section": "频数折线图",
+    "text": "频数折线图\n\n#分组频数折线图\ndata %&gt;% \n  ggplot(aes(retail.price, col = area))+\n  geom_freqpoly(breaks = seq(2, 38, 1))+\n  facet_wrap(~area, ncol = 1)"
+  },
+  {
+    "objectID": "case1code.html#箱线图",
+    "href": "case1code.html#箱线图",
+    "title": "Case 1 based on Chap 3 and Chap 4",
+    "section": "箱线图",
+    "text": "箱线图\n\n简单箱线图\n\ndata %&gt;% \n  ggplot(aes(retail.price))+\n  geom_boxplot()\n\n\n\n\n\n\n\ndata %&gt;%\n  filter(!is.na(groupbuy.price)) %&gt;% \n  ggplot(aes(groupbuy.price))+\n  geom_boxplot()\n\n\n\n\n\n\n\n\n\n\n分组箱线图\n\n#facet_wrap 切面\n#ncol=1 图形排成1列\ndata %&gt;% \n  ggplot(aes(retail.price,col = area)) +\n  geom_boxplot() +\n  facet_wrap(~area, ncol=1) +\n  labs(title = \"零售价格箱线图\",\n       x = \"零售价格\",\n       y = \"频数\") +\n  theme(text = element_text(size = 15))\n\n\n\n\n\n\n\ndata %&gt;% \n  mutate(brand = reorder(brand, retail.price, FUN = median)) %&gt;%  \n  ggplot(aes(retail.price, col = brand)) +\n  geom_boxplot()+\n  facet_wrap(~brand,ncol=1) +\n  labs(title = \"零售价格箱线图\",\n       x = \"零售价格\",\n       y = \"频数\") +\n  theme(text = element_text(size = 10))\n\n\n\n\n\n\n\n\n\n\n按数值大小将箱线图排序\n\n#分组箱线图，箱体按价格降序排列\n#在aes()中设置X轴映射厂家\n#guides(x = guide_axis(n.dodge = 3)) X轴分类标签错位\ndata %&gt;% \n  ggplot(aes(reorder(brand,-retail.price),\n             retail.price,col = brand))+\n  geom_boxplot()+\n  guides(x = guide_axis(n.dodge = 3))+\n  labs(title =\"六大奶茶品牌零售价格\",\n          x = \"品牌\",Y = \"零售价格\")\n\n\n\n\n\n\n\ndata %&gt;% \n  ggplot(aes(retail.price,reorder(brand,-retail.price),\n             col = brand))+\n  geom_boxplot()+\n  labs(title =\"六大奶茶品牌零售价格\",\n       x = \"零售价格\",Y = \"品牌\")\n\n\n\n\n\n\n\ndata %&gt;% \n  ggplot(aes(retail.price,reorder(area,-retail.price),\n             col = area))+\n  geom_boxplot()+\n  labs(title =\"六大奶茶品牌零售价格\",\n       x = \"零售价格\",Y = \"区域\")"
+  },
+  {
+    "objectID": "case1code.html#全样本描述统计",
+    "href": "case1code.html#全样本描述统计",
+    "title": "Case 1 based on Chap 3 and Chap 4",
+    "section": "全样本描述统计",
+    "text": "全样本描述统计\n\n#描述统计\nlibrary(psych)\n\n\nAttaching package: 'psych'\n\n\nThe following objects are masked from 'package:ggplot2':\n\n    %+%, alpha\n\ndescribe(data)\n\n               vars   n   mean      sd median trimmed    mad min     max\nNo                1 336 168.50   97.14  168.5  168.50 124.54   1   336.0\nID                2 336 406.38  241.82  524.5  405.62 345.45  60   759.0\nbrand*            3 336   3.40    1.72    3.0    3.38   1.48   1     6.0\nbranch*           4 334 144.17   83.62  147.5  144.70 108.97   1   283.0\nstar              5 336   3.73    0.36    3.5    3.69   0.00   3     4.5\ncomment.num       6 336 564.28 1027.57  281.0  342.00 245.37  13 10598.0\nretail.price      7 336  15.60    5.26   15.0   14.78   2.97   7    35.0\ngroupbuy.price    8 301  10.85    4.00   10.5   10.57   5.19   6    18.0\ngroupbuy          9 336   0.90    0.31    1.0    0.99   0.00   0     1.0\nvoucher          10 336   0.27    0.44    0.0    0.21   0.00   0     1.0\ndistrict*        11 336   6.35    2.42    6.0    6.23   2.97   1    11.0\narea*            12 336   1.59    0.65    1.5    1.50   0.74   1     3.0\nurban*           13 336   1.50    0.50    1.5    1.50   0.74   1     2.0\n                 range  skew kurtosis    se\nNo               335.0  0.00    -1.21  5.30\nID               699.0 -0.01    -1.64 13.19\nbrand*             5.0  0.12    -1.22  0.09\nbranch*          282.0 -0.05    -1.26  4.58\nstar               1.5  0.65    -0.14  0.02\ncomment.num    10585.0  5.24    36.47 56.06\nretail.price      28.0  1.53     1.72  0.29\ngroupbuy.price    12.0  0.22    -1.15  0.23\ngroupbuy           1.0 -2.58     4.67  0.02\nvoucher            1.0  1.04    -0.91  0.02\ndistrict*         10.0  0.40    -0.73  0.13\narea*              2.0  0.65    -0.61  0.04\nurban*             1.0  0.00    -2.01  0.03\n\nsummary(data)\n\n       No               ID           brand              branch         \n Min.   :  1.00   Min.   : 60.0   Length:336         Length:336        \n 1st Qu.: 84.75   1st Qu.:180.8   Class :character   Class :character  \n Median :168.50   Median :524.5   Mode  :character   Mode  :character  \n Mean   :168.50   Mean   :406.4                                        \n 3rd Qu.:252.25   3rd Qu.:640.2                                        \n Max.   :336.00   Max.   :759.0                                        \n                                                                       \n      star        comment.num       retail.price  groupbuy.price \n Min.   :3.000   Min.   :   13.0   Min.   : 7.0   Min.   : 6.00  \n 1st Qu.:3.500   1st Qu.:  137.5   1st Qu.:13.0   1st Qu.: 6.00  \n Median :3.500   Median :  281.0   Median :15.0   Median :10.50  \n Mean   :3.729   Mean   :  564.3   Mean   :15.6   Mean   :10.85  \n 3rd Qu.:4.000   3rd Qu.:  481.5   3rd Qu.:16.0   3rd Qu.:13.00  \n Max.   :4.500   Max.   :10598.0   Max.   :35.0   Max.   :18.00  \n                                                  NA's   :35     \n    groupbuy         voucher         district             area          \n Min.   :0.0000   Min.   :0.0000   Length:336         Length:336        \n 1st Qu.:1.0000   1st Qu.:0.0000   Class :character   Class :character  \n Median :1.0000   Median :0.0000   Mode  :character   Mode  :character  \n Mean   :0.8958   Mean   :0.2679                                        \n 3rd Qu.:1.0000   3rd Qu.:1.0000                                        \n Max.   :1.0000   Max.   :1.0000                                        \n                                                                        \n    urban          \n Length:336        \n Class :character  \n Mode  :character"
+  },
+  {
+    "objectID": "case1code.html#分组描述统计",
+    "href": "case1code.html#分组描述统计",
+    "title": "Case 1 based on Chap 3 and Chap 4",
+    "section": "分组描述统计",
+    "text": "分组描述统计\n\n#按area分组,报告retail.price的描述性统计量\ndata %&gt;%\n  group_by(area) %&gt;%\n  summarize(n(),\n            min = min(retail.price),\n            q1 = quantile(retail.price, 0.25),\n            median = median(retail.price),\n            mean = mean(retail.price),\n            q3 = quantile(retail.price, 0.75),\n            max = max(retail.price),\n            sd = sd(retail.price))\n\n# A tibble: 3 × 9\n  area  `n()`   min    q1 median  mean    q3   max    sd\n  &lt;chr&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1 市区    168     8    13     15  16.5  16.2    35  5.90\n2 近郊    138     7    13     14  14.7  16      30  4.20\n3 远郊     30     8    11     14  14.5  16      28  5.06\n\n#按area分组,报告retail.price的描述性统计量，表格按mean降序排列\ndistrict_table &lt;- data %&gt;%\n  group_by(district) %&gt;%\n  summarize(n(),\n            min = min(retail.price),\n            q1 = quantile(retail.price, 0.25),\n            median = median(retail.price),\n            mean = mean(retail.price),\n            q3 = quantile(retail.price, 0.75),\n            max = max(retail.price),\n            sd = sd(retail.price)) %&gt;% arrange(desc(mean))\ndistrict_table\n\n# A tibble: 11 × 9\n   district `n()`   min    q1 median  mean    q3   max    sd\n   &lt;chr&gt;    &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n 1 越秀        36    10  14     15    17.1  16      31 5.68 \n 2 海珠        44     8  13     15    16.6  17.2    31 6.09 \n 3 花都         6     9  13.5   15.5  16.5  17.5    28 6.41 \n 4 荔湾        17    11  13     15    16.3  16      29 5.60 \n 5 天河        71     9  13     14    16.3  16      35 6.05 \n 6 南沙         7     8  10.5   14    15.6  19      28 7.04 \n 7 白云        68     9  13     15    15.3  16      30 4.53 \n 8 番禺        48     7  13     14.5  14.8  16      30 4.13 \n 9 增城        15     9  11     14    13.5  14.5    23 3.52 \n10 黄埔        22     8  10.5   12.5  12.6  14.8    16 2.44 \n11 从化         2    11  11.2   11.5  11.5  11.8    12 0.707\n\n#按area分组,报告retail.price的描述性统计量，表格按`n()`降序排列\ndistrict_table &lt;- data %&gt;%\n  group_by(district) %&gt;%\n  summarize(n(),\n            min = min(retail.price),\n            q1 = quantile(retail.price, 0.25),\n            median = median(retail.price),\n            mean = mean(retail.price),\n            q3 = quantile(retail.price, 0.75),\n            max = max(retail.price),\n            sd = sd(retail.price)) %&gt;% arrange(desc(`n()`))\ndistrict_table\n\n# A tibble: 11 × 9\n   district `n()`   min    q1 median  mean    q3   max    sd\n   &lt;chr&gt;    &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n 1 天河        71     9  13     14    16.3  16      35 6.05 \n 2 白云        68     9  13     15    15.3  16      30 4.53 \n 3 番禺        48     7  13     14.5  14.8  16      30 4.13 \n 4 海珠        44     8  13     15    16.6  17.2    31 6.09 \n 5 越秀        36    10  14     15    17.1  16      31 5.68 \n 6 黄埔        22     8  10.5   12.5  12.6  14.8    16 2.44 \n 7 荔湾        17    11  13     15    16.3  16      29 5.60 \n 8 增城        15     9  11     14    13.5  14.5    23 3.52 \n 9 南沙         7     8  10.5   14    15.6  19      28 7.04 \n10 花都         6     9  13.5   15.5  16.5  17.5    28 6.41 \n11 从化         2    11  11.2   11.5  11.5  11.8    12 0.707\n\n#按area分组,报告groupbuy.price的描述性统计量，表格按`n()`降序排列\n#filter(!is.na(groupbuy.price)) 剔除有缺失值的个案\ndistrict_table &lt;- data %&gt;%\n  group_by(area) %&gt;% \n  filter(!is.na(groupbuy.price)) %&gt;% \n  summarize(n(),\n           retail.mean = mean(retail.price),\n           groupbuy.mean = mean(groupbuy.price)) %&gt;% \n           arrange(desc(`n()`))\ndistrict_table\n\n# A tibble: 3 × 4\n  area  `n()` retail.mean groupbuy.mean\n  &lt;chr&gt; &lt;int&gt;       &lt;dbl&gt;         &lt;dbl&gt;\n1 市区    150        16.1         11.7 \n2 近郊    126        14.5         10.2 \n3 远郊     25        15.3          9.36\n\n#按品牌分组,报告retail.price的描述性统计量，表格按`n()`降序排列\n#filter(`n()`&gt;20) 选择分店数量多于20家的品牌\n#MAC：`` option+tilda\nbrand_table &lt;- data %&gt;%\n  group_by(brand) %&gt;%\n  summarize(n(),\n            min = min(retail.price),\n            q1 = quantile(retail.price, 0.25),\n            median = median(retail.price),\n            mean = mean(retail.price),\n            q3 = quantile(retail.price, 0.75),\n            max = max(retail.price),\n            sd = sd(retail.price)) %&gt;% filter(\n              `n()`&gt;20) %&gt;% arrange(desc(mean))\nbrand_table\n\n# A tibble: 6 × 9\n  brand            `n()`   min    q1 median  mean    q3   max    sd\n  &lt;chr&gt;            &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1 喜茶                43    24  27       28  27.9  29      35  1.82\n2 茶百道              58    13  15       16  15.6  16      19  1.15\n3 TANING手挞柠檬茶    44    13  14.8     15  15.0  16      18  1.07\n4 CoCo都可            64    11  13       14  14.4  15      23  2.01\n5 书亦烧仙草          82    10  12       13  13.4  14.8    21  1.77\n6 益禾堂              45     7   9       10  10.1  11      13  1.29\n\n#按brand, area两个变量分组\n\nbrand_table &lt;- data %&gt;%\n  group_by(brand, area) %&gt;%\n  summarize(n(),\n            min = min(retail.price),\n            q1 = quantile(retail.price, 0.25),\n            median = median(retail.price),\n            mean = mean(retail.price),\n            q3 = quantile(retail.price, 0.75),\n            max = max(retail.price),\n            sd = sd(retail.price)) %&gt;% filter(\n              `n()`&gt;10) %&gt;% arrange(desc(mean))\n\n`summarise()` has grouped output by 'brand'. You can override using the\n`.groups` argument.\n\nbrand_table\n\n# A tibble: 11 × 10\n# Groups:   brand [6]\n   brand            area  `n()`   min    q1 median  mean    q3   max    sd\n   &lt;chr&gt;            &lt;chr&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n 1 喜茶             市区     32    24  27     27.5  27.9  28.2    35 1.95 \n 2 茶百道           市区     23    13  15     16    15.7  16.5    18 1.27 \n 3 茶百道           近郊     32    14  15     15    15.4  16      19 1.01 \n 4 TANING手挞柠檬茶 市区     26    13  15     15    15.0  15      18 1.08 \n 5 TANING手挞柠檬茶 近郊     16    13  14.8   15    14.9  16      16 0.998\n 6 CoCo都可         近郊     21    12  13     14    14.4  16      20 2.04 \n 7 CoCo都可         市区     37    11  13     14    14.2  15      18 1.59 \n 8 书亦烧仙草       近郊     39    10  12.5   14    13.6  15      16 1.43 \n 9 书亦烧仙草       市区     33    10  12     13    13.2  14      16 1.72 \n10 益禾堂           市区     17     8  10     10    10.4  11      13 1.18 \n11 益禾堂           近郊     21     7   9     10    10    11      13 1.45"
+  },
+  {
+    "objectID": "case1code.html#总体均值的区间估计",
+    "href": "case1code.html#总体均值的区间估计",
+    "title": "Case 1 based on Chap 3 and Chap 4",
+    "section": "总体均值的区间估计",
+    "text": "总体均值的区间估计\n\nt.test(data$retail.price)\n\n\n    One Sample t-test\n\ndata:  data$retail.price\nt = 54.381, df = 335, p-value &lt; 2.2e-16\nalternative hypothesis: true mean is not equal to 0\n95 percent confidence interval:\n 15.03399 16.16244\nsample estimates:\nmean of x \n 15.59821 \n\n# retail.price总体均值的95%的区间估计\nc(t.test(data$retail.price)$conf.int[1],\nt.test(data$retail.price)$conf.int[2])\n\n[1] 15.03399 16.16244"
+  },
+  {
+    "objectID": "case1code.html#总体方差的区间估计",
+    "href": "case1code.html#总体方差的区间估计",
+    "title": "Case 1 based on Chap 3 and Chap 4",
+    "section": "总体方差的区间估计",
+    "text": "总体方差的区间估计\n\nlibrary(EnvStats)\n\n\nAttaching package: 'EnvStats'\n\n\nThe following objects are masked from 'package:stats':\n\n    predict, predict.lm\n\n\nThe following object is masked from 'package:base':\n\n    print.default\n\nvarTest(data$retail.price)\n\n$statistic\nChi-Squared \n   9260.759 \n\n$parameters\n df \n335 \n\n$p.value\n[1] 0\n\n$estimate\nvariance \n27.64406 \n\n$null.value\nvariance \n       1 \n\n$alternative\n[1] \"two.sided\"\n\n$method\n[1] \"Chi-Squared Test on Variance\"\n\n$data.name\n[1] \"data$retail.price\"\n\n$conf.int\n     LCL      UCL \n23.89261 32.35905 \nattr(,\"conf.level\")\n[1] 0.95\n\nattr(,\"class\")\n[1] \"htestEnvStats\"\n\n# retail.price总体方差的95%的区间估计\nc(varTest(data$retail.price)$conf.int[1],\nvarTest(data$retail.price)$conf.int[2])\n\n     LCL      UCL \n23.89261 32.35905"
+  },
+  {
+    "objectID": "case1code.html#总体均值的t检验",
+    "href": "case1code.html#总体均值的t检验",
+    "title": "Case 1 based on Chap 3 and Chap 4",
+    "section": "总体均值的t检验",
+    "text": "总体均值的t检验\n\nmean(data$retail.price)\n\n[1] 15.59821\n\n#检验retail.price总体均值是否大于15.5？\n#右侧检验，显著性水平为0.01\nt.test(data$retail.price,alter = \"greater\", mu = 15.5, conf.level = 0.01)\n\n\n    One Sample t-test\n\ndata:  data$retail.price\nt = 0.34241, df = 335, p-value = 0.3661\nalternative hypothesis: true mean is greater than 15.5\n1 percent confidence interval:\n 16.2687     Inf\nsample estimates:\nmean of x \n 15.59821 \n\n# p-value为0.001,拒绝原假设。"
+  },
+  {
+    "objectID": "case1code.html#总体方差的卡方检验",
+    "href": "case1code.html#总体方差的卡方检验",
+    "title": "Case 1 based on Chap 3 and Chap 4",
+    "section": "总体方差的卡方检验",
+    "text": "总体方差的卡方检验"
+  },
+  {
+    "objectID": "case1code.html#两个总体方差的f检验",
+    "href": "case1code.html#两个总体方差的f检验",
+    "title": "Case 1 based on Chap 3 and Chap 4",
+    "section": "两个总体方差的F检验",
+    "text": "两个总体方差的F检验"
+  },
+  {
+    "objectID": "case1code.html#两个总体均值的t检验",
+    "href": "case1code.html#两个总体均值的t检验",
+    "title": "Case 1 based on Chap 3 and Chap 4",
+    "section": "两个总体均值的t检验",
+    "text": "两个总体均值的t检验"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "统计学25春",
     "section": "",
-    "text": "第14章 指数\n\n讲义\n\n教学视频\n\nExcel 为什么要把名义收入转换为实际收入？\n\n习题讲评\n\n\n复习\n\n知识点思维导图 mindmap"
-  },
-  {
-    "objectID": "projects.html#project-2",
-    "href": "projects.html#project-2",
-    "title": "Projects",
-    "section": "Project 2",
-    "text": "Project 2"
-  },
-  {
-    "objectID": "projects.html#project-3",
-    "href": "projects.html#project-3",
-    "title": "Projects",
-    "section": "Project 3",
-    "text": "Project 3"
+    "text": "欢迎访问《统计学》课程网站！\nR语言与统计应用课程网站\n\n教材\n\n统计学(第8版), 贾俊平 何晓群 金勇进编著，中国人民大学出版社,2021.\n\n下载教材配套数据文件\n教学软件\n\nMicrosoft Excel 2016或以上版本 \n\n注意：不是WPS Excel \n\n\nR https://www.r-project.org/\nR Studio https://posit.co/download/rstudio-desktop/\n教学视频\nExcel数据分析实战\nR数据分析实战\n教学平台\n91速课：考勤，测验等\n在91速课中设置姓名和学号的方法\n\nQQ群：提交作业，提问答疑\n\n参考书\n下载\n课程考核\n\n平时成绩：50%\n\n个人作业、测验 ：30%\n小组作业：16%\n考勤： 4%\n\n期末考试： 50%\n\n\n\n\n\nclick here"
   },
   {
     "objectID": "case.html",
@@ -382,7 +354,7 @@
     "href": "case.html#实验报告要求",
     "title": "案例与实验报告",
     "section": "实验报告要求",
-    "text": "实验报告要求\n\n实验报告写作要求\n实验报告常见问题"
+    "text": "实验报告要求\n\n实验报告写作要求\n实验报告常见问题\n实验报告期末汇报要求"
   },
   {
     "objectID": "case.html#往届实验报告",
@@ -403,7 +375,7 @@
     "href": "case1comment.html",
     "title": "第3-4章小组作业讲评",
     "section": "",
-    "text": "数据来源的说明\n\n\n\n数据采集的时点\n\n\n\n\n合并小类\n\n\n\n将小类合并为“其他”\n\n\n\n\n\n将小类合并为“其他”\n\n\n\n\n\n注意大小写\n\n\n\n\n组距的易读性\n\n\n\n简洁易读\n\n\n\n\n\n组距的可读性\n\n\n\n\n\n开口组\n\n\n\n\n表格还是图形？\n\n\n\n\n图形中的标签\n\n\n\n\n\n表格与文字\n\n\n\n\n图形标题\n\n\n\n堆栈百分比条形图\n\n\n#图形美化\n\n\n\n饼图的美化\n\n\n\n\n\n箱线图美化\n\n\n\n\n\n小数位数\n\n\n\n\n如何提出要研究的问题？\n\n\n\n\n文字堆砌\n\n\n\n\n研究结论的提炼\n\n\n\n“多”的量化\n\n\n \n\n\n\n文字与表格的对应\n\n\n\n\n\n\n数据采集的时点\n将小类合并为“其他”\n将小类合并为“其他”\n注意大小写\n简洁易读\n组距的可读性\n开口组\n表格与文字\n堆栈百分比条形图\n饼图的美化\n箱线图美化\n小数位数\n“多”的量化\n文字与表格的对应"
+    "text": "数据来源的说明\n\n\n\n数据采集的时点\n\n\n\n\n合并小类\n\n\n\n将小类合并为“其他”\n\n\n\n\n\n将小类合并为“其他”\n\n\n\n\n\n注意大小写\n\n\n\n\n组距的易读性\n\n\n\n简洁易读\n\n\n\n\n\n组距的可读性\n\n\n\n\n\n开口组\n\n\n\n\n表格还是图形？\n\n\n\n\n图形中的标签\n\n\n\n\n\n表格与文字\n\n\n\n\n图形标题\n\n\n\n堆栈百分比条形图\n\n\n#图形美化\n\n\n\n饼图的美化\n\n\n\n\n\n箱线图美化\n\n\n\n\n\n小数位数\n\n\n\n\n如何提出要研究的问题？\n\n\n\n\n文字堆砌\n\n\n\n\n研究结论的提炼\n\n\n\n“多”的量化\n\n\n \n\n\n\n文字与表格的对应"
   },
   {
     "objectID": "chap10.html",
@@ -431,7 +403,7 @@
     "href": "case3comment.html",
     "title": "第9-10章小组作业讲评",
     "section": "",
-    "text": "卡方检验的适用条件\n期望频数小于5的单元格个数不能超过20%。\n解决办法：合并小类别\n\n\n\n期望频数小于5的单元格超过20%\n\n\n\n\n\n期望频数小于5的单元格超过20%\n\n\n\n\n拟合优度检验\n\n\n\n优秀示例\n\n\n\n\n独立性检验研究结论的提炼\n得出“行变量和列变量不独立”的结论后，需要概括出行变量和列变量的联合分布的特征，二者有何关联。\n计算行的百分比，或者列的百分比，归纳出行变量和列变量联合分布的特征。\n\n\n\n结论不够具体\n\n\n\n\n方差分析研究结论的提炼\n得出“不同组别的均值不同”的结论后，需要概括出各个组别的均值有何差距，大小排序。\n\n\n\n需要列出四种变速箱的二手车的价格均值排序\n\n\n\n\n\n结论有误，需要概括“离职和未离职的员工年龄的均值有何差别？\n\n\n \n\n\n\n优秀示例\n\n\n\n\n\n期望频数小于5的单元格超过20%\n期望频数小于5的单元格超过20%\n优秀示例\n结论不够具体\n需要列出四种变速箱的二手车的价格均值排序\n结论有误，需要概括“离职和未离职的员工年龄的均值有何差别？\n优秀示例"
+    "text": "卡方检验的适用条件\n期望频数小于5的单元格个数不能超过20%。\n解决办法：合并小类别\n\n\n\n期望频数小于5的单元格超过20%\n\n\n\n\n\n期望频数小于5的单元格超过20%\n\n\n\n\n拟合优度检验\n\n\n\n优秀示例\n\n\n\n\n独立性检验研究结论的提炼\n得出“行变量和列变量不独立”的结论后，需要概括出行变量和列变量的联合分布的特征，二者有何关联。\n计算行的百分比，或者列的百分比，归纳出行变量和列变量联合分布的特征。\n\n\n\n结论不够具体\n\n\n\n\n方差分析研究结论的提炼\n得出“不同组别的均值不同”的结论后，需要概括出各个组别的均值有何差距，大小排序。\n\n\n\n需要列出四种变速箱的二手车的价格均值排序\n\n\n\n\n\n结论有误，需要概括“离职和未离职的员工年龄的均值有何差别？\n\n\n \n\n\n\n优秀示例"
   },
   {
     "objectID": "chap8.html",
@@ -613,14 +585,14 @@
     "href": "chap8ex.html",
     "title": "第8章教材习题学生习作点评",
     "section": "",
-    "text": "优秀习作\n\n\n\n\n\n优秀习作\n\n\n\n\n\n优秀习作\n\n\n\n\n\n作答不完整\n\n\n\n\n\n过程不够详细\n\n\n\n\n\n优秀习作\n优秀习作\n优秀习作\n作答不完整\n过程不够详细"
+    "text": "优秀习作\n\n\n\n\n\n优秀习作\n\n\n\n\n\n优秀习作\n\n\n\n\n\n作答不完整\n\n\n\n\n\n过程不够详细"
   },
   {
     "objectID": "chap9ex.html",
     "href": "chap9ex.html",
     "title": "第9章教材习题学生习作点评",
     "section": "",
-    "text": "优秀习作\n\n\n\n\n\n优秀习作\n\n\n\n\n\n繁琐\n\n\n\n\n\n原假设和备择假设表述不完整；结论不完整\n\n\n请不要乱提交，制造作业已提交的假象。\n\n\n\n优秀习作\n优秀习作\n繁琐\n原假设和备择假设表述不完整；结论不完整"
+    "text": "优秀习作\n\n\n\n\n\n优秀习作\n\n\n\n\n\n繁琐\n\n\n\n\n\n原假设和备择假设表述不完整；结论不完整\n\n\n请不要乱提交，制造作业已提交的假象。"
   },
   {
     "objectID": "chap11.html",
@@ -739,112 +711,217 @@
     "href": "chap1_slide.html#本章总结",
     "title": "第1章 导论",
     "section": "本章总结",
-    "text": "本章总结\n\n\n\n\n\nhttps://lizongzhang.github.io/excelstat"
+    "text": "本章总结"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "统计学25春",
+    "objectID": "chap14.html",
+    "href": "chap14.html",
+    "title": "第14章",
     "section": "",
-    "text": "欢迎访问《统计学》课程网站！\nR语言与统计应用课程网站\n\n教材\n\n统计学(第8版), 贾俊平 何晓群 金勇进编著，中国人民大学出版社,2021.\n\n下载教材配套数据文件\n教学软件\n\nMicrosoft Excel 2016或以上版本 \n\n注意：不是WPS Excel \n\n\nR https://www.r-project.org/\nR Studio https://posit.co/download/rstudio-desktop/\n教学视频\nExcel数据分析实战\nR数据分析实战\n教学平台\n91速课：考勤，测验等\n在91速课中设置姓名和学号的方法\n\nQQ群：提交作业，提问答疑\n\n参考书\n下载\n课程考核\n\n平时成绩：50%\n\n个人作业、测验 ：30%\n小组作业：16%\n考勤： 4%\n\n期末考试： 50%\n\n\n\n\n\nclick here"
+    "text": "第14章 指数\n\n讲义\n\n教学视频\n\nExcel 为什么要把名义收入转换为实际收入？\n\n习题讲评\n\n\n复习\n\n知识点思维导图 mindmap"
   },
   {
-    "objectID": "case1code.html",
-    "href": "case1code.html",
-    "title": "Case 1 based on Chap 3 and Chap 4",
+    "objectID": "chap3ex.html",
+    "href": "chap3ex.html",
+    "title": "教材第3章习题讲评",
     "section": "",
-    "text": "library(tidyverse)\n\n\nlibrary(readxl)\ndata  &lt;- read_excel(\"data/top6.xlsx\")\n\n\n#加载fct_infreq包\nlibrary(forcats)\ndata %&gt;% ggplot(aes(fct_infreq(brand))) + \n  geom_bar(col = 6, fill = 6) +\n  facet_wrap(~area) +\n  guides(x = guide_axis(angle = 45)) +\n  labs(x = \"品牌\")\n\n\n\n\n\n\n\ndata %&gt;% ggplot(aes(fct_infreq(area))) + \n  geom_bar(col = 1, fill = \"cyan\")+\n  facet_wrap(~brand)+\n  guides(x = guide_axis(angle = 45)) +\n  labs(x = \"品牌\")"
+    "text": "3.1 定性变量的图表工具\n\n\n\n习题3.1学生习作之一\n\n\n\n\n\n习题3.1学生习作之二\n\n\n\n\n\n习题3.1条形图\n\n\n\n\n\n习题3.1帕累托图\n\n\n\n\n3.2或3.3 定量变量的图表工具\n\n\n\n习题3.2学生习作之一\n\n\n\n\n\n习题3.2学生习作之二\n\n\n\n\n\n习题3.2 直方图\n\n\n\n说明数据分布特点\n\n集中区域，稀疏区域\n数据范围，最大/小值\n对称/右偏/左偏\n\n\n\n\n3.5 对比条形图/环形图\n\n\n\n习题3.5学生习作之一\n\n\n\n\n\n习题3.5对比条形图\n\n\n\n\n\n习题3.5对比条形图\n\n\n\n\n\n习题3.5堆栈条形图\n\n\n\n\n\n习题3.5学生习作之二\n\n\n\n\n\n习题3.5对比环形图\n\n\n\n\n3.6 箱线图\n\n\n\n习题3.6学生习作之一\n\n\n\n\n\n习题3.6学生习作之二\n\n\n\n\n\n习题3.6数据整理——按中位数排序\n\n\n\n\n\n习题3.6箱线图"
   },
   {
-    "objectID": "case1code.html#直方图",
-    "href": "case1code.html#直方图",
-    "title": "Case 1 based on Chap 3 and Chap 4",
-    "section": "直方图",
-    "text": "直方图\n\n普通直方图\n\ndata %&gt;% \n  ggplot(aes(retail.price))+\n  geom_histogram(col = 1, fill = 5, breaks = seq(2, 38, 2)) +\n  labs(title = \"零售价直方图\",\n       x = \"团购价格\",\n       y = \"频数\") +\n  scale_x_continuous(breaks = seq(2, 38, 2),\n                     labels = seq(2, 38, 2)) +\n  theme(text = element_text(size = 15)) \n\n\n\n\n\n\n\ndata %&gt;%\n  filter(!is.na(groupbuy.price)) %&gt;% \n  ggplot(aes(groupbuy.price))+\n  geom_histogram(col = 1, fill = 5, breaks = seq(2, 38, 2)) +\n  labs(title = \"团购价直方图\",\n       x = \"团购价\",\n       y = \"频数\") +\n  scale_x_continuous(breaks = seq(2, 38, 2),\n                     labels = seq(2, 38, 2)) +\n  theme(text = element_text(size = 15)) \n\n\n\n\n\n\n\n\n\n\n分组直方图\n\n#按单个定性变量分组\ndata %&gt;% \n  ggplot(aes(retail.price, fill = area))+\n  geom_histogram()+\n  facet_wrap(~area, ncol = 1) +\n  labs(title = \"零售价直方图\",\n       x = \"零售价\",\n       y = \"频数\") +\n  theme(text = element_text(size = 15)) \n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\n\n\n\n\n\n\ndata %&gt;% \n  ggplot(aes(retail.price, fill = area))+\n  geom_density()+\n  facet_wrap(~area, ncol = 1) +\n  labs(title = \"零售价直方图\",\n       x = \"零售价\",\n       y = \"概率密度\") +\n  theme(text = element_text(size = 15)) \n\n\n\n\n\n\n\ndata %&gt;% \n  ggplot(aes(retail.price, color = brand, fill = brand))+\n  geom_histogram()+\n  facet_wrap(~brand, ncol = 1)+\n  labs(title = \"零售价直方图\",\n       x = \"零售价\",\n       y = \"频数\") +\n  theme(text = element_text(size = 15)) \n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\n\n\n\n\n\n\n#按两个定性变量分组后的直方图\ndata %&gt;% \n  ggplot(aes(retail.price, fill = brand))+\n  geom_histogram(breaks = seq(2, 38, 2))+\n  facet_grid(vars(brand), vars(area)) +\n  labs(title = \"零售价直方图\",\n       x = \"零售价\",\n       y = \"频数\") +\n  theme(text = element_text(size = 10),\n        legend.position = \"bottom\") \n\n\n\n\n\n\n\n\n\n\n概率密度曲线\n\ndata %&gt;% \n  ggplot(aes(retail.price, color = area))+\n  geom_histogram(aes(y = ..density..,\n                 fill = area), breaks = seq(2, 38, 1))+\n  geom_density(lwd = 1, linetype = 1)+\n  facet_wrap(~area,ncol=1)\n\nWarning: The dot-dot notation (`..density..`) was deprecated in ggplot2 3.4.0.\nℹ Please use `after_stat(density)` instead."
+    "objectID": "case1pre.html#数据和变量",
+    "href": "case1pre.html#数据和变量",
+    "title": "广州6大品牌奶茶店消费价格分析",
+    "section": "1 数据和变量",
+    "text": "1 数据和变量\n数据来源：大众点评网，广州六大品牌奶茶店\n样本容量：336\n数据来源：大众点评网，广州6大奶茶品牌\n零售价格: retail.price\n团购价格：group.price\n品牌： brand\n区位：area\n市区：荔湾，越秀，天河，海珠\n近郊：白云，番禺，黄埔\n远郊：花都，从化，南沙，增城"
   },
   {
-    "objectID": "case1code.html#频数折线图",
-    "href": "case1code.html#频数折线图",
-    "title": "Case 1 based on Chap 3 and Chap 4",
-    "section": "频数折线图",
-    "text": "频数折线图\n\n#分组频数折线图\ndata %&gt;% \n  ggplot(aes(retail.price, col = area))+\n  geom_freqpoly(breaks = seq(2, 38, 1))+\n  facet_wrap(~area, ncol = 1)"
+    "objectID": "case1pre.html#图形工具",
+    "href": "case1pre.html#图形工具",
+    "title": "广州6大品牌奶茶店消费价格分析",
+    "section": "2 图形工具",
+    "text": "2 图形工具\n2.1 帕累托图\n2.2 分组条形图\n2.3 分组直方图\n2.4 分组箱线图\n2.5 散点图"
   },
   {
-    "objectID": "case1code.html#箱线图",
-    "href": "case1code.html#箱线图",
-    "title": "Case 1 based on Chap 3 and Chap 4",
-    "section": "箱线图",
-    "text": "箱线图\n\n简单箱线图\n\ndata %&gt;% \n  ggplot(aes(retail.price))+\n  geom_boxplot()\n\n\n\n\n\n\n\ndata %&gt;%\n  filter(!is.na(groupbuy.price)) %&gt;% \n  ggplot(aes(groupbuy.price))+\n  geom_boxplot()\n\n\n\n\n\n\n\n\n\n\n分组箱线图\n\n#facet_wrap 切面\n#ncol=1 图形排成1列\ndata %&gt;% \n  ggplot(aes(retail.price,col = area)) +\n  geom_boxplot() +\n  facet_wrap(~area, ncol=1) +\n  labs(title = \"零售价格箱线图\",\n       x = \"零售价格\",\n       y = \"频数\") +\n  theme(text = element_text(size = 15))\n\n\n\n\n\n\n\ndata %&gt;% \n  mutate(brand = reorder(brand, retail.price, FUN = median)) %&gt;%  \n  ggplot(aes(retail.price, col = brand)) +\n  geom_boxplot()+\n  facet_wrap(~brand,ncol=1) +\n  labs(title = \"零售价格箱线图\",\n       x = \"零售价格\",\n       y = \"频数\") +\n  theme(text = element_text(size = 10))\n\n\n\n\n\n\n\n\n\n\n按数值大小将箱线图排序\n\n#分组箱线图，箱体按价格降序排列\n#在aes()中设置X轴映射厂家\n#guides(x = guide_axis(n.dodge = 3)) X轴分类标签错位\ndata %&gt;% \n  ggplot(aes(reorder(brand,-retail.price),\n             retail.price,col = brand))+\n  geom_boxplot()+\n  guides(x = guide_axis(n.dodge = 3))+\n  labs(title =\"六大奶茶品牌零售价格\",\n          x = \"品牌\",Y = \"零售价格\")\n\n\n\n\n\n\n\ndata %&gt;% \n  ggplot(aes(retail.price,reorder(brand,-retail.price),\n             col = brand))+\n  geom_boxplot()+\n  labs(title =\"六大奶茶品牌零售价格\",\n       x = \"零售价格\",Y = \"品牌\")\n\n\n\n\n\n\n\ndata %&gt;% \n  ggplot(aes(retail.price,reorder(area,-retail.price),\n             col = area))+\n  geom_boxplot()+\n  labs(title =\"六大奶茶品牌零售价格\",\n       x = \"零售价格\",Y = \"区域\")"
+    "objectID": "case1pre.html#帕累托图",
+    "href": "case1pre.html#帕累托图",
+    "title": "广州6大品牌奶茶店消费价格分析",
+    "section": "2.1 帕累托图",
+    "text": "2.1 帕累托图\n\nlibrary(tidyverse)\nlibrary(readxl)\ndata  &lt;- read_excel(\"data/top6.xlsx\")\n\nlibrary(forcats)\ndata %&gt;% ggplot(aes(fct_infreq(brand), fill = brand)) + \n  geom_bar() +\n  geom_text(stat = \"count\", aes(label = after_stat(count)), vjust = -0.5)+ \n  scale_y_continuous(limits = c(0,100))+\n  guides(x = guide_axis(angle = 45)) +\n  labs(x = \"品牌\", fill = \"品牌\") +\n  theme_bw() +\n  theme(text = element_text(size = 15),\n        legend.position = \"bottom\",\n        legend.text = element_text(size = 10))"
   },
   {
-    "objectID": "case1code.html#全样本描述统计",
-    "href": "case1code.html#全样本描述统计",
-    "title": "Case 1 based on Chap 3 and Chap 4",
-    "section": "全样本描述统计",
-    "text": "全样本描述统计\n\n#描述统计\nlibrary(psych)\n\n\nAttaching package: 'psych'\n\n\nThe following objects are masked from 'package:ggplot2':\n\n    %+%, alpha\n\ndescribe(data)\n\n               vars   n   mean      sd median trimmed    mad min     max\nNo                1 336 168.50   97.14  168.5  168.50 124.54   1   336.0\nID                2 336 406.38  241.82  524.5  405.62 345.45  60   759.0\nbrand*            3 336   3.40    1.72    3.0    3.38   1.48   1     6.0\nbranch*           4 334 144.17   83.62  147.5  144.70 108.97   1   283.0\nstar              5 336   3.73    0.36    3.5    3.69   0.00   3     4.5\ncomment.num       6 336 564.28 1027.57  281.0  342.00 245.37  13 10598.0\nretail.price      7 336  15.60    5.26   15.0   14.78   2.97   7    35.0\ngroupbuy.price    8 301  10.85    4.00   10.5   10.57   5.19   6    18.0\ngroupbuy          9 336   0.90    0.31    1.0    0.99   0.00   0     1.0\nvoucher          10 336   0.27    0.44    0.0    0.21   0.00   0     1.0\ndistrict*        11 336   6.35    2.42    6.0    6.23   2.97   1    11.0\narea*            12 336   1.59    0.65    1.5    1.50   0.74   1     3.0\nurban*           13 336   1.50    0.50    1.5    1.50   0.74   1     2.0\n                 range  skew kurtosis    se\nNo               335.0  0.00    -1.21  5.30\nID               699.0 -0.01    -1.64 13.19\nbrand*             5.0  0.12    -1.22  0.09\nbranch*          282.0 -0.05    -1.26  4.58\nstar               1.5  0.65    -0.14  0.02\ncomment.num    10585.0  5.24    36.47 56.06\nretail.price      28.0  1.53     1.72  0.29\ngroupbuy.price    12.0  0.22    -1.15  0.23\ngroupbuy           1.0 -2.58     4.67  0.02\nvoucher            1.0  1.04    -0.91  0.02\ndistrict*         10.0  0.40    -0.73  0.13\narea*              2.0  0.65    -0.61  0.04\nurban*             1.0  0.00    -2.01  0.03\n\nsummary(data)\n\n       No               ID           brand              branch         \n Min.   :  1.00   Min.   : 60.0   Length:336         Length:336        \n 1st Qu.: 84.75   1st Qu.:180.8   Class :character   Class :character  \n Median :168.50   Median :524.5   Mode  :character   Mode  :character  \n Mean   :168.50   Mean   :406.4                                        \n 3rd Qu.:252.25   3rd Qu.:640.2                                        \n Max.   :336.00   Max.   :759.0                                        \n                                                                       \n      star        comment.num       retail.price  groupbuy.price \n Min.   :3.000   Min.   :   13.0   Min.   : 7.0   Min.   : 6.00  \n 1st Qu.:3.500   1st Qu.:  137.5   1st Qu.:13.0   1st Qu.: 6.00  \n Median :3.500   Median :  281.0   Median :15.0   Median :10.50  \n Mean   :3.729   Mean   :  564.3   Mean   :15.6   Mean   :10.85  \n 3rd Qu.:4.000   3rd Qu.:  481.5   3rd Qu.:16.0   3rd Qu.:13.00  \n Max.   :4.500   Max.   :10598.0   Max.   :35.0   Max.   :18.00  \n                                                  NA's   :35     \n    groupbuy         voucher         district             area          \n Min.   :0.0000   Min.   :0.0000   Length:336         Length:336        \n 1st Qu.:1.0000   1st Qu.:0.0000   Class :character   Class :character  \n Median :1.0000   Median :0.0000   Mode  :character   Mode  :character  \n Mean   :0.8958   Mean   :0.2679                                        \n 3rd Qu.:1.0000   3rd Qu.:1.0000                                        \n Max.   :1.0000   Max.   :1.0000                                        \n                                                                        \n    urban          \n Length:336        \n Class :character  \n Mode  :character"
+    "objectID": "case1pre.html#分组条形图",
+    "href": "case1pre.html#分组条形图",
+    "title": "广州6大品牌奶茶店消费价格分析",
+    "section": "2.2 分组条形图",
+    "text": "2.2 分组条形图\n\ndata %&gt;%\n  group_by(area, brand) %&gt;%\n  summarise(count = n(), .groups = \"drop\") %&gt;% \n  mutate(brand_order = paste(brand, area, rank(-count), sep = \"_\"))  %&gt;% \n  ggplot(aes(reorder(brand_order, -count),\n             count, fill = brand)) +\n  geom_col()+\n  facet_wrap(~ area, scales = \"free_x\", ncol = 3) +\n  geom_text(aes(label = count), vjust = -0.5) +\n  scale_x_discrete(labels = function(x) gsub(\"_.+$\", \"\", x)) + # 移除排序编号\n  scale_y_continuous(limits = c(0, 42)) +\n  labs(x = \"品牌\", y = \"数量\") +\n  theme(axis.text.x = element_text(angle = 42, hjust = 1), \n        legend.position = \"none\")"
   },
   {
-    "objectID": "case1code.html#分组描述统计",
-    "href": "case1code.html#分组描述统计",
-    "title": "Case 1 based on Chap 3 and Chap 4",
-    "section": "分组描述统计",
-    "text": "分组描述统计\n\n#按area分组,报告retail.price的描述性统计量\ndata %&gt;%\n  group_by(area) %&gt;%\n  summarize(n(),\n            min = min(retail.price),\n            q1 = quantile(retail.price, 0.25),\n            median = median(retail.price),\n            mean = mean(retail.price),\n            q3 = quantile(retail.price, 0.75),\n            max = max(retail.price),\n            sd = sd(retail.price))\n\n# A tibble: 3 × 9\n  area  `n()`   min    q1 median  mean    q3   max    sd\n  &lt;chr&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1 市区    168     8    13     15  16.5  16.2    35  5.90\n2 近郊    138     7    13     14  14.7  16      30  4.20\n3 远郊     30     8    11     14  14.5  16      28  5.06\n\n#按area分组,报告retail.price的描述性统计量，表格按mean降序排列\ndistrict_table &lt;- data %&gt;%\n  group_by(district) %&gt;%\n  summarize(n(),\n            min = min(retail.price),\n            q1 = quantile(retail.price, 0.25),\n            median = median(retail.price),\n            mean = mean(retail.price),\n            q3 = quantile(retail.price, 0.75),\n            max = max(retail.price),\n            sd = sd(retail.price)) %&gt;% arrange(desc(mean))\ndistrict_table\n\n# A tibble: 11 × 9\n   district `n()`   min    q1 median  mean    q3   max    sd\n   &lt;chr&gt;    &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n 1 越秀        36    10  14     15    17.1  16      31 5.68 \n 2 海珠        44     8  13     15    16.6  17.2    31 6.09 \n 3 花都         6     9  13.5   15.5  16.5  17.5    28 6.41 \n 4 荔湾        17    11  13     15    16.3  16      29 5.60 \n 5 天河        71     9  13     14    16.3  16      35 6.05 \n 6 南沙         7     8  10.5   14    15.6  19      28 7.04 \n 7 白云        68     9  13     15    15.3  16      30 4.53 \n 8 番禺        48     7  13     14.5  14.8  16      30 4.13 \n 9 增城        15     9  11     14    13.5  14.5    23 3.52 \n10 黄埔        22     8  10.5   12.5  12.6  14.8    16 2.44 \n11 从化         2    11  11.2   11.5  11.5  11.8    12 0.707\n\n#按area分组,报告retail.price的描述性统计量，表格按`n()`降序排列\ndistrict_table &lt;- data %&gt;%\n  group_by(district) %&gt;%\n  summarize(n(),\n            min = min(retail.price),\n            q1 = quantile(retail.price, 0.25),\n            median = median(retail.price),\n            mean = mean(retail.price),\n            q3 = quantile(retail.price, 0.75),\n            max = max(retail.price),\n            sd = sd(retail.price)) %&gt;% arrange(desc(`n()`))\ndistrict_table\n\n# A tibble: 11 × 9\n   district `n()`   min    q1 median  mean    q3   max    sd\n   &lt;chr&gt;    &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n 1 天河        71     9  13     14    16.3  16      35 6.05 \n 2 白云        68     9  13     15    15.3  16      30 4.53 \n 3 番禺        48     7  13     14.5  14.8  16      30 4.13 \n 4 海珠        44     8  13     15    16.6  17.2    31 6.09 \n 5 越秀        36    10  14     15    17.1  16      31 5.68 \n 6 黄埔        22     8  10.5   12.5  12.6  14.8    16 2.44 \n 7 荔湾        17    11  13     15    16.3  16      29 5.60 \n 8 增城        15     9  11     14    13.5  14.5    23 3.52 \n 9 南沙         7     8  10.5   14    15.6  19      28 7.04 \n10 花都         6     9  13.5   15.5  16.5  17.5    28 6.41 \n11 从化         2    11  11.2   11.5  11.5  11.8    12 0.707\n\n#按area分组,报告groupbuy.price的描述性统计量，表格按`n()`降序排列\n#filter(!is.na(groupbuy.price)) 剔除有缺失值的个案\ndistrict_table &lt;- data %&gt;%\n  group_by(area) %&gt;% \n  filter(!is.na(groupbuy.price)) %&gt;% \n  summarize(n(),\n           retail.mean = mean(retail.price),\n           groupbuy.mean = mean(groupbuy.price)) %&gt;% \n           arrange(desc(`n()`))\ndistrict_table\n\n# A tibble: 3 × 4\n  area  `n()` retail.mean groupbuy.mean\n  &lt;chr&gt; &lt;int&gt;       &lt;dbl&gt;         &lt;dbl&gt;\n1 市区    150        16.1         11.7 \n2 近郊    126        14.5         10.2 \n3 远郊     25        15.3          9.36\n\n#按品牌分组,报告retail.price的描述性统计量，表格按`n()`降序排列\n#filter(`n()`&gt;20) 选择分店数量多于20家的品牌\n#MAC：`` option+tilda\nbrand_table &lt;- data %&gt;%\n  group_by(brand) %&gt;%\n  summarize(n(),\n            min = min(retail.price),\n            q1 = quantile(retail.price, 0.25),\n            median = median(retail.price),\n            mean = mean(retail.price),\n            q3 = quantile(retail.price, 0.75),\n            max = max(retail.price),\n            sd = sd(retail.price)) %&gt;% filter(\n              `n()`&gt;20) %&gt;% arrange(desc(mean))\nbrand_table\n\n# A tibble: 6 × 9\n  brand            `n()`   min    q1 median  mean    q3   max    sd\n  &lt;chr&gt;            &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1 喜茶                43    24  27       28  27.9  29      35  1.82\n2 茶百道              58    13  15       16  15.6  16      19  1.15\n3 TANING手挞柠檬茶    44    13  14.8     15  15.0  16      18  1.07\n4 CoCo都可            64    11  13       14  14.4  15      23  2.01\n5 书亦烧仙草          82    10  12       13  13.4  14.8    21  1.77\n6 益禾堂              45     7   9       10  10.1  11      13  1.29\n\n#按brand, area两个变量分组\n\nbrand_table &lt;- data %&gt;%\n  group_by(brand, area) %&gt;%\n  summarize(n(),\n            min = min(retail.price),\n            q1 = quantile(retail.price, 0.25),\n            median = median(retail.price),\n            mean = mean(retail.price),\n            q3 = quantile(retail.price, 0.75),\n            max = max(retail.price),\n            sd = sd(retail.price)) %&gt;% filter(\n              `n()`&gt;10) %&gt;% arrange(desc(mean))\n\n`summarise()` has grouped output by 'brand'. You can override using the\n`.groups` argument.\n\nbrand_table\n\n# A tibble: 11 × 10\n# Groups:   brand [6]\n   brand            area  `n()`   min    q1 median  mean    q3   max    sd\n   &lt;chr&gt;            &lt;chr&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n 1 喜茶             市区     32    24  27     27.5  27.9  28.2    35 1.95 \n 2 茶百道           市区     23    13  15     16    15.7  16.5    18 1.27 \n 3 茶百道           近郊     32    14  15     15    15.4  16      19 1.01 \n 4 TANING手挞柠檬茶 市区     26    13  15     15    15.0  15      18 1.08 \n 5 TANING手挞柠檬茶 近郊     16    13  14.8   15    14.9  16      16 0.998\n 6 CoCo都可         近郊     21    12  13     14    14.4  16      20 2.04 \n 7 CoCo都可         市区     37    11  13     14    14.2  15      18 1.59 \n 8 书亦烧仙草       近郊     39    10  12.5   14    13.6  15      16 1.43 \n 9 书亦烧仙草       市区     33    10  12     13    13.2  14      16 1.72 \n10 益禾堂           市区     17     8  10     10    10.4  11      13 1.18 \n11 益禾堂           近郊     21     7   9     10    10    11      13 1.45"
+    "objectID": "case1pre.html#分组直方图",
+    "href": "case1pre.html#分组直方图",
+    "title": "广州6大品牌奶茶店消费价格分析",
+    "section": "2.3 分组直方图",
+    "text": "2.3 分组直方图\n\n#按单个定性变量分组\ndata %&gt;% \n  ggplot(aes(retail.price, fill = brand))+\n  geom_histogram(breaks = seq(6, 38, 2))+\n  facet_wrap(~brand, ncol = 2) +\n  scale_y_continuous(limits = c(0,60))+\n  scale_fill_brewer(palette  = \"Set1\") +\n  labs(title = \"零售价直方图\",\n       x = \"零售价\",\n       y = \"频数\") +\n  scale_x_continuous(breaks = seq(6, 36, 4),\n                     labels = seq(6, 36, 4)) +\n  theme_bw() +\n  theme(text = element_text(size = 15),\n        legend.position = \"bottom\",\n        legend.text = element_text(size = 10))\n\n\n零售价格：喜茶&gt;茶百道&gt;TANNING&gt;CoCo都可&gt;书亦烧仙草&gt;益禾堂"
   },
   {
-    "objectID": "case1code.html#总体均值的区间估计",
-    "href": "case1code.html#总体均值的区间估计",
-    "title": "Case 1 based on Chap 3 and Chap 4",
-    "section": "总体均值的区间估计",
-    "text": "总体均值的区间估计\n\nt.test(data$retail.price)\n\n\n    One Sample t-test\n\ndata:  data$retail.price\nt = 54.381, df = 335, p-value &lt; 2.2e-16\nalternative hypothesis: true mean is not equal to 0\n95 percent confidence interval:\n 15.03399 16.16244\nsample estimates:\nmean of x \n 15.59821 \n\n# retail.price总体均值的95%的区间估计\nc(t.test(data$retail.price)$conf.int[1],\nt.test(data$retail.price)$conf.int[2])\n\n[1] 15.03399 16.16244"
+    "objectID": "case1pre.html#分组箱线图",
+    "href": "case1pre.html#分组箱线图",
+    "title": "广州6大品牌奶茶店消费价格分析",
+    "section": "2.4 分组箱线图",
+    "text": "2.4 分组箱线图\n\ndata %&gt;% \n  ggplot(aes(retail.price, reorder(brand, retail.price, FUN = median),\n             col = brand))+\n  geom_boxplot()+\n  labs(title =\"六大奶茶品牌零售价格\",\n       x = \"零售价格\",\n       y = \"品牌\", fill = \"品牌\")+\n  theme_bw() +\n  theme(text = element_text(size = 15),\n        legend.position = \"bottom\",\n        legend.text = element_text(size = 10))\n\n\n零售价格：喜茶&gt;茶百道&gt;TANNING&gt;CoCo都可&gt;书亦烧仙草&gt;益禾堂"
   },
   {
-    "objectID": "case1code.html#总体方差的区间估计",
-    "href": "case1code.html#总体方差的区间估计",
-    "title": "Case 1 based on Chap 3 and Chap 4",
-    "section": "总体方差的区间估计",
-    "text": "总体方差的区间估计\n\nlibrary(EnvStats)\n\n\nAttaching package: 'EnvStats'\n\n\nThe following objects are masked from 'package:stats':\n\n    predict, predict.lm\n\nvarTest(data$retail.price)\n\n\nResults of Hypothesis Test\n--------------------------\n\nNull Hypothesis:                 variance = 1\n\nAlternative Hypothesis:          True variance is not equal to 1\n\nTest Name:                       Chi-Squared Test on Variance\n\nEstimated Parameter(s):          variance = 27.64406\n\nData:                            data$retail.price\n\nTest Statistic:                  Chi-Squared = 9260.759\n\nTest Statistic Parameter:        df = 335\n\nP-value:                         0\n\n95% Confidence Interval:         LCL = 23.89261\n                                 UCL = 32.35905\n\n# retail.price总体方差的95%的区间估计\nc(varTest(data$retail.price)$conf.int[1],\nvarTest(data$retail.price)$conf.int[2])\n\n     LCL      UCL \n23.89261 32.35905"
+    "objectID": "case1pre.html#散点图",
+    "href": "case1pre.html#散点图",
+    "title": "广州6大品牌奶茶店消费价格分析",
+    "section": "2.5 散点图",
+    "text": "2.5 散点图\n\ndata %&gt;% \n  ggplot(aes(retail.price, groupbuy.price,col = brand))+\n  geom_point()+\n  geom_jitter()+\n  geom_smooth(method = lm, se = F) +\n  labs(title = \"零售价格与团购价散点图\",\n       x = \"零售价\",\n       y = \"团购价\") +\n  theme_bw() +\n    theme(text = element_text(size = 15),\n        legend.position = \"bottom\",\n        legend.text = element_text(size = 10))\n\n\n无论在市区、近郊、远郊，同一品牌的团购价格相同。"
   },
   {
-    "objectID": "case1code.html#总体均值的t检验",
-    "href": "case1code.html#总体均值的t检验",
-    "title": "Case 1 based on Chap 3 and Chap 4",
-    "section": "总体均值的t检验",
-    "text": "总体均值的t检验\n\nmean(data$retail.price)\n\n[1] 15.59821\n\n#检验retail.price总体均值是否大于15.5？\n#右侧检验，显著性水平为0.01\nt.test(data$retail.price,alter = \"greater\", mu = 15.5, conf.level = 0.01)\n\n\n    One Sample t-test\n\ndata:  data$retail.price\nt = 0.34241, df = 335, p-value = 0.3661\nalternative hypothesis: true mean is greater than 15.5\n1 percent confidence interval:\n 16.2687     Inf\nsample estimates:\nmean of x \n 15.59821 \n\n# p-value为0.001,拒绝原假设。"
+    "objectID": "case1pre.html#全样本",
+    "href": "case1pre.html#全样本",
+    "title": "广州6大品牌奶茶店消费价格分析",
+    "section": "3.1 全样本",
+    "text": "3.1 全样本\n\nlibrary(psych)\n\ndata %&gt;% \n  select(retail.price, groupbuy.price, comment.num) %&gt;%\n  describe() %&gt;% \n  select(n, mean, sd, median, min, max, skew, kurtosis)\n\n                 n   mean      sd median min   max skew kurtosis\nretail.price   336  15.60    5.26   15.0   7    35 1.53     1.72\ngroupbuy.price 301  10.85    4.00   10.5   6    18 0.22    -1.15\ncomment.num    336 564.28 1027.57  281.0  13 10598 5.24    36.47"
   },
   {
-    "objectID": "case1code.html#总体方差的卡方检验",
-    "href": "case1code.html#总体方差的卡方检验",
-    "title": "Case 1 based on Chap 3 and Chap 4",
-    "section": "总体方差的卡方检验",
-    "text": "总体方差的卡方检验"
+    "objectID": "case1pre.html#表格中添加分布图像",
+    "href": "case1pre.html#表格中添加分布图像",
+    "title": "广州6大品牌奶茶店消费价格分析",
+    "section": "表格中添加分布图像",
+    "text": "表格中添加分布图像\n{gtExtras}\n\n# library(gtExtras)\n# \n# data %&gt;% \n#   select(retail.price, groupbuy.price) %&gt;%\n#   gt_plt_summary()"
   },
   {
-    "objectID": "case1code.html#两个总体方差的f检验",
-    "href": "case1code.html#两个总体方差的f检验",
-    "title": "Case 1 based on Chap 3 and Chap 4",
-    "section": "两个总体方差的F检验",
-    "text": "两个总体方差的F检验"
+    "objectID": "case1pre.html#表格中添加分布图像-1",
+    "href": "case1pre.html#表格中添加分布图像-1",
+    "title": "广州6大品牌奶茶店消费价格分析",
+    "section": "表格中添加分布图像",
+    "text": "表格中添加分布图像\n{gtExtras}\n\nlibrary(gtExtras)\nretail_group &lt;- data %&gt;% \n  dplyr::select(brand, retail.price) %&gt;%\n  group_by(brand) %&gt;%\n  summarize(mean = mean(retail.price) %&gt;% round(3),\n            median = median(retail.price)%&gt;% round(3),\n            sd = sd(retail.price)%&gt;% round(3),\n            retail_t = list(retail.price))\n\n\nretail_group %&gt;%\n  arrange(desc(mean)) %&gt;% \n  gt() %&gt;% \n  gt_plt_dist(retail_t,\n              type = \"histogram\",\n              line_color = \"purple\",\n              fill_color = \"green\",\n              bw = 1)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nbrand\nmean\nmedian\nsd\nretail_t\n\n\n\n\n喜茶\n27.930\n28\n1.818\n\n\n\n   \n\n\n\n茶百道\n15.603\n16\n1.154\n\n\n\n   \n\n\n\nTANING手挞柠檬茶\n15.023\n15\n1.067\n\n\n\n   \n\n\n\nCoCo都可\n14.391\n14\n2.013\n\n\n\n   \n\n\n\n书亦烧仙草\n13.415\n13\n1.770\n\n\n\n   \n\n\n\n益禾堂\n10.067\n10\n1.286"
   },
   {
-    "objectID": "case1code.html#两个总体均值的t检验",
-    "href": "case1code.html#两个总体均值的t检验",
-    "title": "Case 1 based on Chap 3 and Chap 4",
-    "section": "两个总体均值的t检验",
-    "text": "两个总体均值的t检验"
+    "objectID": "case1pre.html#分品牌零售价格比较",
+    "href": "case1pre.html#分品牌零售价格比较",
+    "title": "广州6大品牌奶茶店消费价格分析",
+    "section": "3.2 分品牌零售价格比较",
+    "text": "3.2 分品牌零售价格比较\n\ndata %&gt;%\n  group_by(brand) %&gt;%\n  summarize(n(),\n            min = min(retail.price),\n            q1 = quantile(retail.price, 0.25),\n            median = median(retail.price),\n            mean = mean(retail.price),\n            q3 = quantile(retail.price, 0.75),\n            max = max(retail.price),\n            sd = sd(retail.price)) %&gt;% \n  arrange(desc(median))\n\n# A tibble: 6 × 9\n  brand            `n()`   min    q1 median  mean    q3   max    sd\n  &lt;chr&gt;            &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1 喜茶                43    24  27       28  27.9  29      35  1.82\n2 茶百道              58    13  15       16  15.6  16      19  1.15\n3 TANING手挞柠檬茶    44    13  14.8     15  15.0  16      18  1.07\n4 CoCo都可            64    11  13       14  14.4  15      23  2.01\n5 书亦烧仙草          82    10  12       13  13.4  14.8    21  1.77\n6 益禾堂              45     7   9       10  10.1  11      13  1.29\n\n\n零售价格：喜茶&gt;茶百道&gt;TANNING&gt;CoCo都可&gt;书亦烧仙草&gt;益禾堂"
   },
   {
-    "objectID": "casereq.html",
-    "href": "casereq.html",
-    "title": "小组案例作业",
+    "objectID": "case1pre.html#分区域零售价格比较",
+    "href": "case1pre.html#分区域零售价格比较",
+    "title": "广州6大品牌奶茶店消费价格分析",
+    "section": "3.3 分区域零售价格比较",
+    "text": "3.3 分区域零售价格比较\n\nlibrary(psych)\n\ndata %&gt;%\n  group_by(area) %&gt;%\n  summarize(n(),\n            min = min(retail.price),\n            q1 = quantile(retail.price, 0.25),\n            median = median(retail.price),\n            mean = mean(retail.price),\n            q3 = quantile(retail.price, 0.75),\n            max = max(retail.price),\n            sd = sd(retail.price))%&gt;% \n  arrange(desc(median))\n\n# A tibble: 3 × 9\n  area  `n()`   min    q1 median  mean    q3   max    sd\n  &lt;chr&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1 市区    168     8    13     15  16.5  16.2    35  5.90\n2 近郊    138     7    13     14  14.7  16      30  4.20\n3 远郊     30     8    11     14  14.5  16      28  5.06\n\n\n零售价格：市区&gt;近郊&gt;远郊"
+  },
+  {
+    "objectID": "case1pre.html#section",
+    "href": "case1pre.html#section",
+    "title": "广州6大品牌奶茶店消费价格分析",
     "section": "",
-    "text": "选题要求\n运用统计方法分析现实问题。\n\n\n数据要求\n\n微观层面的截面数据\n样本容量大于200\n至少3个定量变量，至少3个定性变量，建议变量个数超过8个\n不要使用其他教材中的例题或习题数据，不要使用虚拟数据\n\n\n\n第3-4章讨论课 (第8周)\n\n在Excel中整理好收集的数据。\n创建项目, 在项目中存放Excel数据文件，代码文件。\n将Excel导入R Studio。\n运用第3-4章方法分析数据\n\n绘制条形图、饼图、直方图、箱线图、散点图等\n计算定量变量的描述性统计量(均值、标准差、中位数、最小值、最大值)\n\n将R的输出结果，及文字说明整理到WORD文档。\n\n\n\n第7-8章讨论课 (第10周)\n\n运用第7-8章方法分析数据\n\n总体均值的区间估计\n单个总体均值的假设检验\n两个总体均值的假设检验\n\n将R的输出结果，及文字说明整理到WORD文档。\n\n\n\n第9-10章讨论课 (第12周)\n\n运用第9-10章方法分析数据\n\n拟合优度检验\n独立性检验\n方差分析\n\n将R的输出结果，及文字说明整理到WORD文档。\n\n\n\n第11章讨论课 (第14周)\n\n运用第11章方法分析数据\n\n相关分析\n回归分析\n\n将R的输出结果，及文字说明整理到WORD文档。\n\n\n\n小组作业汇报 (第16-17周)\n\n每组汇报时间为5-7分钟。\n汇报大纲(PPT 20页左右)：\n\n选题背景\n数据来源\n数据分析\n结论\n经验分享\n\n\n\n\n演示文稿\n\n15-20页左右\n浅色底色, 深色字体, 字号&gt;28\n图表美观，清晰可读性强\n\n\n\n汇报文稿提交要求\n\n将演示文稿转成PDF格式，将PDF文件提交到QQ群“期末汇报”文件夹中\nPDF文件命名格式：小组编号+组长名字+组长班级.pdf\n\n例如：5黄捷欣19国贸1.pdf\n小组编号请查看QQ群中的小组发言时间表\n\n\n\n\n发言时长\n\n5-7分钟, 请演练课堂汇报的时长, 突出重点 。\n发言时有倒计时软件计时, 时间到请结束发言。"
+    "text": "Thanks for your attention！"
   },
   {
-    "objectID": "case2comment.html",
-    "href": "case2comment.html",
-    "title": "第7-8章小组作业讲评",
+    "objectID": "report.html",
+    "href": "report.html",
+    "title": "《R语言与统计应用》课程实验报告",
     "section": "",
-    "text": "如何提出要证明的观点？\n\n\n\nmiu_0如何选取？\n\n\n\n\n\n差值的检验\n\n\n\n\n\nmiu0不要设置为两个样本均值的差\n\n\n\n\n建议用单侧检验\n\n单侧检验的P值更小，更容易拒绝原假设\n双侧检验的结论过于常识化\n\n\n\n\n双侧检验的结论没有现实意义\n\n\n\n\n\n单侧检验的P值更小\n\n\n\n\n\n双侧检验的结论过于常识化\n\n\n\n\n\n双侧检验的结论过于常识化\n\n\n\n\n\n双侧检验的结论缺乏价值\n\n\n\n\n理论知识理解不足\n\n\n\nP值法\n\n\n\n\n排版及文字\n\n\n\n文字段落太多\n\n\n\n\n\n文字段落太多\n\n\n\n\n\n文字段落太多\n\n\n\n\n\n文字段落太多\n\n\n\n\n\n用表格呈现结果\n\n\n\n\n\n表格中信息模糊\n\n\n\n\n\n图片模糊\n\n\n\n\n\n文字不够简练\n\n\n\n\n\n表格不够清晰\n\n\n\n\n\n优秀例子：思维导图\n\n\n\n\n研究结论的提炼\n\n结论不够具体\n结论过于常识化\n提炼有价值的，有吸引力的，不是常识化的结论\n\n\n\n\n差异具体是多大？\n\n\n\n\n\n差异具体是多大？\n\n\n\n\n\n差异具体是多大？\n\n\n\n\n\n差异具体是多大？\n\n\n\n\n\n显著差异的表现是什么\n\n\n\n\n\n结论缺乏吸引力\n\n\n\n\n\n找到差异\n\n\n\n\n\n优秀例子：有价值的结论\n\n\n\n\n其他问题：没有运用两个总体参数的检验\n\n\n\nmiu_0如何选取？\n差值的检验\nmiu0不要设置为两个样本均值的差\n双侧检验的结论没有现实意义\n单侧检验的P值更小\n双侧检验的结论过于常识化\n双侧检验的结论过于常识化\n双侧检验的结论缺乏价值\nP值法\n文字段落太多\n文字段落太多\n文字段落太多\n文字段落太多\n用表格呈现结果\n表格中信息模糊\n图片模糊\n文字不够简练\n表格不够清晰\n优秀例子：思维导图\n差异具体是多大？\n差异具体是多大？\n差异具体是多大？\n差异具体是多大？\n显著差异的表现是什么\n结论缺乏吸引力\n找到差异\n优秀例子：有价值的结论"
+    "text": "运用统计方法分析现实问题。"
+  },
+  {
+    "objectID": "report.html#封面",
+    "href": "report.html#封面",
+    "title": "《R语言与统计应用》课程实验报告",
+    "section": "封面",
+    "text": "封面\n\n题目\n小组成员信息（按学号顺序排列）\n\n班级 学号 成员1\n班级 学号 成员2\n班级 学号 成员3"
+  },
+  {
+    "objectID": "report.html#前言",
+    "href": "report.html#前言",
+    "title": "《R语言与统计应用》课程实验报告",
+    "section": "1 前言",
+    "text": "1 前言\n介绍研究背景、选题动机、研究目标。"
+  },
+  {
+    "objectID": "report.html#数据概况",
+    "href": "report.html#数据概况",
+    "title": "《R语言与统计应用》课程实验报告",
+    "section": "2 数据概况",
+    "text": "2 数据概况\n介绍数据来源、数据收集过程、解释变量的含义。"
+  },
+  {
+    "objectID": "report.html#描述性统计分析chap-3-4",
+    "href": "report.html#描述性统计分析chap-3-4",
+    "title": "《R语言与统计应用》课程实验报告",
+    "section": "3 描述性统计分析：Chap 3 & 4",
+    "text": "3 描述性统计分析：Chap 3 & 4\n运用表格或图形呈现关键变量的分布特征、报告其描述性统计量。"
+  },
+  {
+    "objectID": "report.html#参数估计-chap-7",
+    "href": "report.html#参数估计-chap-7",
+    "title": "《R语言与统计应用》课程实验报告",
+    "section": "4 参数估计: Chap 7",
+    "text": "4 参数估计: Chap 7\n运用参数估计方法对总体参数（关键变量）进行推断。"
+  },
+  {
+    "objectID": "report.html#假设检验chap-8",
+    "href": "report.html#假设检验chap-8",
+    "title": "《R语言与统计应用》课程实验报告",
+    "section": "5 假设检验：Chap 8",
+    "text": "5 假设检验：Chap 8\n运用假设检验对总体参数（关键变量）进行推断。"
+  },
+  {
+    "objectID": "report.html#独立性检验-chap-9",
+    "href": "report.html#独立性检验-chap-9",
+    "title": "《R语言与统计应用》课程实验报告",
+    "section": "6 独立性检验: Chap 9",
+    "text": "6 独立性检验: Chap 9\n运用独立性检验讨论两个定性变量之间的关系。"
+  },
+  {
+    "objectID": "report.html#方差分析-chap-10",
+    "href": "report.html#方差分析-chap-10",
+    "title": "《R语言与统计应用》课程实验报告",
+    "section": "7 方差分析: Chap 10",
+    "text": "7 方差分析: Chap 10\n运用方差分析讨论多个组别的均值是否相等。"
+  },
+  {
+    "objectID": "report.html#相关与回归分析-chap-11",
+    "href": "report.html#相关与回归分析-chap-11",
+    "title": "《R语言与统计应用》课程实验报告",
+    "section": "8 相关与回归分析: Chap 11",
+    "text": "8 相关与回归分析: Chap 11\n\n运用相关分析讨论定量变量之间的关系。\n建议建立一元线性回归模型，并报告估计的回归方程与判定系数。即使模型拟合效果不佳，判定系数较低，也仍可进行建模与报告。"
+  },
+  {
+    "objectID": "report.html#结论和展望",
+    "href": "report.html#结论和展望",
+    "title": "《R语言与统计应用》课程实验报告",
+    "section": "9 结论和展望",
+    "text": "9 结论和展望\n总结研究结论, 本研究的不足, 值得进一步研究的问题"
+  },
+  {
+    "objectID": "report.html#r代码",
+    "href": "report.html#r代码",
+    "title": "《R语言与统计应用》课程实验报告",
+    "section": "10 R代码",
+    "text": "10 R代码"
+  },
+  {
+    "objectID": "report.html#个人心得体会每个小组成员独立撰写",
+    "href": "report.html#个人心得体会每个小组成员独立撰写",
+    "title": "《R语言与统计应用》课程实验报告",
+    "section": "11 个人心得体会（每个小组成员独立撰写）",
+    "text": "11 个人心得体会（每个小组成员独立撰写）\n班级 学号 成员1\n\n本人在完成实验报告中的具体工作\n遇到过什么困难，如何解决该困难\n课程感想和建议\n单个成员的心得体会字数不少于500字"
+  },
+  {
+    "objectID": "report.html#电子版",
+    "href": "report.html#电子版",
+    "title": "《R语言与统计应用》课程实验报告",
+    "section": "电子版",
+    "text": "电子版\n\n提交时限：第17周上课日的前一天的19:00\nPDF版实验报告提交到QQ群中的“实验报告PDF”文件夹\nPDF文件命名格式：“小组编号 组长名 组长班级 实验报告.pdf”\nR项目文件夹(包含数据文件, R代码文件等 )压缩后命名格式：“小组编号 组长名 组长班级 实验报告.zip/rar”, 提交到QQ群中的“R项目文件”文件夹"
+  },
+  {
+    "objectID": "report.html#纸质版",
+    "href": "report.html#纸质版",
+    "title": "《R语言与统计应用》课程实验报告",
+    "section": "纸质版",
+    "text": "纸质版\n\n双面或单面打印皆可，黑白打印即可，无需彩色打印，无需制作硬壳封面, 三颗订书针装订。\n提交时限：第17周上课日"
   },
   {
     "objectID": "chap1.html",
@@ -917,479 +994,171 @@
     "text": "第4章 数据的概括性度\n讲义\n\n\nExcel教学视频\nExcel 计算描述性统计量的函数\nEXCEL数据分析加载项\nExcel 数据分析加载项中的描述统计功能\n\n\n本章习题\n教材P72 习题4.2，4.3，4.5和4.6\n\n\n习题讲评\n教材第4章习题讲评\n\n\n拓展资源"
   },
   {
-    "objectID": "testing.html",
-    "href": "testing.html",
-    "title": "testing quarto document",
-    "section": "",
-    "text": "1+1\n\n[1] 2"
+    "objectID": "casetips.html#汇报要求",
+    "href": "casetips.html#汇报要求",
+    "title": "《R语言与统计应用》实验报告期末汇报",
+    "section": "汇报要求",
+    "text": "汇报要求\n\n汇报时间：5分钟\n汇报内容：\n\n选题背景\n数据来源\n数据分析\n研究结论\n经验分享\n\n文件形式：演示文稿，转成PDF文档"
   },
   {
-    "objectID": "L9.html",
-    "href": "L9.html",
-    "title": "模块九DeepSeek辅助傻瓜式医学统计",
-    "section": "",
-    "text": "9.1 DeepSeek辅助统计理念快速入门\n9.2 DeepSeek辅助医学统计学习和运用\n9.3 DeepSeek辅助医学统计写作\n9.4 统计再也不怕"
+    "objectID": "casefinal.html#汇报要求",
+    "href": "casefinal.html#汇报要求",
+    "title": "《R语言与统计应用》实验报告汇报要求",
+    "section": "汇报要求",
+    "text": "汇报要求\n\n汇报时间：5分钟\n汇报内容：\n\n数据来源\n变量含义\n数据分析\n研究结论\n经验分享\n\n文件形式：演示文稿，转成PDF文档"
   },
   {
-    "objectID": "L9.html#模块九-deepseek辅助傻瓜式医学统计",
-    "href": "L9.html#模块九-deepseek辅助傻瓜式医学统计",
-    "title": "模块九DeepSeek辅助傻瓜式医学统计",
-    "section": "",
-    "text": "9.1 DeepSeek辅助统计理念快速入门\n9.2 DeepSeek辅助医学统计学习和运用\n9.3 DeepSeek辅助医学统计写作\n9.4 统计再也不怕"
+    "objectID": "casefinal.html#数据来源",
+    "href": "casefinal.html#数据来源",
+    "title": "《R语言与统计应用》实验报告汇报要求",
+    "section": "1 数据来源",
+    "text": "1 数据来源\n\n数据集：mpg\n来源：R包 ggplot2 中的内建数据集\n\nFuel economy data from 1999 to 2008 for 38 popular models of cars\n\n样本容量：234"
   },
   {
-    "objectID": "L9.html#deepseek辅助统计理念快速入门",
-    "href": "L9.html#deepseek辅助统计理念快速入门",
-    "title": "模块九DeepSeek辅助傻瓜式医学统计",
-    "section": "9.1 DeepSeek辅助统计理念快速入门",
-    "text": "9.1 DeepSeek辅助统计理念快速入门\n\n9.1.1 与DeepSeek协作：重塑统计学习与科研方式\n9.1.2 DeepSeek如何助力统计学习？\n9.1.3 从学习者到提问者：如何高效对话？"
+    "objectID": "casefinal.html#变量含义",
+    "href": "casefinal.html#变量含义",
+    "title": "《R语言与统计应用》实验报告汇报要求",
+    "section": "2 变量含义",
+    "text": "2 变量含义\n\nmanufacturer：制造商\nmodel：车型\ndispl：发动机排量（升）\nyear：出厂年份\ncyl：气缸数\ntrans：变速箱类型\ndrv：驱动方式（f = 前驱，r = 后驱，4 = 四驱）\ncty：城市燃油效率（英里/加仑）\nhwy：高速燃油效率（英里/加仑）\nfl：燃油类型\nclass：车辆类别"
   },
   {
-    "objectID": "L9.html#与deepseek协作重塑统计学习与科研方式",
-    "href": "L9.html#与deepseek协作重塑统计学习与科研方式",
-    "title": "模块九DeepSeek辅助傻瓜式医学统计",
-    "section": "9.1.1 与DeepSeek协作：重塑统计学习与科研方式",
-    "text": "9.1.1 与DeepSeek协作：重塑统计学习与科研方式\n\n不知道该用什么统计方法？\n看不懂输出结果\n为写论文而发愁\n\n💡 理念重塑: 从“工具”到“伙伴”:\n\n“我不会统计方法” ➡️ “我会提问”\n“我不会用SPSS/R” ➡ “在AI辅助下我能”\n“我写不好论文中的统计部分” ➡ “我能借助 AI表达、优化”"
+    "objectID": "casefinal.html#数据分析",
+    "href": "casefinal.html#数据分析",
+    "title": "《R语言与统计应用》实验报告汇报要求",
+    "section": "3 数据分析",
+    "text": "3 数据分析\n3.1 可视化：帕累托图、饼图、分组箱线图、分组直方图\n3.2 报告描述性统计量\n3.3 区间估计\n3.4 单个总体均值的假设检验\n3.5 独立性检验\n3.6 方差分析\n3.7 相关和回归分析"
   },
   {
-    "objectID": "L9.html#prompt驱动的可解释统计协作",
-    "href": "L9.html#prompt驱动的可解释统计协作",
-    "title": "模块九DeepSeek辅助傻瓜式医学统计",
-    "section": "9.1.1 Prompt驱动的“可解释统计协作”",
-    "text": "9.1.1 Prompt驱动的“可解释统计协作”\nDeepSeek: “提示词”(Prompt)驱动的大语言模型(LLM)。\n核心优势：与临床研究者进行“可解释的统计对话”。\n\n\n\n🚀 能力维度\nDeepSeek 如何支持统计协作\n\n\n\n\n🧩 认知支持\n说明统计术语、检验条件、适用场景\n\n\n📊 结果解读\n解读OR/HR、Logistic或Cox模型\n\n\n📈 图表表达\n解读KM曲线、森林图等\n\n\n✍️ 文本重构\n输出期刊风格的统计分析段落\n\n\n💬 多轮互动\nPrompt→输出→提问→优化写作\n\n\n📦 Prompt积累\n构建个人“统计分析提示词库”，复用迁移"
+    "objectID": "casefinal.html#可视化帕累托图",
+    "href": "casefinal.html#可视化帕累托图",
+    "title": "《R语言与统计应用》实验报告汇报要求",
+    "section": "3.1 可视化：帕累托图",
+    "text": "3.1 可视化：帕累托图\n\n\nCode\nmpg %&gt;% \n  ggplot(aes(fct_infreq(class))) + \n  geom_bar(col = \"cyan\", fill = \"cyan\")+\n  labs(title = \"Pareto Diagram\", x = \"Manufacturer\") +\n    geom_text(stat = \"count\",\n            aes(label = after_stat(count)), \n            vjust = -0.5)+     \n  guides(x = guide_axis(angle = 45))+\n  labs(title = \"Pareto Diagram\", x = \"Manufacturer\") +\n  scale_y_continuous(limits = c(0, 70))\n\n\n\nSUV、紧凑型和中型车占比最高，是主要车型类别。"
   },
   {
-    "objectID": "L9.html#deepseek如何助力统计学习",
-    "href": "L9.html#deepseek如何助力统计学习",
-    "title": "模块九DeepSeek辅助傻瓜式医学统计",
-    "section": "9.1.2 DeepSeek如何助力统计学习？",
-    "text": "9.1.2 DeepSeek如何助力统计学习？\n\n重构统计学习方式\n\n互动式\n针对性\n不要撒网式学习"
+    "objectID": "casefinal.html#可视化饼图",
+    "href": "casefinal.html#可视化饼图",
+    "title": "《R语言与统计应用》实验报告汇报要求",
+    "section": "3.1 可视化：饼图",
+    "text": "3.1 可视化：饼图\n\n\nCode\ndf &lt;- mpg %&gt;%\n  mutate(class = fct_lump_n(class, 5)) %&gt;% \n  count(class) %&gt;%\n  arrange(desc(n)) %&gt;%\n  mutate(pct = round(100 * n / sum(n), 0),\n         label = paste0(class, \"\\n\", pct, \"%\"),\n         class = factor(class, levels = class) # 按频数降序设置因子顺序\n  )\n\ncolors &lt;- colorRampPalette(c(\"lightblue\", \"blue\", \"darkblue\"))(nrow(df))\n\n# 绘制饼图（极坐标 + 降序排列）\nggplot(df, aes(x = \"\", y = n, fill = class)) +\n  geom_bar(stat = \"identity\", width = 1) +\n  scale_fill_manual(values = colors) +\n  coord_polar(theta = \"y\", direction = -1) +  # 逆时针方向排列\n  geom_text(aes(label = label), \n            col = \"white\",\n            position = position_stack(vjust = 0.5), size = 5) +\n  theme_void() +\n  theme(legend.position = \"none\")\n\n\n\nSUV、紧凑型和中型车三类车型占比共计64%。"
   },
   {
-    "objectID": "L9.html#deepseek如何助力统计学习-1",
-    "href": "L9.html#deepseek如何助力统计学习-1",
-    "title": "模块九DeepSeek辅助傻瓜式医学统计",
-    "section": "9.1.2 DeepSeek如何助力统计学习？",
-    "text": "9.1.2 DeepSeek如何助力统计学习？\n\n统计学习的重心\n\n基础知识(本科课程已涵盖)\n\n变量类型: 定性(无序/有序), 定量(离散/连续)\n参数估计: 置信水平，置信区间\n假设检验: 双/单侧检验，显著性水平, p值, 临界值, 检验统计量\n\n方法选择\n结果解读\n\n\n\n\n9.1.2 统计基础知识补遗\n\n\n🎯 提问句式\n\n🧭 提示语: 请用最通俗的方式解释“统计术语”\n\n\n🧭 提示语: 请用数值模拟解释“统计术语”，并提供 R 代码与详细解释，以便更直观地理解。\n\n\n\n\n🔍 示例1 什么是置信水平？\n\n🧭 提示语: 用最通俗的方式解释什么是置信水平？\n\n\n\n\n\n\n\n🔍 示例1 什么是置信水平？\n\n🧭 提示语: 请用数值模拟上述解释过程，让我理解起来更加容易。给出数值模拟的R代码，并加以解释。\n\n\n\n\n\n\n\n🔍 示例1 什么是置信水平？\n\n🧭 提示语: 请用数值模拟上述解释过程，让我理解起来更加容易。给出数值模拟的R代码，并加以解释。\n\n\n\n\n\n\n\n🔍 示例2 se和sd的区别\n\n🧭 提示语: standar error 和 standard deviation 有什么区别？请用最通俗的方式解释。\n\n\n\n\n\n\n\n🔍 示例2 se和sd的区别\n\n🧭 提示语: standar error 和 standard deviation 有什么区别？请用最通俗的方式解释。\n\n\n\n\n\n\n\n📘 权威期刊建议\n\n\n\n\n\n\n推荐做法\n\n\n\n《Nature》、《Cell》、《JAMA》、《NEJM》 等权威医学与生物期刊明确建议：\n\n柱状图或点图的误差线应使用 标准误差（SE） 或 置信区间（CI），而非 标准差（SD），以避免误导读者。\n\n\n\n\n\n\n\n\n\n参考文献\n\n\n\n\nCumming G, Fidler F, Vaux DL. (2007). Error bars in experimental biology. The Journal of Cell Biology, 177(1):7–11.\n\n\n该文指出：SD 描述数据变异性，而非估计均值的可信度，因此在展示组间比较时使用 SE 或 CI 更有解释力。"
+    "objectID": "casefinal.html#可视化分组箱线图",
+    "href": "casefinal.html#可视化分组箱线图",
+    "title": "《R语言与统计应用》实验报告汇报要求",
+    "section": "3.1 可视化：分组箱线图",
+    "text": "3.1 可视化：分组箱线图\n\n\nCode\nmpg %&gt;%\n  mutate(class = fct_lump_n(class, 5)) %&gt;% \n  ggplot(aes(reorder(class,displ),displ,\n             col = class))+\n  geom_boxplot()+\n  guides(x = guide_axis(n.dodge = 3)) +\n  theme(legend.position = \"none\")\n\n\n\nSUV与皮卡排量较大，紧凑型较小。"
   },
   {
-    "objectID": "L9.html#重构统计学习方式从被动学习到主动建构",
-    "href": "L9.html#重构统计学习方式从被动学习到主动建构",
-    "title": "模块九DeepSeek辅助傻瓜式医学统计",
-    "section": "9.1.2 重构统计学习方式：从被动学习到主动建构",
-    "text": "9.1.2 重构统计学习方式：从被动学习到主动建构\n💡 不再是“学完了才能用”，而是“在用中学习，在问中学”\n📕️ 传统模式：教科书主导，学生被动接受\n\n教材编什么，读者学什么\n\n顺着教材目录走，忽视了统计思维的培养、“统计写作”能力的训练\n\n🚀 DeepSeek模式：需求驱动，Prompt引导学习\n\n先有问题，后找方法\n不再强调公式/计算/软件操作，而是围绕科研任务主动构建统计能力\n\n\n📌 统计学习的未来，不是依靠更全面系统的教材，而是善于利用AI工具的引导。\n\n\n\n9.1.2 DeepSeek 能做什么？\n\n\n\n任务\nDeepSeek 支持\n\n\n\n\n方法选择\n根据变量类型、研究设计，推荐方法\n\n\n适用前提\n如何检验前提条件是否成立\n\n\n软件命令生成\n提供 SPSS / R / Python 操作命令模板\n\n\n结果解读\n报告模型估计结果、系数解释、CI、p-value\n\n\n语言生成\n输出医学期刊风格的统计分析段落"
+    "objectID": "casefinal.html#可视化分组直方图",
+    "href": "casefinal.html#可视化分组直方图",
+    "title": "《R语言与统计应用》实验报告汇报要求",
+    "section": "3.1 可视化：分组直方图",
+    "text": "3.1 可视化：分组直方图\n\n前驱车型城市油耗分布较高，后驱车型油耗偏低且集中，四驱居中偏低。"
   },
   {
-    "objectID": "L9.html#从统计学习者到提问专家如何与-deepseek-高效对话",
-    "href": "L9.html#从统计学习者到提问专家如何与-deepseek-高效对话",
-    "title": "模块九DeepSeek辅助傻瓜式医学统计",
-    "section": "9.1.3 从统计学习者到提问专家：如何与 DeepSeek 高效对话？",
-    "text": "9.1.3 从统计学习者到提问专家：如何与 DeepSeek 高效对话？\n\nDeepSeek可以回答”如何做”\n选择方法, 解释结果, 润色语言\nDeepSeek无法判断统计分析结论的“临床或现实意义”\n① 它不了解临床语境\n\n无法判断1.2 mmHg 的血压差异是否有意义\n无法判断术后感染降低 3% 是否值得改变用药\n无法判断效果大小对患者是否“可感知”\n\n② 它无法识别研究的局限\n\n样本的代表性\n数据质量\n研究全貌\n\n\n\n\n🔍 示例3 deepseek与研究者的角色分工\n\n新药组患者平均在服药后4.3小时出现咳嗽明显缓解，对照组为5.3小时，差异为1.1小时，P = 0.002。\n\n\nDeepSeek的判断：P值小于0.05，说明两组在缓解时间上存在统计学显著差异。\n研究者需要进一步判断：\n\n平均提前1小时缓解咳嗽，对患者体验是否足够重要？\n新药是否价格更高、服用方案更复杂或存在其他副作用？\n如果只是轻症患者，是否有必要优先推荐此类新药？\n在临床实践中，该差异是否足以改变现有用药指南或医生处方习惯？\n\n\n\n📌 要评估“统计显著”的“现实价值”，需结合患者反馈、药物成本、安全性及对临床决策的实际影响。\n\n\n\n\n9.1.3 ① 低质量提问的特点\n\n太笼统：“我这组数据怎么分析？”——没有说明变量、设计、目的；\n背景缺失：没有交代样本量、变量类型、研究目标等关键信息；\n术语模糊：用“数字”, “分组”代替“连续变量”“独立样本”等标准术语；\n目的不清：是要选方法？还是要解释P值？甚至只是想画图？\n\n\n\n\n9.1.3 ② 如何构建高质量提问？\n\n研究背景：研究设计、样本量、数据来源\n变量：类型（定性/定量）、分布特征（正态/非正态）、数据结构（截面/重复测量/分层/生存数据等）\n提问目标：你希望DeepSeek帮你做什么？推荐方法？解释输出？润色语言？\n\n\n\n\n🔍 示例4 高质量提问\n💡 明确表达研究背景、变量类型和分析目的\n\n原问法：我做了线性回归，能不能帮我看看有没有问题？\n优化提问：我用线性回归分析术后住院天数的影响因素，自变量包括年龄、手术方式和是否术前使用抗生素，模型输出如下，请帮我判断变量解释是否合理，并协助我撰写结果描述。\n原问法：我想知道两组患者有无差异，用什么方法好？\n优化提问：我想比较 A 药和B药对血糖控制的效果，两组样本独立，结局变量是非正态分布的 HbA1c，请问适合使用哪种非参数检验方法？\n原问法：这个 P 值怎么解读？\n优化提问：在 logistic 回归中，变量“糖尿病病史”的 OR = 1.9，95% CI 为 1.1–3.2，P = 0.025，请帮我解释这个变量在模型中的统计与临床意义。\n\n\n\n\n🎯 提问句式\n\n研究背景（如研究设计、样本量、数据来源）\n变量类型、数据结构、分布特征（如定量、定性、是否正态）\n分析目的（比较差异、建模预测、描述分布等）\n希望 AI 协助的具体环节（方法选择、结果解读、语言撰写等）"
+    "objectID": "casefinal.html#数据分析-1",
+    "href": "casefinal.html#数据分析-1",
+    "title": "《R语言与统计应用》实验报告汇报要求",
+    "section": "数据分析",
+    "text": "数据分析\n\n\n manufacturer          model               displ            year     \n Length:234         Length:234         Min.   :1.600   Min.   :1999  \n Class :character   Class :character   1st Qu.:2.400   1st Qu.:1999  \n Mode  :character   Mode  :character   Median :3.300   Median :2004  \n                                       Mean   :3.472   Mean   :2004  \n                                       3rd Qu.:4.600   3rd Qu.:2008  \n                                       Max.   :7.000   Max.   :2008  \n      cyl           trans               drv                 cty       \n Min.   :4.000   Length:234         Length:234         Min.   : 9.00  \n 1st Qu.:4.000   Class :character   Class :character   1st Qu.:14.00  \n Median :6.000   Mode  :character   Mode  :character   Median :17.00  \n Mean   :5.889                                         Mean   :16.86  \n 3rd Qu.:8.000                                         3rd Qu.:19.00  \n Max.   :8.000                                         Max.   :35.00  \n      hwy             fl               class          \n Min.   :12.00   Length:234         Length:234        \n 1st Qu.:18.00   Class :character   Class :character  \n Median :24.00   Mode  :character   Mode  :character  \n Mean   :23.44                                        \n 3rd Qu.:27.00                                        \n Max.   :44.00"
   },
   {
-    "objectID": "L9.html#小结从工具到能力构建ai辅助统计思维",
-    "href": "L9.html#小结从工具到能力构建ai辅助统计思维",
-    "title": "模块九DeepSeek辅助傻瓜式医学统计",
-    "section": "9.1 小结：从工具到能力，构建AI辅助统计思维",
-    "text": "9.1 小结：从工具到能力，构建AI辅助统计思维\n\n统计学习不只是掌握方法，更是形成解决问题的思维方式。\nDeepSeek不只是工具，更可以成为统计学习与科研写作的智能伙伴。\n借助 AI，可以加速理解、提升效率，但不能替代判断与思考。\n真正有效的统计学习，应注重：\n\n明确目标（用AI解决具体问题）；\n精准提问（提升与AI对话质量）；\n灵活应用（将建议转化为科研能力）。\n\n\n\n📌 从“学习统计”到“用统计解决问题”"
+    "objectID": "casefinal.html#报告描述性统计量",
+    "href": "casefinal.html#报告描述性统计量",
+    "title": "《R语言与统计应用》实验报告汇报要求",
+    "section": "3.2 报告描述性统计量",
+    "text": "3.2 报告描述性统计量\n\n\nCode\nlibrary(psych)\n\nmpg %&gt;%\n  select(where(is.numeric)) %&gt;% \n  select(-year) %&gt;% \n  describe() %&gt;% \n  select(n, mean, sd, median, min, max) \n\n\n        n  mean   sd median  min max\ndispl 234  3.47 1.29    3.3  1.6   7\ncyl   234  5.89 1.61    6.0  4.0   8\ncty   234 16.86 4.26   17.0  9.0  35\nhwy   234 23.44 5.95   24.0 12.0  44\n\n\n高速油耗高于城市油耗，发动机排量和气缸数变异较小。"
   },
   {
-    "objectID": "L9.html#deepseek辅助医学统计的学习和运用",
-    "href": "L9.html#deepseek辅助医学统计的学习和运用",
-    "title": "模块九DeepSeek辅助傻瓜式医学统计",
-    "section": "9.2 DeepSeek辅助医学统计的学习和运用",
-    "text": "9.2 DeepSeek辅助医学统计的学习和运用\n\n9.2.1 医学统计方法全景图\n9.2.2 DeepSeek如何辅助方法选择？\n9.2.3 DeepSeek如何辅助结果解读？"
+    "objectID": "casefinal.html#区间估计",
+    "href": "casefinal.html#区间估计",
+    "title": "《R语言与统计应用》实验报告汇报要求",
+    "section": "3.3 区间估计",
+    "text": "3.3 区间估计\n\n\nCode\nlibrary(psych)\n\n\nci &lt;- t.test(mpg$cty)$conf.int\nsprintf(\"城市油耗的总体均值的95%%置信区间：[%.2f, %.2f]\", ci[1], ci[2])\n\n\n[1] \"城市油耗的总体均值的95%置信区间：[16.31, 17.41]\"\n\n\nCode\nci &lt;- t.test(mpg$hwy)$conf.int\nsprintf(\"高速油耗的总体均值的95%%置信区间：[%.2f, %.2f]\", ci[1], ci[2])\n\n\n[1] \"高速油耗的总体均值的95%置信区间：[22.67, 24.21]\""
   },
   {
-    "objectID": "L9.html#医学统计方法全景图",
-    "href": "L9.html#医学统计方法全景图",
-    "title": "模块九DeepSeek辅助傻瓜式医学统计",
-    "section": "9.2.1 医学统计方法全景图",
-    "text": "9.2.1 医学统计方法全景图"
+    "objectID": "casefinal.html#单个总体均值的假设检验",
+    "href": "casefinal.html#单个总体均值的假设检验",
+    "title": "《R语言与统计应用》实验报告汇报要求",
+    "section": "3.4 单个总体均值的假设检验",
+    "text": "3.4 单个总体均值的假设检验\n\n\nCode\nlibrary(ggstatsplot)\n\ngghistostats(mpg, cty, \n             test.value = 16,\n             bin.args = list(color = \"black\",\n                             fill = \"cyan\")) +\n  theme_classic(base_size = 15)"
   },
   {
-    "objectID": "L9.html#deepseek如何辅助选择统计方法",
-    "href": "L9.html#deepseek如何辅助选择统计方法",
-    "title": "模块九DeepSeek辅助傻瓜式医学统计",
-    "section": "9.2.2 DeepSeek如何辅助选择统计方法？",
-    "text": "9.2.2 DeepSeek如何辅助选择统计方法？\n✅ 研究目的: 描述/推断/比较/预测/因果推断\n✅ 数据结构: 横截面/纵向/分层/RCT/生存数据等\n✅ 变量类型: 定性变量(无序/有序), 定量变量(离散/连续)\n✅ 变量地位：结局变量/自变量/协变量\n✅ 变量分布：正态/非正态/泊松分布等\n✅ 样本容量\n\n\n临床研究数据结构\n\n\n\n\n\n\n\n\n\n数据结构\n时间特征\n是否追踪\n应用场景示例\n\n\n\n\n横断面研究\n单时间点\n无追踪\n现况调查、患病率估计\n\n\n病例对照研究\n单时间点（回顾性暴露）\n无追踪\n病因探索、罕见病研究\n\n\n随机对照试验\n多时间点（前瞻性：基线+随访）\n干预后追踪\n药物疗效、治疗比较\n\n\n队列研究\n多时间点（前瞻或回顾）\n长期追踪\n危险因素评估、预后分析\n\n\n登记研究\n多时间点（通常前瞻）\n长期追踪\n真实世界数据、药物监测\n\n\n\n\n\n\n统计方法与样本容量\n\n\n\n统计方法\n样本容量建议\n\n\n\n\nt检验（独立样本）\n每组 ≥ 30（≥15 可接受）\n\n\n配对t检验\n≥ 15 对（≥30 理想）\n\n\n方差分析（ANOVA）\n每组 ≥ 20–30\n\n\n卡方检验\n每格期望值 ≥ 5\n\n\nFisher精确检验\n总样本 &lt; 40\n\n\nMann-Whitney U检验\n每组 ≥ 10–15\n\n\nLogistic回归\n每类结局 ≥ 10×变量数（EPV）\n\n\nCox回归模型\n≥ 10 个事件/变量\n\n\n线性回归\n总样本 ≥ 15×变量数\n\n\n倾向评分匹配\n匹配后每组 ≥ 100+\n\n\n\n\n注：以上为经验性参考，正式研究请结合效应量、α、Power 等进行样本量计算。\n\n\n\n\n9.2.2 ① 如何向DeepSeek描述你的研究问题？\n🎯 将“临床问题”转换为“统计问题”\n临床问题：自然语言描述\n\n“比较两种降压药对高血压患者收缩压的影响”\n“新药是否能降低术后感染的风险”\n\n🎯 提问句式\n研究目的：描述 / 推断/ 比较 / 预测 / 因果推断 研究对象：样本单位（如患者、标本等） 自变量：变量类型：（如两组、三组、分层等） 因变量：变量类型： 是否连续 / 分类 / 计数 特殊说明：如样本量、分布形态、是否配对等\n\n\n\n🔍 示例4 差异比较\n\n比较两种降压药对收缩压的影响，自变量为“药物类型”（两组），因变量为“收缩压”（连续变量），各组分别有40人，需要使用什么统计分析方法？\n\n\n\n\n\n\n\n🔍 示例5 影响因素分析\n🩺 临床问题\n\n探讨年龄、性别、住院天数、治疗方案是否与患者出院时的功能恢复水平有关。功能恢复分为三级：良好 / 一般 / 差。\n\n🎯 提问句式\n\n研究目的：预测, 推断\n\n研究对象：康复科出院患者\n\n因变量：功能恢复水平（有序分类变量，共3级）\n\n自变量：年龄(连续), 性别(二分类), 住院天数(连续),治疗方案(无序分类，共3种)\n\n特殊说明：\n\n样本：150 人\n\n因变量具有自然顺序(良好 &gt; 一般 &gt; 差)，但间距不等\n\n希望控制混杂并分析预测因子\n\n\n\n\n\n🔍 示例5 影响因素分析\n\n“我有150名康复患者的数据，记录了年龄、性别、住院天数和治疗方案（3种，无序分类）。我想分析这些因素对出院时功能恢复水平（良好/一般/差）的影响。因变量是有序分类变量。需要用什么统计分析方法？”\n\n\n\n\n\n\n\n🔍 示例5\n要求用SPSS实现有序logistic回归分析"
+    "objectID": "casefinal.html#单个总体均值的假设检验-1",
+    "href": "casefinal.html#单个总体均值的假设检验-1",
+    "title": "《R语言与统计应用》实验报告汇报要求",
+    "section": "3.4 单个总体均值的假设检验",
+    "text": "3.4 单个总体均值的假设检验\n\\(H_0: \\mu \\leq 16\\)\n\\(H_1: \\mu &gt; 16\\)\n拒绝原假设\\(H_0: \\mu \\leq 16\\) 。\n在城市, 油耗均值大于16英里/加仑。"
   },
   {
-    "objectID": "L9.html#deepseek辅助深入学习统计方法",
-    "href": "L9.html#deepseek辅助深入学习统计方法",
-    "title": "模块九DeepSeek辅助傻瓜式医学统计",
-    "section": "9.2.3 deepseek辅助深入学习统计方法",
-    "text": "9.2.3 deepseek辅助深入学习统计方法\n\n追问统计分析过程细节\n追问检验方法的细节\n追问图形工具的细节\n追问如何评估模型拟合效果\n\n\n\n9.2.3 ① 如何向DeepSeek 追问统计分析过程的细节？\n🎯 提问句式\n针对方法/模型，还可以做哪些检验或者绘制可视化图形，来深入探讨方法/模型的估计结果，提供有价值的研究发现？请参考学术文献的主流做法，回答上述问题。\n\n\n\n\n\n\n9.2.3 ① 向DeepSeek 追问统计分析过程的细节\n\n\n\n\n\n\n9.2.3 ② 向deepseek追问检验方法的细节\n\n\n\n\n\n\n9.2.3 ③ 向deepseek追问图形工具的细节\n\n\n\n\n\n\n9.2.3 ④向deepseek追问如何评估模型拟合效果\n\n\n\n\n\n\n9.2.3 ⑤ DeepSeek如何辅助结果解读？\n\n统计学意义：系数含义\n临床学意义：临床相关性、实际应用价值\n\n\n\n\n\n\n\n9.2.3 ⑤ DeepSeek如何辅助结果解读？\n\n\n\n\n\n\n9.2.3 ⑤ DeepSeek如何辅助结果解读？\n\n\n\n\n\n\n9.2.3 ⑥ DeepSeek提供优化统计分析的建议\n🎯 提问句式\n我的样本数据、选用的变量、估计方法是否存在局限性？请提出改进建议。"
+    "objectID": "casefinal.html#两个总体均值的比较四驱和前驱城市道路油耗比较",
+    "href": "casefinal.html#两个总体均值的比较四驱和前驱城市道路油耗比较",
+    "title": "《R语言与统计应用》实验报告汇报要求",
+    "section": "3.4 两个总体均值的比较：四驱和前驱城市道路油耗比较",
+    "text": "3.4 两个总体均值的比较：四驱和前驱城市道路油耗比较\n\n\nCode\nmpg %&gt;%\n  filter(drv %in% c(\"4\", \"f\")) %&gt;%\n  ggbetweenstats(drv, \n                 cty,\n                 p.adjust.method = \"none\",\n                 xlab = \"drive\",\n                 package = \"RColorBrewer\",\n                 palette = \"Set1\",\n                 violin.args = list(width = 0)\n  ) +\n  theme_classic(base_size = 15)"
   },
   {
-    "objectID": "L9.html#小结deepseek辅助医学统计的学习和运用",
-    "href": "L9.html#小结deepseek辅助医学统计的学习和运用",
-    "title": "模块九DeepSeek辅助傻瓜式医学统计",
-    "section": "9.2 小结：DeepSeek辅助医学统计的学习和运用",
-    "text": "9.2 小结：DeepSeek辅助医学统计的学习和运用\n\n将“临床问题”转换为“统计问题”\n\n提问句式：研究目的 + 研究对象 + 自变量 + 因变量 + 特殊说明\n\n追问统计分析过程的细节\n\n方法/模型，还可以做哪些检验或者绘制可视化图形？请参考学术文献的主流做法，回答上述问题。\n\n追问检验方法的细节\n追问图形工具的细节\n追问如何评估模型拟合效果\n关于输出结果的解读\n\n统计学意义：P值、效应量、置信区间\n临床学意义：临床相关性、实际应用价值\n\n优化统计分析的建议\n\n样本数据、选用的变量、估计方法是否存在局限性？请提出改进建议"
+    "objectID": "casefinal.html#两个总体均值的比较四驱和前驱城市道路油耗比较-1",
+    "href": "casefinal.html#两个总体均值的比较四驱和前驱城市道路油耗比较-1",
+    "title": "《R语言与统计应用》实验报告汇报要求",
+    "section": "3.4 两个总体均值的比较：四驱和前驱城市道路油耗比较",
+    "text": "3.4 两个总体均值的比较：四驱和前驱城市道路油耗比较\n\\(H_0: \\mu_4 \\geq \\mu_f\\)\n\\(H_1: \\mu_4 &lt; \\mu_f\\)\n在城市, \\(\\mu_4 &lt; \\mu_f\\), 前驱(20)比四驱(14)省油。"
   },
   {
-    "objectID": "L9.html#deepseek辅助医学统计写作",
-    "href": "L9.html#deepseek辅助医学统计写作",
-    "title": "模块九DeepSeek辅助傻瓜式医学统计",
-    "section": "9.3 DeepSeek辅助医学统计写作",
-    "text": "9.3 DeepSeek辅助医学统计写作\n\n9.3.1 医学统计写作的挑战\n9.3.2 如何向DeepSeek寻求写作帮助？\n9.3.3 多轮对话优化文字段落"
+    "objectID": "casefinal.html#独立性检验驱动类型和气缸数量的关系",
+    "href": "casefinal.html#独立性检验驱动类型和气缸数量的关系",
+    "title": "《R语言与统计应用》实验报告汇报要求",
+    "section": "3.5 独立性检验：驱动类型和气缸数量的关系",
+    "text": "3.5 独立性检验：驱动类型和气缸数量的关系\n\n\nCode\nggbarstats(mpg,\n           drv,\n           cyl,\n           package = \"RColorBrewer\",\n           palette = \"Paired\")+\n  theme_bw(base_size = 15)"
   },
   {
-    "objectID": "L9.html#医学统计写作的挑战",
-    "href": "L9.html#医学统计写作的挑战",
-    "title": "模块九DeepSeek辅助傻瓜式医学统计",
-    "section": "9.3.1 医学统计写作的挑战",
-    "text": "9.3.1 医学统计写作的挑战\n\n统计分析部分的重要性\n高水平期刊对统计分析的准确性和表达逻辑要求极高\n常见困扰\n\n不熟悉统计方法的选择与表述\n难以准确表述结果的意义\n英语表达能力限制写作效率"
+    "objectID": "casefinal.html#独立性检验驱动类型和气缸数量的关系-1",
+    "href": "casefinal.html#独立性检验驱动类型和气缸数量的关系-1",
+    "title": "《R语言与统计应用》实验报告汇报要求",
+    "section": "3.5 独立性检验：驱动类型和气缸数量的关系",
+    "text": "3.5 独立性检验：驱动类型和气缸数量的关系\n驱动类型和气缸数量不独立。\n4缸，72%前驱，28%四驱;\n6缸，54%前驱， 41%四驱，5%后驱;\n8缸，1%前驱， 69%四驱，30%后驱。"
   },
   {
-    "objectID": "L9.html#如何向deepseek寻求写作帮助",
-    "href": "L9.html#如何向deepseek寻求写作帮助",
-    "title": "模块九DeepSeek辅助傻瓜式医学统计",
-    "section": "9.3.2 如何向DeepSeek寻求写作帮助？",
-    "text": "9.3.2 如何向DeepSeek寻求写作帮助？\n🎯 提问句式\n\n输入说明 以下是***结果 / 回归输出 / 表格 / 图形\n目的说明 “请撰写一段医学论文中‘统计分析结果’部分的英文描述\n风格指定 “风格参考JAMA / The Lancet/中华医学杂志\n语言指定 “语言简洁、专业、英文/中文撰写；避免解释性语言\n\n\n\n🔍 示例6 table 1的解释——英文\n\nPlease write a concise and professional paragraph, in the style of a medical journal (e.g., The Lancet or JAMA), describing and comparing the baseline characteristics of two patient groups based on the data presented in Table 1. Use objective, scientific language appropriate for the Results section of a clinical research article.\n\n\n\n\n\n\n\n🔍 示例6 table 1的解释——中文\n\n基于Table 1，撰写一段描述患者基线特征的段落, 重点说明两组患者基线特征的相似性与显著差异, 采用《中华医学杂志》的写作风格, 语言简洁, 专业。\n\n\n\n\n\n\n\n🔍 示例7 统计图形解释——英文\n\nPlease write a concise and professional paragraph, in the style of a medical journal (e.g., The Lancet or JAMA), describing the comparison of age between patients who survived and those who died, based on the data shown in the figure. Use objective, scientific language appropriate for the Results section of a clinical research article.\n\n\n\n\n\n\n\n🔍 示例7 统计图形解释——中文\n\n基于上图，撰写一段描述图中所示生存与死亡患者两组之间年龄比较的段落, 采用《中华医学杂志》的写作风格, 语言简洁, 专业。\n\n\n\n\n\n\n\n🔍 示例8 有序logistic回归估计结果的解释——英文\n\nPlease write a concise and professional paragraph suitable for the “Discussion” section of a clinical research article, describing and interpreting the findings from a binary logistic regression analysis. Emphasize the potential clinical implications and practical relevance of the significant predictors identified in the model. Use formal scientific language similar to that found in journals such as The Lancet or JAMA. Avoid statistical jargon unless necessary, and focus on how the findings may inform clinical decision-making or patient care.\n\n\n\n\n\n\n\n🔍 示例8 有序logistic回归估计结果的解释——英文\n\n\n\n\n\n\n🔍 示例8 有序logistic回归估计结果的解释——英文\n\n\n\n\n\n\n🔍 示例8 有序logistic回归估计结果的解释——中文\n\n请撰写一段用于医学期刊论文“讨论”部分的文字，基于二元 logistic 回归模型的结果，阐述主要显著预测变量的临床意义与实际应用价值。文风应简洁、专业，表达符合《中华医学杂志》的学术规范。\n\n\n\n\n\n\n\n💡 技巧：截长图\n用截图工具，截取长图，将所有的统计输出一次性粘贴到DeepSeek中，避免多次提问。\n截图工具：\n\nWindows：Snipping Tool(Win 11)\nMac OS: Xnip https://zh.xnipapp.com/\n\n\n\n\n\n\n\n\n\n\n\n🎯 提问句式： 一次性输出数据/方法/结果/讨论\n请根据SPSS/R的输出，撰写一篇临床研究论文的四个部分：数据、方法、结果、讨论。\n要求如下：\n① 请使用医学期刊常见的表达方式，语言简洁、专业；\n② 写作风格参考《中华医学杂志》，用中文撰写；\n③ 对“结果”部分要求客观描述，不加入主观解释，绘制表格呈现模型的估计结果；\n④ 对“讨论”部分要求结合统计结果，重点说明显著变量的临床意义与现实应用价值；\n⑤ 适用规范的专业术语"
+    "objectID": "casefinal.html#方差分析",
+    "href": "casefinal.html#方差分析",
+    "title": "《R语言与统计应用》实验报告汇报要求",
+    "section": "3.6 方差分析",
+    "text": "3.6 方差分析\n\n\n\n             Df Sum Sq Mean Sq F value Pr(&gt;F)    \ndrv           2   1879   939.4   92.68 &lt;2e-16 ***\nResiduals   231   2342    10.1                   \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n\n不同驱动方式的车型发动机排量差异显著，后驱车排量(5.2)最大，四驱(4.0)居中，前驱(2.6)最小。"
   },
   {
-    "objectID": "L9.html#多轮对话优化文字段落",
-    "href": "L9.html#多轮对话优化文字段落",
-    "title": "模块九DeepSeek辅助傻瓜式医学统计",
-    "section": "9.3.3 多轮对话优化文字段落",
-    "text": "9.3.3 多轮对话优化文字段落\n\n第一轮生成后继续补充显著性解释、控制混杂变量说明。\n提升质量与防止AI写作痕迹\n核对数据与描述是否匹配。"
+    "objectID": "casefinal.html#研究结论",
+    "href": "casefinal.html#研究结论",
+    "title": "《R语言与统计应用》实验报告汇报要求",
+    "section": "研究结论",
+    "text": "研究结论\n\nSUV、紧凑型和中型车三类车型占比共计64%。\nSUV与皮卡排量较大，紧凑型较小。\n城市油耗的总体均值的95%置信区间：[16.31, 17.41]\n高速油耗的总体均值的95%置信区间：[22.67, 24.21]\n在城市, 油耗均值大于16英里/加仑。\n在城市, \\(\\mu_4 &lt; \\mu_f\\), 前驱(20)比四驱(14)省油。"
   },
   {
-    "objectID": "L9.html#多轮对话优化",
-    "href": "L9.html#多轮对话优化",
-    "title": "模块九DeepSeek辅助傻瓜式医学统计",
-    "section": "9.3.3 多轮对话优化",
-    "text": "9.3.3 多轮对话优化\n\n明确传达研究设计类型、变量信息、分析目的、统计方法或输出；\n指定写作风格（如参考 BMJ / JAMA / 中华医学杂志）；\n要求其输出语言风格客观、精炼、符合医学统计写作规范。\n\n\n\n🎯 提问句式 ① “数据”部分——中文\n我正在撰写一篇临床医学学术论文，请帮我撰写“数据”部分的相关段落，内容包括：\n\n研究设计类型（如回顾性队列、前瞻性观察、随机对照试验等）；\n研究对象的来源与纳入/排除标准（如某医院的连续入院患者、特定病种等）；\n数据收集方式（如电子病历、问卷、电话随访等）；\n变量名称、定义及其分类方式；\n所有变量测量的时间点和方式；\n样本量及缺失数据说明（如是否进行插补、排除等处理）；\n\n写作要求： ① 语言参考《中华医学杂志》的风格，规范、简练、客观； ② 仅陈述事实，不进行解释或讨论； ③ 所用术语请医学统计规范\n我使用了以下变量(列出变量名称及含义)：\n\n\n\n🎯 提问句式 ① “数据”部分——英文\nPlease help me write a paragraph suitable for the Data / Participants / Methods section of a clinical research article, describing the study data source, variables, and data collection methods.\nInclude the following elements: - Study design: e.g., retrospective cohort / prospective observational - Study population: inclusion and exclusion criteria, hospital or registry - Data collection method: electronic medical records, interviews, etc. - Variable definitions: e.g., age (continuous), sex (binary: male/female), GCS score (continuous) - Timing of data collection: baseline at admission / discharge - Handling of missing data: deletion / imputation / no missingness\nWriting style: - Use concise, objective scientific language; - Follow the tone and structure of journals like BMJ or JAMA; - Avoid interpretation—just state the facts; - End with a reference to Table 1 if available (e.g., “Baseline characteristics are shown in Table 1”).\n\n\n\n🔍 示例9 优化“数据”的写作\n\n\n\n\n\n\n🎯 提问句式 ② “方法”部分——中文\n以下是我研究的一部分统计分析输出结果（如表格/图/文字），请根据医学期刊论文的写作规范（参考《中华医学杂志》），帮助我撰写“统计分析”部分的方法描述文字，要求语言规范、专业、精炼，适用于论文的“方法”章节。\n\n研究类型：回顾性观察研究\n因变量：住院期间状态（生存=1，死亡=2）\n自变量：性别、年龄、SBP、GCS评分、糖尿病史、卒中类型\n分析方法：二元Logistic回归（逐步法）\n模型评价方法：Omnibus检验、Hosmer-Lemeshow检验、分类预测准确率\n\n请撰写论文中关于“方法”的段落。\n\n\n\n🎯 提问句式 ② “方法”部分——英文\n\nPlease help me write the “Statistical Analysis” section of a clinical research article in the style of BMJ or JAMA, using the data and analysis described below. Use professional, concise, and scientifically accurate language appropriate for peer-reviewed medical journals.\n\nPlease include:\n\nStudy design and population\nVariables involved (e.g., age, sex, disease type)\nStatistical methods used (e.g., t-test, Cox regression, Kaplan-Meier)\nSoftware used (e.g., SPSS, R, Stata)\nSignificance level (e.g., two-sided P &lt; 0.05)\n\nEnsure that the paragraph is suitable for inclusion in the Methods section of a medical journal manuscript.\n\n\n\n🔍 示例9 优化“方法”的写作\n\n\n\n\n\n\n🎯 提问句式 ③ “结果”部分——中文\n我正在撰写一篇医学研究论文的“结果”部分，以下是我的结果输出，请根据统计结果写出“结果”段落。\n写作要求如下：\n① 请使用医学期刊论文中“结果”部分常见的表达方式\n② 语言客观、精炼，不夹叙述、解释与讨论\n③ 表达风格参考《中华医学杂志》\n④ 正确描述显著性（如 P 值、置信区间、效应量）\n⑤ 分层/亚组分析时，请明确指出组间比较与趋势\n⑥ 所用术语请尽量规范，遵循医学统计表达惯例。\n\n\n\n🎯 提问句式 ③ “结果”部分——英文\nPlease write a professional, objective, and concise paragraph suitable for the Results section of a clinical research article, based on the logistic regression results provided below.\nWriting style: follow the conventions used in BMJ or JAMA.\nLanguage: formal, scientific, and free from subjective interpretation or discussion.\nContent: include odds ratios (OR), confidence intervals (CI), and P-values.\nStructure: begin with the overall result, then report on significant predictors, and conclude with non-significant findings if relevant.\nDo not explain or interpret the results—just report them accurately.\n\n\n\n🔍 示例9 优化“结果”的写作\n\n\n\n\n\n\n🎯 提问句式 ④ “讨论”部分–中文\n请帮助我撰写一段用于医学期刊论文“讨论”部分的文字。以下是我的研究背景与统计分析结果：\n\n研究设计：前瞻性队列研究 / 回顾性研究 / 随机对照试验（请根据实际写）\n主要结局：\n统计方法：\n显著变量：\n非显著变量：\n\n请根据上述信息，撰写“讨论”部分的段落，重点说明：\n① 显著变量的临床意义与现实应用价值 ② 如何解释统计结果中显著与不显著变量的差异 ③ 如何将研究结果与既往研究进行对比 ④ 语言风格参考《中华医学杂志》，表达规范、客观 ⑤ 避免重复“结果”部分的内容，请聚焦解释与意义，不是数据罗列\n请以论文讨论部分的标准结构撰写该段内容。\n\n\n\n🎯 提问句式 ④ “讨论”部分–英文\nPlease help me write a professional, well-structured paragraph suitable for the Discussion section of a clinical research article, based on the following logistic regression results:\n\nStudy design:\nPrimary outcome:\nSignificant predictors:\nNon-significant variables:\n\nWriting requirements: 1. Explain the clinical relevance and implications of statistically significant predictors; 2. Discuss potential reasons for non-significant findings; 3. Compare with findings from previous studies (if applicable); 4. Use objective and concise scientific language, modeled after BMJ or JAMA; 5. Focus on interpretation and contextualization, not repetition of numeric results.\n\n\n\n🔍 示例9 优化“讨论”的写作\n\n\n\n\n\n\n💡 技巧：基于范文，驱动 AI 的写作进阶\n\n选取一篇范文，发送给DeepSeek，要求DeepSeek归纳其值得借鉴之处\n要求DeepSeek参照“亮点”对你的段落进行润色与改写\n\n\n\n\n\n\n\n💡 技巧：DeepSeek进入“学习–改进”模式\n\n\n\n\n\n\n💡 DeepSeek的局限性\n\n服务器繁忙\n\n替代方案：腾讯元宝 https://yuanbao.tencent.com/chat/\n\n未提取到图片中的文字\n\n替代方案：问小白 https://www.wenxiaobai.com/\n\n\n\n\n\n\n\n\n\n\n\n💡 问小白：已接入DeepSeek V3\n\n\n\n\n\n\n💡 问小白: 生成网页/研报"
+    "objectID": "casefinal.html#经验分享",
+    "href": "casefinal.html#经验分享",
+    "title": "《R语言与统计应用》实验报告汇报要求",
+    "section": "经验分享",
+    "text": "经验分享\n\n合并小类\n使用gghistostats等函数进行可视化和统计检验\nAI工具的使用\n…"
   },
   {
-    "objectID": "L9.html#小结-deepseek辅助医学统计写作",
-    "href": "L9.html#小结-deepseek辅助医学统计写作",
-    "title": "模块九DeepSeek辅助傻瓜式医学统计",
-    "section": "9.3 小结 DeepSeek辅助医学统计写作",
-    "text": "9.3 小结 DeepSeek辅助医学统计写作\n\n建立自己的提示词库\n\n方法提示词：适用条件/数据结构/样本容量/估计结果解释/需要做的检验/可视化工具\n写作提示词：数据/方法/结果/讨论\n\n建立自己的范文库\n\n高水平期刊的同类研究的范文的数据/方法/结果/讨论的写法\n\n不要忙于统计分析，而疏于写作\n\n边分析边写作：每完成一部分统计分析，就立即转化为文字，避免遗忘。\n初稿不求完美：先写出雏形，然后借助AI逐步润色。\n\n\n💡 统计写作不是“最后一步”，而是每一步统计分析的记录、反馈与构建。"
+    "objectID": "casefinal.html#相关和回归分析",
+    "href": "casefinal.html#相关和回归分析",
+    "title": "《R语言与统计应用》实验报告汇报要求",
+    "section": "3.7 相关和回归分析",
+    "text": "3.7 相关和回归分析\n\n\nCode\nlibrary(corrplot)\n\nmpg %&gt;% \n  select(displ, cyl, cty, hwy) %&gt;% \n  cor() %&gt;% \n  round(3) %&gt;% \n  corrplot(col = c(4,5),\n           title = \"Coefficient of Correlation Matrix\",\n           mar = c(2,2,2,2),\n           tl.col = 1,\n           addCoef.col = 'white',\n           number.digits = 3)\n\n\n\n发动机排量与气缸数高度正相关，油耗与排量呈负相关。"
   },
   {
-    "objectID": "L9.html#统计再也不怕",
-    "href": "L9.html#统计再也不怕",
-    "title": "模块九DeepSeek辅助傻瓜式医学统计",
-    "section": "9.4 统计再也不怕",
-    "text": "9.4 统计再也不怕\n\n构建“AI+统计”的信心\n用Prompt实践训练，让统计更“傻瓜”、更“可控”\n“统计不再可怕，AI与你同行”\n\n\n\n9.4 练习作业\n\n上传你论文中的一张表格(如Table 1 或 回归模型估计表格)，请DeepSeek写作对应的统计分析段落。 |\n将你过去最头疼的统计部分（如生存分析、PSM段落）写成Prompt试试看 |"
+    "objectID": "casefinal.html#相关和回归分析-1",
+    "href": "casefinal.html#相关和回归分析-1",
+    "title": "《R语言与统计应用》实验报告汇报要求",
+    "section": "3.7 相关和回归分析",
+    "text": "3.7 相关和回归分析\n\n\nCode\ncoef &lt;- mpg %&gt;% \n  lm(cty ~ displ, .) %&gt;% \n  coef() %&gt;% \n  round(3)\n\nmodel &lt;- mpg %&gt;% \n  lm(cty ~ displ, .) \n\nr2 &lt;- summary(model)$r.squared %&gt;% round(3)\n\n\nmpg %&gt;% \n  ggplot(aes(displ, cty))+\n  geom_point()+\n  geom_smooth(method = lm, se = F)+\n  annotate(\"text\", 4,30,\n           label = paste(\"cty_hat = \" ,\n                         coef[1], coef[2],\"displ\"), size = 5) +\n   annotate(\"text\", x = 5.5, y = 30,\n           label =  paste(\"R² =\",  r2),\n           hjust = 0, size = 5)\n\n\n\n发动机排量（displ）每增加1升，油耗（hwy）平均减少2.63英里/加仑。"
   },
   {
-    "objectID": "L9.html#模块九-总结",
-    "href": "L9.html#模块九-总结",
-    "title": "模块九DeepSeek辅助傻瓜式医学统计",
-    "section": "模块九 总结",
-    "text": "模块九 总结\n\n✅ DeepSeek如何助力统计方法的学习？\n✅ DeepSeek如何助力统计方法的运用？\n✅ DeepSeek如何助力写出医学论文中的统计方法/结果/讨论段落的写作？"
-  },
-  {
-    "objectID": "L9.html#致谢",
-    "href": "L9.html#致谢",
-    "title": "模块九DeepSeek辅助傻瓜式医学统计",
-    "section": "致谢",
-    "text": "致谢\n\n医生不必精通统计，但值得拥有一位懂统计、会表达的AI助手。\n\n\n\n\nDeepSeek不是统计学家，却总能说出你心中那句“有理有据”。\n\n\n\n\n把统计分析交给AI，把思考留给科学。\n\n\n\n\n感谢大家的参与！欢迎提问交流！"
-  },
-  {
-    "objectID": "casetips.html#模块九-deepseek辅助傻瓜式医学统计",
-    "href": "casetips.html#模块九-deepseek辅助傻瓜式医学统计",
-    "title": "《R语言与统计应用》实验报告常见问题",
-    "section": "模块九 DeepSeek辅助傻瓜式医学统计",
-    "text": "模块九 DeepSeek辅助傻瓜式医学统计\n\n9.1 DeepSeek辅助统计理念快速入门\n9.2 DeepSeek辅助医学统计学习和运用\n9.3 DeepSeek辅助医学统计写作\n9.4 统计再也不怕"
-  },
-  {
-    "objectID": "casetips.html#deepseek辅助统计理念快速入门",
-    "href": "casetips.html#deepseek辅助统计理念快速入门",
-    "title": "《R语言与统计应用》实验报告常见问题",
-    "section": "9.1 DeepSeek辅助统计理念快速入门",
-    "text": "9.1 DeepSeek辅助统计理念快速入门\n\n9.1.1 与DeepSeek协作：重塑统计学习与科研方式\n9.1.2 DeepSeek如何助力统计学习？\n9.1.3 从学习者到提问者：如何高效对话？"
-  },
-  {
-    "objectID": "casetips.html#与deepseek协作重塑统计学习与科研方式",
-    "href": "casetips.html#与deepseek协作重塑统计学习与科研方式",
-    "title": "《R语言与统计应用》实验报告常见问题",
-    "section": "9.1.1 与DeepSeek协作：重塑统计学习与科研方式",
-    "text": "9.1.1 与DeepSeek协作：重塑统计学习与科研方式\n\n不知道该用什么统计方法？\n看不懂输出结果\n为写论文而发愁\n\n💡 理念重塑: 从“工具”到“伙伴”:\n\n“我不会统计方法” ➡️ “我会提问”\n“我不会用SPSS/R” ➡ “在AI辅助下我能”\n“我写不好论文中的统计部分” ➡ “我能借助 AI表达、优化”"
-  },
-  {
-    "objectID": "casetips.html#prompt驱动的可解释统计协作",
-    "href": "casetips.html#prompt驱动的可解释统计协作",
-    "title": "《R语言与统计应用》实验报告常见问题",
-    "section": "9.1.1 Prompt驱动的“可解释统计协作”",
-    "text": "9.1.1 Prompt驱动的“可解释统计协作”\nDeepSeek: “提示词”(Prompt)驱动的大语言模型(LLM)。\n核心优势：与临床研究者进行“可解释的统计对话”。\n\n\n\n🚀 能力维度\nDeepSeek 如何支持统计协作\n\n\n\n\n🧩 认知支持\n说明统计术语、检验条件、适用场景\n\n\n📊 结果解读\n解读OR/HR、Logistic或Cox模型\n\n\n📈 图表表达\n解读KM曲线、森林图等\n\n\n✍️ 文本重构\n输出期刊风格的统计分析段落\n\n\n💬 多轮互动\nPrompt→输出→提问→优化写作\n\n\n📦 Prompt积累\n构建个人“统计分析提示词库”，复用迁移"
-  },
-  {
-    "objectID": "casetips.html#deepseek如何助力统计学习",
-    "href": "casetips.html#deepseek如何助力统计学习",
-    "title": "《R语言与统计应用》实验报告常见问题",
-    "section": "9.1.2 DeepSeek如何助力统计学习？",
-    "text": "9.1.2 DeepSeek如何助力统计学习？\n\n重构统计学习方式\n\n互动式\n针对性\n不要撒网式学习"
-  },
-  {
-    "objectID": "casetips.html#deepseek如何助力统计学习-1",
-    "href": "casetips.html#deepseek如何助力统计学习-1",
-    "title": "《R语言与统计应用》实验报告常见问题",
-    "section": "9.1.2 DeepSeek如何助力统计学习？",
-    "text": "9.1.2 DeepSeek如何助力统计学习？\n\n统计学习的重心\n\n基础知识(本科课程已涵盖)\n\n变量类型: 定性(无序/有序), 定量(离散/连续)\n参数估计: 置信水平，置信区间\n假设检验: 双/单侧检验，显著性水平, p值, 临界值, 检验统计量\n\n方法选择\n结果解读"
-  },
-  {
-    "objectID": "casetips.html#重构统计学习方式从被动学习到主动建构",
-    "href": "casetips.html#重构统计学习方式从被动学习到主动建构",
-    "title": "《R语言与统计应用》实验报告常见问题",
-    "section": "9.1.2 重构统计学习方式：从被动学习到主动建构",
-    "text": "9.1.2 重构统计学习方式：从被动学习到主动建构\n💡 不再是“学完了才能用”，而是“在用中学习，在问中学”\n📕️ 传统模式：教科书主导，学生被动接受\n\n教材编什么，读者学什么\n\n顺着教材目录走，忽视了统计思维的培养、“统计写作”能力的训练\n\n🚀 DeepSeek模式：需求驱动，Prompt引导学习\n\n先有问题，后找方法\n不再强调公式/计算/软件操作，而是围绕科研任务主动构建统计能力\n\n\n📌 统计学习的未来，不是依靠更全面系统的教材，而是善于利用AI工具的引导。"
-  },
-  {
-    "objectID": "casetips.html#从统计学习者到提问专家如何与-deepseek-高效对话",
-    "href": "casetips.html#从统计学习者到提问专家如何与-deepseek-高效对话",
-    "title": "《R语言与统计应用》实验报告常见问题",
-    "section": "9.1.3 从统计学习者到提问专家：如何与 DeepSeek 高效对话？",
-    "text": "9.1.3 从统计学习者到提问专家：如何与 DeepSeek 高效对话？\n\nDeepSeek可以回答”如何做”\n选择方法, 解释结果, 润色语言\nDeepSeek无法判断统计分析结论的“临床或现实意义”\n① 它不了解临床语境\n\n无法判断1.2 mmHg 的血压差异是否有意义\n无法判断术后感染降低 3% 是否值得改变用药\n无法判断效果大小对患者是否“可感知”\n\n② 它无法识别研究的局限\n\n样本的代表性\n数据质量\n研究全貌"
-  },
-  {
-    "objectID": "casetips.html#小结从工具到能力构建ai辅助统计思维",
-    "href": "casetips.html#小结从工具到能力构建ai辅助统计思维",
-    "title": "《R语言与统计应用》实验报告常见问题",
-    "section": "9.1 小结：从工具到能力，构建AI辅助统计思维",
-    "text": "9.1 小结：从工具到能力，构建AI辅助统计思维\n\n统计学习不只是掌握方法，更是形成解决问题的思维方式。\nDeepSeek不只是工具，更可以成为统计学习与科研写作的智能伙伴。\n借助 AI，可以加速理解、提升效率，但不能替代判断与思考。\n真正有效的统计学习，应注重：\n\n明确目标（用AI解决具体问题）；\n精准提问（提升与AI对话质量）；\n灵活应用（将建议转化为科研能力）。\n\n\n\n📌 从“学习统计”到“用统计解决问题”"
-  },
-  {
-    "objectID": "casetips.html#deepseek辅助医学统计的学习和运用",
-    "href": "casetips.html#deepseek辅助医学统计的学习和运用",
-    "title": "《R语言与统计应用》实验报告常见问题",
-    "section": "9.2 DeepSeek辅助医学统计的学习和运用",
-    "text": "9.2 DeepSeek辅助医学统计的学习和运用\n\n9.2.1 医学统计方法全景图\n9.2.2 DeepSeek如何辅助方法选择？\n9.2.3 DeepSeek如何辅助结果解读？"
-  },
-  {
-    "objectID": "casetips.html#医学统计方法全景图",
-    "href": "casetips.html#医学统计方法全景图",
-    "title": "《R语言与统计应用》实验报告常见问题",
-    "section": "9.2.1 医学统计方法全景图",
-    "text": "9.2.1 医学统计方法全景图"
-  },
-  {
-    "objectID": "casetips.html#deepseek如何辅助选择统计方法",
-    "href": "casetips.html#deepseek如何辅助选择统计方法",
-    "title": "《R语言与统计应用》实验报告常见问题",
-    "section": "9.2.2 DeepSeek如何辅助选择统计方法？",
-    "text": "9.2.2 DeepSeek如何辅助选择统计方法？\n✅ 研究目的: 描述/推断/比较/预测/因果推断\n✅ 数据结构: 横截面/纵向/分层/RCT/生存数据等\n✅ 变量类型: 定性变量(无序/有序), 定量变量(离散/连续)\n✅ 变量地位：结局变量/自变量/协变量\n✅ 变量分布：正态/非正态/泊松分布等\n✅ 样本容量"
-  },
-  {
-    "objectID": "casetips.html#deepseek辅助深入学习统计方法",
-    "href": "casetips.html#deepseek辅助深入学习统计方法",
-    "title": "《R语言与统计应用》实验报告常见问题",
-    "section": "9.2.3 deepseek辅助深入学习统计方法",
-    "text": "9.2.3 deepseek辅助深入学习统计方法\n\n追问统计分析过程细节\n追问检验方法的细节\n追问图形工具的细节\n追问如何评估模型拟合效果"
-  },
-  {
-    "objectID": "casetips.html#小结deepseek辅助医学统计的学习和运用",
-    "href": "casetips.html#小结deepseek辅助医学统计的学习和运用",
-    "title": "《R语言与统计应用》实验报告常见问题",
-    "section": "9.2 小结：DeepSeek辅助医学统计的学习和运用",
-    "text": "9.2 小结：DeepSeek辅助医学统计的学习和运用\n\n将“临床问题”转换为“统计问题”\n\n提问句式：研究目的 + 研究对象 + 自变量 + 因变量 + 特殊说明\n\n追问统计分析过程的细节\n\n方法/模型，还可以做哪些检验或者绘制可视化图形？请参考学术文献的主流做法，回答上述问题。\n\n追问检验方法的细节\n追问图形工具的细节\n追问如何评估模型拟合效果\n关于输出结果的解读\n\n统计学意义：P值、效应量、置信区间\n临床学意义：临床相关性、实际应用价值\n\n优化统计分析的建议\n\n样本数据、选用的变量、估计方法是否存在局限性？请提出改进建议"
-  },
-  {
-    "objectID": "casetips.html#deepseek辅助医学统计写作",
-    "href": "casetips.html#deepseek辅助医学统计写作",
-    "title": "《R语言与统计应用》实验报告常见问题",
-    "section": "9.3 DeepSeek辅助医学统计写作",
-    "text": "9.3 DeepSeek辅助医学统计写作\n\n9.3.1 医学统计写作的挑战\n9.3.2 如何向DeepSeek寻求写作帮助？\n9.3.3 多轮对话优化文字段落"
-  },
-  {
-    "objectID": "casetips.html#医学统计写作的挑战",
-    "href": "casetips.html#医学统计写作的挑战",
-    "title": "《R语言与统计应用》实验报告常见问题",
-    "section": "9.3.1 医学统计写作的挑战",
-    "text": "9.3.1 医学统计写作的挑战\n\n统计分析部分的重要性\n高水平期刊对统计分析的准确性和表达逻辑要求极高\n常见困扰\n\n不熟悉统计方法的选择与表述\n难以准确表述结果的意义\n英语表达能力限制写作效率"
-  },
-  {
-    "objectID": "casetips.html#如何向deepseek寻求写作帮助",
-    "href": "casetips.html#如何向deepseek寻求写作帮助",
-    "title": "《R语言与统计应用》实验报告常见问题",
-    "section": "9.3.2 如何向DeepSeek寻求写作帮助？",
-    "text": "9.3.2 如何向DeepSeek寻求写作帮助？\n🎯 提问句式\n\n输入说明 以下是***结果 / 回归输出 / 表格 / 图形\n目的说明 “请撰写一段医学论文中‘统计分析结果’部分的英文描述\n风格指定 “风格参考JAMA / The Lancet/中华医学杂志\n语言指定 “语言简洁、专业、英文/中文撰写；避免解释性语言"
-  },
-  {
-    "objectID": "casetips.html#多轮对话优化文字段落",
-    "href": "casetips.html#多轮对话优化文字段落",
-    "title": "《R语言与统计应用》实验报告常见问题",
-    "section": "9.3.3 多轮对话优化文字段落",
-    "text": "9.3.3 多轮对话优化文字段落\n\n第一轮生成后继续补充显著性解释、控制混杂变量说明。\n提升质量与防止AI写作痕迹\n核对数据与描述是否匹配。"
-  },
-  {
-    "objectID": "casetips.html#多轮对话优化",
-    "href": "casetips.html#多轮对话优化",
-    "title": "《R语言与统计应用》实验报告常见问题",
-    "section": "9.3.3 多轮对话优化",
-    "text": "9.3.3 多轮对话优化\n\n明确传达研究设计类型、变量信息、分析目的、统计方法或输出；\n指定写作风格（如参考 BMJ / JAMA / 中华医学杂志）；\n要求其输出语言风格客观、精炼、符合医学统计写作规范。"
-  },
-  {
-    "objectID": "casetips.html#小结-deepseek辅助医学统计写作",
-    "href": "casetips.html#小结-deepseek辅助医学统计写作",
-    "title": "《R语言与统计应用》实验报告常见问题",
-    "section": "9.3 小结 DeepSeek辅助医学统计写作",
-    "text": "9.3 小结 DeepSeek辅助医学统计写作\n\n建立自己的提示词库\n\n方法提示词：适用条件/数据结构/样本容量/估计结果解释/需要做的检验/可视化工具\n写作提示词：数据/方法/结果/讨论\n\n建立自己的范文库\n\n高水平期刊的同类研究的范文的数据/方法/结果/讨论的写法\n\n不要忙于统计分析，而疏于写作\n\n边分析边写作：每完成一部分统计分析，就立即转化为文字，避免遗忘。\n初稿不求完美：先写出雏形，然后借助AI逐步润色。\n\n\n💡 统计写作不是“最后一步”，而是每一步统计分析的记录、反馈与构建。"
-  },
-  {
-    "objectID": "casetips.html#统计再也不怕",
-    "href": "casetips.html#统计再也不怕",
-    "title": "《R语言与统计应用》实验报告常见问题",
-    "section": "9.4 统计再也不怕",
-    "text": "9.4 统计再也不怕\n\n构建“AI+统计”的信心\n用Prompt实践训练，让统计更“傻瓜”、更“可控”\n“统计不再可怕，AI与你同行”"
-  },
-  {
-    "objectID": "casetips.html#模块九-总结",
-    "href": "casetips.html#模块九-总结",
-    "title": "《R语言与统计应用》实验报告常见问题",
-    "section": "模块九 总结",
-    "text": "模块九 总结\n\n✅ DeepSeek如何助力统计方法的学习？\n✅ DeepSeek如何助力统计方法的运用？\n✅ DeepSeek如何助力写出医学论文中的统计方法/结果/讨论段落的写作？"
-  },
-  {
-    "objectID": "casetips.html#致谢",
-    "href": "casetips.html#致谢",
-    "title": "《R语言与统计应用》实验报告常见问题",
-    "section": "致谢",
-    "text": "致谢\n\n医生不必精通统计，但值得拥有一位懂统计、会表达的AI助手。\n\n\n\n\nDeepSeek不是统计学家，却总能说出你心中那句“有理有据”。\n\n\n\n\n把统计分析交给AI，把思考留给科学。\n\n\n\n\n感谢大家的参与！欢迎提问交流！"
-  },
-  {
-    "objectID": "casetips.html#数据框中的定量变量以字符串的形式保存",
-    "href": "casetips.html#数据框中的定量变量以字符串的形式保存",
-    "title": "《R语言与统计应用》实验报告常见问题",
-    "section": "数据框中的定量变量以字符串的形式保存",
-    "text": "数据框中的定量变量以字符串的形式保存\n\n\nCode\ndf &lt;- data.frame(\n  name = c(\"Tom\", \"Jerry\", \"Mickey\", \"Donald\", \"Goofy\"),\n  height = c(\"170\", \"172\", \"183\", \"185\", \"177\"),\n  weight = c(\"73\", \"78\", \"85\", \"92\", \"70\")\n)\n\nmean(df$height)\n\n\nWarning in mean.default(df$height): argument is not numeric or logical:\nreturning NA\n\n\n[1] NA\n\n\nCode\n# 把height, weight转换为数值型\n\ndf &lt;- df %&gt;%\n  mutate(across(c(height, weight), as.numeric))\n\nmean(df$height)\n\n\n[1] 177.4"
-  },
-  {
-    "objectID": "casetips.html#在用r读取excel文件时excel文件中的数值变量成了字符串",
-    "href": "casetips.html#在用r读取excel文件时excel文件中的数值变量成了字符串",
-    "title": "《R语言与统计应用》实验报告常见问题",
-    "section": "在用R读取Excel文件时，Excel文件中的数值变量成了字符串",
-    "text": "在用R读取Excel文件时，Excel文件中的数值变量成了字符串\n\n某列中混有非数字字符, 如空格、文字、符号等\nExcel 中该列被显式设置为了“文本”格式\n如果前几行的数据不具代表性（如缺失、为字符串等），类型推断就可能失误"
-  },
-  {
-    "objectID": "casetips.html#r读取excel文件时excel中的数值变成了字符串",
-    "href": "casetips.html#r读取excel文件时excel中的数值变成了字符串",
-    "title": "《R语言与统计应用》实验报告常见问题",
-    "section": "R读取Excel文件时，Excel中的数值变成了字符串",
-    "text": "R读取Excel文件时，Excel中的数值变成了字符串\n\n某列中混有非数字字符, 如空格、文字、符号等\nExcel 中该列被显式设置为了“文本”格式\n如果前几行的数据不具代表性（如缺失、为字符串等），类型推断就可能失误"
-  },
-  {
-    "objectID": "casetips.html#帕雷托图",
-    "href": "casetips.html#帕雷托图",
-    "title": "《R语言与统计应用》实验报告常见问题",
-    "section": "帕雷托图",
-    "text": "帕雷托图\n\n条形按降序排列\n标注频数"
-  },
-  {
-    "objectID": "casetips.html#帕雷托图-1",
-    "href": "casetips.html#帕雷托图-1",
-    "title": "《R语言与统计应用》实验报告常见问题",
-    "section": "帕雷托图",
-    "text": "帕雷托图\n\nmpg %&gt;% \n  ggplot(aes(fct_infreq(class))) + \n  geom_bar(col = \"cyan\", fill = \"cyan\")+\n  labs(title = \"Pareto Diagram\", x = \"Manufacturer\") +\n    geom_text(stat = \"count\",\n            aes(label = after_stat(count)), \n            vjust = -0.5)+     \n  guides(x = guide_axis(angle = 45))+\n  labs(title = \"Pareto Diagram\", x = \"Manufacturer\") +\n  scale_y_continuous(limits = c(0, 70))"
-  },
-  {
-    "objectID": "casetips.html#帕累托图",
-    "href": "casetips.html#帕累托图",
-    "title": "《R语言与统计应用》实验报告常见问题",
-    "section": "帕累托图",
-    "text": "帕累托图\n\n条形按降序排列\n标注频数"
-  },
-  {
-    "objectID": "casetips.html#帕累托图-1",
-    "href": "casetips.html#帕累托图-1",
-    "title": "《R语言与统计应用》实验报告常见问题",
-    "section": "帕累托图",
-    "text": "帕累托图\n\n\nCode\nmpg %&gt;% \n  ggplot(aes(fct_infreq(class))) + \n  geom_bar(col = \"cyan\", fill = \"cyan\")+\n  labs(title = \"Pareto Diagram\", x = \"Manufacturer\") +\n    geom_text(stat = \"count\",\n            aes(label = after_stat(count)), \n            vjust = -0.5)+     \n  guides(x = guide_axis(angle = 45))+\n  labs(title = \"Pareto Diagram\", x = \"Manufacturer\") +\n  scale_y_continuous(limits = c(0, 70))"
-  },
-  {
-    "objectID": "casetips.html#饼图扇区按百分比降序排列",
-    "href": "casetips.html#饼图扇区按百分比降序排列",
-    "title": "《R语言与统计应用》实验报告常见问题",
-    "section": "饼图扇区按百分比降序排列",
-    "text": "饼图扇区按百分比降序排列\n\n\nCode\n# 准备数据：按频数降序排列\ndf &lt;- mpg %&gt;%\n  count(class) %&gt;%\n  arrange(desc(n)) %&gt;%\n  mutate(pct = round(100 * n / sum(n), 0),\n         label = paste0(class, \"\\n\", pct, \"%\"),\n         class = factor(class, levels = class) # 按频数降序设置因子顺序\n  )\n\ncolors &lt;- colorRampPalette(c(\"lightblue\", \"blue\", \"darkblue\"))(nrow(df))\n\n# 绘制饼图（极坐标 + 降序排列）\nggplot(df, aes(x = \"\", y = n, fill = class)) +\n  geom_bar(stat = \"identity\", width = 1) +\n  scale_fill_manual(values = colors) +\n  coord_polar(theta = \"y\", direction = -1) +  # 逆时针方向排列\n  geom_text(aes(label = label), \n            col = \"white\",\n            position = position_stack(vjust = 0.5), size = 5) +\n  theme_void() +\n  theme(legend.position = \"none\")"
-  },
-  {
-    "objectID": "casetips.html#合并小类减少扇区",
-    "href": "casetips.html#合并小类减少扇区",
-    "title": "《R语言与统计应用》实验报告常见问题",
-    "section": "合并小类，减少扇区",
-    "text": "合并小类，减少扇区\n\n\nCode\ndf &lt;- mpg %&gt;%\n  mutate(class = fct_lump_n(class, 5)) %&gt;% \n  count(class) %&gt;%\n  arrange(desc(n)) %&gt;%\n  mutate(pct = round(100 * n / sum(n), 0),\n         label = paste0(class, \"\\n\", pct, \"%\"),\n         class = factor(class, levels = class) # 按频数降序设置因子顺序\n  )\n\ncolors &lt;- colorRampPalette(c(\"lightblue\", \"blue\", \"darkblue\"))(nrow(df))\n\n# 绘制饼图（极坐标 + 降序排列）\nggplot(df, aes(x = \"\", y = n, fill = class)) +\n  geom_bar(stat = \"identity\", width = 1) +\n  scale_fill_manual(values = colors) +\n  coord_polar(theta = \"y\", direction = -1) +  # 逆时针方向排列\n  geom_text(aes(label = label), \n            col = \"white\",\n            position = position_stack(vjust = 0.5), size = 5) +\n  theme_void() +\n  theme(legend.position = \"none\")"
-  },
-  {
-    "objectID": "casetips.html#独立性检验-适用条件",
-    "href": "casetips.html#独立性检验-适用条件",
-    "title": "《R语言与统计应用》实验报告常见问题",
-    "section": "独立性检验 —— 适用条件",
-    "text": "独立性检验 —— 适用条件\n\n\nCode\nchisq.test(mpg$class, mpg$drv)\n\n\nWarning in chisq.test(mpg$class, mpg$drv): Chi-squared approximation may be\nincorrect\n\n\n\n    Pearson's Chi-squared test\n\ndata:  mpg$class and mpg$drv\nX-squared = 221.6, df = 12, p-value &lt; 2.2e-16"
-  },
-  {
-    "objectID": "casetips.html#独立性检验-提炼研究结论",
-    "href": "casetips.html#独立性检验-提炼研究结论",
-    "title": "《R语言与统计应用》实验报告常见问题",
-    "section": "独立性检验 —— 提炼研究结论",
-    "text": "独立性检验 —— 提炼研究结论\n\n\n         \n            f Other\n  compact  74    26\n  midsize  93     7\n  suv       0   100\n  Other    39    61\n\n\n         \n           f Other\n  compact 33     9\n  midsize 36     2\n  suv      0    48\n  Other   31    40"
-  },
-  {
-    "objectID": "casetips.html#单因素方差分析-分类数太多导致有些组别的样本量太小",
-    "href": "casetips.html#单因素方差分析-分类数太多导致有些组别的样本量太小",
-    "title": "《R语言与统计应用》实验报告常见问题",
-    "section": "单因素方差分析 – 分类数太多，导致有些组别的样本量太小",
-    "text": "单因素方差分析 – 分类数太多，导致有些组别的样本量太小\n\n\nCode\n# 单因素方差分析\nggbetweenstats(\n  data = mpg,\n  x = class,\n  y = displ,\n  type = \"parametric\",        \n  palette = \"Accent\", \n  violin.args = list(width = 0),\n  title = \"Suv, Midsize, Compact, Subcompact, Other五个组别的排量比较\",\n  xlab = \"Class\",\n  ylab = \"发动机排量\",\n  bf.message = FALSE,\n  digits = 3L\n)"
-  },
-  {
-    "objectID": "casetips.html#单因素方差分析-可视化-排序",
-    "href": "casetips.html#单因素方差分析-可视化-排序",
-    "title": "《R语言与统计应用》实验报告常见问题",
-    "section": "单因素方差分析 – 可视化, 排序",
-    "text": "单因素方差分析 – 可视化, 排序\n\n\nCode\n# 按中位数对 class 重新排序\ndf &lt;- mpg %&gt;%\n  mutate(\n    class = fct_lump(class, n = 4),\n    class = fct_reorder(class, displ, \n                        .fun = median, .desc = TRUE)\n  )\n\n# 单因素方差分析\nggbetweenstats(\n  data = df,\n  x = class,\n  y = displ,\n  type = \"parametric\",        \n  palette = \"Accent\", \n  violin.args = list(width = 0),\n  title = \"Suv, Midsize, Compact, Subcompact, Other五个组别的排量比较\",\n  xlab = \"Class\",\n  ylab = \"发动机排量\",\n  bf.message = FALSE,\n  digits = 3L\n)"
-  },
-  {
-    "objectID": "casetips.html#若两个定型变量不独立有何关联-提炼研究结论",
-    "href": "casetips.html#若两个定型变量不独立有何关联-提炼研究结论",
-    "title": "《R语言与统计应用》实验报告常见问题",
-    "section": "若两个定型变量不独立，有何关联 —— 提炼研究结论",
-    "text": "若两个定型变量不独立，有何关联 —— 提炼研究结论\n\n\n         \n            f Other\n  compact  74    26\n  midsize  93     7\n  suv       0   100\n  Other    39    61\n\n\n         \n           f Other\n  compact 33     9\n  midsize 36     2\n  suv      0    48\n  Other   31    40"
-  },
-  {
-    "objectID": "casetips.html#饼图-扇区按百分比降序排列",
-    "href": "casetips.html#饼图-扇区按百分比降序排列",
-    "title": "《R语言与统计应用》实验报告常见问题",
-    "section": "饼图 – 扇区按百分比降序排列",
-    "text": "饼图 – 扇区按百分比降序排列\n\n\nCode\n# 准备数据：按频数降序排列\ndf &lt;- mpg %&gt;%\n  count(class) %&gt;%\n  arrange(desc(n)) %&gt;%\n  mutate(pct = round(100 * n / sum(n), 0),\n         label = paste0(class, \"\\n\", pct, \"%\"),\n         class = factor(class, levels = class) # 按频数降序设置因子顺序\n  )\n\ncolors &lt;- colorRampPalette(c(\"lightblue\", \"blue\", \"darkblue\"))(nrow(df))\n\n# 绘制饼图（极坐标 + 降序排列）\nggplot(df, aes(x = \"\", y = n, fill = class)) +\n  geom_bar(stat = \"identity\", width = 1) +\n  scale_fill_manual(values = colors) +\n  coord_polar(theta = \"y\", direction = -1) +  # 逆时针方向排列\n  geom_text(aes(label = label), \n            col = \"white\",\n            position = position_stack(vjust = 0.5), size = 5) +\n  theme_void() +\n  theme(legend.position = \"none\")"
-  },
-  {
-    "objectID": "casetips.html#合并小类分组箱线图",
-    "href": "casetips.html#合并小类分组箱线图",
-    "title": "《R语言与统计应用》实验报告常见问题",
-    "section": "合并小类，分组箱线图",
-    "text": "合并小类，分组箱线图\n\n\nCode\nmpg %&gt;%\n  mutate(class = fct_lump_n(class, 5)) %&gt;% \n  ggplot(aes(reorder(class,displ),displ,\n             col = class))+\n  geom_boxplot()+\n  guides(x = guide_axis(n.dodge = 3)) +\n  theme(legend.position = \"none\")"
-  },
-  {
-    "objectID": "casetips.html#独立性检验-查看期望频数",
-    "href": "casetips.html#独立性检验-查看期望频数",
-    "title": "《R语言与统计应用》实验报告常见问题",
-    "section": "独立性检验 —— 查看期望频数",
-    "text": "独立性检验 —— 查看期望频数\n\n\nCode\nchisq.test(df$class, df$drv)\n\n\n\n    Pearson's Chi-squared test\n\ndata:  df$class and df$drv\nX-squared = 105.86, df = 3, p-value &lt; 2.2e-16\n\n\nCode\nchisq.test(df$class, df$drv)$expected\n\n\n         df$drv\ndf$class         f    Other\n  compact 21.29060 25.70940\n  midsize 18.57265 22.42735\n  suv     28.08547 33.91453\n  Other   38.05128 45.94872"
-  },
-  {
-    "objectID": "casetips.html#计算行列百分比-提炼研究结论",
-    "href": "casetips.html#计算行列百分比-提炼研究结论",
-    "title": "《R语言与统计应用》实验报告常见问题",
-    "section": "计算行/列百分比 —— 提炼研究结论",
-    "text": "计算行/列百分比 —— 提炼研究结论\n\n\n         \n            f Other\n  compact  74    26\n  midsize  93     7\n  suv       0   100\n  Other    39    61\n\n\n         \n           f Other\n  compact 33     9\n  midsize 36     2\n  suv      0    48\n  Other   31    40"
-  },
-  {
-    "objectID": "casetips.html#独立性检验-合并小类降低列联表纬度",
-    "href": "casetips.html#独立性检验-合并小类降低列联表纬度",
-    "title": "《R语言与统计应用》实验报告常见问题",
-    "section": "独立性检验 —— 合并小类，降低列联表纬度",
-    "text": "独立性检验 —— 合并小类，降低列联表纬度\n\n\nCode\ndf &lt;- mpg %&gt;% \n  mutate(class = fct_lump_n(class, 3),\n         drv = fct_lump_n(drv, 1))\n\ntable(df$class, df$drv)\n\n\n         \n           f Other\n  compact 35    12\n  midsize 38     3\n  suv      0    62\n  Other   33    51"
-  },
-  {
-    "objectID": "casetips.html#单因素方差分析-合并小类-排序",
-    "href": "casetips.html#单因素方差分析-合并小类-排序",
-    "title": "《R语言与统计应用》实验报告常见问题",
-    "section": "单因素方差分析 – 合并小类, 排序",
-    "text": "单因素方差分析 – 合并小类, 排序\n\n\nCode\n# 按中位数对 class 重新排序\ndf &lt;- mpg %&gt;%\n  mutate(\n    class = fct_lump(class, n = 4),\n    class = fct_reorder(class, displ, \n                        .fun = median, .desc = TRUE)\n  )\n\n# 单因素方差分析\nggbetweenstats(\n  data = df,\n  x = class,\n  y = displ,\n  type = \"parametric\",        \n  palette = \"Accent\", \n  violin.args = list(width = 0),\n  title = \"Suv, Midsize, Compact, Subcompact, Other五个组别的排量比较\",\n  xlab = \"Class\",\n  ylab = \"发动机排量\",\n  bf.message = FALSE,\n  digits = 3L\n)"
+    "objectID": "casefinal.html#研究结论-1",
+    "href": "casefinal.html#研究结论-1",
+    "title": "《R语言与统计应用》实验报告汇报要求",
+    "section": "研究结论",
+    "text": "研究结论\n\n驱动类型和气缸数量不独立：4缸，72%前驱，28%四驱; 6缸，54%前驱， 41%四驱，5%后驱; 8缸，1%前驱， 69%四驱，30%后驱。\n不同驱动方式的车型发动机排量差异显著: 后驱(5.2)最大，四驱(4.0)居中，前驱(2.6)最小。\n发动机排量与气缸数高度正相关，油耗与排量呈负相关。\n发动机排量（displ）每增加1升，油耗（hwy）平均减少2.63英里/加仑。"
   }
 ]
