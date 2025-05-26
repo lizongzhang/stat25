@@ -16,11 +16,13 @@ title: "案例与实验报告"
 
 # 往届实验报告
 
+-   <img src="img/link.png" style="width: 24px; height: 24px;margin-right: 10px">[R语言与统计应用实验报告——饮料特征分析](https://lizongzhang.github.io/stat/stu_report.html){target="_blank"}
+
 -   <img src="img/link.png" style="width: 24px; height: 24px;margin-right: 10px">[SPSS与统计实验报告——B站热门视频分析](https://lizongzhang.github.io/statwithspss/stureportspss1.html){target="_blank"}
 
 -   <img src="img/link.png" style="width: 24px; height: 24px;margin-right: 10px">[SPSS与统计实验报告——中国电影票房TOP100分析SPSS](https://lizongzhang.github.io/statwithspss/stureportspss2.html){target="_blank"}
 
--   <img src="img/link.png" style="width: 24px; height: 24px;margin-right: 10px">[R语言与统计应用实验报告——饮料特征分析](https://lizongzhang.github.io/stat/stu_report.html){target="_blank"}
+
 
 # 第1次讨论课
 
