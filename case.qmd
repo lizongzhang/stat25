@@ -46,15 +46,13 @@ title: "案例与实验报告"
     
 # 实验报告
 
-## 实验报告要求
-
 -   <img src="img/link.png" style="width: 24px; height: 24px;margin-right: 10px">[实验报告写作要求](https://lizongzhang.github.io/stat25/report.html){target="_blank"}
 
 -   <img src="img/link.png" style="width: 24px; height: 24px;margin-right: 10px">[实验报告期末汇报要求](https://lizongzhang.github.io/stat25/casefinal.html){target="_blank"}
 
 -   <img src="img/link.png" style="width: 24px; height: 24px;margin-right: 10px">[实验报告常见问题](https://lizongzhang.github.io/stat25/casetips.html){target="_blank"}
 
-## 往届实验报告
+# 往届实验报告
 
 -   <img src="img/link.png" style="width: 24px; height: 24px;margin-right: 10px">[SPSS与统计实验报告——B站热门视频分析](https://lizongzhang.github.io/statwithspss/stureportspss1.html){target="_blank"}
 
@@ -140,22 +138,6 @@ title: "案例与实验报告"
 
 
 # 实验报告汇报 (第17周)
-
--   每组汇报时间为5分钟。
-
--   汇报大纲(PPT 20页左右)：
-
-    -   选题背景
-    
-    -   数据来源
-    
-    -   数据分析
-    
-    -   结论
-    
-    -   经验分享
-    
-
 
 
 # 第3-4章小组作业点评
