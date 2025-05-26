@@ -50,10 +50,9 @@ title: "案例与实验报告"
 
 -   <img src="img/link.png" style="width: 24px; height: 24px;margin-right: 10px">[实验报告写作要求](https://lizongzhang.github.io/stat25/report.html){target="_blank"}
 
+-   <img src="img/link.png" style="width: 24px; height: 24px;margin-right: 10px">[实验报告期末汇报要求](https://lizongzhang.github.io/stat25/casefinal.html){target="_blank"}
 
 -   <img src="img/link.png" style="width: 24px; height: 24px;margin-right: 10px">[实验报告常见问题](https://lizongzhang.github.io/stat25/casetips.html){target="_blank"}
-
--   <img src="img/link.png" style="width: 24px; height: 24px;margin-right: 10px">[实验报告期末汇报要求](https://lizongzhang.github.io/stat25/casefinal.html){target="_blank"}
 
 ## 往届实验报告
 
