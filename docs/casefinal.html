@@ -223,13 +223,8 @@
 <li><p>文件形式：演示文稿，转成PDF文档</p></li>
 </ul>
 </section>
-<section class="slide level2">
-
-</section>
-<section>
-<section id="示例汽车性能分析" class="title-slide slide level1 center">
-<h1>示例：汽车性能分析</h1>
-
+<section id="示例汽车性能分析" class="slide level2">
+<h2>示例：汽车性能分析</h2>
 </section>
 <section id="数据来源" class="slide level2">
 <h2>1 数据来源</h2>
@@ -263,7 +258,7 @@
 <p>3.1 可视化：帕累托图、饼图、分组箱线图、分组直方图</p>
 <p>3.2 报告描述性统计量</p>
 <p>3.3 区间估计</p>
-<p>3.4 单个总体均值的假设检验</p>
+<p>3.4 假设检验</p>
 <p>3.5 独立性检验</p>
 <p>3.6 方差分析</p>
 <p>3.7 相关和回归分析</p>
@@ -338,7 +333,26 @@
 </section>
 <section id="可视化分组直方图" class="slide level2">
 <h2>3.1 可视化：分组直方图</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>mpg <span class="sc">%&gt;%</span> </span>
+<span id="cb4-2"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(cty))<span class="sc">+</span></span>
+<span id="cb4-3"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">col =</span> <span class="dv">1</span>, <span class="at">fill =</span> <span class="dv">5</span>, <span class="at">binwidth =</span> <span class="dv">2</span>)<span class="sc">+</span></span>
+<span id="cb4-4"><a></a>  <span class="fu">stat_bin</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">ifelse</span>(<span class="fu">after_stat</span>(count) <span class="sc">==</span> <span class="dv">0</span>, <span class="st">""</span>, </span>
+<span id="cb4-5"><a></a>                              <span class="fu">after_stat</span>(count))), <span class="at">binwidth =</span> <span class="dv">2</span>, </span>
+<span id="cb4-6"><a></a>           <span class="at">geom =</span> <span class="st">"text"</span>,<span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.5</span>)<span class="sc">+</span></span>
+<span id="cb4-7"><a></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">50</span>), <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">50</span>,<span class="dv">10</span>))<span class="sc">+</span></span>
+<span id="cb4-8"><a></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">9</span>,<span class="dv">35</span>,<span class="dv">2</span>)) <span class="sc">+</span></span>
+<span id="cb4-9"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> drv, <span class="at">ncol =</span> <span class="dv">1</span>,</span>
+<span id="cb4-10"><a></a>    <span class="at">labeller =</span> <span class="fu">as_labeller</span>(<span class="fu">c</span>(</span>
+<span id="cb4-11"><a></a>      <span class="st">"4"</span> <span class="ot">=</span> <span class="st">"4-wheel drive"</span>,</span>
+<span id="cb4-12"><a></a>      <span class="st">"f"</span> <span class="ot">=</span> <span class="st">"Front-wheel drive"</span>,</span>
+<span id="cb4-13"><a></a>      <span class="st">"r"</span> <span class="ot">=</span> <span class="st">"Rear-wheel drive"</span></span>
+<span id="cb4-14"><a></a>    ))) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 
+</div>
 <img data-src="casefinal_files/figure-revealjs/unnamed-chunk-5-1.png" width="960" class="r-stretch"><p>前驱车型城市油耗分布较高，后驱车型油耗偏低且集中，四驱居中偏低。</p>
 </section>
 <section id="报告描述性统计量" class="slide level2">
@@ -346,13 +360,13 @@
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">library</span>(psych)</span>
-<span id="cb4-2"><a></a></span>
-<span id="cb4-3"><a></a>mpg <span class="sc">%&gt;%</span></span>
-<span id="cb4-4"><a></a>  <span class="fu">select</span>(<span class="fu">where</span>(is.numeric)) <span class="sc">%&gt;%</span> </span>
-<span id="cb4-5"><a></a>  <span class="fu">select</span>(<span class="sc">-</span>year) <span class="sc">%&gt;%</span> </span>
-<span id="cb4-6"><a></a>  <span class="fu">describe</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb4-7"><a></a>  <span class="fu">select</span>(n, mean, sd, median, min, max) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">library</span>(psych)</span>
+<span id="cb5-2"><a></a></span>
+<span id="cb5-3"><a></a>mpg <span class="sc">%&gt;%</span></span>
+<span id="cb5-4"><a></a>  <span class="fu">select</span>(<span class="fu">where</span>(is.numeric)) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-5"><a></a>  <span class="fu">select</span>(<span class="sc">-</span>year) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-6"><a></a>  <span class="fu">describe</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb5-7"><a></a>  <span class="fu">select</span>(n, mean, sd, median, min, max) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>        n  mean   sd median  min max
@@ -369,19 +383,19 @@ hwy   234 23.44 5.95   24.0 12.0  44</code></pre>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="fu">library</span>(psych)</span>
-<span id="cb6-2"><a></a></span>
-<span id="cb6-3"><a></a></span>
-<span id="cb6-4"><a></a>ci <span class="ot">&lt;-</span> <span class="fu">t.test</span>(mpg<span class="sc">$</span>cty)<span class="sc">$</span>conf.int</span>
-<span id="cb6-5"><a></a><span class="fu">sprintf</span>(<span class="st">"城市油耗的总体均值的95%%置信区间：[%.2f, %.2f]"</span>, ci[<span class="dv">1</span>], ci[<span class="dv">2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="fu">library</span>(psych)</span>
+<span id="cb7-2"><a></a></span>
+<span id="cb7-3"><a></a></span>
+<span id="cb7-4"><a></a>ci <span class="ot">&lt;-</span> <span class="fu">t.test</span>(mpg<span class="sc">$</span>cty)<span class="sc">$</span>conf.int</span>
+<span id="cb7-5"><a></a><span class="fu">sprintf</span>(<span class="st">"城市油耗的总体均值的95%%置信区间：[%.2f, %.2f]"</span>, ci[<span class="dv">1</span>], ci[<span class="dv">2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "城市油耗的总体均值的95%置信区间：[16.31, 17.41]"</code></pre>
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>ci <span class="ot">&lt;-</span> <span class="fu">t.test</span>(mpg<span class="sc">$</span>hwy)<span class="sc">$</span>conf.int</span>
-<span id="cb8-2"><a></a><span class="fu">sprintf</span>(<span class="st">"高速油耗的总体均值的95%%置信区间：[%.2f, %.2f]"</span>, ci[<span class="dv">1</span>], ci[<span class="dv">2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>ci <span class="ot">&lt;-</span> <span class="fu">t.test</span>(mpg<span class="sc">$</span>hwy)<span class="sc">$</span>conf.int</span>
+<span id="cb9-2"><a></a><span class="fu">sprintf</span>(<span class="st">"高速油耗的总体均值的95%%置信区间：[%.2f, %.2f]"</span>, ci[<span class="dv">1</span>], ci[<span class="dv">2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "高速油耗的总体均值的95%置信区间：[22.67, 24.21]"</code></pre>
@@ -393,13 +407,13 @@ hwy   234 23.44 5.95   24.0 12.0  44</code></pre>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="fu">library</span>(ggstatsplot)</span>
-<span id="cb10-2"><a></a></span>
-<span id="cb10-3"><a></a><span class="fu">gghistostats</span>(mpg, cty, </span>
-<span id="cb10-4"><a></a>             <span class="at">test.value =</span> <span class="dv">16</span>,</span>
-<span id="cb10-5"><a></a>             <span class="at">bin.args =</span> <span class="fu">list</span>(<span class="at">color =</span> <span class="st">"black"</span>,</span>
-<span id="cb10-6"><a></a>                             <span class="at">fill =</span> <span class="st">"cyan"</span>)) <span class="sc">+</span></span>
-<span id="cb10-7"><a></a>  <span class="fu">theme_classic</span>(<span class="at">base_size =</span> <span class="dv">15</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="fu">library</span>(ggstatsplot)</span>
+<span id="cb11-2"><a></a></span>
+<span id="cb11-3"><a></a><span class="fu">gghistostats</span>(mpg, cty, </span>
+<span id="cb11-4"><a></a>             <span class="at">test.value =</span> <span class="dv">16</span>,</span>
+<span id="cb11-5"><a></a>             <span class="at">bin.args =</span> <span class="fu">list</span>(<span class="at">color =</span> <span class="st">"black"</span>,</span>
+<span id="cb11-6"><a></a>                             <span class="at">fill =</span> <span class="st">"cyan"</span>)) <span class="sc">+</span></span>
+<span id="cb11-7"><a></a>  <span class="fu">theme_classic</span>(<span class="at">base_size =</span> <span class="dv">15</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 
 </div>
@@ -416,17 +430,17 @@ hwy   234 23.44 5.95   24.0 12.0  44</code></pre>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>mpg <span class="sc">%&gt;%</span></span>
-<span id="cb11-2"><a></a>  <span class="fu">filter</span>(drv <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"4"</span>, <span class="st">"f"</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb11-3"><a></a>  <span class="fu">ggbetweenstats</span>(drv, </span>
-<span id="cb11-4"><a></a>                 cty,</span>
-<span id="cb11-5"><a></a>                 <span class="at">p.adjust.method =</span> <span class="st">"none"</span>,</span>
-<span id="cb11-6"><a></a>                 <span class="at">xlab =</span> <span class="st">"drive"</span>,</span>
-<span id="cb11-7"><a></a>                 <span class="at">package =</span> <span class="st">"RColorBrewer"</span>,</span>
-<span id="cb11-8"><a></a>                 <span class="at">palette =</span> <span class="st">"Set1"</span>,</span>
-<span id="cb11-9"><a></a>                 <span class="at">violin.args =</span> <span class="fu">list</span>(<span class="at">width =</span> <span class="dv">0</span>)</span>
-<span id="cb11-10"><a></a>  ) <span class="sc">+</span></span>
-<span id="cb11-11"><a></a>  <span class="fu">theme_classic</span>(<span class="at">base_size =</span> <span class="dv">15</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a>mpg <span class="sc">%&gt;%</span></span>
+<span id="cb12-2"><a></a>  <span class="fu">filter</span>(drv <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"4"</span>, <span class="st">"f"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb12-3"><a></a>  <span class="fu">ggbetweenstats</span>(drv, </span>
+<span id="cb12-4"><a></a>                 cty,</span>
+<span id="cb12-5"><a></a>                 <span class="at">p.adjust.method =</span> <span class="st">"none"</span>,</span>
+<span id="cb12-6"><a></a>                 <span class="at">xlab =</span> <span class="st">"drive"</span>,</span>
+<span id="cb12-7"><a></a>                 <span class="at">package =</span> <span class="st">"RColorBrewer"</span>,</span>
+<span id="cb12-8"><a></a>                 <span class="at">palette =</span> <span class="st">"Set1"</span>,</span>
+<span id="cb12-9"><a></a>                 <span class="at">violin.args =</span> <span class="fu">list</span>(<span class="at">width =</span> <span class="dv">0</span>)</span>
+<span id="cb12-10"><a></a>  ) <span class="sc">+</span></span>
+<span id="cb12-11"><a></a>  <span class="fu">theme_classic</span>(<span class="at">base_size =</span> <span class="dv">15</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 
 </div>
@@ -442,12 +456,12 @@ hwy   234 23.44 5.95   24.0 12.0  44</code></pre>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="fu">ggbarstats</span>(mpg,</span>
-<span id="cb12-2"><a></a>           drv,</span>
-<span id="cb12-3"><a></a>           cyl,</span>
-<span id="cb12-4"><a></a>           <span class="at">package =</span> <span class="st">"RColorBrewer"</span>,</span>
-<span id="cb12-5"><a></a>           <span class="at">palette =</span> <span class="st">"Paired"</span>)<span class="sc">+</span></span>
-<span id="cb12-6"><a></a>  <span class="fu">theme_bw</span>(<span class="at">base_size =</span> <span class="dv">15</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="fu">ggbarstats</span>(mpg,</span>
+<span id="cb13-2"><a></a>           drv,</span>
+<span id="cb13-3"><a></a>           cyl,</span>
+<span id="cb13-4"><a></a>           <span class="at">package =</span> <span class="st">"RColorBrewer"</span>,</span>
+<span id="cb13-5"><a></a>           <span class="at">palette =</span> <span class="st">"Paired"</span>)<span class="sc">+</span></span>
+<span id="cb13-6"><a></a>  <span class="fu">theme_bw</span>(<span class="at">base_size =</span> <span class="dv">15</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 
 </div>
@@ -462,7 +476,34 @@ hwy   234 23.44 5.95   24.0 12.0  44</code></pre>
 <section id="方差分析" class="slide level2">
 <h2>3.6 方差分析</h2>
 <div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>mpg <span class="sc">%&gt;%</span> </span>
+<span id="cb14-2"><a></a>  <span class="fu">mutate</span>(<span class="at">drv =</span> <span class="fu">fct_reorder</span>(drv, displ, <span class="at">.fun =</span> median)) <span class="sc">%&gt;%</span></span>
+<span id="cb14-3"><a></a>  <span class="fu">ggbetweenstats</span>(</span>
+<span id="cb14-4"><a></a>    drv, </span>
+<span id="cb14-5"><a></a>    displ,</span>
+<span id="cb14-6"><a></a>    <span class="at">type =</span> <span class="st">"parametric"</span>,        </span>
+<span id="cb14-7"><a></a>    <span class="at">palette =</span> <span class="st">"Accent"</span>, </span>
+<span id="cb14-8"><a></a>    <span class="at">violin.args =</span> <span class="fu">list</span>(<span class="at">width =</span> <span class="dv">0</span>),</span>
+<span id="cb14-9"><a></a>    <span class="at">xlab =</span> <span class="st">"drv"</span>,</span>
+<span id="cb14-10"><a></a>    <span class="at">ylab =</span> <span class="st">"发动机排量"</span>,</span>
+<span id="cb14-11"><a></a>    <span class="at">bf.message =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb14-12"><a></a>    <span class="at">digits =</span> <span class="dv">3</span>L</span>
+<span id="cb14-13"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 
+</div>
+<img data-src="casefinal_files/figure-revealjs/unnamed-chunk-11-1.png" width="960" class="r-stretch"><p>不同驱动方式的车型发动机排量差异显著，后驱车排量(5.2)最大，四驱(4.0)居中，前驱(2.6)最小。</p>
+</section>
+<section id="方差分析-1" class="slide level2">
+<h2>3.6 方差分析</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="fu">aov</span>(cty <span class="sc">~</span> drv, <span class="at">data =</span> mpg) <span class="sc">%&gt;%</span> </span>
+<span id="cb15-2"><a></a>  <span class="fu">summary</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>             Df Sum Sq Mean Sq F value Pr(&gt;F)    
 drv           2   1879   939.4   92.68 &lt;2e-16 ***
@@ -471,60 +512,63 @@ Residuals   231   2342    10.1
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
 </div>
-<img data-src="casefinal_files/figure-revealjs/unnamed-chunk-11-1.png" width="960" class="r-stretch"><p>不同驱动方式的车型发动机排量差异显著，后驱车排量(5.2)最大，四驱(4.0)居中，前驱(2.6)最小。</p>
+<p>不同驱动方式的车型发动机排量差异显著，后驱车排量(5.2)最大，四驱(4.0)居中，前驱(2.6)最小。</p>
 </section>
-<section id="相关和回归分析" class="slide level2">
-<h2>3.7 相关和回归分析</h2>
+<section id="相关分析" class="slide level2">
+<h2>3.7 相关分析</h2>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="fu">library</span>(corrplot)</span>
-<span id="cb14-2"><a></a></span>
-<span id="cb14-3"><a></a>mpg <span class="sc">%&gt;%</span> </span>
-<span id="cb14-4"><a></a>  <span class="fu">select</span>(displ, cyl, cty, hwy) <span class="sc">%&gt;%</span> </span>
-<span id="cb14-5"><a></a>  <span class="fu">cor</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb14-6"><a></a>  <span class="fu">round</span>(<span class="dv">3</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb14-7"><a></a>  <span class="fu">corrplot</span>(<span class="at">col =</span> <span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">5</span>),</span>
-<span id="cb14-8"><a></a>           <span class="at">title =</span> <span class="st">"Coefficient of Correlation Matrix"</span>,</span>
-<span id="cb14-9"><a></a>           <span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>),</span>
-<span id="cb14-10"><a></a>           <span class="at">tl.col =</span> <span class="dv">1</span>,</span>
-<span id="cb14-11"><a></a>           <span class="at">addCoef.col =</span> <span class="st">'white'</span>,</span>
-<span id="cb14-12"><a></a>           <span class="at">number.digits =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="fu">library</span>(corrplot)</span>
+<span id="cb17-2"><a></a></span>
+<span id="cb17-3"><a></a>mpg <span class="sc">%&gt;%</span> </span>
+<span id="cb17-4"><a></a>  <span class="fu">select</span>(displ, cyl, cty, hwy) <span class="sc">%&gt;%</span> </span>
+<span id="cb17-5"><a></a>  <span class="fu">cor</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb17-6"><a></a>  <span class="fu">round</span>(<span class="dv">3</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb17-7"><a></a>  <span class="fu">corrplot</span>(<span class="at">col =</span> <span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">5</span>),</span>
+<span id="cb17-8"><a></a>           <span class="at">title =</span> <span class="st">"Coefficient of Correlation Matrix"</span>,</span>
+<span id="cb17-9"><a></a>           <span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>),</span>
+<span id="cb17-10"><a></a>           <span class="at">tl.col =</span> <span class="dv">1</span>,</span>
+<span id="cb17-11"><a></a>           <span class="at">addCoef.col =</span> <span class="st">'white'</span>,</span>
+<span id="cb17-12"><a></a>           <span class="at">number.digits =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 
 </div>
-<img data-src="casefinal_files/figure-revealjs/unnamed-chunk-12-1.png" width="960" class="r-stretch"><p>发动机排量与气缸数高度正相关，油耗与排量呈负相关。</p>
+<img data-src="casefinal_files/figure-revealjs/unnamed-chunk-13-1.png" width="960" class="r-stretch"><p>发动机排量与气缸数高度正相关，油耗与排量呈负相关。</p>
 </section>
-<section id="相关和回归分析-1" class="slide level2">
-<h2>3.7 相关和回归分析</h2>
+<section id="回归分析" class="slide level2">
+<h2>3.7 回归分析</h2>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a>coef <span class="ot">&lt;-</span> mpg <span class="sc">%&gt;%</span> </span>
-<span id="cb15-2"><a></a>  <span class="fu">lm</span>(cty <span class="sc">~</span> displ, .) <span class="sc">%&gt;%</span> </span>
-<span id="cb15-3"><a></a>  <span class="fu">coef</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb15-4"><a></a>  <span class="fu">round</span>(<span class="dv">3</span>)</span>
-<span id="cb15-5"><a></a></span>
-<span id="cb15-6"><a></a>model <span class="ot">&lt;-</span> mpg <span class="sc">%&gt;%</span> </span>
-<span id="cb15-7"><a></a>  <span class="fu">lm</span>(cty <span class="sc">~</span> displ, .) </span>
-<span id="cb15-8"><a></a></span>
-<span id="cb15-9"><a></a>r2 <span class="ot">&lt;-</span> <span class="fu">summary</span>(model)<span class="sc">$</span>r.squared <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">3</span>)</span>
-<span id="cb15-10"><a></a></span>
-<span id="cb15-11"><a></a></span>
-<span id="cb15-12"><a></a>mpg <span class="sc">%&gt;%</span> </span>
-<span id="cb15-13"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(displ, cty))<span class="sc">+</span></span>
-<span id="cb15-14"><a></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
-<span id="cb15-15"><a></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm, <span class="at">se =</span> F)<span class="sc">+</span></span>
-<span id="cb15-16"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="dv">4</span>,<span class="dv">30</span>,</span>
-<span id="cb15-17"><a></a>           <span class="at">label =</span> <span class="fu">paste</span>(<span class="st">"cty_hat = "</span> ,</span>
-<span id="cb15-18"><a></a>                         coef[<span class="dv">1</span>], coef[<span class="dv">2</span>],<span class="st">"displ"</span>), <span class="at">size =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
-<span id="cb15-19"><a></a>   <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="fl">5.5</span>, <span class="at">y =</span> <span class="dv">30</span>,</span>
-<span id="cb15-20"><a></a>           <span class="at">label =</span>  <span class="fu">paste</span>(<span class="st">"R² ="</span>,  r2),</span>
-<span id="cb15-21"><a></a>           <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">size =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb18-2"><a></a></span>
+<span id="cb18-3"><a></a>coef <span class="ot">&lt;-</span> mpg <span class="sc">%&gt;%</span> </span>
+<span id="cb18-4"><a></a>  <span class="fu">lm</span>(cty <span class="sc">~</span> displ,.) <span class="sc">%&gt;%</span> </span>
+<span id="cb18-5"><a></a>  <span class="fu">coef</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb18-6"><a></a>  <span class="fu">round</span>(<span class="dv">3</span>)</span>
+<span id="cb18-7"><a></a></span>
+<span id="cb18-8"><a></a>model <span class="ot">&lt;-</span> mpg <span class="sc">%&gt;%</span> </span>
+<span id="cb18-9"><a></a>  <span class="fu">lm</span>(cty <span class="sc">~</span> displ, .) </span>
+<span id="cb18-10"><a></a></span>
+<span id="cb18-11"><a></a>r2 <span class="ot">&lt;-</span> <span class="fu">summary</span>(model)<span class="sc">$</span>r.squared <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">3</span>)</span>
+<span id="cb18-12"><a></a></span>
+<span id="cb18-13"><a></a></span>
+<span id="cb18-14"><a></a>mpg <span class="sc">%&gt;%</span> </span>
+<span id="cb18-15"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(displ, cty))<span class="sc">+</span></span>
+<span id="cb18-16"><a></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb18-17"><a></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm, <span class="at">se =</span> F)<span class="sc">+</span></span>
+<span id="cb18-18"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="dv">4</span>,<span class="dv">30</span>,</span>
+<span id="cb18-19"><a></a>           <span class="at">label =</span> <span class="fu">paste</span>(<span class="st">"cty_hat = "</span> ,</span>
+<span id="cb18-20"><a></a>                         coef[<span class="dv">1</span>], coef[<span class="dv">2</span>],<span class="st">"displ"</span>), <span class="at">size =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb18-21"><a></a>   <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="fl">5.5</span>, <span class="at">y =</span> <span class="dv">30</span>,</span>
+<span id="cb18-22"><a></a>           <span class="at">label =</span>  <span class="fu">paste</span>(<span class="st">"R² ="</span>,  r2),</span>
+<span id="cb18-23"><a></a>           <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">size =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb18-24"><a></a>  <span class="fu">theme_bw</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 
 </div>
-<img data-src="casefinal_files/figure-revealjs/unnamed-chunk-13-1.png" width="960" class="r-stretch"><p>发动机排量（displ）每增加1升，油耗（hwy）平均减少2.63英里/加仑。</p>
+<img data-src="casefinal_files/figure-revealjs/unnamed-chunk-14-1.png" width="960" class="r-stretch"><p>发动机排量（displ）每增加1升，油耗（hwy）平均减少2.63英里/加仑。</p>
 </section>
 <section id="研究结论" class="slide level2">
 <h2>研究结论</h2>
@@ -556,7 +600,7 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </ul>
 
 
-</section></section>
+</section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">

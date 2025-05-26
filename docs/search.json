@@ -914,7 +914,7 @@
     "href": "report.html#电子版",
     "title": "《R语言与统计应用》课程实验报告",
     "section": "电子版",
-    "text": "电子版\n\n提交时限：第17周上课日的前一天的19:00\nPDF版实验报告提交到QQ群中的“实验报告PDF”文件夹\nPDF文件命名格式：“小组编号 组长名 组长班级 实验报告.pdf”\nR项目文件夹(包含数据文件, R代码文件等 )压缩后命名格式：“小组编号 组长名 组长班级 实验报告.zip/rar”, 提交到QQ群中的“R项目文件”文件夹"
+    "text": "电子版\n\n提交时限：第17周上课日的前一天的19:00\nPDF版实验报告, 提交到QQ群中的“实验报告PDF”文件夹\n\nPDF文件命名格式：“小组编号_组长名_组长班级_实验报告.pdf”\n\nR项目文件夹(包含数据文件, R代码文件等 )的压缩文件, 提交到QQ群中的“R项目文件”文件夹\n\n压缩后命名格式：“小组编号_组长名_组长班级_ 实验报告.zip/rar”\n\nPDF版期末汇报, 提交到QQ群中的“期末汇报PDF”文件夹\n\nPDF文件命名格式：“小组编号_组长名_组长班级_期末汇报.pdf”"
   },
   {
     "objectID": "report.html#纸质版",
@@ -1026,7 +1026,7 @@
     "href": "casefinal.html#数据分析",
     "title": "《R语言与统计应用》实验报告汇报要求",
     "section": "3 数据分析",
-    "text": "3 数据分析\n3.1 可视化：帕累托图、饼图、分组箱线图、分组直方图\n3.2 报告描述性统计量\n3.3 区间估计\n3.4 单个总体均值的假设检验\n3.5 独立性检验\n3.6 方差分析\n3.7 相关和回归分析"
+    "text": "3 数据分析\n3.1 可视化：帕累托图、饼图、分组箱线图、分组直方图\n3.2 报告描述性统计量\n3.3 区间估计\n3.4 假设检验\n3.5 独立性检验\n3.6 方差分析\n3.7 相关和回归分析"
   },
   {
     "objectID": "casefinal.html#可视化帕累托图",
@@ -1054,7 +1054,7 @@
     "href": "casefinal.html#可视化分组直方图",
     "title": "《R语言与统计应用》实验报告汇报要求",
     "section": "3.1 可视化：分组直方图",
-    "text": "3.1 可视化：分组直方图\n\n前驱车型城市油耗分布较高，后驱车型油耗偏低且集中，四驱居中偏低。"
+    "text": "3.1 可视化：分组直方图\n\n\nCode\nmpg %&gt;% \n  ggplot(aes(cty))+\n  geom_histogram(col = 1, fill = 5, binwidth = 2)+\n  stat_bin(aes(label = ifelse(after_stat(count) == 0, \"\", \n                              after_stat(count))), binwidth = 2, \n           geom = \"text\",vjust = -0.5)+\n  scale_y_continuous(limits = c(0,50), breaks = seq(0,50,10))+\n  scale_x_continuous(breaks = seq(9,35,2)) +\n  facet_wrap(~ drv, ncol = 1,\n    labeller = as_labeller(c(\n      \"4\" = \"4-wheel drive\",\n      \"f\" = \"Front-wheel drive\",\n      \"r\" = \"Rear-wheel drive\"\n    ))) \n\n\n\n前驱车型城市油耗分布较高，后驱车型油耗偏低且集中，四驱居中偏低。"
   },
   {
     "objectID": "casefinal.html#数据分析-1",
@@ -1124,7 +1124,7 @@
     "href": "casefinal.html#方差分析",
     "title": "《R语言与统计应用》实验报告汇报要求",
     "section": "3.6 方差分析",
-    "text": "3.6 方差分析\n\n\n\n             Df Sum Sq Mean Sq F value Pr(&gt;F)    \ndrv           2   1879   939.4   92.68 &lt;2e-16 ***\nResiduals   231   2342    10.1                   \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n\n不同驱动方式的车型发动机排量差异显著，后驱车排量(5.2)最大，四驱(4.0)居中，前驱(2.6)最小。"
+    "text": "3.6 方差分析\n\n\nCode\nmpg %&gt;% \n  mutate(drv = fct_reorder(drv, displ, .fun = median)) %&gt;%\n  ggbetweenstats(\n    drv, \n    displ,\n    type = \"parametric\",        \n    palette = \"Accent\", \n    violin.args = list(width = 0),\n    xlab = \"drv\",\n    ylab = \"发动机排量\",\n    bf.message = FALSE,\n    digits = 3L\n  )\n\n\n\n不同驱动方式的车型发动机排量差异显著，后驱车排量(5.2)最大，四驱(4.0)居中，前驱(2.6)最小。"
   },
   {
     "objectID": "casefinal.html#研究结论",
@@ -1152,7 +1152,7 @@
     "href": "casefinal.html#相关和回归分析-1",
     "title": "《R语言与统计应用》实验报告汇报要求",
     "section": "3.7 相关和回归分析",
-    "text": "3.7 相关和回归分析\n\n\nCode\ncoef &lt;- mpg %&gt;% \n  lm(cty ~ displ, .) %&gt;% \n  coef() %&gt;% \n  round(3)\n\nmodel &lt;- mpg %&gt;% \n  lm(cty ~ displ, .) \n\nr2 &lt;- summary(model)$r.squared %&gt;% round(3)\n\n\nmpg %&gt;% \n  ggplot(aes(displ, cty))+\n  geom_point()+\n  geom_smooth(method = lm, se = F)+\n  annotate(\"text\", 4,30,\n           label = paste(\"cty_hat = \" ,\n                         coef[1], coef[2],\"displ\"), size = 5) +\n   annotate(\"text\", x = 5.5, y = 30,\n           label =  paste(\"R² =\",  r2),\n           hjust = 0, size = 5)\n\n\n\n发动机排量（displ）每增加1升，油耗（hwy）平均减少2.63英里/加仑。"
+    "text": "3.7 相关和回归分析\n\n\nCode\nlibrary(tidyverse)\n\ncoef &lt;- mpg %&gt;% \n  lm(cty ~ displ,.) %&gt;% \n  coef() %&gt;% \n  round(3)\n\nmodel &lt;- mpg %&gt;% \n  lm(cty ~ displ, .) \n\nr2 &lt;- summary(model)$r.squared %&gt;% round(3)\n\n\nmpg %&gt;% \n  ggplot(aes(displ, cty))+\n  geom_point()+\n  geom_smooth(method = lm, se = F)+\n  annotate(\"text\", 4,30,\n           label = paste(\"cty_hat = \" ,\n                         coef[1], coef[2],\"displ\"), size = 5) +\n   annotate(\"text\", x = 5.5, y = 30,\n           label =  paste(\"R² =\",  r2),\n           hjust = 0, size = 5) +\n  theme_bw() \n\n\n\n发动机排量（displ）每增加1升，油耗（hwy）平均减少2.63英里/加仑。"
   },
   {
     "objectID": "casefinal.html#研究结论-1",
@@ -1160,5 +1160,208 @@
     "title": "《R语言与统计应用》实验报告汇报要求",
     "section": "研究结论",
     "text": "研究结论\n\n驱动类型和气缸数量不独立：4缸，72%前驱，28%四驱; 6缸，54%前驱， 41%四驱，5%后驱; 8缸，1%前驱， 69%四驱，30%后驱。\n不同驱动方式的车型发动机排量差异显著: 后驱(5.2)最大，四驱(4.0)居中，前驱(2.6)最小。\n发动机排量与气缸数高度正相关，油耗与排量呈负相关。\n发动机排量（displ）每增加1升，油耗（hwy）平均减少2.63英里/加仑。"
+  },
+  {
+    "objectID": "casefinal_html.html",
+    "href": "casefinal_html.html",
+    "title": "《R语言与统计应用》实验报告汇报要求",
+    "section": "",
+    "text": "Loading required package: sysfonts\n\n\nLoading required package: showtextdb\n\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.2     ✔ tibble    3.2.1\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n✔ purrr     1.0.4     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors"
+  },
+  {
+    "objectID": "casefinal_html.html#汇报要求",
+    "href": "casefinal_html.html#汇报要求",
+    "title": "《R语言与统计应用》实验报告汇报要求",
+    "section": "汇报要求",
+    "text": "汇报要求\n\n汇报时间：5分钟\n汇报内容：\n\n数据来源\n变量含义\n数据分析\n研究结论\n经验分享\n\n文件形式：演示文稿，转成PDF文档"
+  },
+  {
+    "objectID": "casefinal_html.html#数据来源",
+    "href": "casefinal_html.html#数据来源",
+    "title": "《R语言与统计应用》实验报告汇报要求",
+    "section": "1 数据来源",
+    "text": "1 数据来源\n\n数据集：mpg\n来源：R包 ggplot2 中的内建数据集\n\nFuel economy data from 1999 to 2008 for 38 popular models of cars\n\n样本容量：234"
+  },
+  {
+    "objectID": "casefinal_html.html#变量含义",
+    "href": "casefinal_html.html#变量含义",
+    "title": "《R语言与统计应用》实验报告汇报要求",
+    "section": "2 变量含义",
+    "text": "2 变量含义\n\nmanufacturer：制造商\nmodel：车型\ndispl：发动机排量（升）\nyear：出厂年份\ncyl：气缸数\ntrans：变速箱类型\ndrv：驱动方式（f = 前驱，r = 后驱，4 = 四驱）\ncty：城市燃油效率（英里/加仑）\nhwy：高速燃油效率（英里/加仑）\nfl：燃油类型\nclass：车辆类别"
+  },
+  {
+    "objectID": "casefinal_html.html#数据分析",
+    "href": "casefinal_html.html#数据分析",
+    "title": "《R语言与统计应用》实验报告汇报要求",
+    "section": "3 数据分析",
+    "text": "3 数据分析\n3.1 可视化：帕累托图、饼图、分组箱线图、分组直方图\n3.2 报告描述性统计量\n3.3 区间估计\n3.4 单个总体均值的假设检验\n3.5 独立性检验\n3.6 方差分析\n3.7 相关和回归分析"
+  },
+  {
+    "objectID": "casefinal_html.html#可视化帕累托图",
+    "href": "casefinal_html.html#可视化帕累托图",
+    "title": "《R语言与统计应用》实验报告汇报要求",
+    "section": "3.1 可视化：帕累托图",
+    "text": "3.1 可视化：帕累托图\n\nmpg %&gt;% \n  ggplot(aes(fct_infreq(class))) + \n  geom_bar(col = \"cyan\", fill = \"cyan\")+\n  labs(title = \"Pareto Diagram\", x = \"Manufacturer\") +\n    geom_text(stat = \"count\",\n            aes(label = after_stat(count)), \n            vjust = -0.5)+     \n  guides(x = guide_axis(angle = 45))+\n  labs(title = \"Pareto Diagram\", x = \"Manufacturer\") +\n  scale_y_continuous(limits = c(0, 70))\n\n\n\n\n\n\n\n\nSUV、紧凑型和中型车占比最高，是主要车型类别。"
+  },
+  {
+    "objectID": "casefinal_html.html#可视化饼图",
+    "href": "casefinal_html.html#可视化饼图",
+    "title": "《R语言与统计应用》实验报告汇报要求",
+    "section": "3.1 可视化：饼图",
+    "text": "3.1 可视化：饼图\n\ndf &lt;- mpg %&gt;%\n  mutate(class = fct_lump_n(class, 5)) %&gt;% \n  count(class) %&gt;%\n  arrange(desc(n)) %&gt;%\n  mutate(pct = round(100 * n / sum(n), 0),\n         label = paste0(class, \"\\n\", pct, \"%\"),\n         class = factor(class, levels = class) # 按频数降序设置因子顺序\n  )\n\ncolors &lt;- colorRampPalette(c(\"lightblue\", \"blue\", \"darkblue\"))(nrow(df))\n\n# 绘制饼图（极坐标 + 降序排列）\nggplot(df, aes(x = \"\", y = n, fill = class)) +\n  geom_bar(stat = \"identity\", width = 1) +\n  scale_fill_manual(values = colors) +\n  coord_polar(theta = \"y\", direction = -1) +  # 逆时针方向排列\n  geom_text(aes(label = label), \n            col = \"white\",\n            position = position_stack(vjust = 0.5), size = 5) +\n  theme_void() +\n  theme(legend.position = \"none\")\n\n\n\n\n\n\n\n\nSUV、紧凑型和中型车三类车型占比共计64%。"
+  },
+  {
+    "objectID": "casefinal_html.html#可视化分组箱线图",
+    "href": "casefinal_html.html#可视化分组箱线图",
+    "title": "《R语言与统计应用》实验报告汇报要求",
+    "section": "3.1 可视化：分组箱线图",
+    "text": "3.1 可视化：分组箱线图\n\nmpg %&gt;%\n  mutate(class = fct_lump_n(class, 5)) %&gt;% \n  ggplot(aes(reorder(class,displ),displ,\n             col = class))+\n  geom_boxplot()+\n  guides(x = guide_axis(n.dodge = 3)) +\n  theme(legend.position = \"none\")\n\n\n\n\n\n\n\n\nSUV与皮卡排量较大，紧凑型较小。"
+  },
+  {
+    "objectID": "casefinal_html.html#可视化分组直方图",
+    "href": "casefinal_html.html#可视化分组直方图",
+    "title": "《R语言与统计应用》实验报告汇报要求",
+    "section": "3.1 可视化：分组直方图",
+    "text": "3.1 可视化：分组直方图\n\nmpg %&gt;% \n  ggplot(aes(cty))+\n  geom_histogram(col = 1, fill = 5, binwidth = 2)+\n  stat_bin(aes(label = ifelse(after_stat(count) == 0, \"\", \n                              after_stat(count))), binwidth = 2, \n           geom = \"text\",vjust = -0.5)+\n  scale_y_continuous(limits = c(0,50), breaks = seq(0,50,10))+\n  scale_x_continuous(breaks = seq(9,35,2)) +\n  facet_wrap(~ drv, ncol = 1,\n    labeller = as_labeller(c(\n      \"4\" = \"4-wheel drive\",\n      \"f\" = \"Front-wheel drive\",\n      \"r\" = \"Rear-wheel drive\"\n    ))) \n\n\n\n\n\n\n\n\n前驱车型城市油耗分布较高，后驱车型油耗偏低且集中，四驱居中偏低。"
+  },
+  {
+    "objectID": "casefinal_html.html#报告描述性统计量",
+    "href": "casefinal_html.html#报告描述性统计量",
+    "title": "《R语言与统计应用》实验报告汇报要求",
+    "section": "3.2 报告描述性统计量",
+    "text": "3.2 报告描述性统计量\n\nlibrary(psych)\n\n\nAttaching package: 'psych'\n\n\nThe following objects are masked from 'package:ggplot2':\n\n    %+%, alpha\n\nmpg %&gt;%\n  select(where(is.numeric)) %&gt;% \n  select(-year) %&gt;% \n  describe() %&gt;% \n  select(n, mean, sd, median, min, max) \n\n        n  mean   sd median  min max\ndispl 234  3.47 1.29    3.3  1.6   7\ncyl   234  5.89 1.61    6.0  4.0   8\ncty   234 16.86 4.26   17.0  9.0  35\nhwy   234 23.44 5.95   24.0 12.0  44\n\n\n高速油耗高于城市油耗，发动机排量和气缸数变异较小。"
+  },
+  {
+    "objectID": "casefinal_html.html#区间估计",
+    "href": "casefinal_html.html#区间估计",
+    "title": "《R语言与统计应用》实验报告汇报要求",
+    "section": "3.3 区间估计",
+    "text": "3.3 区间估计\n\nlibrary(psych)\n\n\nci &lt;- t.test(mpg$cty)$conf.int\nsprintf(\"城市油耗的总体均值的95%%置信区间：[%.2f, %.2f]\", ci[1], ci[2])\n\n[1] \"城市油耗的总体均值的95%置信区间：[16.31, 17.41]\"\n\nci &lt;- t.test(mpg$hwy)$conf.int\nsprintf(\"高速油耗的总体均值的95%%置信区间：[%.2f, %.2f]\", ci[1], ci[2])\n\n[1] \"高速油耗的总体均值的95%置信区间：[22.67, 24.21]\""
+  },
+  {
+    "objectID": "casefinal_html.html#单个总体均值的假设检验",
+    "href": "casefinal_html.html#单个总体均值的假设检验",
+    "title": "《R语言与统计应用》实验报告汇报要求",
+    "section": "3.4 单个总体均值的假设检验",
+    "text": "3.4 单个总体均值的假设检验\n\nlibrary(ggstatsplot)\n\nYou can cite this package as:\n     Patil, I. (2021). Visualizations with statistical details: The 'ggstatsplot' approach.\n     Journal of Open Source Software, 6(61), 3167, doi:10.21105/joss.03167\n\ngghistostats(mpg, cty, \n             test.value = 16,\n             bin.args = list(color = \"black\",\n                             fill = \"cyan\")) +\n  theme_classic(base_size = 15)"
+  },
+  {
+    "objectID": "casefinal_html.html#单个总体均值的假设检验-1",
+    "href": "casefinal_html.html#单个总体均值的假设检验-1",
+    "title": "《R语言与统计应用》实验报告汇报要求",
+    "section": "3.4 单个总体均值的假设检验",
+    "text": "3.4 单个总体均值的假设检验\n\\(H_0: \\mu \\leq 16\\)\n\\(H_1: \\mu &gt; 16\\)\n拒绝原假设\\(H_0: \\mu \\leq 16\\) 。\n在城市, 油耗均值大于16英里/加仑。"
+  },
+  {
+    "objectID": "casefinal_html.html#两个总体均值的比较四驱和前驱城市道路油耗比较",
+    "href": "casefinal_html.html#两个总体均值的比较四驱和前驱城市道路油耗比较",
+    "title": "《R语言与统计应用》实验报告汇报要求",
+    "section": "3.4 两个总体均值的比较：四驱和前驱城市道路油耗比较",
+    "text": "3.4 两个总体均值的比较：四驱和前驱城市道路油耗比较\n\nmpg %&gt;%\n  filter(drv %in% c(\"4\", \"f\")) %&gt;%\n  ggbetweenstats(drv, \n                 cty,\n                 p.adjust.method = \"none\",\n                 xlab = \"drive\",\n                 package = \"RColorBrewer\",\n                 palette = \"Set1\",\n                 violin.args = list(width = 0)\n  ) +\n  theme_classic(base_size = 15)"
+  },
+  {
+    "objectID": "casefinal_html.html#两个总体均值的比较四驱和前驱城市道路油耗比较-1",
+    "href": "casefinal_html.html#两个总体均值的比较四驱和前驱城市道路油耗比较-1",
+    "title": "《R语言与统计应用》实验报告汇报要求",
+    "section": "3.4 两个总体均值的比较：四驱和前驱城市道路油耗比较",
+    "text": "3.4 两个总体均值的比较：四驱和前驱城市道路油耗比较\n\\(H_0: \\mu_4 \\geq \\mu_f\\)\n\\(H_1: \\mu_4 &lt; \\mu_f\\)\n在城市, \\(\\mu_4 &lt; \\mu_f\\), 前驱(20)比四驱(14)省油。"
+  },
+  {
+    "objectID": "casefinal_html.html#独立性检验驱动类型和气缸数量的关系",
+    "href": "casefinal_html.html#独立性检验驱动类型和气缸数量的关系",
+    "title": "《R语言与统计应用》实验报告汇报要求",
+    "section": "3.5 独立性检验：驱动类型和气缸数量的关系",
+    "text": "3.5 独立性检验：驱动类型和气缸数量的关系\n\nggbarstats(mpg,\n           drv,\n           cyl,\n           package = \"RColorBrewer\",\n           palette = \"Paired\")+\n  theme_bw(base_size = 15)"
+  },
+  {
+    "objectID": "casefinal_html.html#独立性检验驱动类型和气缸数量的关系-1",
+    "href": "casefinal_html.html#独立性检验驱动类型和气缸数量的关系-1",
+    "title": "《R语言与统计应用》实验报告汇报要求",
+    "section": "3.5 独立性检验：驱动类型和气缸数量的关系",
+    "text": "3.5 独立性检验：驱动类型和气缸数量的关系\n驱动类型和气缸数量不独立。\n4缸，72%前驱，28%四驱;\n6缸，54%前驱， 41%四驱，5%后驱;\n8缸，1%前驱， 69%四驱，30%后驱。"
+  },
+  {
+    "objectID": "casefinal_html.html#方差分析",
+    "href": "casefinal_html.html#方差分析",
+    "title": "《R语言与统计应用》实验报告汇报要求",
+    "section": "3.6 方差分析",
+    "text": "3.6 方差分析\n\nmpg %&gt;% \n  mutate(drv = fct_reorder(drv, displ, .fun = median)) %&gt;%\n  ggbetweenstats(\n    drv, \n    displ,\n    type = \"parametric\",        \n    palette = \"Accent\", \n    violin.args = list(width = 0),\n    xlab = \"drv\",\n    ylab = \"发动机排量\",\n    bf.message = FALSE,\n    digits = 3L\n  )\n\n\n\n\n\n\n\naov(cty ~ drv, data = mpg) %&gt;% \n  summary()\n\n             Df Sum Sq Mean Sq F value Pr(&gt;F)    \ndrv           2   1879   939.4   92.68 &lt;2e-16 ***\nResiduals   231   2342    10.1                   \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n\n不同驱动方式的车型发动机排量差异显著，后驱车排量(5.2)最大，四驱(4.0)居中，前驱(2.6)最小。"
+  },
+  {
+    "objectID": "casefinal_html.html#相关和回归分析",
+    "href": "casefinal_html.html#相关和回归分析",
+    "title": "《R语言与统计应用》实验报告汇报要求",
+    "section": "3.7 相关和回归分析",
+    "text": "3.7 相关和回归分析\n\nlibrary(corrplot)\n\ncorrplot 0.95 loaded\n\nmpg %&gt;% \n  select(displ, cyl, cty, hwy) %&gt;% \n  cor() %&gt;% \n  round(3) %&gt;% \n  corrplot(col = c(4,5),\n           title = \"Coefficient of Correlation Matrix\",\n           mar = c(2,2,2,2),\n           tl.col = 1,\n           addCoef.col = 'white',\n           number.digits = 3)\n\n\n\n\n\n\n\n\n发动机排量与气缸数高度正相关，油耗与排量呈负相关。"
+  },
+  {
+    "objectID": "casefinal_html.html#相关和回归分析-1",
+    "href": "casefinal_html.html#相关和回归分析-1",
+    "title": "《R语言与统计应用》实验报告汇报要求",
+    "section": "3.7 相关和回归分析",
+    "text": "3.7 相关和回归分析\n\ncoef &lt;- mpg %&gt;% \n  lm(cty ~ displ, .) %&gt;% \n  coef() %&gt;% \n  round(3)\n\nmodel &lt;- mpg %&gt;% \n  lm(cty ~ displ, .) \n\nr2 &lt;- summary(model)$r.squared %&gt;% round(3)\n\n\nmpg %&gt;% \n  ggplot(aes(displ, cty))+\n  geom_point()+\n  geom_smooth(method = lm, se = F)+\n  annotate(\"text\", 4,30,\n           label = paste(\"cty_hat = \" ,\n                         coef[1], coef[2],\"displ\"), size = 5) +\n   annotate(\"text\", x = 5.5, y = 30,\n           label =  paste(\"R² =\",  r2),\n           hjust = 0, size = 5)\n\n\n\n\n\n\n\n\n发动机排量（displ）每增加1升，油耗（hwy）平均减少2.63英里/加仑。"
+  },
+  {
+    "objectID": "casefinal_html.html#研究结论",
+    "href": "casefinal_html.html#研究结论",
+    "title": "《R语言与统计应用》实验报告汇报要求",
+    "section": "研究结论",
+    "text": "研究结论\n\nSUV、紧凑型和中型车三类车型占比共计64%。\nSUV与皮卡排量较大，紧凑型较小。\n城市油耗的总体均值的95%置信区间：[16.31, 17.41]\n高速油耗的总体均值的95%置信区间：[22.67, 24.21]\n在城市, 油耗均值大于16英里/加仑。\n在城市, \\(\\mu_4 &lt; \\mu_f\\), 前驱(20)比四驱(14)省油。"
+  },
+  {
+    "objectID": "casefinal_html.html#研究结论-1",
+    "href": "casefinal_html.html#研究结论-1",
+    "title": "《R语言与统计应用》实验报告汇报要求",
+    "section": "研究结论",
+    "text": "研究结论\n\n驱动类型和气缸数量不独立：4缸，72%前驱，28%四驱; 6缸，54%前驱， 41%四驱，5%后驱; 8缸，1%前驱， 69%四驱，30%后驱。\n不同驱动方式的车型发动机排量差异显著: 后驱(5.2)最大，四驱(4.0)居中，前驱(2.6)最小。\n发动机排量与气缸数高度正相关，油耗与排量呈负相关。\n发动机排量（displ）每增加1升，油耗（hwy）平均减少2.63英里/加仑。"
+  },
+  {
+    "objectID": "casefinal_html.html#经验分享",
+    "href": "casefinal_html.html#经验分享",
+    "title": "《R语言与统计应用》实验报告汇报要求",
+    "section": "经验分享",
+    "text": "经验分享\n\n合并小类\n使用gghistostats等函数进行可视化和统计检验\nAI工具的使用\n…"
+  },
+  {
+    "objectID": "casefinal.html#示例汽车性能分析",
+    "href": "casefinal.html#示例汽车性能分析",
+    "title": "《R语言与统计应用》实验报告汇报要求",
+    "section": "示例：汽车性能分析",
+    "text": "示例：汽车性能分析"
+  },
+  {
+    "objectID": "casefinal.html#方差分析-1",
+    "href": "casefinal.html#方差分析-1",
+    "title": "《R语言与统计应用》实验报告汇报要求",
+    "section": "3.6 方差分析",
+    "text": "3.6 方差分析\n\n\nCode\naov(cty ~ drv, data = mpg) %&gt;% \n  summary()\n\n\n             Df Sum Sq Mean Sq F value Pr(&gt;F)    \ndrv           2   1879   939.4   92.68 &lt;2e-16 ***\nResiduals   231   2342    10.1                   \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n\n不同驱动方式的车型发动机排量差异显著，后驱车排量(5.2)最大，四驱(4.0)居中，前驱(2.6)最小。"
+  },
+  {
+    "objectID": "casefinal.html#相关分析",
+    "href": "casefinal.html#相关分析",
+    "title": "《R语言与统计应用》实验报告汇报要求",
+    "section": "3.7 相关分析",
+    "text": "3.7 相关分析\n\n\nCode\nlibrary(corrplot)\n\nmpg %&gt;% \n  select(displ, cyl, cty, hwy) %&gt;% \n  cor() %&gt;% \n  round(3) %&gt;% \n  corrplot(col = c(4,5),\n           title = \"Coefficient of Correlation Matrix\",\n           mar = c(2,2,2,2),\n           tl.col = 1,\n           addCoef.col = 'white',\n           number.digits = 3)\n\n\n\n发动机排量与气缸数高度正相关，油耗与排量呈负相关。"
+  },
+  {
+    "objectID": "casefinal.html#回归分析",
+    "href": "casefinal.html#回归分析",
+    "title": "《R语言与统计应用》实验报告汇报要求",
+    "section": "3.7 回归分析",
+    "text": "3.7 回归分析\n\n\nCode\nlibrary(tidyverse)\n\ncoef &lt;- mpg %&gt;% \n  lm(cty ~ displ,.) %&gt;% \n  coef() %&gt;% \n  round(3)\n\nmodel &lt;- mpg %&gt;% \n  lm(cty ~ displ, .) \n\nr2 &lt;- summary(model)$r.squared %&gt;% round(3)\n\n\nmpg %&gt;% \n  ggplot(aes(displ, cty))+\n  geom_point()+\n  geom_smooth(method = lm, se = F)+\n  annotate(\"text\", 4,30,\n           label = paste(\"cty_hat = \" ,\n                         coef[1], coef[2],\"displ\"), size = 5) +\n   annotate(\"text\", x = 5.5, y = 30,\n           label =  paste(\"R² =\",  r2),\n           hjust = 0, size = 5) +\n  theme_bw() \n\n\n\n发动机排量（displ）每增加1升，油耗（hwy）平均减少2.63英里/加仑。"
+  },
+  {
+    "objectID": "report.html#电子文档",
+    "href": "report.html#电子文档",
+    "title": "《R语言与统计应用》课程实验报告",
+    "section": "电子文档",
+    "text": "电子文档\n\n提交时限：第17周上课日的前一天的19:00\nPDF版实验报告, 提交到QQ群中的“实验报告PDF”文件夹\n\nPDF文件命名格式：“小组编号_组长名_组长班级_实验报告.pdf”\n\nR项目文件夹(包含数据文件, R代码文件等 )的压缩文件, 提交到QQ群中的“R项目文件”文件夹\n\n压缩后命名格式：“小组编号_组长名_组长班级_ 实验报告.zip/rar”\n\nPDF版期末汇报, 提交到QQ群中的“期末汇报PDF”文件夹\n\nPDF文件命名格式：“小组编号_组长名_组长班级_期末汇报.pdf”"
+  },
+  {
+    "objectID": "report.html#纸质文档",
+    "href": "report.html#纸质文档",
+    "title": "《R语言与统计应用》课程实验报告",
+    "section": "纸质文档",
+    "text": "纸质文档\n\n双面或单面打印皆可，黑白打印即可，无需彩色打印，无需制作硬壳封面, 三颗订书针装订。\n提交时限：第17周上课日"
   }
 ]

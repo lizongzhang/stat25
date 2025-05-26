@@ -59,7 +59,7 @@ library(tidyverse)
 
 ------
 
-# 示例：汽车性能分析
+## 示例：汽车性能分析
 
 ---
 
@@ -97,16 +97,13 @@ library(tidyverse)
 
 3.3 区间估计
 
-3.4 单个总体均值的假设检验
+3.4 假设检验
 
 3.5 独立性检验
 
 3.6 方差分析
 
 3.7 相关和回归分析
-
-
-
 
 
 ----
@@ -186,6 +183,8 @@ SUV与皮卡排量较大，紧凑型较小。
 ## 3.1 可视化：分组直方图
 
 ```{r}
+#| echo: TRUE
+
 mpg %>% 
   ggplot(aes(cty))+
   geom_histogram(col = 1, fill = 5, binwidth = 2)+
@@ -337,6 +336,8 @@ ggbarstats(mpg,
 ## 3.6 方差分析
 
 ```{r}
+#| echo: TRUE
+
 mpg %>% 
   mutate(drv = fct_reorder(drv, displ, .fun = median)) %>%
   ggbetweenstats(
@@ -351,13 +352,25 @@ mpg %>%
     digits = 3L
   )
 
-aov(cty ~ drv, data = mpg) %>% 
-  summary()
 ```
+
 不同驱动方式的车型发动机排量差异显著，后驱车排量(5.2)最大，四驱(4.0)居中，前驱(2.6)最小。
 ---
 
-## 3.7 相关和回归分析
+## 3.6 方差分析
+
+```{r}
+#| echo: TRUE
+
+aov(cty ~ drv, data = mpg) %>% 
+  summary()
+```
+
+
+不同驱动方式的车型发动机排量差异显著，后驱车排量(5.2)最大，四驱(4.0)居中，前驱(2.6)最小。
+---
+
+## 3.7 相关分析
 
 ```{r}
 #| echo: TRUE
@@ -377,17 +390,20 @@ mpg %>%
 
 ```
 发动机排量与气缸数高度正相关，油耗与排量呈负相关。
+
 ---
 
-## 3.7 相关和回归分析
+## 3.7 回归分析
 
 ```{r}
 #| echo: true
 #| message: false
 #| warning: false
 
+library(tidyverse)
+
 coef <- mpg %>% 
-  lm(cty ~ displ, .) %>% 
+  lm(cty ~ displ,.) %>% 
   coef() %>% 
   round(3)
 
@@ -406,7 +422,8 @@ mpg %>%
                          coef[1], coef[2],"displ"), size = 5) +
    annotate("text", x = 5.5, y = 30,
            label =  paste("R² =",  r2),
-           hjust = 0, size = 5)
+           hjust = 0, size = 5) +
+  theme_bw() 
 
 
 ```
