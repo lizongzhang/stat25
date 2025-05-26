@@ -1370,5 +1370,26 @@
     "title": "《R语言与统计应用》实验报告汇报要求",
     "section": "3.2 描述性统计分析",
     "text": "3.2 描述性统计分析\n\n\nCode\nlibrary(psych)\n\nmpg %&gt;%\n  select(where(is.numeric)) %&gt;% \n  select(-year) %&gt;% \n  describe() %&gt;% \n  select(n, mean, sd, median, min, max) \n\n\n        n  mean   sd median  min max\ndispl 234  3.47 1.29    3.3  1.6   7\ncyl   234  5.89 1.61    6.0  4.0   8\ncty   234 16.86 4.26   17.0  9.0  35\nhwy   234 23.44 5.95   24.0 12.0  44\n\n\n高速油耗高于城市油耗，发动机排量和气缸数变异较小。"
+  },
+  {
+    "objectID": "case.html#小组作业要求",
+    "href": "case.html#小组作业要求",
+    "title": "案例与实验报告",
+    "section": "小组作业要求",
+    "text": "小组作业要求\n案例作业要求"
+  },
+  {
+    "objectID": "case.html#小组作业示例",
+    "href": "case.html#小组作业示例",
+    "title": "案例与实验报告",
+    "section": "小组作业示例",
+    "text": "小组作业示例\n\n第3-4章 广州六大奶茶品牌\n第7-8章 小组作业收获感\n第8-9章 汽车油耗\n第9-10章 奶茶品牌、区位和价格\n第11章 二手房房价、区位和房龄"
+  },
+  {
+    "objectID": "case.html#往届小组作业",
+    "href": "case.html#往届小组作业",
+    "title": "案例与实验报告",
+    "section": "往届小组作业",
+    "text": "往届小组作业\n\n饮料特征分析——第3-4章图表工具和描述统计R\n广东省地市领导班子特征分析——第3章图表工具SPSS\n奶茶消费调查——第3章图表工具SPSS\n证监会录用人员特征——第3章图表工具Excel\n饮料特征分析——第7-8章区间估计和假设检验R\n证券分析师——第9-10章卡方检验和方差分析R\n饮料特征分析——第9-10章卡方检验和方差分析R {target=“_blank”}\n广州市住宅房租比较——第10章方差分析SPSS\n大学生择偶观调查——第10章方差分析SPSS\n饮料特征分析——第11章相关和回归分析R"
   }
 ]
