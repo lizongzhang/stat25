@@ -1,30 +1,37 @@
 ---
-title: "案例与实验报告"
+title: "案例分析"
 ---
 
 **每组4-5人，由组长填写在线问卷，提交分组信息：<https://www.wjx.top/vm/e3AyWsR.aspx#> **
 
 
     
-# 实验报告
+# 案例分析要求
 
--   <img src="img/link.png" style="width: 24px; height: 24px;margin-right: 10px">[实验报告写作要求](https://lizongzhang.github.io/stat25/report.html){target="_blank"}
+## 选题要求
 
--   <img src="img/link.png" style="width: 24px; height: 24px;margin-right: 10px">[实验报告期末汇报要求](https://lizongzhang.github.io/stat25/casefinal.html){target="_blank"}
+- 运用统计方法分析现实问题。
+  
+## 数据要求
 
--   <img src="img/link.png" style="width: 24px; height: 24px;margin-right: 10px">[实验报告常见问题](https://lizongzhang.github.io/stat25/casetips.html){target="_blank"}
+-   微观层面的截面数据
 
-# 往届实验报告
+-   样本容量大于200
 
--   <img src="img/link.png" style="width: 24px; height: 24px;margin-right: 10px">[R语言与统计应用实验报告——饮料特征分析](https://lizongzhang.github.io/stat/stu_report.html){target="_blank"}
+-   至少3个定量变量，至少3个定性变量，建议变量个数超过8个
 
--   <img src="img/link.png" style="width: 24px; height: 24px;margin-right: 10px">[SPSS与统计实验报告——B站热门视频分析](https://lizongzhang.github.io/statwithspss/stureportspss1.html){target="_blank"}
+-   不要使用其他教材中的例题或习题数据，不要使用虚拟数据  
 
--   <img src="img/link.png" style="width: 24px; height: 24px;margin-right: 10px">[SPSS与统计实验报告——中国电影票房TOP100分析SPSS](https://lizongzhang.github.io/statwithspss/stureportspss2.html){target="_blank"}
+## 期末汇报
 
 
+-   <img src="img/link.png" style="width: 24px; height: 24px;margin-right: 10px">[期末汇报要求](https://lizongzhang.github.io/stat25/casefinal.html){target="_blank"}
 
-# 第1次讨论课
+-   <img src="img/link.png" style="width: 24px; height: 24px;margin-right: 10px">[案例分析常见问题 to be updated](https://lizongzhang.github.io/stat25/case.html){target="_blank"}
+
+# 讨论课安排
+
+## 案例选题  (第3-4周)
 
 -   讨论问题：
 
@@ -48,13 +55,9 @@ title: "案例与实验报告"
 
 -   请带笔记本电脑。
 
-# 第3-4章讨论课 (第8周)
+## 第3-4章讨论课 (第6-7周)
 
 -   在Excel中整理好收集的数据。
-
--   创建项目, 在项目中存放Excel数据文件，代码文件。
-
--   将Excel导入R Studio。
 
 -   运用第3-4章方法分析数据
 
@@ -62,9 +65,9 @@ title: "案例与实验报告"
   
     -     计算定量变量的描述性统计量(均值、标准差、中位数、最小值、最大值)
     
--   将R的输出结果，及文字说明整理到WORD文档。
+-   将Excel的输出结果，及文字说明整理到PPT文档。
 
-# 第7-8章讨论课  (第10周)
+## 第7-8章讨论课  (第10-11周)
 
 -   运用第7-8章方法分析数据
 
@@ -74,11 +77,10 @@ title: "案例与实验报告"
     
     -     两个总体均值的假设检验
     
--   将R的输出结果，及文字说明整理到WORD文档。
+-   将Excel的输出结果，及文字说明整理到PPT文档。
 
 
-
-# 第9-10章讨论课  (第12周)
+## 第9-10章讨论课  (第12-13周)
 
 -   运用第9-10章方法分析数据
 
@@ -88,9 +90,9 @@ title: "案例与实验报告"
     
     -     方差分析
     
--   将R的输出结果，及文字说明整理到WORD文档。
+-   将Excel的输出结果，及文字说明整理到PPT文档。
 
-# 第11章讨论课 (第14周)
+## 第11章讨论课 (第14周)
 
 -   运用第11章方法分析数据
 
@@ -98,18 +100,12 @@ title: "案例与实验报告"
   
     -     回归分析
     
--   将R的输出结果，及文字说明整理到WORD文档。
+-   将Excel的输出结果，及文字说明整理到PPT文档。
+
+## 小组汇报 (第16-17周)
 
 
-# 实验报告汇报 (第17周)
-
-# 小组作业
-
-## 小组作业要求
-
-<img src="img/link.png" style="width: 24px; height: 24px;margin-right: 10px">[案例作业要求](https://lizongzhang.github.io/stat25/casereq.html){target="_blank"}
-
-## 小组作业示例
+# 案例分析示例(重点参考选题方向和分析角度)
 
 -   <img src="img/link.png" style="width: 24px; height: 24px;margin-right: 10px">[第3-4章 广州六大奶茶品牌](https://lizongzhang.github.io/stat24/case1pre.html){target="_blank"}
   
@@ -121,7 +117,7 @@ title: "案例与实验报告"
   
 -   <img src="img/link.png" style="width: 24px; height: 24px;margin-right: 10px">[第11章 二手房房价、区位和房龄](https://lizongzhang.github.io/stat/case4.html){target="_blank"}
 
-## 往届小组作业
+# 往届案例作业(重点参考选题方向和分析角度)
 
 -   <img src="img/link.png" style="width: 24px; height: 24px;margin-right: 10px">[饮料特征分析——第3-4章图表工具和描述统计R](https://lizongzhang.github.io/stat/stu6.html){target="_blank"}
 
@@ -143,31 +139,28 @@ title: "案例与实验报告"
 
 -   <img src="img/link.png" style="width: 24px; height: 24px;margin-right: 10px">[饮料特征分析——第11章相关和回归分析R](https://lizongzhang.github.io/stat/stu10.html){target="_blank"} 
 
+# 往届案例作业点评
 
-# 第3-4章小组作业点评
+### 第3-4章小组作业点评
 
 <img src="img/link.png" style="width: 24px; height: 24px;margin-right: 10px">[第3-4章小组作业点评](https://lizongzhang.github.io/statwithspss/case1comment.html)
 
-# 第7-8章小组作业点评
+### 第7-8章小组作业点评
 
 <img src="img/link.png" style="width: 24px; height: 24px;margin-right: 10px">[第7-8章小组作业点评](https://lizongzhang.github.io/statwithspss/case2comment.html)
 
-# 第9-10章小组作业点评
+### 第9-10章小组作业点评
 
 <img src="img/link.png" style="width: 24px; height: 24px;margin-right: 10px">[第9-10章小组作业点评](https://lizongzhang.github.io/statwithspss/case3comment.html)
 
 
 # Q&A
 
-Q1：实验报告与小组作业需用同样的选题和数据吗？
+Q1：案例分析中的统计分析必须要用Excel软件来实现吗？
 
-A：建议用同样的选题和数据。若想用不同的选题或数据，也可。
+A：不是必须的，也可以使用SPSS, R, Python等其他软件，或者AI等数据分析工具。
 
-Q2：实验报告中的统计分析必须要用R软件来实现吗？
-
-A：是的。创建数据文件、整理数据可以使用Excel，统计方法的实现需要用R。
-
-Q3：如何选题？
+Q2：如何选题？
 
 A：从兴趣出发，考虑数据的可获得性。
 
@@ -179,7 +172,7 @@ A：从兴趣出发，考虑数据的可获得性。
 
 -   必应/google搜索 关键词 + 数据/dataset
 
-Q4：问卷调查如何收集定量变量？
+Q3：问卷调查如何收集定量变量？
 
 A：填空题。需要考虑被访者能否容易回答，数据质量是否可靠。
 
@@ -190,8 +183,7 @@ A：填空题。需要考虑被访者能否容易回答，数据质量是否可�
 -  APP使用情况
 
 
-
-# 发言时间表(见QQ群文件)
+# 讨论/汇报时间表(后续在QQ群发布)
 
 
 

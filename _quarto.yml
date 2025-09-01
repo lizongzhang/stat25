@@ -3,7 +3,7 @@ project:
   output-dir: docs
   
 website:
-  title: "统计学25春"
+  title: "统计学25秋"
   navbar:
     left:
       - href: index.qmd

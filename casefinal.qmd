@@ -1,5 +1,5 @@
 ---
-title:  "《R语言与统计应用》<br>实验报告汇报要求"
+title:  "《统计学》<br>案例汇报要求"
 date: today
 author: 
   name: "李宗璋"
