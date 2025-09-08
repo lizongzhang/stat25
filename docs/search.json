@@ -186,14 +186,14 @@
     "href": "chap2.html",
     "title": "第2章",
     "section": "",
-    "text": "讲义"
+    "text": "讲义\n问卷设计"
   },
   {
     "objectID": "chap2.html#题目1",
     "href": "chap2.html#题目1",
     "title": "第2章",
     "section": "题目1",
-    "text": "题目1\n阅读以下推文\n微信公众号狗熊会&gt;案例图书&gt;精品案例&gt;中国女排国际竞争力现况及国内选材建队思路分析\n微信公众号狗熊会&gt;案例图书&gt;精品案例&gt;公共自行车损坏识别\n微信公众号狗熊会&gt;案例图书&gt;精品案例&gt;bilibili人类云吸猫行为观察\n微信公众号狗熊会&gt;案例图书&gt;精品案例&gt;王者荣耀英雄职业数据探索性分析\n1.1 数据来源？\n1.2 研究中的观测单元（观测个体）是什么？\n1.3 样本容量？\n1.3 研究中使用了哪些变量？\n1.4 文中利用统计分析回答了哪些问题？\n1.5 该推文对我们开展统计案例分析有何启发？\n\n\n点击浏览图片"
+    "text": "题目1\n1.1 开展关于毕业生薪酬的研究，你感兴趣那些问题？列出研究问题。\n1.2 针对你想研究的的问题，你想收集那些数据？列出变量名称，这些数据是分类数据(有序分类还是无序分类), 还是数值数据(离散数据还是连续数据)？"
   },
   {
     "objectID": "chap2.html#教学视频",
@@ -571,7 +571,7 @@
     "href": "chap1.html#题目2",
     "title": "第1章",
     "section": "题目2",
-    "text": "题目2\n2.1 开展关于毕业生薪酬的研究，你感兴趣那些问题？列出研究问题。\n2.2 针对你想研究的的问题，你想收集那些数据？列出变量名称，这些数据是分类数据(有序分类还是无序分类), 还是数值数据(离散数据还是连续数据)？"
+    "text": "题目2\n在微信公众号狗熊会&gt;案例图书&gt;精品案例挑选一篇推文，回答以下问题：\n2.1 数据来源？\n2.2 研究中的观测单元（观测个体）是什么？\n2.3 样本容量？\n2.3 研究中使用了哪些变量？\n2.4 文中利用统计分析回答了哪些问题？\n2.5 该推文对我们开展统计案例分析有何启发？"
   },
   {
     "objectID": "case2code.html",
@@ -677,5 +677,138 @@
     "title": "第1章",
     "section": "题目3",
     "text": "题目3\n在微信公众号狗熊会&gt;案例图书&gt;精品案例挑选一篇推文，回答以下问题：\n3.1 数据来源？\n3.2 研究中的观测单元（观测个体）是什么？\n3.3 样本容量？\n3.3 研究中使用了哪些变量？\n3.4 文中利用统计分析回答了哪些问题？\n3.5 该推文对我们开展统计案例分析有何启发？"
+  },
+  {
+    "objectID": "chap2ques.html#大纲",
+    "href": "chap2ques.html#大纲",
+    "title": "问卷设计",
+    "section": "大纲",
+    "text": "大纲\n\n1.1 选题\n1.2 定性数据\n1.3 定量数据\n1.4 在线工具"
+  },
+  {
+    "objectID": "chap2ques.html#选题",
+    "href": "chap2ques.html#选题",
+    "title": "问卷设计",
+    "section": "1.1 选题",
+    "text": "1.1 选题"
+  },
+  {
+    "objectID": "chap2ques.html#选题的基本原则",
+    "href": "chap2ques.html#选题的基本原则",
+    "title": "问卷设计",
+    "section": "选题的基本原则",
+    "text": "选题的基本原则\n\n兴趣驱动：选择自己感兴趣的主题，保持动力。\n可行性：确保资源、时间和目标人群可及。\n明确性：研究问题清晰，能转化为可量化的问卷题目。\n社会价值：选择对学术、社会或政策有意义的主题。"
+  },
+  {
+    "objectID": "chap2ques.html#步骤1确定研究目标",
+    "href": "chap2ques.html#步骤1确定研究目标",
+    "title": "问卷设计",
+    "section": "步骤1：确定研究目标",
+    "text": "步骤1：确定研究目标\n\n明确调查的目的：\n\n探索现象（如）\n验证假设（如评优与学习时长、社团活动时长角色的关系）\n解决问题（如共享）"
+  },
+  {
+    "objectID": "chap2ques.html#步骤2聚焦研究领域",
+    "href": "chap2ques.html#步骤2聚焦研究领域",
+    "title": "问卷设计",
+    "section": "步骤2：聚焦研究领域",
+    "text": "步骤2：聚焦研究领域\n\n从广泛领域入手，逐步聚焦：\n\n学术类：学习习惯、课程满意度、在线学习效果。\n生活类：消费行为、心理健康、宿舍生活。\n社会类：环保意识、职业规划、性别平等态度。\n\n提示：结合自身专业或社会热点。"
+  },
+  {
+    "objectID": "chap2ques.html#步骤3评估选题可行性",
+    "href": "chap2ques.html#步骤3评估选题可行性",
+    "title": "问卷设计",
+    "section": "步骤3：评估选题可行性",
+    "text": "步骤3：评估选题可行性\n\n目标人群：是否容易接触到足够样本（如本校学生）？\n数据类型：是否适合定量或定性数据？\n时间与资源：问卷设计、发放和分析的时间是否充足？\n示例：\n选调生"
+  },
+  {
+    "objectID": "chap2ques.html#步骤4查阅文献与背景",
+    "href": "chap2ques.html#步骤4查阅文献与背景",
+    "title": "问卷设计",
+    "section": "步骤4：查阅文献与背景",
+    "text": "步骤4：查阅文献与背景\n\n目的：了解已有研究，避免重复，找到切入点。\n方法：\n\n市调大赛选题。\n搜索关键词，如“大学生+心理健康+问卷”。\n\n示例：发现“大学生拖延症”研究较多，但“拖延症与社交媒体使用”的结合较少，可作为切入点。"
+  },
+  {
+    "objectID": "chap2ques.html#步骤5细化研究问题",
+    "href": "chap2ques.html#步骤5细化研究问题",
+    "title": "问卷设计",
+    "section": "步骤5：细化研究问题",
+    "text": "步骤5：细化研究问题\n\n将宽泛主题转化为具体问题：\n\n宽泛：“大学生心理健康状况”。\n具体：“大学生学业/择业/同伴压力与焦虑水平的关系”。"
+  },
+  {
+    "objectID": "chap2ques.html#常见选题误区",
+    "href": "chap2ques.html#常见选题误区",
+    "title": "问卷设计",
+    "section": "常见选题误区",
+    "text": "常见选题误区\n\n过于宽泛：如“大学生生活”（需聚焦具体方面）。\n过于敏感：如个人隐私问题，可能降低响应率。\n缺乏新意：重复已有研究，需找到独特角度。\n不可量化：如“大学生幸福感”（需定义可测量的指标）。"
+  },
+  {
+    "objectID": "chap2ques.html#实用建议",
+    "href": "chap2ques.html#实用建议",
+    "title": "问卷设计",
+    "section": "实用建议",
+    "text": "实用建议\n\n头脑风暴：与同学、导师讨论，激发灵感。\n小规模测试：先试探性询问几人，验证主题吸引力。\n结合热点：如疫情后的学习方式变化、AI工具使用情况。\n工具支持：使用问卷星便于数据收集。"
+  },
+  {
+    "objectID": "chap2ques.html#单项选择题",
+    "href": "chap2ques.html#单项选择题",
+    "title": "问卷设计",
+    "section": "单项选择题",
+    "text": "单项选择题\n\n题干清晰：避免模糊或歧义\n选项互斥：不同答案之间不重叠\n顺序合理：非常不满意 → 不满意 → 一般 → 满意 → 非常满意\n覆盖全面：提供“其他/不愿回答”选项"
+  },
+  {
+    "objectID": "chap2ques.html#单项选择题-1",
+    "href": "chap2ques.html#单项选择题-1",
+    "title": "问卷设计",
+    "section": "单项选择题",
+    "text": "单项选择题\n您希望孩子读书至少读到什么程度？\n1.现在就不想读书了\n2.小学毕业 （6 年）\n3.初中毕业 （9 年）\n4.职业高中/中专/技校 （大约 12 年）\n5.普通高中毕业 （12 年）\n6.大学专科（15 年）\n7.大学本科（16-17 年）\n8.研究生（硕士大约 19 年，博士大约 23 年）\n9.无所谓"
+  },
+  {
+    "objectID": "chap2ques.html#多项选择题",
+    "href": "chap2ques.html#多项选择题",
+    "title": "问卷设计",
+    "section": "多项选择题",
+    "text": "多项选择题\nD18 本自然村内或附近有没有以下金融机构？【多选】\n1.商业银行（包括邮政储蓄）\n2.农村信用合作社或农村资金互助社\n3.村村通\n4.其他非正规金融机构\n5.没有【跳至 D19】"
+  },
+  {
+    "objectID": "chap2ques.html#ai-驱动的问卷数据分析工具",
+    "href": "chap2ques.html#ai-驱动的问卷数据分析工具",
+    "title": "问卷设计",
+    "section": "AI 驱动的问卷数据分析工具",
+    "text": "AI 驱动的问卷数据分析工具\nSurveyMonkey Get Quick Insights with Analyze with AI\nhttps://help.surveymonkey.com/en/surveymonkey/analyze/analyze-with-ai/\nBlix 是一款专注于开放性文本分析的 AI 工具，利用大语言模型对问卷中的开放性回答进行主题提取、情感分析和趋势识别，适用于市场调研、HR 调查等场景\nhttps://blix.ai/"
+  },
+  {
+    "objectID": "chap2ques.html#ai和在线工具",
+    "href": "chap2ques.html#ai和在线工具",
+    "title": "问卷设计",
+    "section": "AI和在线工具",
+    "text": "AI和在线工具\nSurveyMonkey Get Quick Insights with Analyze with AI\nhttps://help.surveymonkey.com/en/surveymonkey/analyze/analyze-with-ai/\nBlix 是一款专注于开放性文本分析的 AI工具，利用大语言模型对问卷中的开放性回答进行主题提取、情感分析和趋势识别，适用于市场调研、HR 调查等场景\nhttps://blix.ai/\nSPSSPRO 众言科技开发在线统计分析平台\nhttps://www.spsspro.com/"
+  },
+  {
+    "objectID": "chap2.html#数据库",
+    "href": "chap2.html#数据库",
+    "title": "第2章",
+    "section": "数据库",
+    "text": "数据库\nCSMAR国泰安经济金融数据库 http://www.gtarsc.com/Home\n中国家庭追踪调查CFPS http://www.isss.pku.edu.cn/cfps/\n中国家庭金融调查数据CHFS https://chfs.swufe.edu.cn\n中国健康与养老数据追踪调查数据CHARLS http://charls.pku.edu.cn\n暨南大学社会调查中心 https://sdc-iesr.jnu.edu.cn"
+  },
+  {
+    "objectID": "chap2.html#公众号",
+    "href": "chap2.html#公众号",
+    "title": "第2章",
+    "section": "公众号",
+    "text": "公众号\n微信公众号抽样调查之家 &gt; 市调大赛"
+  },
+  {
+    "objectID": "chap2.html#问卷调查示例",
+    "href": "chap2.html#问卷调查示例",
+    "title": "第2章",
+    "section": "问卷调查示例",
+    "text": "问卷调查示例\n微信公众号毕导: 专业与薪资\nB站影视飓风: Win还是Mac?"
+  },
+  {
+    "objectID": "chap2ques.html#多项选择题提取定量变量",
+    "href": "chap2ques.html#多项选择题提取定量变量",
+    "title": "问卷设计",
+    "section": "多项选择题提取定量变量",
+    "text": "多项选择题提取定量变量\n多项选择题: 允许受访者在多个选项中勾选一个或多个。\n\n原始数据通常是分类数据（名义变量），每个选项本身没有大小顺序。\n统计每位受访者勾选的选项总数。\n勾选的选项总数是数值型变量（定量变量），可以做加减、平均、相关等统计分析。\n\n题目：你喜欢的运动有哪些？（可多选）\nA. 足球\nB. 篮球\nC. 游泳\nD. 跑步"
   }
 ]
