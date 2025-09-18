@@ -25,7 +25,7 @@ format:
       - header.html
       - fonts.html
     title-slide-attributes: 
-      data-background-image: "img/bili_up.JPG"  
+      data-background-image: "img/bili_up.jpg"  
       data-background-size: "100px"        
       data-background-position: "center bottom 200px"  
     plugins: [highlight, zoom, notes]
