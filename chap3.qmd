@@ -236,12 +236,12 @@ data %>%
 
 <img src="img/video.png" alt="讲义" style="width: 24px; height: 24px;margin-right: 10px">[Excel图表工具综合运用——基金经理](https://www.bilibili.com/video/BV1UJ4m1b7Lb/){target="_blank"}
 
-<img src="img/video.png" alt="讲义" style="width: 24px; height: 24px;margin-right: 10px">[EXCEL数据清洗合集](https://www.bilibili.com/video/BV1uc41177Mn/){target="_blank"}
+<img src="img/video.png" alt="讲义" style="width: 24px; height: 24px;margin-right: 10px">[EXCEL 网页数据清洗](https://www.bilibili.com/video/BV1wm411271A/){target="_blank"}
+
+<img src="img/video.png" alt="讲义" style="width: 24px; height: 24px;margin-right: 10px">[EXCEL 问卷调查数据清洗](https://www.bilibili.com/video/BV1WH4y1N7eW){target="_blank"}
 
 
 <img src="img/video.png" alt="讲义" style="width: 24px; height: 24px;margin-right: 10px">[EXCEL如何美化箱线图？](https://www.bilibili.com/video/BV1imxqedE8B/){target="_blank"}
-
-
 
 
 # Excel习题
