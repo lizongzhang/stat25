@@ -68,7 +68,7 @@ title: "第6章"
 
 11. $X \sim F(5,10), P(X>3)=$ ?; $P(X<1)=$ ?
 
-### 第4题 总体分布为正态分布，样本均值的分布
+### 第4题 总体分布服从正态分布，样本均值的分布
 
 4.1 生成500个服从正态分布N(100,10^2)的随机数。将这500个数视作总体，从中随机抽取容量为4的样本，重复抽样100次，绘制100个样本的样本均值的直方图。
 
@@ -131,7 +131,6 @@ title: "第6章"
 <img src="img/link.png" style="width: 24px; height: 24px;margin-right: 10px"> [第6章Excel习题学生习作点评](https://lizongzhang.github.io/stat25/chap6ex.html){target="_blank"}
 
 
-
 ## 拓展资源
 
 
@@ -143,17 +142,13 @@ title: "第6章"
 <img src="img/link.png" style="width: 24px; height: 24px;margin-right: 10px">t分布与标准正态分布特定区间取值概率对比  <https://www.geogebra.org/m/zxUzwgkH>{target="_blank"}
 
 
-
 <img src="img/link.png" style="width: 24px; height: 24px;margin-right: 10px">卡方分布计算器<https://www.geogebra.org/m/AQX6fB2e>{target="_blank"}
-
-
 
 <img src="img/link.png" style="width: 24px; height: 24px;margin-right: 10px">F分布概率密度曲线<https://www.geogebra.org/m/zxt2xuRs>{target="_blank"}
 
 <img src="img/link.png" style="width: 24px; height: 24px;margin-right: 10px">分位数计算器 <https://gallery.shinyapps.io/dist_calc/>{target="_blank"}
   
-<img src="img/link.png" style="width: 24px; height: 24px;margin-right: 10px">Central Limit Theorem for Means
-              <https://gallery.shinyapps.io/CLT_mean/>{target="_blank"}
+<img src="img/link.png" style="width: 24px; height: 24px;margin-right: 10px">Central Limit Theorem for Means <https://gallery.shinyapps.io/CLT_mean/>{target="_blank"}
   
 <img src="img/link.png" style="width: 24px; height: 24px;margin-right: 10px">中心极限定理 n=2-31 <https://astools.datadesk.com/clt.html>{target="_blank"}
   

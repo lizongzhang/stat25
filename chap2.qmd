@@ -27,6 +27,9 @@ title: "第2章"
 
 <img src="img/video.png" alt="讲义" style="width: 24px; height: 24px;margin-right: 10px">[如何用Excel整理提取的网页数据？](https://www.bilibili.com/video/BV1HL411N7BG/){target="_blank"}
 
+<img src="img/video.png" alt="讲义" style="width: 24px; height: 24px;margin-right: 10px">[Excel问卷调查数据清洗](https://www.bilibili.com/video/BV1WH4y1N7eW){target="_blank"}
+
+
 
 # 拓展资源
 

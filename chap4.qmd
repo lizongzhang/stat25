@@ -26,3 +26,8 @@ title: "第4章"
 
 # 拓展资源
 
+<img src="img/video.png" alt="讲义" style="width: 24px; height: 24px;margin-right: 10px">[Napkin AI 文本一键可视化!](https://www.bilibili.com/video/BV1ju4gz3Euv/){target="_blank"}
+
+<img src="img/video.png" alt="讲义" style="width: 24px; height: 24px;margin-right: 10px">[Excel数据清洗](https://www.bilibili.com/video/BV1uc41177Mn/){target="_blank"}
+
+
